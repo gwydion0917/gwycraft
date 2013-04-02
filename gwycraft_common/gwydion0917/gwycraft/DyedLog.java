@@ -3,6 +3,7 @@ package gwydion0917.gwycraft;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,13 +12,13 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class DyedLog extends Block {
+public class DyedLog extends BlockLog {
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
 	public DyedLog(int id) {
-		super(id, Material.wood);
+		super(id);
 		setUnlocalizedName("dyedLog");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(2.0F);
