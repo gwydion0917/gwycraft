@@ -1,0 +1,19 @@
+[
+{
+	"modid": "GwyCraft",
+	"name": "GwyCraft",
+	"description": "",
+	"version": "",
+	"credits": "",
+	"logoFile": "/gfx/gwycraft/logo.png",
+	"mcversion": "",
+	"url": "https://github.com/gwydion0917/gwycraft",
+	"updateUrl": "",
+	"authors": [ "gwydion0917", "zepanv" ],
+	"parent":"",
+	"screenshots": [],
+	"dependencies": [
+		"mod_MinecraftForge"
+		]
+}
+]
