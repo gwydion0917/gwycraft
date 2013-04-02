@@ -28,6 +28,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Gwycraft {
 
+	// Use this for colors
 	public static final String[] gwyColorNames = { "White", "Orange",
 			"Magenta", "Light Blue", "Yellow", "Light Green", "Pink",
 			"Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown",
