@@ -6,8 +6,9 @@ import cpw.mods.fml.common.network.IGuiHandler;
 
 public class CommonProxy implements IGuiHandler {
 
-	public static String BLOCKS_PNG = "gwydion0917/mods/GwyCraft/res/blocks.png";
-	public static String ITEMS_PNG = "gwydion0917/mods/GwyCraft/res/items.png";
+	// Pre-1.5
+	//public static String BLOCKS_PNG = "gwydion0917/mods/GwyCraft/res/blocks.png";
+	//public static String ITEMS_PNG = "gwydion0917/mods/GwyCraft/res/items.png";
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
