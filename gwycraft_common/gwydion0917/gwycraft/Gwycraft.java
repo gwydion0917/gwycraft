@@ -9,8 +9,6 @@ import gwydion0917.gwycraft.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.creativetab.*;
-import net.minecraft.block.material.*;
 import net.minecraftforge.common.*;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
@@ -176,31 +174,31 @@ public class Gwycraft {
 			glowyWoolID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"glowyWool", 1490).getInt(1490);
 			dyedStoneID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedStone", 1491).getInt(1490);
+					"dyedStone", 1491).getInt(1491);
 			dyedStoneSlabID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedStoneSlab", 1492).getInt(1490);
+					"dyedStoneSlab", 1492).getInt(1492);
 			dyedBookcaseID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedBookcase", 1493).getInt(1490);
+					"dyedBookcase", 1493).getInt(1493);
 			dyedBrickID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedBrick", 1494).getInt(1490);
+					"dyedBrick", 1494).getInt(1494);
 			dyedClayblockID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedClayblock", 1495).getInt(1490);
+					"dyedClayblock", 1495).getInt(1495);
 			dyedGlassID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedGlass", 1496).getInt(1490);
+					"dyedGlass", 1496).getInt(1496);
 			dyedLeafID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedLeaf", 1497).getInt(1490);
+					"dyedLeaf", 1497).getInt(1497);
 			dyedLogID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedLog", 1498).getInt(1490);
+					"dyedLog", 1498).getInt(1498);
 			dyedMudbrickID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedMudbrick", 1499).getInt(1490);
+					"dyedMudbrick", 1499).getInt(1499);
 			dyedPlankID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedPlank", 1500).getInt(1490);
+					"dyedPlank", 1500).getInt(1500);
 			dyedSandID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedSand", 1501).getInt(1490);
+					"dyedSand", 1501).getInt(1501);
 			dyedStonebrickID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedStonebrick", 1502).getInt(1490);
+					"dyedStonebrick", 1502).getInt(1502);
 			dyedStonecobbleID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedStonecobble", 1503).getInt(1490);
+					"dyedStonecobble", 1503).getInt(1503);
 
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "GlowyBlocks can't load its config.");
@@ -214,18 +212,18 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-		Block dyedStoneSlab = new DyedStone(dyedStoneSlabID);
-		Block dyedBookcase = new DyedStone(dyedBookcaseID);
-		Block dyedBrick = new DyedStone(dyedBrickID);
-		Block dyedClayblock = new DyedStone(dyedClayblockID);
-		Block dyedGlass = new DyedStone(dyedGlassID);
-		Block dyedLeaf = new DyedStone(dyedLeafID);
-		Block dyedLog = new DyedStone(dyedLogID);
-		Block dyedMudbrick = new DyedStone(dyedMudbrickID);
-		Block dyedPlank = new DyedStone(dyedPlankID);
-		Block dyedSand = new DyedStone(dyedSandID);
-		Block dyedStonebrick = new DyedStone(dyedStonebrickID);
-		Block dyedStonecobble = new DyedStone(dyedStonecobbleID);
+		Block dyedStoneSlab = new DyedStoneSlab(dyedStoneSlabID);
+		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
+		Block dyedBrick = new DyedBrick(dyedBrickID);
+		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
+		Block dyedGlass = new DyedGlass(dyedGlassID);
+		Block dyedLeaf = new DyedLeaf(dyedLeafID);
+		Block dyedLog = new DyedLog(dyedLogID);
+		Block dyedMudbrick = new DyedMudbrick(dyedMudbrickID);
+		Block dyedPlank = new DyedPlank(dyedPlankID);
+		Block dyedSand = new DyedSand(dyedSandID);
+		Block dyedStonebrick = new DyedStonebrick(dyedStonebrickID);
+		Block dyedStonecobble = new DyedStoneCobble(dyedStonecobbleID);
 
 		CommonProxy.registerRenderers();
 
@@ -245,7 +243,6 @@ public class Gwycraft {
 			// dyedStone
 			GameRegistry.registerBlock(dyedStone, dyedItemStone.class, "dyedStone");
 			for (int i = 0; i < 16; i++) {
-				ItemStack stone = new ItemStack(Block.stone, 1, i);
 				ItemStack dyedStoneStack = new ItemStack(dyedStone, 1, i);
 				LanguageRegistry.addName(dyedStoneStack,
 						dyedStoneNames[dyedStoneStack.getItemDamage()]);
@@ -253,7 +250,6 @@ public class Gwycraft {
 			// dyedStone Slab
 			GameRegistry.registerBlock(dyedStoneSlab, dyedItemStoneSlab.class, "dyedStoneSlab");
 			for (int i = 0; i < 16; i++) {
-				ItemStack stoneSingleSlab = new ItemStack(Block.stoneSingleSlab, 1, i);
 				ItemStack dyedStoneSlabStack = new ItemStack(dyedStoneSlab, 1, i);
 				LanguageRegistry.addName(dyedStoneSlabStack,
 						dyedStoneSlabNames[dyedStoneSlabStack.getItemDamage()]);
@@ -261,7 +257,6 @@ public class Gwycraft {
 			// dyedBookcase
 			GameRegistry.registerBlock(dyedBookcase, dyedItemBookcase.class, "dyedBookcase");
 			for (int i = 0; i < 16; i++) {
-				ItemStack bookShelf = new ItemStack(Block.bookShelf, 1, i);
 				ItemStack dyedBookcaseStack = new ItemStack(dyedBookcase, 1, i);
 				LanguageRegistry.addName(dyedBookcaseStack,
 						dyedBookcaseNames[dyedBookcaseStack.getItemDamage()]);
@@ -269,7 +264,6 @@ public class Gwycraft {
 			// dyedBrick
 			GameRegistry.registerBlock(dyedBrick, dyedItemBrick.class, "dyedBrick");
 			for (int i = 0; i < 16; i++) {
-				ItemStack brick = new ItemStack(Block.brick, 1, i);
 				ItemStack dyedBrickStack = new ItemStack(dyedBrick, 1, i);
 				LanguageRegistry.addName(dyedBrickStack,
 						dyedBrickNames[dyedBrickStack.getItemDamage()]);
@@ -277,7 +271,6 @@ public class Gwycraft {
 			// dyedClayblock
 			GameRegistry.registerBlock(dyedClayblock, dyedItemClayblock.class, "dyedClayblock");
 			for (int i = 0; i < 16; i++) {
-				ItemStack blockClay = new ItemStack(Block.blockClay, 1, i);
 				ItemStack dyedClayblockStack = new ItemStack(dyedClayblock, 1, i);
 				LanguageRegistry.addName(dyedClayblockStack,
 						dyedClayblockNames[dyedClayblockStack.getItemDamage()]);
@@ -285,7 +278,6 @@ public class Gwycraft {
 			// dyedGlass
 			GameRegistry.registerBlock(dyedGlass, dyedItemGlass.class, "dyedGlass");
 			for (int i = 0; i < 16; i++) {
-				ItemStack glass = new ItemStack(Block.glass, 1, i);
 				ItemStack dyedGlassStack = new ItemStack(dyedGlass, 1, i);
 				LanguageRegistry.addName(dyedGlassStack,
 						dyedGlassNames[dyedGlassStack.getItemDamage()]);
@@ -293,7 +285,6 @@ public class Gwycraft {
 			// dyedLeaf
 			GameRegistry.registerBlock(dyedLeaf, dyedItemLeaf.class, "dyedLeaf");
 			for (int i = 0; i < 16; i++) {
-				ItemStack leaves = new ItemStack(Block.leaves, 1, i);
 				ItemStack dyedLeafStack = new ItemStack(dyedLeaf, 1, i);
 				LanguageRegistry.addName(dyedLeafStack,
 						dyedLeafNames[dyedLeafStack.getItemDamage()]);
@@ -301,7 +292,6 @@ public class Gwycraft {
 			// dyedLog
 			GameRegistry.registerBlock(dyedLog, dyedItemLog.class, "dyedLog");
 			for (int i = 0; i < 16; i++) {
-				ItemStack wood = new ItemStack(Block.wood, 1, i);
 				ItemStack dyedLogStack = new ItemStack(dyedLog, 1, i);
 				LanguageRegistry.addName(dyedLogStack,
 						dyedLogNames[dyedLogStack.getItemDamage()]);
@@ -309,7 +299,6 @@ public class Gwycraft {
 			// dyedMudbrick
 			GameRegistry.registerBlock(dyedMudbrick, dyedItemMudbrick.class, "dyedMudbrick");
 			for (int i = 0; i < 16; i++) {
-				ItemStack brick = new ItemStack(Block.brick, 1, i);
 				ItemStack dyedMudbrickStack = new ItemStack(dyedMudbrick, 1, i);
 				LanguageRegistry.addName(dyedMudbrickStack,
 						dyedMudbrickNames[dyedMudbrickStack.getItemDamage()]);
@@ -317,7 +306,6 @@ public class Gwycraft {
 			// dyedPlank
 			GameRegistry.registerBlock(dyedPlank, dyedItemPlank.class, "dyedPlank");
 			for (int i = 0; i < 16; i++) {
-				ItemStack planks = new ItemStack(Block.planks, 1, i);
 				ItemStack dyedPlankStack = new ItemStack(dyedPlank, 1, i);
 				LanguageRegistry.addName(dyedPlankStack,
 						dyedPlankNames[dyedPlankStack.getItemDamage()]);
@@ -325,7 +313,6 @@ public class Gwycraft {
 			// dyedSand
 			GameRegistry.registerBlock(dyedSand, dyedItemSand.class, "dyedSand");
 			for (int i = 0; i < 16; i++) {
-				ItemStack sand = new ItemStack(Block.sand, 1, i);
 				ItemStack dyedSandStack = new ItemStack(dyedSand, 1, i);
 				LanguageRegistry.addName(dyedSandStack,
 						dyedSandNames[dyedSandStack.getItemDamage()]);
@@ -333,7 +320,6 @@ public class Gwycraft {
 			// dyedStonebrick
 			GameRegistry.registerBlock(dyedStonebrick, dyedItemStonebrick.class, "dyedStonebrick");
 			for (int i = 0; i < 16; i++) {
-				ItemStack brick = new ItemStack(Block.brick, 1, i);
 				ItemStack dyedStonebrickStack = new ItemStack(dyedStonebrick, 1, i);
 				LanguageRegistry.addName(dyedStonebrickStack,
 						dyedStonebrickNames[dyedStonebrickStack.getItemDamage()]);
@@ -341,7 +327,6 @@ public class Gwycraft {
 			// dyedStonecobble
 			GameRegistry.registerBlock(dyedStonecobble, dyedItemStonecobble.class, "dyedStonecobble");
 			for (int i = 0; i < 16; i++) {
-				ItemStack cobblestone = new ItemStack(Block.cobblestone, 1, i);
 				ItemStack dyedStonecobbleStack = new ItemStack(dyedStonecobble, 1, i);
 				LanguageRegistry.addName(dyedStonecobbleStack,
 						dyedStonecobbleNames[dyedStonecobbleStack.getItemDamage()]);
