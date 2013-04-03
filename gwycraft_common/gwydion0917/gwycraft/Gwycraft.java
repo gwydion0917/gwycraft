@@ -35,7 +35,7 @@ public class Gwycraft {
 
 	private int glowyWoolID;
 	private int dyedStoneID;
-	private int dyedStoneSlabID;
+	private int dyedStoneSlab1ID;
 	private int dyedBookcaseID;
 	private int dyedBrickID;
 	private int dyedClayblockID;
@@ -67,8 +67,8 @@ public class Gwycraft {
 					"glowyWool", 1490).getInt(1490);
 			dyedStoneID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"dyedStone", 1491).getInt(1491);
-			dyedStoneSlabID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedStoneSlab", 1492).getInt(1492);
+			dyedStoneSlab1ID = config.getBlock(Configuration.CATEGORY_BLOCK,
+					"dyedStoneSlab1", 1492).getInt(1492);
 			dyedBookcaseID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"dyedBookcase", 1493).getInt(1493);
 			dyedBrickID = config.getBlock(Configuration.CATEGORY_BLOCK,
@@ -104,7 +104,7 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-		Block dyedStoneSlab = new DyedStoneSlab(dyedStoneSlabID);
+		Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID);
 		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
 		Block dyedBrick = new DyedBrick(dyedBrickID);
 		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
@@ -140,12 +140,12 @@ public class Gwycraft {
 					gwyColorNames[dyedStoneStack.getItemDamage()] + " Stone");
 		}
 		// dyedStone Slab
-		GameRegistry.registerBlock(dyedStoneSlab, dyedItemStoneSlab.class,
-				"dyedStoneSlab");
-		for (int i = 0; i < 16; i++) {
-			ItemStack dyedStoneSlabStack = new ItemStack(dyedStoneSlab, 1, i);
-			LanguageRegistry.addName(dyedStoneSlabStack,
-					gwyColorNames[dyedStoneSlabStack.getItemDamage()]
+		GameRegistry.registerBlock(dyedStoneSlab1, dyedItemStoneSlab1.class,
+				"dyedStoneSlab1");
+		for (int i = 0; i < 7; i++) {
+			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
+			LanguageRegistry.addName(dyedStoneSlab1Stack,
+					gwyColorNames[dyedStoneSlab1Stack.getItemDamage()]
 							+ " Stone Slab");
 		}
 		// dyedBookcase
