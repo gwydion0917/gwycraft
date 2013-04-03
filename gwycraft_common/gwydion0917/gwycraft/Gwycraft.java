@@ -47,6 +47,7 @@ public class Gwycraft {
 	private int dyedSandID;
 	private int dyedStonebrickID;
 	private int dyedStonecobbleID;
+    private int dyedMudbrickStairsID;
 
 	@Instance("Gwycraft")
 	public static Gwycraft instance;
@@ -91,6 +92,8 @@ public class Gwycraft {
 					"dyedStonebrick", 1502).getInt(1502);
 			dyedStonecobbleID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"dyedStonecobble", 1503).getInt(1503);
+            dyedMudbrickStairsID = config.getBlock(Configuration.CATEGORY_BLOCK,
+                    "dyedMudbrickStairs", 1504).getInt(1504);
 
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "GlowyBlocks can't load its config.");
@@ -104,7 +107,7 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-		Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID);
+//		Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID, false, null);
 		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
 		Block dyedBrick = new DyedBrick(dyedBrickID);
 		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
@@ -116,6 +119,7 @@ public class Gwycraft {
 		Block dyedSand = new DyedSand(dyedSandID);
 		Block dyedStonebrick = new DyedStonebrick(dyedStonebrickID);
 		Block dyedStonecobble = new DyedStoneCobble(dyedStonecobbleID);
+//        Block dyedMudbrickStairs = new DyedMudbrickStairs(dyedMudbrickStairsID);
 
 		CommonProxy.registerRenderers();
 
@@ -140,14 +144,14 @@ public class Gwycraft {
 					gwyColorNames[dyedStoneStack.getItemDamage()] + " Stone");
 		}
 		// dyedStone Slab
-		GameRegistry.registerBlock(dyedStoneSlab1, dyedItemStoneSlab1.class,
-				"dyedStoneSlab1");
-		for (int i = 0; i < 7; i++) {
-			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
-			LanguageRegistry.addName(dyedStoneSlab1Stack,
-					gwyColorNames[dyedStoneSlab1Stack.getItemDamage()]
-							+ " Stone Slab");
-		}
+//		GameRegistry.registerBlock(dyedStoneSlab1, dyedItemStoneSlab1.class,
+//				"dyedStoneSlab1");
+//		for (int i = 0; i < 7; i++) {
+//			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
+//			LanguageRegistry.addName(dyedStoneSlab1Stack,
+//					gwyColorNames[dyedStoneSlab1Stack.getItemDamage()]
+//							+ " Stone Slab");
+//		}
 		// dyedBookcase
 		GameRegistry.registerBlock(dyedBookcase, dyedItemBookcase.class,
 				"dyedBookcase");
