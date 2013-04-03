@@ -12,13 +12,13 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class DyedLog extends Block {
+public class DyedLog4 extends BlockLog {
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
-	public DyedLog(int id) {
-		super(id, Material.rock);
+	public DyedLog4(int id) {
+		super(id);
 		setUnlocalizedName("dyedLog");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(2.0F);

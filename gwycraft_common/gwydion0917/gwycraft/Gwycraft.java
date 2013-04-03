@@ -41,7 +41,8 @@ public class Gwycraft {
 	private int dyedClayblockID;
 	private int dyedGlassID;
 	private int dyedLeafID;
-	private int dyedLogID;
+    private int dyedLogID;
+    static int dyedLog1ID;
 	private int dyedMudbrickID;
 	private int dyedPlankID;
 	private int dyedSandID;
@@ -80,8 +81,8 @@ public class Gwycraft {
 					"dyedGlass", 1496).getInt(1496);
 			dyedLeafID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"dyedLeaf", 1497).getInt(1497);
-			dyedLogID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedLog", 1498).getInt(1498);
+            dyedLogID = config.getBlock(Configuration.CATEGORY_BLOCK,
+                    "dyedLog", 1498).getInt(1498);
 			dyedMudbrickID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"dyedMudbrick", 1499).getInt(1499);
 			dyedPlankID = config.getBlock(Configuration.CATEGORY_BLOCK,
@@ -94,6 +95,8 @@ public class Gwycraft {
 					"dyedStonecobble", 1503).getInt(1503);
             dyedMudbrickStairsID = config.getBlock(Configuration.CATEGORY_BLOCK,
                     "dyedMudbrickStairs", 1504).getInt(1504);
+            dyedLog1ID = config.getBlock(Configuration.CATEGORY_BLOCK,
+                    "dyedLog1", 1505).getInt(1505);
 
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "GlowyBlocks can't load its config.");
@@ -120,7 +123,8 @@ public class Gwycraft {
 		Block dyedStonebrick = new DyedStonebrick(dyedStonebrickID);
 		Block dyedStonecobble = new DyedStoneCobble(dyedStonecobbleID);
 //        Block dyedMudbrickStairs = new DyedMudbrickStairs(dyedMudbrickStairsID);
-
+		Block dyedLog1 = new DyedLog1(dyedLog1ID);
+		
 		CommonProxy.registerRenderers();
 
 		// glowyWool
@@ -191,13 +195,20 @@ public class Gwycraft {
 			LanguageRegistry.addName(dyedLeafStack,
 					gwyColorNames[dyedLeafStack.getItemDamage()] + " Leaf");
 		}
-		// dyedLog
-		GameRegistry.registerBlock(dyedLog, dyedItemLog.class, "dyedLog");
-		for (int i = 0; i < 16; i++) {
-			ItemStack dyedLogStack = new ItemStack(dyedLog, 1, i);
-			LanguageRegistry.addName(dyedLogStack,
-					gwyColorNames[dyedLogStack.getItemDamage()] + " Log");
-		}
+        // dyedLog
+        GameRegistry.registerBlock(dyedLog, dyedItemLog.class, "dyedLog");
+        for (int i = 0; i < 16; i++) {
+            ItemStack dyedLogStack = new ItemStack(dyedLog, 1, i);
+            LanguageRegistry.addName(dyedLogStack,
+                    gwyColorNames[dyedLogStack.getItemDamage()] + " Log");
+        }
+        // dyedLog1
+        GameRegistry.registerBlock(dyedLog1, dyedItemLog1.class, "dyedLog1");
+        for (int i = 0; i < 4; i++) {
+            ItemStack dyedLog1Stack = new ItemStack(dyedLog1, 1, i);
+            LanguageRegistry.addName(dyedLog1Stack,
+                    gwyColorNames[dyedLog1Stack.getItemDamage()] + " Log");
+        }
 		// dyedMudbrick
 		GameRegistry.registerBlock(dyedMudbrick, dyedItemMudbrick.class,
 				"dyedMudbrick");
