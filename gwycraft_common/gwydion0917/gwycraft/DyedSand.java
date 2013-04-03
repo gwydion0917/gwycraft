@@ -3,6 +3,7 @@ package gwydion0917.gwycraft;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,7 +12,7 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class DyedSand extends Block {
+public class DyedSand extends BlockSand {
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
