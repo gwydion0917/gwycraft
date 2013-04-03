@@ -3,7 +3,6 @@ package gwydion0917.gwycraft;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -19,10 +18,11 @@ public class DyedLog1 extends Block
     /** The type of tree this log came from. */
     public static final String[] woodType = new String[] {"white", "orange", "magenta", "light blue"};
     public static final String[] treeTextureTypes = new String[] {"Gwycraft:logside_0", "Gwycraft:logside_1", "Gwycraft:logside_2", "Gwycraft:logside_3"};
+    public static final String[] treeTopTextureTypes = new String[] {"Gwycraft:logtop_0", "Gwycraft:logtop_1", "Gwycraft:logtop_2", "Gwycraft:logtop_3"};
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
     @SideOnly(Side.CLIENT)
-    private Icon tree_top;
+    private Icon[] iconArray1;
 
     public DyedLog1(int id) {
         super(id, Material.wood);
@@ -120,7 +120,7 @@ public class DyedLog1 extends Block
     {
         int k = par2 & 12;
         int l = par2 & 3;
-        return k == 0 && (par1 == 1 || par1 == 0) ? this.tree_top : (k == 4 && (par1 == 5 || par1 == 4) ? this.tree_top : (k == 8 && (par1 == 2 || par1 == 3) ? this.tree_top : this.iconArray[l]));
+        return k == 0 && (par1 == 1 || par1 == 0) ? this.iconArray1[l] : (k == 4 && (par1 == 5 || par1 == 4) ? this.iconArray1[l] : (k == 8 && (par1 == 2 || par1 == 3) ? this.iconArray1[l] : this.iconArray[l]));
     }
 
     /**
@@ -169,15 +169,15 @@ public class DyedLog1 extends Block
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.tree_top = par1IconRegister.registerIcon("tree_top");
+        this.iconArray1 = new Icon[treeTopTextureTypes.length];
         this.iconArray = new Icon[treeTextureTypes.length];
 
         for (int i = 0; i < this.iconArray.length; ++i)
         {
             this.iconArray[i] = par1IconRegister.registerIcon(treeTextureTypes[i]);
+            this.iconArray1[i] = par1IconRegister.registerIcon(treeTopTextureTypes[i]);
         }
     }
-
     @Override
     public boolean canSustainLeaves(World world, int x, int y, int z)
     {
