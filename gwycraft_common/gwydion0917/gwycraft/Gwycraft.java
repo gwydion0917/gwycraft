@@ -40,7 +40,7 @@ public class Gwycraft {
 
     private int glowyWoolID;
 	private int dyedStoneID;
-	private int dyedStoneSlab1ID;
+	static int dyedStoneSlab1ID;
 	private int dyedBookcaseID;
 	private int dyedBrickID;
 	private int dyedClayblockID;
@@ -121,7 +121,7 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-//		Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID, false, null);
+		Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID, false);
 		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
 		Block dyedBrick = new DyedBrick(dyedBrickID);
 		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
@@ -161,14 +161,14 @@ public class Gwycraft {
 					gwyColorNames[dyedStoneStack.getItemDamage()] + " Stone");
 		}
 		// dyedStone Slab
-//		GameRegistry.registerBlock(dyedStoneSlab1, dyedItemStoneSlab1.class,
-//				"dyedStoneSlab1");
-//		for (int i = 0; i < 7; i++) {
-//			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
-//			LanguageRegistry.addName(dyedStoneSlab1Stack,
-//					gwyColorNames[dyedStoneSlab1Stack.getItemDamage()]
-//							+ " Stone Slab");
-//		}
+		GameRegistry.registerBlock(dyedStoneSlab1, dyedItemStoneSlab1.class,
+				"dyedStoneSlab1");
+		for (int i = 0; i < 7; i++) {
+			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
+			LanguageRegistry.addName(dyedStoneSlab1Stack,
+					gwyColorNames[dyedStoneSlab1Stack.getItemDamage()]
+							+ " Stone Slab");
+		}
 		// dyedBookcase
 		GameRegistry.registerBlock(dyedBookcase, dyedItemBookcase.class,
 				"dyedBookcase");
