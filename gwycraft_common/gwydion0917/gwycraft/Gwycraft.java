@@ -54,7 +54,7 @@ public class Gwycraft {
 	private int dyedPlankID;
 	private int dyedSandID;
 	private int dyedStonebrickID;
-	private int dyedStonecobbleID;
+	static int dyedStonecobbleID;
     private int dyedMudbrickStairsID;
 
 	@Instance("Gwycraft")

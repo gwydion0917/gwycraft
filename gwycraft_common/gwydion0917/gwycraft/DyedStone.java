@@ -1,6 +1,7 @@
 package gwydion0917.gwycraft;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -31,6 +32,10 @@ public class DyedStone extends Block {
 	}
 
 	@Override
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return gwydion0917.gwycraft.Gwycraft.dyedStonecobbleID;
+    }
 	public int damageDropped(int metadata) {
 		return metadata;
 	}
