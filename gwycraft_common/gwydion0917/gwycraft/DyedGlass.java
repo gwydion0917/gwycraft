@@ -25,6 +25,14 @@ public class DyedGlass extends BlockGlass {
 		setStepSound(Block.glass.stepSound);
 
 	}
+	
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int getRenderBlockPass()
+    {
+        return 1;
+    }
+
 
 	@Override
 	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
