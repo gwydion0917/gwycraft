@@ -16,8 +16,8 @@ import gwydion0917.gwycraft.DyedPlank;
 public class DyedBookcase extends BlockBookshelf {
 
 	@SideOnly(Side.CLIENT)
-//	private Icon[][] iconBuffer;
-	private Icon[] iconArray;
+    private Icon[] iconArray;
+    private Icon[] iconArray1;
 	
 	public DyedBookcase(int id) {
 		super(id);
@@ -31,9 +31,10 @@ public class DyedBookcase extends BlockBookshelf {
 	@Override
     public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) 
 	{
- //       return this.iconArray[par2 % this.iconArray.length];
-        return par1 != 1 && par1 != 0 ? super.getBlockTextureFromSideAndMetadata(par1, par2) : Block.planks.getBlockTextureFromSide(par1);
-    }
+        int l = par2 & 15;
+        return (par1 == 1 || par1 == 0) ? this.iconArray1[l] : this.iconArray[l];
+
+	}
 	
 	@Override
 	public int damageDropped(int metadata) {
@@ -53,19 +54,11 @@ public class DyedBookcase extends BlockBookshelf {
 	public void registerIcons(IconRegister par1IconRegister) 
 	{
 	    this.iconArray = new Icon[16];
+        this.iconArray1 = new Icon[16];
         
 	    for (int i = 0; i < this.iconArray.length; ++i)        {
-	        this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:bookcase_" + i);
-
-	    //	    this.iconBuffer = new Icon[16][6];
-	    
-//		for (int i = 0; i < this.iconBuffer.length; ++i) 		{
-//		    this.iconBuffer[i][0] = par1IconRegister.registerIcon("Gwycraft:plank_" + i);
-//            this.iconBuffer[i][1] = par1IconRegister.registerIcon("Gwycraft:plank_" + i);
-//            this.iconBuffer[i][2] = par1IconRegister.registerIcon("Gwycraft:bookcase_" + i);
-//            this.iconBuffer[i][3] = par1IconRegister.registerIcon("Gwycraft:bookcase_" + i);
-//            this.iconBuffer[i][4] = par1IconRegister.registerIcon("Gwycraft:bookcase_" + i);
-//            this.iconBuffer[i][5] = par1IconRegister.registerIcon("Gwycraft:bookcase_" + i);
+            this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:bookcase_" + i);
+            this.iconArray1[i] = par1IconRegister.registerIcon("Gwycraft:plank_" + i);
 		}
 	}
 
