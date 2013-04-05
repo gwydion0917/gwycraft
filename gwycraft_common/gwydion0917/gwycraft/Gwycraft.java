@@ -43,6 +43,7 @@ import gwydion0917.gwycraft.blocks.dyedItemStonecobble;
 import gwydion0917.gwycraft.blocks.glowyItemWool;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -168,9 +169,9 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-        Block dyedStoneSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);;
-        Block dyedStoneSlab2 = new DyedStoneSlab2(dyedStoneSlab2ID, false);
-        Block dyedStoneDoubleSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
+		BlockHalfSlab dyedStoneSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);;
+		BlockHalfSlab dyedStoneSlab2 = new DyedStoneSlab2(dyedStoneSlab2ID, false);
+		BlockHalfSlab dyedStoneDoubleSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
 		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
 		Block dyedBrick = new DyedBrick(dyedBrickID);
 		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
