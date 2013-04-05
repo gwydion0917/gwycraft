@@ -13,7 +13,7 @@ import net.minecraft.util.Icon;
 
 public class dyedItemStoneSlab1 extends ItemBlock {
 
-	private final static String[] subNames = { "white", "orange", "magenta", "lightBlue", "yellow", "lightGreen", "pink", "darkGrey"};
+//	private final static String[] subNames = { "white", "orange", "magenta", "lightBlue", "yellow", "lightGreen", "pink", "darkGrey"};
 
     private final boolean isFullBlock;
 

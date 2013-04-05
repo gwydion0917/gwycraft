@@ -1,9 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.Gwycraft;
-
 import java.util.List;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -13,11 +10,6 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.Facing;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 
 public class DyedStoneSlab2 extends BlockHalfSlab{
     /** The type of tree this slab came from. */
@@ -26,10 +18,10 @@ public class DyedStoneSlab2 extends BlockHalfSlab{
 
     private Icon[] iconArray;
 
-    public DyedStoneSlab2(int par1, boolean par2)
+    public DyedStoneSlab2(int par1, boolean par2, Material mat)
     {
-        super(par1, par2, Material.rock);
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        super(par1, par2, mat);
+        setCreativeTab(CreativeTabs.tabBlock);
     }
 
     @SideOnly(Side.CLIENT)
@@ -79,7 +71,7 @@ public class DyedStoneSlab2 extends BlockHalfSlab{
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneDoubleSlab1ID)
+        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneSlab2ID)
         {
             for (int j = 0; j < 8; ++j)
             {
@@ -93,6 +85,7 @@ public class DyedStoneSlab2 extends BlockHalfSlab{
         this.iconArray = new Icon[16];
 
         for (int i = 0; i < this.iconArray.length; ++i) {
-            this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);        }
+            this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);
+        }
     }
 }

@@ -1,7 +1,8 @@
 package gwydion0917.gwycraft.blocks;
 
+import gwydion0917.gwycraft.Gwycraft;
+
 import java.util.List;
-// import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -11,11 +12,6 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
-// import net.minecraft.entity.Entity;
-// import net.minecraft.util.AxisAlignedBB;
-// import net.minecraft.util.Facing;
-// import net.minecraft.world.IBlockAccess;
-// import net.minecraft.world.World;
 
 public class DyedStoneSlab1 extends BlockHalfSlab{
     /** The type of tree this slab came from. */
@@ -26,6 +22,8 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
     public DyedStoneSlab1(int par1, boolean par2, Material mat)
     {
         super(par1, par2, mat);
+        setCreativeTab(CreativeTabs.tabBlock);
+
     }
 
     @SideOnly(Side.CLIENT)
@@ -33,11 +31,15 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
+//    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
+//    {
+//        return this.iconArray[par2 % this.iconArray.length];
+//    }
+
     public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        return this.iconArray[par2 % this.iconArray.length];
+        return this.iconArray[par2 % this.iconArray.length & 7];
     }
-
     /**
      * Returns the ID of the items to drop on destruction.
      */

@@ -36,8 +36,6 @@ import gwydion0917.gwycraft.blocks.dyedItemMudbrick;
 import gwydion0917.gwycraft.blocks.dyedItemPlank;
 import gwydion0917.gwycraft.blocks.dyedItemSand;
 import gwydion0917.gwycraft.blocks.dyedItemStone;
-import gwydion0917.gwycraft.blocks.dyedItemStoneSlab1;
-import gwydion0917.gwycraft.blocks.dyedItemStoneSlab2;
 import gwydion0917.gwycraft.blocks.dyedItemStonebrick;
 import gwydion0917.gwycraft.blocks.dyedItemStonecobble;
 import gwydion0917.gwycraft.blocks.glowyItemWool;
@@ -82,8 +80,9 @@ public class Gwycraft {
     public static int glowyWoolID;
     public static int dyedStoneID;
     public static int dyedStoneSlab1ID;
-    public static int dyedStoneSlab2ID;
     public static int dyedStoneDoubleSlab1ID;
+    public static int dyedStoneSlab2ID;
+    public static int dyedStoneDoubleSlab2ID;
     public static int dyedBookcaseID;
     public static int dyedBrickID;
     public static int dyedClayblockID;
@@ -155,6 +154,8 @@ public class Gwycraft {
                     "dyedLog4", 1508).getInt(1508);
             dyedStoneDoubleSlab1ID = config.getBlock(Configuration.CATEGORY_BLOCK,
                     "dyedStoneDoubleSlab1", 1509).getInt(1509);
+            dyedStoneDoubleSlab2ID = config.getBlock(Configuration.CATEGORY_BLOCK,
+                    "dyedStoneDoubleSlab2", 1510).getInt(1510);
 
             
 		} catch (Exception e) {
@@ -169,9 +170,10 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-		BlockHalfSlab dyedStoneSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);;
-		BlockHalfSlab dyedStoneSlab2 = new DyedStoneSlab2(dyedStoneSlab2ID, false);
-		BlockHalfSlab dyedStoneDoubleSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
+		BlockHalfSlab dyedStoneSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);
+        BlockHalfSlab dyedStoneDoubleSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
+		BlockHalfSlab dyedStoneSlab2 = (DyedStoneSlab2) new DyedStoneSlab2(dyedStoneSlab2ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab2").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);
+        BlockHalfSlab dyedStoneDoubleSlab2 = (DyedStoneSlab2) new DyedStoneSlab2(dyedStoneDoubleSlab2ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab2").setHardness(2.0F);
 		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
 		Block dyedBrick = new DyedBrick(dyedBrickID);
 		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
@@ -212,8 +214,8 @@ public class Gwycraft {
 		}
 		// dyedStone Slab
 		GameRegistry.registerBlock(dyedStoneSlab1, "dyedStoneSlab1");
-		Item.itemsList[dyedStoneSlab1ID] = (new ItemSlab (dyedStoneSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, false)).setUnlocalizedName("woodSlab");
-	    Item.itemsList[dyedStoneDoubleSlab1ID] = (new ItemSlab(dyedStoneDoubleSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, true)).setUnlocalizedName("woodSlab");
+		Item.itemsList[dyedStoneSlab1ID] = (new ItemSlab (dyedStoneSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, false)).setUnlocalizedName("dyedStoneSlab1");
+	    Item.itemsList[dyedStoneDoubleSlab1ID] = (new ItemSlab(dyedStoneDoubleSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, true)).setUnlocalizedName("dyedStoneSlab1");
 
 		for (int i = 0; i < 8; i++) {
 			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
@@ -221,8 +223,10 @@ public class Gwycraft {
 					gwyColorSlab1Names[dyedStoneSlab1Stack.getItemDamage()]
 							+ " Stone Slab");
 		}
-        GameRegistry.registerBlock(dyedStoneSlab2, dyedItemStoneSlab2.class,
-                "dyedStoneSlab2");
+        GameRegistry.registerBlock(dyedStoneSlab2, "dyedStoneSlab2");
+        Item.itemsList[dyedStoneSlab2ID] = (new ItemSlab (dyedStoneSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, false)).setUnlocalizedName("dyedStoneSlab2");
+        Item.itemsList[dyedStoneDoubleSlab2ID] = (new ItemSlab(dyedStoneDoubleSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, true)).setUnlocalizedName("dyedStoneSlab2");
+
         for (int i = 0; i < 8; i++) {
             ItemStack dyedStoneSlab2Stack = new ItemStack(dyedStoneSlab2, 1, i);
             LanguageRegistry.addName(dyedStoneSlab2Stack,
