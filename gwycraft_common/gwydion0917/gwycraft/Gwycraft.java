@@ -32,15 +32,18 @@ public class Gwycraft {
 			"Magenta", "Light Blue", "Yellow", "Light Green", "Pink",
 			"Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown",
 			"Green", "Red", "Black" };
-
     public static final String[] gwyColorLog1Names = { "White", "Orange", "Magenta", "Light Blue" };
     public static final String[] gwyColorLog2Names = { "Yellow", "Light Green", "Pink", "Dark Grey"};
     public static final String[] gwyColorLog3Names = { "Light Grey", "Cyan", "Purple", "Blue"};
     public static final String[] gwyColorLog4Names = { "Brown", "Green", "Red", "Black" };
+    public static final String[] gwyColorSlab1Names = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey"};
+    public static final String[] gwyColorSlab2Names = { "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};
 
     private int glowyWoolID;
 	private int dyedStoneID;
-	static int dyedStoneSlab1ID;
+    static int dyedStoneSlab1ID;
+    static int dyedStoneSlab2ID;
+    static int dyedStoneDoubleSlab1ID;
 	private int dyedBookcaseID;
 	private int dyedBrickID;
 	private int dyedClayblockID;
@@ -76,18 +79,20 @@ public class Gwycraft {
 					"glowyWool", 1490).getInt(1490);
 			dyedStoneID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"dyedStone", 1491).getInt(1491);
-			dyedStoneSlab1ID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedStoneSlab1", 1492).getInt(1492);
+            dyedStoneSlab1ID = config.getBlock(Configuration.CATEGORY_BLOCK,
+                    "dyedStoneSlab1", 1492).getInt(1492);
+            dyedStoneSlab2ID = config.getBlock(Configuration.CATEGORY_BLOCK,
+                    "dyedStoneSlab2", 1493).getInt(1493);
 			dyedBookcaseID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedBookcase", 1493).getInt(1493);
+					"dyedBookcase", 1494).getInt(1494);
 			dyedBrickID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedBrick", 1494).getInt(1494);
+					"dyedBrick", 1495).getInt(1495);
 			dyedClayblockID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedClayblock", 1495).getInt(1495);
+					"dyedClayblock", 1496).getInt(1496);
 			dyedGlassID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedGlass", 1496).getInt(1496);
+					"dyedGlass", 1497).getInt(1497);
 			dyedLeafID = config.getBlock(Configuration.CATEGORY_BLOCK,
-					"dyedLeaf", 1497).getInt(1497);
+					"dyedLeaf", 1498).getInt(1498);
 			dyedMudbrickID = config.getBlock(Configuration.CATEGORY_BLOCK,
 					"dyedMudbrick", 1499).getInt(1499);
 			dyedPlankID = config.getBlock(Configuration.CATEGORY_BLOCK,
@@ -108,6 +113,8 @@ public class Gwycraft {
                     "dyedLog3", 1507).getInt(1507);
             dyedLog4ID = config.getBlock(Configuration.CATEGORY_BLOCK,
                     "dyedLog4", 1508).getInt(1508);
+            dyedStoneDoubleSlab1ID = config.getBlock(Configuration.CATEGORY_BLOCK,
+                    "dyedStoneDoubleSlab1", 1509).getInt(1509);
 
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "GlowyBlocks can't load its config.");
@@ -121,7 +128,9 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-		Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID, false);
+        Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID, false);
+        Block dyedStoneSlab2 = new DyedStoneSlab2(dyedStoneSlab2ID, false);
+        Block dyedStoneDoubleSlab1 = new DyedStoneSlab1(dyedStoneDoubleSlab1ID, true);
 		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
 		Block dyedBrick = new DyedBrick(dyedBrickID);
 		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
@@ -163,12 +172,28 @@ public class Gwycraft {
 		// dyedStone Slab
 		GameRegistry.registerBlock(dyedStoneSlab1, dyedItemStoneSlab1.class,
 				"dyedStoneSlab1");
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 8; i++) {
 			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
 			LanguageRegistry.addName(dyedStoneSlab1Stack,
-					gwyColorNames[dyedStoneSlab1Stack.getItemDamage()]
+					gwyColorSlab1Names[dyedStoneSlab1Stack.getItemDamage()]
 							+ " Stone Slab");
 		}
+        GameRegistry.registerBlock(dyedStoneSlab2, dyedItemStoneSlab2.class,
+                "dyedStoneSlab2");
+        for (int i = 0; i < 8; i++) {
+            ItemStack dyedStoneSlab2Stack = new ItemStack(dyedStoneSlab2, 1, i);
+            LanguageRegistry.addName(dyedStoneSlab2Stack,
+                    gwyColorSlab2Names[dyedStoneSlab2Stack.getItemDamage()]
+                            + " Stone Slab");
+        }
+        GameRegistry.registerBlock(dyedStoneDoubleSlab1, dyedItemStoneDoubleSlab1.class,
+                "dyedStoneDoubleSlab1");
+        for (int i = 0; i < 8; i++) {
+            ItemStack dyedStoneDoubleSlab1Stack = new ItemStack(dyedStoneDoubleSlab1, 1, i);
+            LanguageRegistry.addName(dyedStoneDoubleSlab1Stack,
+                    gwyColorSlab1Names[dyedStoneDoubleSlab1Stack.getItemDamage()]
+                            + " Stone Slab");
+        }
 		// dyedBookcase
 		GameRegistry.registerBlock(dyedBookcase, dyedItemBookcase.class,
 				"dyedBookcase");

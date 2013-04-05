@@ -17,17 +17,17 @@ import net.minecraft.util.Facing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class DyedStoneSlab1 extends BlockHalfSlab{
+public class DyedStoneSlab2 extends BlockHalfSlab{
     /** The type of tree this slab came from. */
-    public static final String[] colorSlab = new String[] {"White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey"};
-    public static final String[] slabTextures = new String[] {"Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7", "Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7"};
+    public static final String[] colorSlab = new String[] {"Light Gray", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};
+    public static final String[] slabTextures = new String[] {"Gwycraft:stone_8", "Gwycraft:stone_9", "Gwycraft:stone_10", "Gwycraft:stone_11", "Gwycraft:stone_12", "Gwycraft:stone_13", "Gwycraft:stone_14", "Gwycraft:stone_15", "Gwycraft:stone_8", "Gwycraft:stone_9", "Gwycraft:stone_10", "Gwycraft:stone_11", "Gwycraft:stone_12", "Gwycraft:stone_13", "Gwycraft:stone_14", "Gwycraft:stone_15"};
+
     private Icon[] iconArray;
 
-    public DyedStoneSlab1(int par1, boolean par2)
+    public DyedStoneSlab2(int par1, boolean par2)
     {
         super(par1, par2, Material.rock);
         this.setCreativeTab(CreativeTabs.tabBlock);
-        setUnlocalizedName("dyedStoneSlab1");
     }
 
     @SideOnly(Side.CLIENT)
@@ -45,7 +45,7 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return gwydion0917.gwycraft.Gwycraft.dyedStoneSlab1ID;
+        return gwydion0917.gwycraft.Gwycraft.dyedStoneSlab2ID;
     }
 
     /**
@@ -54,7 +54,7 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
      */
     protected ItemStack createStackedBlock(int par1)
     {
-        return new ItemStack(gwydion0917.gwycraft.Gwycraft.dyedStoneSlab1ID, 2, par1 & 7);
+        return new ItemStack(gwydion0917.gwycraft.Gwycraft.dyedStoneSlab2ID, 2, par1 & 7);
     }
 
     /**
@@ -77,7 +77,7 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneSlab1ID)
+        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneDoubleSlab1ID)
         {
             for (int j = 0; j < 8; ++j)
             {
@@ -91,7 +91,6 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
         this.iconArray = new Icon[16];
 
         for (int i = 0; i < this.iconArray.length; ++i) {
-            this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);
-        }
+            this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);        }
     }
 }

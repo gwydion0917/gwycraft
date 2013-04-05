@@ -17,13 +17,13 @@ import net.minecraft.util.Facing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class DyedStoneSlab1 extends BlockHalfSlab{
+public class DyedStoneDoubleSlab1 extends BlockHalfSlab{
     /** The type of tree this slab came from. */
     public static final String[] colorSlab = new String[] {"White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey"};
     public static final String[] slabTextures = new String[] {"Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7", "Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7"};
     private Icon[] iconArray;
 
-    public DyedStoneSlab1(int par1, boolean par2)
+    public DyedStoneDoubleSlab1(int par1, boolean par2)
     {
         super(par1, par2, Material.rock);
         this.setCreativeTab(CreativeTabs.tabBlock);
@@ -77,7 +77,7 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneSlab1ID)
+        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneDoubleSlab1ID)
         {
             for (int j = 0; j < 8; ++j)
             {
