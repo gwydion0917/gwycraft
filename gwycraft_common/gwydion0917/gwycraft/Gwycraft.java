@@ -5,9 +5,48 @@ package gwydion0917.gwycraft;
 import java.util.logging.Level;
 
 import gwydion0917.gwycraft.CommonProxy;
+import gwydion0917.gwycraft.blocks.DyedBookcase;
+import gwydion0917.gwycraft.blocks.DyedBrick;
+import gwydion0917.gwycraft.blocks.DyedClayblock;
+import gwydion0917.gwycraft.blocks.DyedGlass;
+import gwydion0917.gwycraft.blocks.DyedLeaf;
+import gwydion0917.gwycraft.blocks.DyedLog1;
+import gwydion0917.gwycraft.blocks.DyedLog2;
+import gwydion0917.gwycraft.blocks.DyedLog3;
+import gwydion0917.gwycraft.blocks.DyedLog4;
+import gwydion0917.gwycraft.blocks.DyedMudbrick;
+import gwydion0917.gwycraft.blocks.DyedPlank;
+import gwydion0917.gwycraft.blocks.DyedSand;
+import gwydion0917.gwycraft.blocks.DyedStone;
+import gwydion0917.gwycraft.blocks.DyedStoneCobble;
+import gwydion0917.gwycraft.blocks.DyedStoneSlab1;
+import gwydion0917.gwycraft.blocks.DyedStoneSlab2;
+import gwydion0917.gwycraft.blocks.DyedStonebrick;
+import gwydion0917.gwycraft.blocks.GlowyWool;
+import gwydion0917.gwycraft.blocks.dyedItemBookcase;
+import gwydion0917.gwycraft.blocks.dyedItemBrick;
+import gwydion0917.gwycraft.blocks.dyedItemClayblock;
+import gwydion0917.gwycraft.blocks.dyedItemGlass;
+import gwydion0917.gwycraft.blocks.dyedItemLeaf;
+import gwydion0917.gwycraft.blocks.dyedItemLog1;
+import gwydion0917.gwycraft.blocks.dyedItemLog2;
+import gwydion0917.gwycraft.blocks.dyedItemLog3;
+import gwydion0917.gwycraft.blocks.dyedItemLog4;
+import gwydion0917.gwycraft.blocks.dyedItemMudbrick;
+import gwydion0917.gwycraft.blocks.dyedItemPlank;
+import gwydion0917.gwycraft.blocks.dyedItemSand;
+import gwydion0917.gwycraft.blocks.dyedItemStone;
+import gwydion0917.gwycraft.blocks.dyedItemStoneSlab1;
+import gwydion0917.gwycraft.blocks.dyedItemStoneSlab2;
+import gwydion0917.gwycraft.blocks.dyedItemStonebrick;
+import gwydion0917.gwycraft.blocks.dyedItemStonecobble;
+import gwydion0917.gwycraft.blocks.glowyItemWool;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.*;
 import cpw.mods.fml.common.FMLLog;
@@ -39,26 +78,26 @@ public class Gwycraft {
     public static final String[] gwyColorSlab1Names = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey"};
     public static final String[] gwyColorSlab2Names = { "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};
 
-    private int glowyWoolID;
-	private int dyedStoneID;
-    static int dyedStoneSlab1ID;
-    static int dyedStoneSlab2ID;
-    static int dyedStoneDoubleSlab1ID;
-	private int dyedBookcaseID;
-	private int dyedBrickID;
-	private int dyedClayblockID;
-	private int dyedGlassID;
-	private int dyedLeafID;
-    static int dyedLog1ID;
-    static int dyedLog2ID;
-    static int dyedLog3ID;
-    static int dyedLog4ID;
-	private int dyedMudbrickID;
-	private int dyedPlankID;
-	private int dyedSandID;
-	private int dyedStonebrickID;
-	static int dyedStonecobbleID;
-    private int dyedMudbrickStairsID;
+    public static int glowyWoolID;
+    public static int dyedStoneID;
+    public static int dyedStoneSlab1ID;
+    public static int dyedStoneSlab2ID;
+    public static int dyedStoneDoubleSlab1ID;
+    public static int dyedBookcaseID;
+    public static int dyedBrickID;
+    public static int dyedClayblockID;
+    public static int dyedGlassID;
+    public static int dyedLeafID;
+    public static int dyedLog1ID;
+    public static int dyedLog2ID;
+    public static int dyedLog3ID;
+    public static int dyedLog4ID;
+    public static int dyedMudbrickID;
+    public static int dyedPlankID;
+    public static int dyedSandID;
+    public static int dyedStonebrickID;
+	public static int dyedStonecobbleID;
+	public static int dyedMudbrickStairsID;
 
 	@Instance("Gwycraft")
 	public static Gwycraft instance;
@@ -116,6 +155,7 @@ public class Gwycraft {
             dyedStoneDoubleSlab1ID = config.getBlock(Configuration.CATEGORY_BLOCK,
                     "dyedStoneDoubleSlab1", 1509).getInt(1509);
 
+            
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "GlowyBlocks can't load its config.");
 		} finally {
@@ -128,9 +168,9 @@ public class Gwycraft {
 	public void init(FMLInitializationEvent event) {
 		Block glowyWool = new GlowyWool(glowyWoolID);
 		Block dyedStone = new DyedStone(dyedStoneID);
-        Block dyedStoneSlab1 = new DyedStoneSlab1(dyedStoneSlab1ID, false);
+        Block dyedStoneSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);;
         Block dyedStoneSlab2 = new DyedStoneSlab2(dyedStoneSlab2ID, false);
-        Block dyedStoneDoubleSlab1 = new DyedStoneSlab1(dyedStoneDoubleSlab1ID, true);
+        Block dyedStoneDoubleSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
 		Block dyedBookcase = new DyedBookcase(dyedBookcaseID);
 		Block dyedBrick = new DyedBrick(dyedBrickID);
 		Block dyedClayblock = new DyedClayblock(dyedClayblockID);
@@ -146,8 +186,8 @@ public class Gwycraft {
         Block dyedLog2 = new DyedLog2(dyedLog2ID);
         Block dyedLog3 = new DyedLog3(dyedLog3ID);
         Block dyedLog4 = new DyedLog4(dyedLog4ID);
-		
-		CommonProxy.registerRenderers();
+
+        CommonProxy.registerRenderers();
 
 		// glowyWool
 		GameRegistry.registerBlock(glowyWool, glowyItemWool.class, "glowyWool");
@@ -170,8 +210,10 @@ public class Gwycraft {
 					gwyColorNames[dyedStoneStack.getItemDamage()] + " Stone");
 		}
 		// dyedStone Slab
-		GameRegistry.registerBlock(dyedStoneSlab1, dyedItemStoneSlab1.class,
-				"dyedStoneSlab1");
+		GameRegistry.registerBlock(dyedStoneSlab1, "dyedStoneSlab1");
+		Item.itemsList[dyedStoneSlab1ID] = (new ItemSlab (dyedStoneSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, false)).setUnlocalizedName("woodSlab");
+	    Item.itemsList[dyedStoneDoubleSlab1ID] = (new ItemSlab(dyedStoneDoubleSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, true)).setUnlocalizedName("woodSlab");
+
 		for (int i = 0; i < 8; i++) {
 			ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
 			LanguageRegistry.addName(dyedStoneSlab1Stack,
@@ -184,14 +226,6 @@ public class Gwycraft {
             ItemStack dyedStoneSlab2Stack = new ItemStack(dyedStoneSlab2, 1, i);
             LanguageRegistry.addName(dyedStoneSlab2Stack,
                     gwyColorSlab2Names[dyedStoneSlab2Stack.getItemDamage()]
-                            + " Stone Slab");
-        }
-        GameRegistry.registerBlock(dyedStoneDoubleSlab1, dyedItemStoneDoubleSlab1.class,
-                "dyedStoneDoubleSlab1");
-        for (int i = 0; i < 8; i++) {
-            ItemStack dyedStoneDoubleSlab1Stack = new ItemStack(dyedStoneDoubleSlab1, 1, i);
-            LanguageRegistry.addName(dyedStoneDoubleSlab1Stack,
-                    gwyColorSlab1Names[dyedStoneDoubleSlab1Stack.getItemDamage()]
                             + " Stone Slab");
         }
 		// dyedBookcase
