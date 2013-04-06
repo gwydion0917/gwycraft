@@ -204,8 +204,12 @@ public class Gwycraft {
         for (int i = 0; i < 8; i++) {
         ItemStack dyedStoneSlab1Stack = new ItemStack(dyedStoneSlab1, 1, i);
         ItemStack dyedStoneSlab2Stack = new ItemStack(dyedStoneSlab2, 1, i);
+        ItemStack dyedStone1Stack = new ItemStack(dyedStone, 8, i);
+        ItemStack dyedStone2Stack = new ItemStack(dyedStone, 8, i+8);
         LanguageRegistry.addName(dyedStoneSlab1Stack, gwyColorSlab1Names[dyedStoneSlab1Stack.getItemDamage()] + " Stone Slab");
         LanguageRegistry.addName(dyedStoneSlab2Stack, gwyColorSlab2Names[dyedStoneSlab2Stack.getItemDamage()] + " Stone Slab");
+        GameRegistry.addRecipe(new ItemStack(dyedStoneSlab1, 8, i), "XXX", 'X', dyedStone1Stack);
+        GameRegistry.addRecipe(new ItemStack(dyedStoneSlab2, 8, i), "XXX", 'X', dyedStone2Stack);
 	}        
    
         // 4 Meta

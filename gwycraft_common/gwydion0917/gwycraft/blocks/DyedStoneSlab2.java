@@ -23,7 +23,7 @@ public class DyedStoneSlab2 extends BlockHalfSlab{
     public DyedStoneSlab2(int par1, boolean par2, Material mat)
     {
         super(par1, par2, mat);
-        setCreativeTab(CreativeTabs.tabBlock);
+//        setCreativeTab(CreativeTabs.tabBlock);
     }
 
     @SideOnly(Side.CLIENT)

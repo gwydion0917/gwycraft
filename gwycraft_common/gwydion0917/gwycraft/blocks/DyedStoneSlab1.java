@@ -21,7 +21,7 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
     public DyedStoneSlab1(int par1, boolean par2, Material mat)
     {
         super(par1, par2, mat);
-        setCreativeTab(CreativeTabs.tabBlock);
+//        setCreativeTab(CreativeTabs.tabBlock);
     }
 
     @SideOnly(Side.CLIENT)
@@ -36,8 +36,29 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
 
     public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        return this.iconArray[par2 % this.iconArray.length];
+        par2 = par2%8;
+        if(par2 == 0)
+            return this.iconArray[par2 & 7];
+        else if(par2 == 1)
+            return this.iconArray[par2 & 7];
+        else if(par2 == 2)
+            return this.iconArray[par2 & 7];
+        else if(par2 == 3)
+            return this.iconArray[par2 & 7];
+        else if(par2 == 4)
+            return this.iconArray[par2 & 7];
+        else if(par2 == 5)
+            return this.iconArray[par2 & 7];
+        else if(par2 == 6)
+            return this.iconArray[par2 & 7];
+
+        return this.iconArray[par2 & 7];
+        
     }
+
+//    {
+//        return this.iconArray[par2 % this.iconArray.length];
+//    }
     /**
      * Returns the ID of the items to drop on destruction.
      */
