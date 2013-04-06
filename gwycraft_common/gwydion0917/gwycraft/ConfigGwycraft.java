@@ -29,22 +29,27 @@ public class ConfigGwycraft {
     public static int dyedStonebrickID = 1919;
     public static int dyedStonecobbleID = 1920;
     public static int dyedMudbrickStairsID = 1921;
+    public static int blockGemOreID = 1922;
+    public static int blockGemCompressedID = 1923;
     
-//  public static int portalSpawnerID = 5000;
-//  public static int scimitarID = 5001;
-//  public static int bowID = 5002;
-//  public static int ptahsPickID = 5003;
-//  public static int soteksRageID = 5004;
-//  public static int osirisWillID = 5005;
-//  public static int akersToilID = 5006;
-//  public static int gabsBlessingID = 5008;
-//  public static int rasGloryID = 5009;
-//  public static int sekhmetsWrathID = 5010;
-//  public static int nutsAgilityID = 5011;
-//  public static int horusFlightID = 5012;
+    public static int flawedAgateID = 5001;
+    public static int flawedAmethystID = 5002;
+    public static int flawedAquamarineID = 5003;
+    public static int flawedCitrineID = 5004;
+    public static int flawedEmeraldID = 5005;
+    public static int flawedGarnetID = 5006;
+    public static int flawedHematiteID = 5007;
+    public static int flawedLapisID = 5008;
+    public static int flawedOnyxID = 5009;
+    public static int flawedQuartzID = 5010;
+    public static int flawedRubyID = 5011;
+    public static int flawedSapphireID = 5012;
+    public static int flawedTanzaniteID = 5013;
+    public static int flawedTigerseyeID = 5014;
+    public static int flawedTopazID = 5015;
+    public static int flawedMoonstoneID = 5016;
 
-    
-    public void initConfig()
+public void initConfig()
     {
 
         //File fileDir = new File(GwyCraft.proxy.getMinecraftDir() + "/config/gwyCraft");
@@ -82,20 +87,26 @@ public class ConfigGwycraft {
         dyedLog4ID = config.getBlock("dyedLog4", dyedLog4ID).getInt();
         dyedStoneDoubleSlab1ID = config.getBlock("dyedStoneDoubleSlab1", dyedStoneDoubleSlab1ID).getInt();
         dyedStoneDoubleSlab2ID = config.getBlock("dyedStoneDoubleSlab2", dyedStoneDoubleSlab2ID).getInt();
+        blockGemOreID = config.getBlock("blockGemOre", blockGemOreID).getInt();
+        blockGemCompressedID = config.getBlock("blockGemCompressed", blockGemCompressedID).getInt();
 
 
-//      portalSpawnerID = config.getItem("Scarab", portalSpawnerID).getInt();
-//      scimitarID = config.getItem("Scimitar", scimitarID).getInt();
-//      bowID = config.getItem("Deser Bow", bowID).getInt();
-//      ptahsPickID = config.getItem("Ptah's Pick", ptahsPickID).getInt();
-//      soteksRageID = config.getItem("Sotek's Rage", soteksRageID).getInt();
-//      osirisWillID = config.getItem("Osiris's Will", osirisWillID).getInt();
-//      akersToilID = config.getItem("Aker's Toil", akersToilID).getInt();
-//      gabsBlessingID = config.getItem("Gab's Blessing", gabsBlessingID).getInt();
-//      rasGloryID = config.getItem("Ra's Glory", rasGloryID).getInt();
-//      sekhmetsWrathID = config.getItem("Sekhmet's Wrath", sekhmetsWrathID).getInt();
-//      nutsAgilityID = config.getItem("Nut's Agility", nutsAgilityID).getInt();
-//      horusFlightID = config.getItem("Horus's Flight", horusFlightID).getInt();
+        flawedAgateID = config.getItem("Flawed Agate", flawedAgateID).getInt();
+        flawedAmethystID = config.getItem("Flawed Amethyst", flawedAmethystID).getInt();
+        flawedAquamarineID = config.getItem("Flawed Aquamarine", flawedAquamarineID).getInt();
+        flawedCitrineID = config.getItem("Flawed Citrine", flawedCitrineID).getInt();
+        flawedEmeraldID = config.getItem("Flawed Emerald", flawedEmeraldID).getInt();
+        flawedGarnetID = config.getItem("Flawed Garnet", flawedGarnetID).getInt();
+        flawedHematiteID = config.getItem("Flawed Hematite", flawedHematiteID).getInt();
+        flawedLapisID = config.getItem("Flawed Lapis", flawedLapisID).getInt();
+        flawedOnyxID = config.getItem("Flawed Onyx", flawedOnyxID).getInt();
+        flawedQuartzID = config.getItem("Flawed Quartz", flawedQuartzID).getInt();
+        flawedRubyID = config.getItem("Flawed Ruby", flawedRubyID).getInt();
+        flawedSapphireID = config.getItem("Flawed Sapphire", flawedSapphireID).getInt();
+        flawedTanzaniteID = config.getItem("Flawed Tanzanite", flawedTanzaniteID).getInt();
+        flawedTigerseyeID = config.getItem("Flawed Tigerseye", flawedTigerseyeID).getInt();
+        flawedTopazID = config.getItem("Flawed Topaz", flawedTopazID).getInt();
+        flawedMoonstoneID = config.getItem("Flawed Moonstone", flawedMoonstoneID).getInt();
         
         config.save();
     }
