@@ -16,13 +16,8 @@ public class DyedStoneCobble extends Block {
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
-	public DyedStoneCobble(int id) {
-		super(id, Material.rock);
-		setUnlocalizedName("dyedStonecobble");
-		setCreativeTab(CreativeTabs.tabBlock);
-		setHardness(2.0F);
-		setStepSound(Block.stone.stepSound);
-
+	public DyedStoneCobble(int id, Material mat) {
+		super(id, mat);
 	}
 
 	@Override

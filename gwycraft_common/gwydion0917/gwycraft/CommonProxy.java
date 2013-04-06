@@ -1,10 +1,17 @@
 package gwydion0917.gwycraft;
 
+import java.io.File;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class CommonProxy implements IGuiHandler {
+
+    public File getMinecraftDir() 
+    {
+        return new File(".");
+    }
 
 	// Pre-1.5
 	//public static String BLOCKS_PNG = "gwydion0917/mods/GwyCraft/res/blocks.png";

@@ -1,7 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.Gwycraft;
-
+import gwydion0917.gwycraft.ConfigGwycraft;
 import java.util.List;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
@@ -23,7 +22,6 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
     {
         super(par1, par2, mat);
         setCreativeTab(CreativeTabs.tabBlock);
-
     }
 
     @SideOnly(Side.CLIENT)
@@ -38,14 +36,14 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
 
     public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        return this.iconArray[par2 % this.iconArray.length & 7];
+        return this.iconArray[par2 % this.iconArray.length];
     }
     /**
      * Returns the ID of the items to drop on destruction.
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return gwydion0917.gwycraft.Gwycraft.dyedStoneSlab1ID;
+        return ConfigGwycraft.dyedStoneSlab1ID;
     }
 
     /**
@@ -54,7 +52,7 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
      */
     protected ItemStack createStackedBlock(int par1)
     {
-        return new ItemStack(gwydion0917.gwycraft.Gwycraft.dyedStoneSlab1ID, 2, par1 & 7);
+        return new ItemStack(ConfigGwycraft.dyedStoneSlab1ID, 2, par1 & 7);
     }
 
     /**
@@ -77,7 +75,7 @@ public class DyedStoneSlab1 extends BlockHalfSlab{
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneSlab1ID)
+        if (par1 != ConfigGwycraft.dyedStoneSlab1ID)
         {
             for (int j = 0; j < 8; ++j)
             {

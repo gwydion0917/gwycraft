@@ -13,7 +13,6 @@ public class dyedItemBookcase extends ItemBlock {
 	public dyedItemBookcase(int id) {
 		super(id);
 		setHasSubtypes(true);
-		setUnlocalizedName("dyedBookcase");
 	}
 
 	@Override

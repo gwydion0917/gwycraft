@@ -16,13 +16,8 @@ public class GlowyWool extends Block {
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
-	public GlowyWool(int id) {
-		super(id, Material.cloth);
-		setUnlocalizedName("glowyWool");
-		setCreativeTab(CreativeTabs.tabBlock);
-		setLightValue(1f);
-		setHardness(0.8F);
-		setStepSound(Block.cloth.stepSound);
+	public GlowyWool(int id, Material mat) {
+		super(id, mat);
 
 	}
 

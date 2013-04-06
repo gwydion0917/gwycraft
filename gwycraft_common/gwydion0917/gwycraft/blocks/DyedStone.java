@@ -1,5 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
+import gwydion0917.gwycraft.ConfigGwycraft;
 import gwydion0917.gwycraft.Gwycraft;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class DyedStone extends Block {
 	@Override
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return gwydion0917.gwycraft.Gwycraft.dyedStonecobbleID;
+        return ConfigGwycraft.dyedStonecobbleID;
     }
 	public int damageDropped(int metadata) {
 		return metadata;

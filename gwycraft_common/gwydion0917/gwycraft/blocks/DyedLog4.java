@@ -1,5 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
+import gwydion0917.gwycraft.ConfigGwycraft;
 import gwydion0917.gwycraft.Gwycraft;
 
 import java.util.List;
@@ -56,7 +57,7 @@ public class DyedLog4 extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return gwydion0917.gwycraft.Gwycraft.dyedLog4ID;
+        return ConfigGwycraft.dyedLog4ID;
     }
 
     /**

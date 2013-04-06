@@ -1,5 +1,7 @@
 package gwydion0917.gwycraft.blocks;
 
+import gwydion0917.gwycraft.ConfigGwycraft;
+
 import java.util.List;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
@@ -39,7 +41,7 @@ public class DyedStoneSlab2 extends BlockHalfSlab{
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return gwydion0917.gwycraft.Gwycraft.dyedStoneSlab2ID;
+        return ConfigGwycraft.dyedStoneSlab2ID;
     }
 
     /**
@@ -48,7 +50,7 @@ public class DyedStoneSlab2 extends BlockHalfSlab{
      */
     protected ItemStack createStackedBlock(int par1)
     {
-        return new ItemStack(gwydion0917.gwycraft.Gwycraft.dyedStoneSlab2ID, 2, par1 & 7);
+        return new ItemStack(ConfigGwycraft.dyedStoneSlab2ID, 2, par1 & 7);
     }
 
     /**
@@ -71,7 +73,7 @@ public class DyedStoneSlab2 extends BlockHalfSlab{
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        if (par1 != gwydion0917.gwycraft.Gwycraft.dyedStoneSlab2ID)
+        if (par1 != ConfigGwycraft.dyedStoneSlab2ID)
         {
             for (int j = 0; j < 8; ++j)
             {
