@@ -2,48 +2,48 @@ package gwydion0917.gwycraft;
 
 // This Import list will grow longer with each additional tutorial.
 // It's not pruned between full class postings, unlike other tutorial code.
-import java.util.Arrays;
-import java.util.logging.Level;
 
 import gwydion0917.gwycraft.CommonProxy;
 import gwydion0917.gwycraft.ConfigGwycraft;
 import gwydion0917.gwycraft.blocks.BlockGemCompressed;
 import gwydion0917.gwycraft.blocks.BlockGemOre;
-import gwydion0917.gwycraft.blocks.DyedBookcase;
-import gwydion0917.gwycraft.blocks.DyedBrick;
-import gwydion0917.gwycraft.blocks.DyedClayblock;
-import gwydion0917.gwycraft.blocks.DyedGlass;
-import gwydion0917.gwycraft.blocks.DyedLeaf;
-import gwydion0917.gwycraft.blocks.DyedLog1;
-import gwydion0917.gwycraft.blocks.DyedLog2;
-import gwydion0917.gwycraft.blocks.DyedLog3;
-import gwydion0917.gwycraft.blocks.DyedLog4;
-import gwydion0917.gwycraft.blocks.DyedMudbrick;
-import gwydion0917.gwycraft.blocks.DyedMudbrickStairs;
-import gwydion0917.gwycraft.blocks.DyedPlank;
-import gwydion0917.gwycraft.blocks.DyedSand;
-import gwydion0917.gwycraft.blocks.DyedStone;
-import gwydion0917.gwycraft.blocks.DyedStoneCobble;
-import gwydion0917.gwycraft.blocks.DyedStoneSlab1;
-import gwydion0917.gwycraft.blocks.DyedStoneSlab2;
-import gwydion0917.gwycraft.blocks.DyedStonebrick;
-import gwydion0917.gwycraft.blocks.GlowyWool;
-import gwydion0917.gwycraft.blocks.dyedItemBookcase;
-import gwydion0917.gwycraft.blocks.dyedItemBrick;
-import gwydion0917.gwycraft.blocks.dyedItemClayblock;
-import gwydion0917.gwycraft.blocks.dyedItemGlass;
-import gwydion0917.gwycraft.blocks.dyedItemLeaf;
-import gwydion0917.gwycraft.blocks.dyedItemLog1;
-import gwydion0917.gwycraft.blocks.dyedItemLog2;
-import gwydion0917.gwycraft.blocks.dyedItemLog3;
-import gwydion0917.gwycraft.blocks.dyedItemLog4;
-import gwydion0917.gwycraft.blocks.dyedItemMudbrick;
-import gwydion0917.gwycraft.blocks.dyedItemPlank;
-import gwydion0917.gwycraft.blocks.dyedItemSand;
-import gwydion0917.gwycraft.blocks.dyedItemStone;
-import gwydion0917.gwycraft.blocks.dyedItemStonebrick;
-import gwydion0917.gwycraft.blocks.dyedItemStonecobble;
-import gwydion0917.gwycraft.blocks.glowyItemWool;
+import gwydion0917.gwycraft.blocks.BlockDyedBookcase;
+import gwydion0917.gwycraft.blocks.BlockDyedBrick;
+import gwydion0917.gwycraft.blocks.BlockDyedClayblock;
+import gwydion0917.gwycraft.blocks.BlockDyedGlass;
+import gwydion0917.gwycraft.blocks.BlockDyedLeaf;
+import gwydion0917.gwycraft.blocks.BlockDyedLog1;
+import gwydion0917.gwycraft.blocks.BlockDyedLog2;
+import gwydion0917.gwycraft.blocks.BlockDyedLog3;
+import gwydion0917.gwycraft.blocks.BlockDyedLog4;
+import gwydion0917.gwycraft.blocks.BlockDyedMudbrick;
+import gwydion0917.gwycraft.blocks.BlockDyedMudbrickStairs;
+import gwydion0917.gwycraft.blocks.BlockDyedPlank;
+import gwydion0917.gwycraft.blocks.BlockDyedSand;
+import gwydion0917.gwycraft.blocks.BlockDyedStone;
+import gwydion0917.gwycraft.blocks.BlockDyedCobble;
+import gwydion0917.gwycraft.blocks.BlockDyedStoneSlab1;
+import gwydion0917.gwycraft.blocks.BlockDyedStoneSlab2;
+import gwydion0917.gwycraft.blocks.BlockDyedStonebrick;
+import gwydion0917.gwycraft.blocks.BlockGlowyWool;
+import gwydion0917.gwycraft.blocks.ItemDyedBookshelf;
+import gwydion0917.gwycraft.blocks.ItemDyedBrick;
+import gwydion0917.gwycraft.blocks.ItemDyedClayblock;
+import gwydion0917.gwycraft.blocks.ItemDyedGlass;
+import gwydion0917.gwycraft.blocks.ItemDyedLeaf;
+import gwydion0917.gwycraft.blocks.ItemDyedLog1;
+import gwydion0917.gwycraft.blocks.ItemDyedLog2;
+import gwydion0917.gwycraft.blocks.ItemDyedLog3;
+import gwydion0917.gwycraft.blocks.ItemDyedLog4;
+import gwydion0917.gwycraft.blocks.ItemDyedMudbrick;
+import gwydion0917.gwycraft.blocks.ItemDyedPlank;
+import gwydion0917.gwycraft.blocks.ItemDyedSand;
+import gwydion0917.gwycraft.blocks.ItemDyedStone;
+import gwydion0917.gwycraft.blocks.ItemDyedStonebrick;
+import gwydion0917.gwycraft.blocks.ItemDyedCobble;
+import gwydion0917.gwycraft.blocks.ItemGemOre;
+import gwydion0917.gwycraft.blocks.ItemGlowyWool;
+import gwydion0917.gwycraft.blocks.ItemGemCompressed;
 import gwydion0917.gwycraft.items.ItemFlawedAgate;
 import gwydion0917.gwycraft.items.ItemFlawedAmethyst;
 import gwydion0917.gwycraft.items.ItemFlawedAquamarine;
@@ -63,7 +63,6 @@ import gwydion0917.gwycraft.items.ItemFlawedTopaz;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
-import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -94,13 +93,14 @@ public class Gwycraft {
     public static final String[] gwyColorLog4Names = { "Brown", "Green", "Red", "Black" };
     public static final String[] gwyColorSlab1Names = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey"};
     public static final String[] gwyColorSlab2Names = { "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};
-
+    public static final String[] gwyGemNames = { "Flawed Agate", "Flawed Amethyst", "Flawed Aquamarine", "Flawed Citrine", "Flawed Emerald", "Flawed Garnet", "Flawed Hematite", "Flawed Lapis Lazuli", "Flawed Onyx", "Flawed Quartz", "Flawed Ruby", "Flawed Sapphire", "Flawed Tanzanite", "Flawed Tigerseye", "Flawed Topaz", "Flawed Moonstone"};
+    
     public static Block glowyWool;
     public static Block dyedStone;
-    public static DyedStoneSlab1 dyedStoneSlab1;
-    public static DyedStoneSlab1 dyedStoneDoubleSlab1;
-    public static DyedStoneSlab2 dyedStoneSlab2;
-    public static DyedStoneSlab2 dyedStoneDoubleSlab2;
+    public static BlockDyedStoneSlab1 dyedStoneSlab1;
+    public static BlockDyedStoneSlab1 dyedStoneDoubleSlab1;
+    public static BlockDyedStoneSlab2 dyedStoneSlab2;
+    public static BlockDyedStoneSlab2 dyedStoneDoubleSlab2;
     public static BlockBookshelf dyedBookcase;
     public static Block dyedBrick;
     public static Block dyedClayblock;
@@ -119,22 +119,7 @@ public class Gwycraft {
     public static Block blockGemOre;
     public static Block blockGemCompressed;
 
-    public static Item flawedAgate;
-    public static Item flawedAmethyst;
-    public static Item flawedAquamarine;
-    public static Item flawedCitrine;
-    public static Item flawedEmerald;
-    public static Item flawedGarnet;
-    public static Item flawedHematite;
-    public static Item flawedLapis;
-    public static Item flawedOnyx;
-    public static Item flawedQuartz;
-    public static Item flawedRuby;
-    public static Item flawedSapphire;
-    public static Item flawedTanzanite;
-    public static Item flawedTigerseye;
-    public static Item flawedTopaz;
-    public static Item flawedMoonstone;
+    public static Item flawedGems;
 
 	@Instance("Gwycraft")
 	public static Gwycraft instance;
@@ -148,75 +133,60 @@ public class Gwycraft {
 	}
 	@Init
 	public void init(FMLInitializationEvent event) {
-		glowyWool = new GlowyWool(ConfigGwycraft.glowyWoolID, Material.cloth).setHardness(0.8F).setStepSound(Block.cloth.stepSound).setUnlocalizedName("Gwycraft:glowyWool").setLightValue(1f).setCreativeTab(CreativeTabs.tabBlock);
-		dyedStone = new DyedStone(ConfigGwycraft.dyedStoneID).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:dyedStone").setCreativeTab(CreativeTabs.tabBlock);
-		dyedStoneSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(ConfigGwycraft.dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);
-		dyedStoneDoubleSlab1 = (DyedStoneSlab1) new DyedStoneSlab1(ConfigGwycraft.dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
-		dyedStoneSlab2 = (DyedStoneSlab2) new DyedStoneSlab2(ConfigGwycraft.dyedStoneSlab2ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab2").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);
-		dyedStoneDoubleSlab2 = (DyedStoneSlab2) new DyedStoneSlab2(ConfigGwycraft.dyedStoneDoubleSlab2ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab2").setHardness(2.0F);
-		dyedBookcase = (BlockBookshelf) new DyedBookcase(ConfigGwycraft.dyedBookcaseID, Material.wood).setHardness(1.5F).setStepSound(Block.wood.stepSound).setUnlocalizedName("Gwycraft:dyedBookcase");
-		dyedBrick = new DyedBrick(ConfigGwycraft.dyedBrickID);
-		dyedClayblock = new DyedClayblock(ConfigGwycraft.dyedClayblockID);
-		dyedGlass = new DyedGlass(ConfigGwycraft.dyedGlassID);
-		dyedLeaf = new DyedLeaf(ConfigGwycraft.dyedLeafID);
-		dyedMudbrick = new DyedMudbrick(ConfigGwycraft.dyedMudbrickID);
-		dyedPlank = new DyedPlank(ConfigGwycraft.dyedPlankID).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Gwycraft:dyedPlank");
-		dyedSand = new DyedSand(ConfigGwycraft.dyedSandID);
-		dyedStonebrick = new DyedStonebrick(ConfigGwycraft.dyedStonebrickID);
-		dyedStonecobble = new DyedStoneCobble(ConfigGwycraft.dyedStonecobbleID, Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:dyedStonecobble").setCreativeTab(CreativeTabs.tabBlock);
-		dyedMudbrickStairs = new DyedMudbrickStairs(ConfigGwycraft.dyedMudbrickStairsID, dyedMudbrick, 0).setUnlocalizedName("Gwycraft:DyedMudbrickStairs");
-        dyedLog1 = new DyedLog1(ConfigGwycraft.dyedLog1ID);
-        dyedLog2 = new DyedLog2(ConfigGwycraft.dyedLog2ID);
-        dyedLog3 = new DyedLog3(ConfigGwycraft.dyedLog3ID);
-        dyedLog4 = new DyedLog4(ConfigGwycraft.dyedLog4ID);
-        blockGemOre = new BlockGemOre(ConfigGwycraft.blockGemOreID).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("gemOre");
-        blockGemCompressed = new BlockGemCompressed(ConfigGwycraft.blockGemOreID).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("gemOreCompressed");
+		glowyWool = new BlockGlowyWool(ConfigGwycraft.glowyWoolID, Material.cloth).setHardness(0.8F).setStepSound(Block.cloth.stepSound).setUnlocalizedName("Gwycraft:glowyWool").setLightValue(1f).setCreativeTab(CreativeTabs.tabBlock);
+		dyedStone = new BlockDyedStone(ConfigGwycraft.dyedStoneID).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:dyedStone").setCreativeTab(CreativeTabs.tabBlock);
+		dyedStoneSlab1 = (BlockDyedStoneSlab1) new BlockDyedStoneSlab1(ConfigGwycraft.dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);
+		dyedStoneDoubleSlab1 = (BlockDyedStoneSlab1) new BlockDyedStoneSlab1(ConfigGwycraft.dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
+		dyedStoneSlab2 = (BlockDyedStoneSlab2) new BlockDyedStoneSlab2(ConfigGwycraft.dyedStoneSlab2ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab2").setHardness(2.0F).setCreativeTab(CreativeTabs.tabBlock);
+		dyedStoneDoubleSlab2 = (BlockDyedStoneSlab2) new BlockDyedStoneSlab2(ConfigGwycraft.dyedStoneDoubleSlab2ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab2").setHardness(2.0F);
+		dyedBookcase = (BlockBookshelf) new BlockDyedBookcase(ConfigGwycraft.dyedBookcaseID, Material.wood).setHardness(1.5F).setStepSound(Block.wood.stepSound).setUnlocalizedName("Gwycraft:dyedBookcase");
+		dyedBrick = new BlockDyedBrick(ConfigGwycraft.dyedBrickID);
+		dyedClayblock = new BlockDyedClayblock(ConfigGwycraft.dyedClayblockID);
+		dyedGlass = new BlockDyedGlass(ConfigGwycraft.dyedGlassID);
+		dyedLeaf = new BlockDyedLeaf(ConfigGwycraft.dyedLeafID);
+		dyedMudbrick = new BlockDyedMudbrick(ConfigGwycraft.dyedMudbrickID);
+		dyedPlank = new BlockDyedPlank(ConfigGwycraft.dyedPlankID).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Gwycraft:dyedPlank");
+		dyedSand = new BlockDyedSand(ConfigGwycraft.dyedSandID);
+		dyedStonebrick = new BlockDyedStonebrick(ConfigGwycraft.dyedStonebrickID);
+		dyedStonecobble = new BlockDyedCobble(ConfigGwycraft.dyedStonecobbleID, Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:dyedStonecobble").setCreativeTab(CreativeTabs.tabBlock);
+		dyedMudbrickStairs = new BlockDyedMudbrickStairs(ConfigGwycraft.dyedMudbrickStairsID, dyedMudbrick, 0).setUnlocalizedName("Gwycraft:DyedMudbrickStairs");
+        dyedLog1 = new BlockDyedLog1(ConfigGwycraft.dyedLog1ID);
+        dyedLog2 = new BlockDyedLog2(ConfigGwycraft.dyedLog2ID);
+        dyedLog3 = new BlockDyedLog3(ConfigGwycraft.dyedLog3ID);
+        dyedLog4 = new BlockDyedLog4(ConfigGwycraft.dyedLog4ID);
+        blockGemOre = new BlockGemOre(ConfigGwycraft.blockGemOreID, Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("gemOre").setCreativeTab(CreativeTabs.tabBlock);
+        blockGemCompressed = new BlockGemCompressed(ConfigGwycraft.blockGemCompressedID, Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockGemCompressed").setCreativeTab(CreativeTabs.tabBlock);
         
-        flawedAgate = new ItemFlawedAgate(ConfigGwycraft.flawedAgateID).setUnlocalizedName("Gwycraft:flawedAgate").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedAmethyst = new ItemFlawedAmethyst(ConfigGwycraft.flawedAmethystID).setUnlocalizedName("Gwycraft:flawedAmethyst").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedAquamarine = new ItemFlawedAquamarine(ConfigGwycraft.flawedAquamarineID).setUnlocalizedName("Gwycraft:flawedAquamarine").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedCitrine = new ItemFlawedCitrine(ConfigGwycraft.flawedCitrineID).setUnlocalizedName("Gwycraft:flawedCitrine").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedEmerald = new ItemFlawedEmerald(ConfigGwycraft.flawedEmeraldID).setUnlocalizedName("Gwycraft:flawedEmerald").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedGarnet = new ItemFlawedGarnet(ConfigGwycraft.flawedGarnetID).setUnlocalizedName("Gwycraft:flawedGarnet").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedHematite = new ItemFlawedHematite(ConfigGwycraft.flawedHematiteID).setUnlocalizedName("Gwycraft:flawedHematite").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedLapis = new ItemFlawedLapis(ConfigGwycraft.flawedLapisID).setCreativeTab(CreativeTabs.tabMaterials);
-        flawedOnyx = new ItemFlawedOnyx(ConfigGwycraft.flawedOnyxID).setUnlocalizedName("Gwycraft:flawedOnyx").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedQuartz = new ItemFlawedQuartz(ConfigGwycraft.flawedQuartzID).setUnlocalizedName("Gwycraft:flawedQuartz").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedRuby = new ItemFlawedRuby(ConfigGwycraft.flawedRubyID).setUnlocalizedName("Gwycraft:flawedRuby").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedSapphire = new ItemFlawedSapphire(ConfigGwycraft.flawedSapphireID).setUnlocalizedName("Gwycraft:flawedSapphire").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedTanzanite = new ItemFlawedTanzanite(ConfigGwycraft.flawedTanzaniteID).setUnlocalizedName("Gwycraft:flawedTanzanite").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedTigerseye = new ItemFlawedTigerseye(ConfigGwycraft.flawedTigerseyeID).setUnlocalizedName("Gwycraft:flawedTigerseye").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedTopaz = new ItemFlawedTopaz(ConfigGwycraft.flawedTopazID).setUnlocalizedName("Gwycraft:flawedTopaz").setCreativeTab(CreativeTabs.tabMaterials);
-        flawedMoonstone = new ItemFlawedMoonstone(ConfigGwycraft.flawedMoonstoneID).setUnlocalizedName("Gwycraft:flawedMoonstone").setCreativeTab(CreativeTabs.tabMaterials);
-
+        flawedGems = new ItemFlawedAgate(ConfigGwycraft.flawedGemsID).setUnlocalizedName("Gwycraft:flawedGems").setCreativeTab(CreativeTabs.tabMaterials);
 
         CommonProxy.registerRenderers();
 
         //  GameRegistry Register Blocks
-        GameRegistry.registerBlock(glowyWool, glowyItemWool.class, "glowyWool");
-        GameRegistry.registerBlock(dyedStone, dyedItemStone.class, "dyedStone");
+        GameRegistry.registerBlock(glowyWool, ItemGlowyWool.class, "glowyWool");
+        GameRegistry.registerBlock(dyedStone, ItemDyedStone.class, "dyedStone");
         GameRegistry.registerBlock(dyedStoneSlab1, "dyedStoneSlab1");
         GameRegistry.registerBlock(dyedStoneSlab2, "dyedStoneSlab2");
-        GameRegistry.registerBlock(dyedBookcase, dyedItemBookcase.class, "dyedBookcase");
-        GameRegistry.registerBlock(dyedPlank, dyedItemPlank.class, "dyedPlank");
-        GameRegistry.registerBlock(dyedBrick, dyedItemBrick.class, "dyedBrick");
-        GameRegistry.registerBlock(dyedClayblock, dyedItemClayblock.class, "dyedClayblock");
-        GameRegistry.registerBlock(dyedGlass, dyedItemGlass.class, "dyedGlass");
-        GameRegistry.registerBlock(dyedLeaf, dyedItemLeaf.class, "dyedLeaf");
-        GameRegistry.registerBlock(dyedLog1, dyedItemLog1.class, "dyedLog1");
-        GameRegistry.registerBlock(dyedLog2, dyedItemLog2.class, "dyedLog2");
-        GameRegistry.registerBlock(dyedLog3, dyedItemLog3.class, "dyedLog3");
-        GameRegistry.registerBlock(dyedLog4, dyedItemLog4.class, "dyedLog4");
-        GameRegistry.registerBlock(dyedMudbrick, dyedItemMudbrick.class, "dyedMudbrick");
-        GameRegistry.registerBlock(dyedSand, dyedItemSand.class, "dyedSand");
-        GameRegistry.registerBlock(dyedStonebrick, dyedItemStonebrick.class,"dyedStonebrick");
-        GameRegistry.registerBlock(dyedStonecobble, dyedItemStonecobble.class, "dyedStonecobble");
+        GameRegistry.registerBlock(dyedBookcase, ItemDyedBookshelf.class, "dyedBookcase");
+        GameRegistry.registerBlock(dyedPlank, ItemDyedPlank.class, "dyedPlank");
+        GameRegistry.registerBlock(dyedBrick, ItemDyedBrick.class, "dyedBrick");
+        GameRegistry.registerBlock(dyedClayblock, ItemDyedClayblock.class, "dyedClayblock");
+        GameRegistry.registerBlock(dyedGlass, ItemDyedGlass.class, "dyedGlass");
+        GameRegistry.registerBlock(dyedLeaf, ItemDyedLeaf.class, "dyedLeaf");
+        GameRegistry.registerBlock(dyedLog1, ItemDyedLog1.class, "dyedLog1");
+        GameRegistry.registerBlock(dyedLog2, ItemDyedLog2.class, "dyedLog2");
+        GameRegistry.registerBlock(dyedLog3, ItemDyedLog3.class, "dyedLog3");
+        GameRegistry.registerBlock(dyedLog4, ItemDyedLog4.class, "dyedLog4");
+        GameRegistry.registerBlock(dyedMudbrick, ItemDyedMudbrick.class, "dyedMudbrick");
+        GameRegistry.registerBlock(dyedSand, ItemDyedSand.class, "dyedSand");
+        GameRegistry.registerBlock(dyedStonebrick, ItemDyedStonebrick.class,"dyedStonebrick");
+        GameRegistry.registerBlock(dyedStonecobble, ItemDyedCobble.class, "dyedStonecobble");
+        GameRegistry.registerBlock(blockGemCompressed, ItemGemCompressed.class, "blockGemCompressed");
+        GameRegistry.registerBlock(blockGemOre, ItemGemOre.class, "blockGemOre");
 		
         Item.itemsList[ConfigGwycraft.dyedStoneSlab1ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, false)).setUnlocalizedName("woodSlab");
         Item.itemsList[dyedStoneDoubleSlab1.blockID] = (new ItemSlab (ConfigGwycraft.dyedStoneDoubleSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, true)).setUnlocalizedName("woodSlab");
         Item.itemsList[ConfigGwycraft.dyedStoneSlab2ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, false)).setUnlocalizedName("woodSlab");
         Item.itemsList[dyedStoneDoubleSlab2.blockID] = (new ItemSlab (ConfigGwycraft.dyedStoneDoubleSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, true)).setUnlocalizedName("woodSlab");
-
 
         // Language Registry
         // 16 Meta
@@ -235,6 +205,8 @@ public class Gwycraft {
             ItemStack dyedSandStack = new ItemStack(dyedSand, 1, i);
             ItemStack dyedStonebrickStack = new ItemStack(dyedStonebrick, 1, i);
             ItemStack dyedStonecobbleStack = new ItemStack(dyedStonecobble, 1, i);
+            ItemStack blockGemCompressedStack = new ItemStack(blockGemCompressed, 1, i);
+            ItemStack blockGemOreStack = new ItemStack(blockGemOre, 1, i);
 			
             // Language Registry
 			LanguageRegistry.addName(glowyWoolStack, "Glowy " + gwyColorNames[glowyWoolStack.getItemDamage()] + " Wool");
@@ -249,6 +221,8 @@ public class Gwycraft {
             LanguageRegistry.addName(dyedSandStack, gwyColorNames[dyedSandStack.getItemDamage()] + " Sand");
             LanguageRegistry.addName(dyedStonebrickStack, gwyColorNames[dyedStonebrickStack.getItemDamage()] + " Stone Brick");
             LanguageRegistry.addName(dyedStonecobbleStack, gwyColorNames[dyedStonecobbleStack.getItemDamage()] + " Cobblestone");
+            LanguageRegistry.addName(blockGemCompressedStack, gwyGemNames[blockGemCompressedStack.getItemDamage()] + " Block");
+            LanguageRegistry.addName(blockGemOreStack, gwyGemNames[blockGemOreStack.getItemDamage()] + " Ore");
 
             //  Add Recipes
             GameRegistry.addRecipe(new ItemStack(dyedBookcase, 1, i), "###", "XXX", "###", '#', dyedPlankStack, 'X', Item.book);
@@ -301,23 +275,41 @@ public class Gwycraft {
 
         // Items
         // Language Registry
-        LanguageRegistry.addName(flawedAgate, "Flawed Agate");
-        LanguageRegistry.addName(flawedAmethyst, "Flawed Amethyst");
-        LanguageRegistry.addName(flawedAquamarine, "Flawed Aquamarine");
-        LanguageRegistry.addName(flawedCitrine, "Flawed Citrine");
-        LanguageRegistry.addName(flawedEmerald, "Flawed Emerald");
-        LanguageRegistry.addName(flawedGarnet, "Flawed Garnet");
-        LanguageRegistry.addName(flawedHematite, "Flawed Hematite");
-        LanguageRegistry.addName(flawedLapis, "Flawed Lapis");
-        LanguageRegistry.addName(flawedOnyx, "Flawed Onyx");
-        LanguageRegistry.addName(flawedQuartz, "Flawed Quartz");
-        LanguageRegistry.addName(flawedRuby, "Flawed Ruby");
-        LanguageRegistry.addName(flawedSapphire, "Flawed Sapphire");
-        LanguageRegistry.addName(flawedTanzanite, "Flawed Tanzanite");
-        LanguageRegistry.addName(flawedTigerseye, "Flawed Tigerseye");
-        LanguageRegistry.addName(flawedTopaz, "Flawed Topaz");
-        LanguageRegistry.addName(flawedMoonstone, "Flawed Moonstone");	
-        }
+        LanguageRegistry.addName(flawedGems, "Flawed Agate");
+        LanguageRegistry.addName(flawedGems, "Flawed Amethyst");
+        LanguageRegistry.addName(flawedGems, "Flawed Aquamarine");
+        LanguageRegistry.addName(flawedGems, "Flawed Citrine");
+        LanguageRegistry.addName(flawedGems, "Flawed Emerald");
+        LanguageRegistry.addName(flawedGems, "Flawed Garnet");
+        LanguageRegistry.addName(flawedGems, "Flawed Hematite");
+        LanguageRegistry.addName(flawedGems, "Flawed Lapis");
+        LanguageRegistry.addName(flawedGems, "Flawed Onyx");
+        LanguageRegistry.addName(flawedGems, "Flawed Quartz");
+        LanguageRegistry.addName(flawedGems, "Flawed Ruby");
+        LanguageRegistry.addName(flawedGems, "Flawed Sapphire");
+        LanguageRegistry.addName(flawedGems, "Flawed Tanzanite");
+        LanguageRegistry.addName(flawedGems, "Flawed Tigerseye");
+        LanguageRegistry.addName(flawedGems, "Flawed Topaz");
+        LanguageRegistry.addName(flawedGems, "Flawed Moonstone");	
+
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 0), "XXX", "XXX", "XXX", 'X', flawedAgate);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 1), "XXX", "XXX", "XXX", 'X', flawedAmethyst);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 2), "XXX", "XXX", "XXX", 'X', flawedAquamarine);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 3), "XXX", "XXX", "XXX", 'X', flawedCitrine);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 4), "XXX", "XXX", "XXX", 'X', flawedEmerald);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 5), "XXX", "XXX", "XXX", 'X', flawedGarnet);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 6), "XXX", "XXX", "XXX", 'X', flawedHematite);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 7), "XXX", "XXX", "XXX", 'X', flawedLapis);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 8), "XXX", "XXX", "XXX", 'X', flawedOnyx);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 9), "XXX", "XXX", "XXX", 'X', flawedQuartz);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 10), "XXX", "XXX", "XXX", 'X', flawedRuby);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 11), "XXX", "XXX", "XXX", 'X', flawedSapphire);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 12), "XXX", "XXX", "XXX", 'X', flawedTanzanite);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 13), "XXX", "XXX", "XXX", 'X', flawedTigerseye);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 14), "XXX", "XXX", "XXX", 'X', flawedTopaz);
+//        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 15), "XXX", "XXX", "XXX", 'X', flawedMoonstone);
+
+	    }
 
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {

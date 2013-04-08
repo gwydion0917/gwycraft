@@ -32,22 +32,7 @@ public class ConfigGwycraft {
     public static int blockGemOreID = 1922;
     public static int blockGemCompressedID = 1923;
     
-    public static int flawedAgateID = 5001;
-    public static int flawedAmethystID = 5002;
-    public static int flawedAquamarineID = 5003;
-    public static int flawedCitrineID = 5004;
-    public static int flawedEmeraldID = 5005;
-    public static int flawedGarnetID = 5006;
-    public static int flawedHematiteID = 5007;
-    public static int flawedLapisID = 5008;
-    public static int flawedOnyxID = 5009;
-    public static int flawedQuartzID = 5010;
-    public static int flawedRubyID = 5011;
-    public static int flawedSapphireID = 5012;
-    public static int flawedTanzaniteID = 5013;
-    public static int flawedTigerseyeID = 5014;
-    public static int flawedTopazID = 5015;
-    public static int flawedMoonstoneID = 5016;
+    public static int flawedGemsID = 5001;
 
 public void initConfig()
     {
@@ -91,22 +76,7 @@ public void initConfig()
         blockGemCompressedID = config.getBlock("blockGemCompressed", blockGemCompressedID).getInt();
 
 
-        flawedAgateID = config.getItem("Flawed Agate", flawedAgateID).getInt();
-        flawedAmethystID = config.getItem("Flawed Amethyst", flawedAmethystID).getInt();
-        flawedAquamarineID = config.getItem("Flawed Aquamarine", flawedAquamarineID).getInt();
-        flawedCitrineID = config.getItem("Flawed Citrine", flawedCitrineID).getInt();
-        flawedEmeraldID = config.getItem("Flawed Emerald", flawedEmeraldID).getInt();
-        flawedGarnetID = config.getItem("Flawed Garnet", flawedGarnetID).getInt();
-        flawedHematiteID = config.getItem("Flawed Hematite", flawedHematiteID).getInt();
-        flawedLapisID = config.getItem("Flawed Lapis", flawedLapisID).getInt();
-        flawedOnyxID = config.getItem("Flawed Onyx", flawedOnyxID).getInt();
-        flawedQuartzID = config.getItem("Flawed Quartz", flawedQuartzID).getInt();
-        flawedRubyID = config.getItem("Flawed Ruby", flawedRubyID).getInt();
-        flawedSapphireID = config.getItem("Flawed Sapphire", flawedSapphireID).getInt();
-        flawedTanzaniteID = config.getItem("Flawed Tanzanite", flawedTanzaniteID).getInt();
-        flawedTigerseyeID = config.getItem("Flawed Tigerseye", flawedTigerseyeID).getInt();
-        flawedTopazID = config.getItem("Flawed Topaz", flawedTopazID).getInt();
-        flawedMoonstoneID = config.getItem("Flawed Moonstone", flawedMoonstoneID).getInt();
+        flawedGemsID = config.getItem("Flawed Gems", flawedGemsID).getInt();
         
         config.save();
     }
