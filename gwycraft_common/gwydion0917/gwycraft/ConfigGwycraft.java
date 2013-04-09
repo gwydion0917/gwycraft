@@ -31,6 +31,8 @@ public class ConfigGwycraft {
     public static int dyedMudbrickStairsID = 1921;
     public static int blockGemOreID = 1922;
     public static int blockGemCompressedID = 1923;
+    public static int blockDyedStonePaver1ID = 1924;
+    public static int blockDyedStonePaver2ID = 1925;
     
     public static int flawedGemsID = 5001;
 
@@ -74,6 +76,8 @@ public void initConfig()
         dyedStoneDoubleSlab2ID = config.getBlock("dyedStoneDoubleSlab2", dyedStoneDoubleSlab2ID).getInt();
         blockGemOreID = config.getBlock("blockGemOre", blockGemOreID).getInt();
         blockGemCompressedID = config.getBlock("blockGemCompressed", blockGemCompressedID).getInt();
+        blockDyedStonePaver1ID = config.getBlock("blockDyedStonePaver1", blockDyedStonePaver1ID).getInt();
+        blockDyedStonePaver2ID = config.getBlock("blockDyedStonePaver2", blockDyedStonePaver2ID).getInt();
 
 
         flawedGemsID = config.getItem("Flawed Gems", flawedGemsID).getInt();
