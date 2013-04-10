@@ -33,6 +33,8 @@ public class ConfigGwycraft {
     public static int blockGemCompressedID = 1923;
     public static int blockDyedStonePaver1ID = 1924;
     public static int blockDyedStonePaver2ID = 1925;
+    public static int blockDyedStoneBrickSlab1ID = 1926;
+    public static int blockDyedStoneBrickDoubleSlab1ID = 1927;
     
     public static int itemFlawedGemsID = 5001;
     public static int itemDyedClayID = 5002;
@@ -82,7 +84,9 @@ public static void initConfig()
         blockGemCompressedID = config.getBlock("blockGemCompressed", blockGemCompressedID).getInt();
         blockDyedStonePaver1ID = config.getBlock("blockDyedStonePaver1", blockDyedStonePaver1ID).getInt();
         blockDyedStonePaver2ID = config.getBlock("blockDyedStonePaver2", blockDyedStonePaver2ID).getInt();
+        blockDyedStoneBrickSlab1ID = config.getBlock("blockDyedStoneBrickSlab1", blockDyedStoneBrickSlab1ID).getInt();
 
+        blockDyedStoneBrickDoubleSlab1ID = config.getBlock("blockDyedStoneBrickDoubleSlab1", blockDyedStoneBrickDoubleSlab1ID).getInt();
 
         itemFlawedGemsID = config.getItem("Flawed Gems", itemFlawedGemsID).getInt();
         itemDyedClayID = config.getItem("Dyed Clay", itemDyedClayID).getInt();
