@@ -34,7 +34,7 @@ public class ConfigGwycraft {
     public static int blockDyedStonePaver1ID = 1924;
     public static int blockDyedStonePaver2ID = 1925;
     
-    public static int flawedGemsID = 5001;
+    public static int itemFlawedGemsID = 5001;
 
 public static void initConfig()
     {
@@ -80,7 +80,7 @@ public static void initConfig()
         blockDyedStonePaver2ID = config.getBlock("blockDyedStonePaver2", blockDyedStonePaver2ID).getInt();
 
 
-        flawedGemsID = config.getItem("Flawed Gems", flawedGemsID).getInt();
+        itemFlawedGemsID = config.getItem("Flawed Gems", itemFlawedGemsID).getInt();
         
         config.save();
     }
