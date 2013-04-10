@@ -36,7 +36,7 @@ public class ConfigGwycraft {
     
     public static int flawedGemsID = 5001;
 
-public void initConfig()
+public static void initConfig()
     {
 
         //File fileDir = new File(GwyCraft.proxy.getMinecraftDir() + "/config/gwyCraft");
@@ -58,7 +58,7 @@ public void initConfig()
         dyedStoneSlab1ID = config.getBlock("dyedStoneSlab1", dyedStoneSlab1ID).getInt();
         dyedStoneSlab2ID = config.getBlock("dyedStoneSlab2", dyedStoneSlab2ID ).getInt();
         dyedBookcaseID = config.getBlock("dyedBookcase", dyedBookcaseID).getInt();
-        dyedBrickID = config.getBlock("dyedBrick", dyedBookcaseID).getInt();
+        dyedBrickID = config.getBlock("dyedBrick", dyedBrickID).getInt();
         dyedClayblockID = config.getBlock("dyedClayblock", dyedClayblockID).getInt();
         dyedGlassID = config.getBlock("dyedGlass", dyedGlassID).getInt();
         dyedLeafID = config.getBlock("dyedLeaf", dyedLeafID).getInt();

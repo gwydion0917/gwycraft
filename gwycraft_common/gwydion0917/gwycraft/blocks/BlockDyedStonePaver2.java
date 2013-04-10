@@ -23,7 +23,6 @@ public class BlockDyedStonePaver2 extends BlockHalfSlab{
     public BlockDyedStonePaver2(int par1, boolean par2, Material mat)
     {
         super(par1, par2, mat);
-        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.1F, 1.0F);
 //        setCreativeTab(CreativeTabs.tabBlock);
     }
 

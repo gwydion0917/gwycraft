@@ -6,6 +6,8 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBasePressurePlate;
 import net.minecraft.block.BlockHalfSlab;
+import net.minecraft.block.BlockPressurePlate;
+import net.minecraft.block.BlockSnow;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -18,14 +20,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
 
-public class BlockDyedStonePaver1 extends BlockBasePressurePlate {
+public class BlockDyedStonePaver1 extends Block {
     /** The type of tree this slab came from. */
     public static final String[] colorSlab = new String[] {"White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey"};
     public static final String[] slabTextures = new String[] {"Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7", "Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7"};
     private Icon[] iconArray;
 
     public BlockDyedStonePaver1 (int id) {
-        super(id, null, Material.rock);
+        super(id, Material.rock);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.1F, 1.0F);
         this.setLightOpacity(255);
     }
@@ -78,19 +80,16 @@ public class BlockDyedStonePaver1 extends BlockBasePressurePlate {
         }
     }
 
-    @Override
     protected int func_94351_d(World world, int i, int j, int k) {
         // TODO Auto-generated method stub
         return 0;
     }
 
-    @Override
     protected int func_94350_c(int i) {
         // TODO Auto-generated method stub
         return 0;
     }
 
-    @Override
     protected int func_94355_d(int i) {
         // TODO Auto-generated method stub
         return 0;
