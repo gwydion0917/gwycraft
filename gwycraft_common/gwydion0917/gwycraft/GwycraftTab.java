@@ -14,6 +14,6 @@ public class GwycraftTab extends CreativeTabs
 	@Override
 	public Item getTabIconItem()
 	{
-		return Gwycraft.flawedGems;
+		return Gwycraft.itemFlawedGems;
 	}	
 }

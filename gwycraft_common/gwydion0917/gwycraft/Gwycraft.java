@@ -298,22 +298,6 @@ public class Gwycraft {
 
         // Items
         // Language Registry
-        LanguageRegistry.addName(flawedGems, "Flawed Agate");
-        LanguageRegistry.addName(flawedGems, "Flawed Amethyst");
-        LanguageRegistry.addName(flawedGems, "Flawed Aquamarine");
-        LanguageRegistry.addName(flawedGems, "Flawed Citrine");
-        LanguageRegistry.addName(flawedGems, "Flawed Emerald");
-        LanguageRegistry.addName(flawedGems, "Flawed Garnet");
-        LanguageRegistry.addName(flawedGems, "Flawed Hematite");
-        LanguageRegistry.addName(flawedGems, "Flawed Lapis");
-        LanguageRegistry.addName(flawedGems, "Flawed Onyx");
-        LanguageRegistry.addName(flawedGems, "Flawed Quartz");
-        LanguageRegistry.addName(flawedGems, "Flawed Ruby");
-        LanguageRegistry.addName(flawedGems, "Flawed Sapphire");
-        LanguageRegistry.addName(flawedGems, "Flawed Tanzanite");
-        LanguageRegistry.addName(flawedGems, "Flawed Tigerseye");
-        LanguageRegistry.addName(flawedGems, "Flawed Topaz");
-        LanguageRegistry.addName(flawedGems, "Flawed Moonstone");	
 
 //        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 0), "XXX", "XXX", "XXX", 'X', flawedAgate);
 //        GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, 1), "XXX", "XXX", "XXX", 'X', flawedAmethyst);
