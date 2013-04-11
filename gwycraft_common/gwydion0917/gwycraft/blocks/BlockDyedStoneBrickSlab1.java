@@ -4,10 +4,14 @@ import gwydion0917.gwycraft.ConfigGwycraft;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 
 import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.List;
 import java.util.Random;
 
 public class BlockDyedStoneBrickSlab1 extends BlockHalfSlab{
@@ -21,19 +25,31 @@ public class BlockDyedStoneBrickSlab1 extends BlockHalfSlab{
         super(par1, par2, mat);
     }
 
-        public int idDropped(int par1, Random par2Random, int par3)
+    /**
+     * Returns the slab block name with step type.
+     */
+    public String getFullSlabName(int par1)
+    {
+        if (par1 < 0 || par1 >= colorSlab.length)
+        {
+            par1 = 0;
+        }
+
+        return super.getUnlocalizedName() + "." + colorSlab[par1];
+    }
+
+          public int idDropped(int par1, Random par2Random, int par3)
         {
             return ConfigGwycraft.blockDyedStoneBrickSlab1ID;
         }
-        
-        public String getFullSlabName(int i)
-        {
-            if (!isDoubleSlab)
-                return super.getUnlocalizedName() + "blockDyedStoneBrickSlab";
-            else
-                return super.getUnlocalizedName() + "blockDyedStoneBrickDoubleSlab";
-        }        
-      
+
+        @SideOnly(Side.CLIENT)
+        public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
+            for (int i = 0; i < 8; i++) {
+                subItems.add(new ItemStack(this, 1, i));
+            }
+        }
+              
         @SideOnly(Side.CLIENT)
         public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
         {
@@ -55,12 +71,12 @@ public class BlockDyedStoneBrickSlab1 extends BlockHalfSlab{
 
             return this.iconArray[par2 & 7];
         }
-    
+
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
         this.iconArray = new Icon[16];
 
-        for (int i = 0; i < this.iconArray.length; ++i) {
+        for (int i = 0; i < 16; ++i) {
             this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);
         }
     }
