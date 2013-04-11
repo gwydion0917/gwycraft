@@ -13,7 +13,7 @@ import java.util.Random;
 public class BlockDyedStoneBrickSlab1 extends BlockHalfSlab{
     /** The type of tree this slab came from. */
     public static final String[] colorSlab = new String[] {"White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey"};
-    public static final String[] slabTextures = new String[] {"Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7", "Gwycraft:stone_0", "Gwycraft:stone_1", "Gwycraft:stone_2", "Gwycraft:stone_3", "Gwycraft:stone_4", "Gwycraft:stone_5", "Gwycraft:stone_6", "Gwycraft:stone_7"};
+    public static final String[] slabTextures = new String[] {"Gwycraft:stonebrick_0", "Gwycraft:stonebrick_1", "Gwycraft:stonebrick_2", "Gwycraft:stonebrick_3", "Gwycraft:stonebrick_4", "Gwycraft:stonebrick_5", "Gwycraft:stonebrick_6", "Gwycraft:stonebrick_7", "Gwycraft:stonebrick_0", "Gwycraft:stonebrick_1", "Gwycraft:stonebrick_2", "Gwycraft:stonebrick_3", "Gwycraft:stonebrick_4", "Gwycraft:stonebrick_5", "Gwycraft:stonebrick_6", "Gwycraft:stonebrick_7"};
     private Icon[] iconArray;
 
     public BlockDyedStoneBrickSlab1(int par1, boolean par2, Material mat)
@@ -57,7 +57,7 @@ public class BlockDyedStoneBrickSlab1 extends BlockHalfSlab{
         }
     
     @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister) {
+    public void registerIcons(IconRegister par1IconRegister) {
         this.iconArray = new Icon[16];
 
         for (int i = 0; i < this.iconArray.length; ++i) {
