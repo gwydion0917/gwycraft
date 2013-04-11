@@ -25,14 +25,12 @@ public class BlockDyedGlass extends BlockGlass {
 		setStepSound(Block.glass.stepSound);
 
 	}
-	
-    @SideOnly(Side.CLIENT)
-    @Override
-    public int getRenderBlockPass()
-    {
-        return 1;
-    }
 
+	@SideOnly(Side.CLIENT)
+	@Override
+	public int getRenderBlockPass() {
+		return 1;
+	}
 
 	@Override
 	public Icon getIcon(int par1, int par2) {
@@ -45,6 +43,7 @@ public class BlockDyedGlass extends BlockGlass {
 	}
 
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
 		for (int i = 0; i < 16; i++) {
 			subItems.add(new ItemStack(this, 1, i));
@@ -52,11 +51,13 @@ public class BlockDyedGlass extends BlockGlass {
 	}
 
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:glass_" + i);
+			this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:glass_"
+					+ i);
 		}
 	}
 

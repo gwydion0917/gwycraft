@@ -32,6 +32,7 @@ public class BlockGlowyWool extends Block {
 	}
 
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
 		for (int i = 0; i < 16; i++) {
 			subItems.add(new ItemStack(this, 1, i));
@@ -39,6 +40,7 @@ public class BlockGlowyWool extends Block {
 	}
 
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[16];
 

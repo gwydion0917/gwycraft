@@ -15,48 +15,49 @@ import net.minecraft.util.MathHelper;
 
 public class ItemDyedMud extends ItemDye {
 
-    public String[] textureNames = new String[] {"Gwycraft:mud_white", "Gwycraft:mud_orange", "Gwycraft:mud_magenta", "Gwycraft:mud_lblue", "Gwycraft:mud_yellow", "Gwycraft:mud_lime", "Gwycraft:mud_pink", "Gwycraft:mud_gray", "Gwycraft:mud_lgray", "Gwycraft:mud_cyan", "Gwycraft:mud_purple", "Gwycraft:mud_blue", "Gwycraft:mud_brown", "Gwycraft:mud_green", "Gwycraft:mud_red", "Gwycraft:mud_black"};
-    public Icon[] icons;
+	public String[] textureNames = new String[] { "Gwycraft:mud_white",
+			"Gwycraft:mud_orange", "Gwycraft:mud_magenta",
+			"Gwycraft:mud_lblue", "Gwycraft:mud_yellow", "Gwycraft:mud_lime",
+			"Gwycraft:mud_pink", "Gwycraft:mud_gray", "Gwycraft:mud_lgray",
+			"Gwycraft:mud_cyan", "Gwycraft:mud_purple", "Gwycraft:mud_blue",
+			"Gwycraft:mud_brown", "Gwycraft:mud_green", "Gwycraft:mud_red",
+			"Gwycraft:mud_black" };
+	public Icon[] icons;
 
-    public int blockType;
+	public int blockType;
 
-    public ItemDyedMud(int par1) 
-    {
-        super(par1);
-        setUnlocalizedName("Gwycraft:itemDyedMud");
-        this.setHasSubtypes(true);
-    }
+	public ItemDyedMud(int par1) {
+		super(par1);
+		setUnlocalizedName("Gwycraft:itemDyedMud");
+		this.setHasSubtypes(true);
+	}
 
-    @SideOnly(Side.CLIENT)
-    @Override
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerIcons(IconRegister iconRegister) {
+		this.icons = new Icon[textureNames.length];
 
-    public void registerIcons(IconRegister iconRegister)
-    {
-        this.icons = new Icon[textureNames.length];
+		for (int i = 0; i < this.icons.length; ++i) {
+			this.icons[i] = iconRegister.registerIcon(textureNames[i]);
+		}
+	}
 
-        for (int i = 0; i < this.icons.length; ++i)
-        {
-            this.icons[i] = iconRegister.registerIcon(textureNames[i]);
-        }
-    }
+	@Override
+	public void getSubItems(int id, CreativeTabs par2CreativeTabs, List list) {
+		for (int i = 0; i < 16; i++)
+			list.add(new ItemStack(id, 1, i));
+	}
 
-    public void getSubItems(int id, List list)
-    { 
-        for (int i = 0; i < 16; i++)
-            list.add(new ItemStack(id, 1, i));
-    }
+	@SideOnly(Side.CLIENT)
+	@Override
+	public Icon getIconFromDamage(int meta) {
+		return icons[meta];
+	}
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public Icon getIconFromDamage(int meta)
-    {
-        return icons[meta];
-    }
-
-    public String getUnlocalizedName(ItemStack stack)
-    {
-        int arr = MathHelper.clamp_int(stack.getItemDamage(), 0, 16);
-        return "item." +textureNames[arr];
-    }
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		int arr = MathHelper.clamp_int(stack.getItemDamage(), 0, 16);
+		return "item." + textureNames[arr];
+	}
 
 }

@@ -36,6 +36,7 @@ public class BlockDyedMudbrick extends Block {
 	}
 
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
 		for (int i = 0; i < 16; i++) {
 			subItems.add(new ItemStack(this, 1, i));
@@ -43,11 +44,13 @@ public class BlockDyedMudbrick extends Block {
 	}
 
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:mudbrick_" + i);
+			this.iconArray[i] = par1IconRegister
+					.registerIcon("Gwycraft:mudbrick_" + i);
 		}
 	}
 
