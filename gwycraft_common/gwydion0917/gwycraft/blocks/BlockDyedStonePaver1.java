@@ -20,7 +20,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
 
-public class BlockDyedStonePaver1 extends Block {
+public class BlockDyedStonePaver1 extends BlockHalfSlab {
 	/** The type of tree this slab came from. */
 	public static final String[] colorSlab = new String[] { "White", "Orange",
 			"Magenta", "Light Blue", "Yellow", "Light Green", "Pink",
@@ -35,79 +35,64 @@ public class BlockDyedStonePaver1 extends Block {
 	private Icon[] iconArray;
 
 	public BlockDyedStonePaver1(int id) {
-		super(id, Material.rock);
+		super(id, false, Material.rock);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.1F, 1.0F);
 		this.setLightOpacity(255);
 	}
 
-	@Override
-	public void addCollisionBoxesToList(World par1World, int par2, int par3,
-			int par4, AxisAlignedBB par5AxisAlignedBB, List par6List,
-			Entity par7Entity) {
-		this.setBlockBoundsBasedOnState(par1World, par2, par3, par4);
-		super.addCollisionBoxesToList(par1World, par2, par3, par4,
-				par5AxisAlignedBB, par6List, par7Entity);
-	}
+    /**
+     * Returns the slab block name with step type.
+     */
+    @Override
+    public String getFullSlabName(int par1) {
+        if (par1 < 0 || par1 >= colorSlab.length) {
+            par1 = 0;
+        }
 
-	@Override
-	public int getRenderBlockPass() {
-		return 1;
-	}
+        return super.getUnlocalizedName() + "." + colorSlab[par1];
+    }
 
-	@Override
-	public boolean isOpaqueCube() {
-		return false;
-	}
+    public int idDropped(int par1, Random par2Random, int par3) {
+        return ConfigGwycraft.dyedStoneSlab1ID;
+    }
 
-	@Override
-	public Icon getIcon(int par1, int par2) {
-		return this.iconArray[par2 % this.iconArray.length];
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
+        for (int i = 0; i < 8; i++) {
+            subItems.add(new ItemStack(this, 1, i));
+        }
+    }
 
-	@Override
-	public int idDropped(int par1, Random par2Random, int par3) {
-		return ConfigGwycraft.dyedStonecobbleID;
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public Icon getIcon(int par1, int par2) {
+        par2 = par2 % 8;
+        if (par2 == 0)
+            return this.iconArray[par2 & 7];
+        else if (par2 == 1)
+            return this.iconArray[par2 & 7];
+        else if (par2 == 2)
+            return this.iconArray[par2 & 7];
+        else if (par2 == 3)
+            return this.iconArray[par2 & 7];
+        else if (par2 == 4)
+            return this.iconArray[par2 & 7];
+        else if (par2 == 5)
+            return this.iconArray[par2 & 7];
+        else if (par2 == 6)
+            return this.iconArray[par2 & 7];
 
-	@Override
-	public int damageDropped(int metadata) {
-		return metadata;
-	}
+        return this.iconArray[par2 & 7];
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int i = 0; i < 16; i++) {
-			subItems.add(new ItemStack(this, 1, i));
-		}
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IconRegister par1IconRegister) {
+        this.iconArray = new Icon[16];
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IconRegister par1IconRegister) {
-		this.iconArray = new Icon[16];
-
-		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:stone_"
-					+ i);
-		}
-	}
-
-	// FIXME: Is this needed?
-	// protected int func_94351_d(World world, int i, int j, int k) {
-	// // TODO Auto-generated method stub
-	// return 0;
-	// }
-	//
-	//
-	// protected int func_94350_c(int i) {
-	// // TODO Auto-generated method stub
-	// return 0;
-	// }
-	//
-	// protected int func_94355_d(int i) {
-	// // TODO Auto-generated method stub
-	// return 0;
-	// }
-
+        for (int i = 0; i < 16; ++i) {
+            this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);
+        }
+    }
 }

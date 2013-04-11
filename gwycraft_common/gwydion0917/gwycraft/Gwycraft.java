@@ -40,8 +40,6 @@ import gwydion0917.gwycraft.blocks.ItemDyedMudbrick;
 import gwydion0917.gwycraft.blocks.ItemDyedPlank;
 import gwydion0917.gwycraft.blocks.ItemDyedSand;
 import gwydion0917.gwycraft.blocks.ItemDyedStone;
-import gwydion0917.gwycraft.blocks.ItemDyedStoneBrickDoubleSlab1;
-import gwydion0917.gwycraft.blocks.ItemDyedStoneBrickSlab1;
 import gwydion0917.gwycraft.blocks.ItemDyedStonePaver1;
 import gwydion0917.gwycraft.blocks.ItemDyedStonebrick;
 import gwydion0917.gwycraft.blocks.ItemDyedCobble;
@@ -61,7 +59,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemStack;
@@ -201,9 +198,7 @@ public class Gwycraft {
 //        GameRegistry.registerBlock(blockDyedStoneBrickDoubleSlab1, "blockDyedStoneBrickDoubleSlab1");
 		
         Item.itemsList[ConfigGwycraft.dyedStoneSlab1ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, false)).setUnlocalizedName("blockDyedStoneSlab1");
-//        Item.itemsList[dyedStoneDoubleSlab1.blockID] = (new ItemSlab (ConfigGwycraft.dyedStoneDoubleSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, true)).setUnlocalizedName("woodSlab");
         Item.itemsList[ConfigGwycraft.dyedStoneSlab2ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, false)).setUnlocalizedName("blockDyedStoneSlab2");
-//        Item.itemsList[dyedStoneDoubleSlab2.blockID] = (new ItemSlab (ConfigGwycraft.dyedStoneDoubleSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, true)).setUnlocalizedName("woodSlab");
         Item.itemsList[ConfigGwycraft.itemFlawedGemsID] = (new Item (ConfigGwycraft.itemFlawedGemsID - 256)).setUnlocalizedName("itemFlawedGems");
         Item.itemsList[ConfigGwycraft.itemDyedClayID] = (new Item (ConfigGwycraft.itemDyedClayID - 256)).setUnlocalizedName("itemDyedClay");
         Item.itemsList[ConfigGwycraft.itemDyedClayBricksID] = (new Item (ConfigGwycraft.itemDyedClayBricksID - 256)).setUnlocalizedName("itemDyedClayBricks");
