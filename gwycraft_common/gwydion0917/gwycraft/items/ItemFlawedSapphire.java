@@ -12,7 +12,7 @@ public class ItemFlawedSapphire extends Item
     }
     public void updateIcons(IconRegister par1IconRegister)
     {
-         iconIndex = par1IconRegister.registerIcon("Gwycraft:gem_sapphire");
+    	itemIcon = par1IconRegister.registerIcon("Gwycraft:gem_sapphire");
     }
 
 }

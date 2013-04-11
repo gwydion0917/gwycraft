@@ -13,7 +13,7 @@ public class ItemFlawedAgate extends Item
     }
     public void updateIcons(IconRegister par1IconRegister)
     {
-         iconIndex = par1IconRegister.registerIcon("Gwycraft:gem_agate");
+    	itemIcon = par1IconRegister.registerIcon("Gwycraft:gem_agate");
     }
 
 }

@@ -12,7 +12,7 @@ public class ItemFlawedHematite extends Item
     }
     public void updateIcons(IconRegister par1IconRegister)
     {
-         iconIndex = par1IconRegister.registerIcon("Gwycraft:gem_hematite");
+    	itemIcon = par1IconRegister.registerIcon("Gwycraft:gem_hematite");
     }
 
 }

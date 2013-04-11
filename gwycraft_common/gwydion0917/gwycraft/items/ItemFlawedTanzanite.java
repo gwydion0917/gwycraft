@@ -12,7 +12,7 @@ public class ItemFlawedTanzanite extends Item
     }
     public void updateIcons(IconRegister par1IconRegister)
     {
-         iconIndex = par1IconRegister.registerIcon("Gwycraft:gem_tanzanite");
+    	itemIcon = par1IconRegister.registerIcon("Gwycraft:gem_tanzanite");
     }
 
 }

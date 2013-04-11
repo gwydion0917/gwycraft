@@ -12,7 +12,7 @@ public class ItemFlawedGarnet extends Item
     }
     public void updateIcons(IconRegister par1IconRegister)
     {
-         iconIndex = par1IconRegister.registerIcon("Gwycraft:gem_garnet");
+    	itemIcon = par1IconRegister.registerIcon("Gwycraft:gem_garnet");
     }
 
 }

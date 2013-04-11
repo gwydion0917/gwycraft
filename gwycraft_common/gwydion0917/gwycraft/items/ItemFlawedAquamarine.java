@@ -12,7 +12,7 @@ public class ItemFlawedAquamarine extends Item
     }
     public void updateIcons(IconRegister par1IconRegister)
     {
-         iconIndex = par1IconRegister.registerIcon("Gwycraft:gem_aquamarine");
+    	itemIcon = par1IconRegister.registerIcon("Gwycraft:gem_aquamarine");
     }
 
 }

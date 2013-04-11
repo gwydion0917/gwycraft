@@ -13,7 +13,7 @@ public class ItemFlawedLapis extends Item
     }
     public void updateIcons(IconRegister par1IconRegister)
     {
-         iconIndex = par1IconRegister.registerIcon("Gwycraft:gem_lapis_lazuli");
+    	itemIcon = par1IconRegister.registerIcon("Gwycraft:gem_lapis_lazuli");
     }
 
 }

@@ -30,7 +30,7 @@ public class ItemDyedMudBricks extends ItemDye {
     @SideOnly(Side.CLIENT)
     @Override
 
-    public void updateIcons(IconRegister iconRegister)
+    public void registerIcons(IconRegister iconRegister)
     {
         this.icons = new Icon[textureNames.length];
 

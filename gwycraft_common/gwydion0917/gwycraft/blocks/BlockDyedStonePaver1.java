@@ -51,7 +51,7 @@ public class BlockDyedStonePaver1 extends Block {
     }
     
     @Override
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+    public Icon getIcon(int par1, int par2) {
         return this.iconArray[par2 % this.iconArray.length];
     }
 

@@ -22,7 +22,7 @@ public class BlockDyedBookcase extends BlockBookshelf {
 	}
 
 	@Override
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) 
+    public Icon getIcon(int par1, int par2) 
 	{
         int l = par2 & 15;
         return (par1 == 1 || par1 == 0) ? this.iconArray1[l] : this.iconArray[l];
