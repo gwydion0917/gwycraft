@@ -23,34 +23,6 @@ public class BlockDyedStoneSlab2 extends BlockHalfSlab{
     public BlockDyedStoneSlab2(int par1, boolean par2, Material mat)
     {
         super(par1, par2, mat);
-//        setCreativeTab(CreativeTabs.tabBlock);
-    }
-
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        return this.iconArray[par2 % this.iconArray.length];
-    }
-
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
-    public int idDropped(int par1, Random par2Random, int par3)
-    {
-        return ConfigGwycraft.dyedStoneSlab2ID;
-    }
-
-    /**
-     * Returns an item stack containing a single instance of the current block type. 'i' is the block's subtype/damage
-     * and is ignored for blocks which do not support subtypes. Blocks which cannot be harvested should return null.
-     */
-    protected ItemStack createStackedBlock(int par1)
-    {
-        return new ItemStack(ConfigGwycraft.dyedStoneSlab2ID, 2, par1 & 7);
     }
 
     /**
@@ -66,27 +38,45 @@ public class BlockDyedStoneSlab2 extends BlockHalfSlab{
         return super.getUnlocalizedName() + "." + colorSlab[par1];
     }
 
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-     */
-    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-    {
-        if (par1 != ConfigGwycraft.dyedStoneSlab2ID)
+          public int idDropped(int par1, Random par2Random, int par3)
         {
-            for (int j = 0; j < 8; ++j)
-            {
-                par3List.add(new ItemStack(par1, 1, j));
+            return ConfigGwycraft.dyedStoneSlab2ID;
+        }
+
+        @SideOnly(Side.CLIENT)
+        public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
+            for (int i = 0; i < 8; i++) {
+                subItems.add(new ItemStack(this, 1, i));
             }
         }
-    }
+              
+        @SideOnly(Side.CLIENT)
+        public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
+        {
+            par2 = par2%8;
+            if(par2 == 0)
+                return this.iconArray[par2 & 7];
+            else if(par2 == 1)
+                return this.iconArray[par2 & 7];
+            else if(par2 == 2)
+                return this.iconArray[par2 & 7];
+            else if(par2 == 3)
+                return this.iconArray[par2 & 7];
+            else if(par2 == 4)
+                return this.iconArray[par2 & 7];
+            else if(par2 == 5)
+                return this.iconArray[par2 & 7];
+            else if(par2 == 6)
+                return this.iconArray[par2 & 7];
+
+            return this.iconArray[par2 & 7];
+        }
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
         this.iconArray = new Icon[16];
 
-        for (int i = 0; i < this.iconArray.length; ++i) {
+        for (int i = 0; i < 16; ++i) {
             this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);
         }
     }
