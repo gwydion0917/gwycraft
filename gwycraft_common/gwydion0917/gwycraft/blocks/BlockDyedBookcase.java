@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -56,5 +57,19 @@ public class BlockDyedBookcase extends BlockBookshelf {
 					.registerIcon("Gwycraft:bookcase_" + i);
 		}
 	}
+	
+    /**
+     * Determines the amount of enchanting power this block can provide to an enchanting table.
+     * @param world The World
+     * @param x X position
+     * @param y Y position
+     * @param z Z position
+     * @return The amount of enchanting power this block produces.
+     */
+	@Override
+    public int getEnchantPower(World world, int x, int y, int z)
+    {
+        return 1;
+    }
 
 }
