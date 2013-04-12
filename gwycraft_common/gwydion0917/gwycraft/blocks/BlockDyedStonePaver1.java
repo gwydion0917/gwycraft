@@ -15,6 +15,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -36,22 +37,10 @@ public class BlockDyedStonePaver1 extends BlockHalfSlab {
 
 	public BlockDyedStonePaver1(int id) {
 		super(id, false, Material.rock);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.1F, 1.0F);
-		this.setLightOpacity(255);
+		this.setLightOpacity(0);
 	}
 
-    /**
-     * Returns the slab block name with step type.
-     */
     @Override
-    public String getFullSlabName(int par1) {
-        if (par1 < 0 || par1 >= colorSlab.length) {
-            par1 = 0;
-        }
-
-        return super.getUnlocalizedName() + "." + colorSlab[par1];
-    }
-
     public int idDropped(int par1, Random par2Random, int par3) {
         return ConfigGwycraft.dyedStoneSlab1ID;
     }
@@ -61,6 +50,47 @@ public class BlockDyedStonePaver1 extends BlockHalfSlab {
     public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
         for (int i = 0; i < 8; i++) {
             subItems.add(new ItemStack(this, 1, i));
+        }
+    }
+
+    @Override
+    /**
+     * Updates the blocks bounds based on its current state. Args: world, x, y, z
+     */
+    public void setBlockBoundsBasedOnState(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
+    {
+        if (this.isDoubleSlab)
+        {
+            this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+        }
+        else
+        {
+            boolean flag = (par1IBlockAccess.getBlockMetadata(par2, par3, par4) & 8) != 0;
+
+            if (flag)
+            {
+                this.setBlockBounds(0.0F, 0.9F, 0.0F, 1.0F, 1.0F, 1.0F);
+            }
+            else
+            {
+                this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.1F, 1.0F);
+            }
+        }
+    }
+
+    @Override
+    /**
+     * Sets the block's bounds for rendering it as an item
+     */
+    public void setBlockBoundsForItemRender()
+    {
+        if (this.isDoubleSlab)
+        {
+            this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+        }
+        else
+        {
+            this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.1F, 1.0F);
         }
     }
 
@@ -94,5 +124,11 @@ public class BlockDyedStonePaver1 extends BlockHalfSlab {
         for (int i = 0; i < 16; ++i) {
             this.iconArray[i] = par1IconRegister.registerIcon(slabTextures[i]);
         }
+    }
+
+    @Override
+    public String getFullSlabName(int i) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
