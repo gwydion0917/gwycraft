@@ -1,11 +1,7 @@
 package gwydion0917.gwycraft;
 
-import java.io.File;
-import java.io.IOException;
-
-import gwydion0917.gwycraft.Gwycraft;
-
 import net.minecraftforge.common.Configuration;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ConfigGwycraft {
 	public static int glowyWoolID = 1901;
@@ -35,84 +31,74 @@ public class ConfigGwycraft {
 	public static int blockDyedStonePaver2ID = 1925;
 	public static int blockDyedStoneBrickSlab1ID = 1926;
 	public static int blockDyedStoneBrickDoubleSlab1ID = 1927;
-//  public static int blockDyedStoneBrickSlab2ID = 1928;
-//  public static int blockDyedStoneBrickDoubleSlab2D = 1929;
-//  public static int blockDyedSandstoneID = 1930;
-//  public static int blockDyedSandstoneChiseledID = 1931;
-//  public static int blockDyedSandstoneSmoothID = 1932;
-//  public static int blockDyedCobbleSlab1ID = 1933;
-//  public static int blockDyedCobbleDoubleSlab1ID = 1934;
-//  public static int blockDyedCobbleSlab2ID = 1935;
-//  public static int blockDyedCobbleDoubleSlab2D = 1936;
-//  public static int blockDyedStoneBrickSlab1ID = 1937;
-//  public static int blockDyedStoneBrickDoubleSlab1ID = 1938;
-//  public static int blockDyedStoneBrickSlab2ID = 1939;
-//  public static int blockDyedStoneBrickDoubleSlab2D = 1940;
-//  public static int blockDyedLogSlab1ID = 1941;
-//  public static int blockDyedLogDoubleSlab1ID = 1942;
-//  public static int blockDyedLogSlab2ID = 1943;
-//  public static int blockDyedLogDoubleSlab2D = 1944;
-//  public static int blockDyedMudBrickSlab1ID = 1945;
-//  public static int blockDyedMudBrickDoubleSlab1ID = 1946;
-//  public static int blockDyedMudBrickSlab2ID = 1947;
-//  public static int blockDyedMudBrickDoubleSlab2D = 1948;
-//  public static int blockDyedPlankSlab1ID = 1949;
-//  public static int blockDyedPlankDoubleSlab1ID = 1950;
-//  public static int blockDyedPlankSlab2ID = 1951;
-//  public static int blockDyedPlankDoubleSlab2D = 1952;
-//  public static int blockGemCompressedSlab1ID = 1953;
-//  public static int blockGemCompressedDoubleSlab1ID = 1954;
-//  public static int blockGemCompressedSlab2ID = 1955;
-//  public static int blockGemCompressedDoubleSlab2D = 1956;
-//  public static int blockGlowyWoolSlab1ID = 1957;
-//  public static int blockGlowyWoolDoubleSlab1ID = 1958;
-//  public static int blockGlowyWoolSlab2ID = 1959;
-//  public static int blockGlowyWoolDoubleSlab2D = 1960;
-//  public static int blockDyedFencesID = 1961;
-//  public static int blockDyedCobbleWallsID = 1962;
+	// public static int blockDyedStoneBrickSlab2ID = 1928;
+	// public static int blockDyedStoneBrickDoubleSlab2D = 1929;
+	// public static int blockDyedSandstoneID = 1930;
+	// public static int blockDyedSandstoneChiseledID = 1931;
+	// public static int blockDyedSandstoneSmoothID = 1932;
+	// public static int blockDyedCobbleSlab1ID = 1933;
+	// public static int blockDyedCobbleDoubleSlab1ID = 1934;
+	// public static int blockDyedCobbleSlab2ID = 1935;
+	// public static int blockDyedCobbleDoubleSlab2D = 1936;
+	// public static int blockDyedStoneBrickSlab1ID = 1937;
+	// public static int blockDyedStoneBrickDoubleSlab1ID = 1938;
+	// public static int blockDyedStoneBrickSlab2ID = 1939;
+	// public static int blockDyedStoneBrickDoubleSlab2D = 1940;
+	// public static int blockDyedLogSlab1ID = 1941;
+	// public static int blockDyedLogDoubleSlab1ID = 1942;
+	// public static int blockDyedLogSlab2ID = 1943;
+	// public static int blockDyedLogDoubleSlab2D = 1944;
+	// public static int blockDyedMudBrickSlab1ID = 1945;
+	// public static int blockDyedMudBrickDoubleSlab1ID = 1946;
+	// public static int blockDyedMudBrickSlab2ID = 1947;
+	// public static int blockDyedMudBrickDoubleSlab2D = 1948;
+	// public static int blockDyedPlankSlab1ID = 1949;
+	// public static int blockDyedPlankDoubleSlab1ID = 1950;
+	// public static int blockDyedPlankSlab2ID = 1951;
+	// public static int blockDyedPlankDoubleSlab2D = 1952;
+	// public static int blockGemCompressedSlab1ID = 1953;
+	// public static int blockGemCompressedDoubleSlab1ID = 1954;
+	// public static int blockGemCompressedSlab2ID = 1955;
+	// public static int blockGemCompressedDoubleSlab2D = 1956;
+	// public static int blockGlowyWoolSlab1ID = 1957;
+	// public static int blockGlowyWoolDoubleSlab1ID = 1958;
+	// public static int blockGlowyWoolSlab2ID = 1959;
+	// public static int blockGlowyWoolDoubleSlab2D = 1960;
+	// public static int blockDyedFencesID = 1961;
+	// public static int blockDyedCobbleWallsID = 1962;
 
 	public static int itemFlawedGemsID = 5001;
 	public static int itemDyedClayID = 5002;
 	public static int itemDyedClayBricksID = 5003;
 	public static int itemDyedMudID = 5004;
-    public static int itemDyedMudBricksID = 5005;
-//  public static int itemDyedSticksID = 5006;
-//  public static int itemIronSawBladeID = 5007;
-//  public static int itemDiamondSawBladeID = 5008;
-//  public static int itemIronRouterTipID = 5009;
-//  public static int itemDiamondRouterTipID = 5010;
-//  public static int itemDyedFuel1ID = 5011;
-//  public static int itemDyedFuel2ID = 5012;
-//  public static int itemDyedFuel3ID = 5013;
-//  public static int itemDyedFuel4ID = 5014;
-//  public static int itemDyedFuel5ID = 5015;
-//  public static int itemDyedFuel6ID = 5016;
-//  public static int itemDyedFuel7ID = 5017;
-//  public static int itemDyedFuel8ID = 5018;
-//  public static int itemDyedFuel9ID = 5019;
-//  public static int itemDyedFuel10ID = 5020;
-//  public static int itemDyedFuel11ID = 5021;
-//  public static int itemDyedFuel12ID = 5022;
-//  public static int itemDyedFuel13ID = 5023;
-//  public static int itemDyedFuel14ID = 5024;
-//  public static int itemDyedFuel15ID = 5025;
-//  public static int itemDyedFuel16ID = 5026;
+	public static int itemDyedMudBricksID = 5005;
 
-	public static void initConfig() {
+	// public static int itemDyedSticksID = 5006;
+	// public static int itemIronSawBladeID = 5007;
+	// public static int itemDiamondSawBladeID = 5008;
+	// public static int itemIronRouterTipID = 5009;
+	// public static int itemDiamondRouterTipID = 5010;
+	// public static int itemDyedFuel1ID = 5011;
+	// public static int itemDyedFuel2ID = 5012;
+	// public static int itemDyedFuel3ID = 5013;
+	// public static int itemDyedFuel4ID = 5014;
+	// public static int itemDyedFuel5ID = 5015;
+	// public static int itemDyedFuel6ID = 5016;
+	// public static int itemDyedFuel7ID = 5017;
+	// public static int itemDyedFuel8ID = 5018;
+	// public static int itemDyedFuel9ID = 5019;
+	// public static int itemDyedFuel10ID = 5020;
+	// public static int itemDyedFuel11ID = 5021;
+	// public static int itemDyedFuel12ID = 5022;
+	// public static int itemDyedFuel13ID = 5023;
+	// public static int itemDyedFuel14ID = 5024;
+	// public static int itemDyedFuel15ID = 5025;
+	// public static int itemDyedFuel16ID = 5026;
 
-		// File fileDir = new File(GwyCraft.proxy.getMinecraftDir() +
-		// "/config/gwyCraft");
-		// fileDir.mkdir();
-		File cfgFile = new File(Gwycraft.proxy.getMinecraftDir()
-				+ "/config/gwycraft.cfg");
+	public static void initConfig(FMLPreInitializationEvent event) {
 
-		try {
-			cfgFile.createNewFile();
-		} catch (IOException e) {
-			System.out.println(e);
-		}
-
-		Configuration config = new Configuration(cfgFile);
+		Configuration config = new Configuration(
+				event.getSuggestedConfigurationFile());
 		config.load();
 
 		glowyWoolID = config.getBlock("Glow Wool", glowyWoolID).getInt();

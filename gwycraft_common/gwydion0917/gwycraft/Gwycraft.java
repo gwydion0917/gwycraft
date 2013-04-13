@@ -134,7 +134,7 @@ public class Gwycraft {
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-        ConfigGwycraft.initConfig();
+        ConfigGwycraft.initConfig(event);
         
 		glowyWool = new BlockGlowyWool(ConfigGwycraft.glowyWoolID, Material.cloth).setHardness(0.8F).setStepSound(Block.cloth.stepSound).setUnlocalizedName("Gwycraft:glowyWool").setLightValue(1f).setCreativeTab(tabs);
 		dyedStone = new BlockDyedStone(ConfigGwycraft.dyedStoneID).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:dyedStone").setCreativeTab(tabs);
