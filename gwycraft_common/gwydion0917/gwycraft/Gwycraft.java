@@ -209,6 +209,9 @@ public class Gwycraft {
         // Language Registry
         // 16 Meta
         for (int i = 0; i < 16; i++) {
+        	// Dye is inverted compared to wool
+        	ItemStack dye = new ItemStack(Item.dyePowder, 1, 15 - i);
+        	
 			ItemStack cloth = new ItemStack(Block.cloth, 1, i);
 			ItemStack glowyWoolStack = new ItemStack(glowyWool, 1, i);
 			ItemStack gsDust = new ItemStack(Item.lightStoneDust, 1);
@@ -257,6 +260,8 @@ public class Gwycraft {
             GameRegistry.addRecipe(new ItemStack(dyedStonebrick, 4, i), "xx", "xx", 'x', dyedStoneStack);
             GameRegistry.addRecipe(glowyWoolStack, " x ", "xyx", " x ", 'y', cloth, 'x', gsDust);
             GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Block.glowStone), cloth);
+            GameRegistry.addShapelessRecipe(new ItemStack(dyedStonecobble, 8, i), dye, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone);
+            GameRegistry.addShapelessRecipe(new ItemStack(dyedPlank, 8, i), dye, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks);
             FurnaceRecipes.smelting().addSmelting(dyedStonecobble.blockID, i, new ItemStack(dyedStone, 1, i ), 0.1F);
             FurnaceRecipes.smelting().addSmelting(dyedSand.blockID, i, new ItemStack(dyedGlass, 1, i ), 0.1F);
         }
