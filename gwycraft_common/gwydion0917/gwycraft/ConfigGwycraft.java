@@ -95,8 +95,8 @@ public class ConfigGwycraft {
 	public static int blockDyedStonePaver2ID = 1925;
 	public static int blockDyedStoneBrickSlab1ID = 1926;
 	public static int blockDyedStoneBrickDoubleSlab1ID = 1927;
-	// public static int blockDyedStoneBrickSlab2ID = 1928;
-	// public static int blockDyedStoneBrickDoubleSlab2D = 1929;
+    public static int blockDyedStoneBrickSlab2ID = 1928;
+    public static int blockDyedStoneBrickDoubleSlab2ID = 1929;
 	// public static int blockDyedSandstoneID = 1930;
 	// public static int blockDyedSandstoneChiseledID = 1931;
 	// public static int blockDyedSandstoneSmoothID = 1932;
@@ -104,10 +104,10 @@ public class ConfigGwycraft {
 	// public static int blockDyedCobbleDoubleSlab1ID = 1934;
 	// public static int blockDyedCobbleSlab2ID = 1935;
 	// public static int blockDyedCobbleDoubleSlab2D = 1936;
-	// public static int blockDyedStoneBrickSlab1ID = 1937;
-	// public static int blockDyedStoneBrickDoubleSlab1ID = 1938;
-	// public static int blockDyedStoneBrickSlab2ID = 1939;
-	// public static int blockDyedStoneBrickDoubleSlab2D = 1940;
+	// public static int blockDyedBrickSlab1ID = 1937;
+	// public static int blockDyedBrickDoubleSlab1ID = 1938;
+	// public static int blockDyedBrickSlab2ID = 1939;
+	// public static int blockDyedBrickDoubleSlab2D = 1940;
 	// public static int blockDyedLogSlab1ID = 1941;
 	// public static int blockDyedLogDoubleSlab1ID = 1942;
 	// public static int blockDyedLogSlab2ID = 1943;
@@ -206,11 +206,17 @@ public class ConfigGwycraft {
 		blockDyedStoneBrickSlab1ID = config.getBlock(
 				"blockDyedStoneBrickSlab1", blockDyedStoneBrickSlab1ID)
 				.getInt();
+        blockDyedStoneBrickSlab2ID = config.getBlock(
+                "blockDyedStoneBrickSlab2", blockDyedStoneBrickSlab2ID)
+                .getInt();
         blockDyedFencesID = config.getBlock("blockDyedFences", blockDyedFencesID).getInt();
         blockDyedCobbleWallsID = config.getBlock("blockDyedCobbleWalls", blockDyedCobbleWallsID).getInt();
 		blockDyedStoneBrickDoubleSlab1ID = config.getBlock(
 				"blockDyedStoneBrickDoubleSlab1",
 				blockDyedStoneBrickDoubleSlab1ID).getInt();
+		blockDyedStoneBrickDoubleSlab2ID = config.getBlock(
+                "blockDyedStoneBrickDoubleSlab2",
+                blockDyedStoneBrickDoubleSlab2ID).getInt();
 
 		itemFlawedGemsID = config.getItem("Flawed Gems", itemFlawedGemsID)
 				.getInt();

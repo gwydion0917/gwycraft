@@ -7,6 +7,7 @@ import gwydion0917.gwycraft.CommonProxy;
 import gwydion0917.gwycraft.ConfigGwycraft;
 import gwydion0917.gwycraft.blocks.BlockDyedFences;
 import gwydion0917.gwycraft.blocks.BlockDyedStoneBrickSlab1;
+import gwydion0917.gwycraft.blocks.BlockDyedStoneBrickSlab2;
 import gwydion0917.gwycraft.blocks.BlockGemCompressed;
 import gwydion0917.gwycraft.blocks.BlockGemOre;
 import gwydion0917.gwycraft.blocks.BlockDyedBookcase;
@@ -123,6 +124,8 @@ public class Gwycraft {
     public static Block blockDyedStonePaver2;
     public static BlockHalfSlab blockDyedStoneBrickSlab1;
     public static BlockHalfSlab blockDyedStoneBrickDoubleSlab1;
+    public static BlockHalfSlab blockDyedStoneBrickSlab2;
+    public static BlockHalfSlab blockDyedStoneBrickDoubleSlab2;
     public static Block blockDyedFence;
     public static Block blockDyedCobbleWalls;
 
@@ -170,6 +173,8 @@ public class Gwycraft {
         blockDyedStonePaver2 = new BlockDyedStonePaver2(ConfigGwycraft.blockDyedStonePaver2ID).setUnlocalizedName("Gwycraft:BlockDyedStonePaver2").setHardness(2.0F).setCreativeTab(tabs);
         blockDyedStoneBrickSlab1 = (BlockDyedStoneBrickSlab1) new BlockDyedStoneBrickSlab1(ConfigGwycraft.blockDyedStoneBrickSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneBrickSlab1").setHardness(2.0F).setCreativeTab(tabs);
         blockDyedStoneBrickDoubleSlab1 = (BlockDyedStoneBrickSlab1) new BlockDyedStoneBrickSlab1(ConfigGwycraft.blockDyedStoneBrickDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneBrickDoubleSlab1").setHardness(2.0F);
+        blockDyedStoneBrickSlab2 = (BlockDyedStoneBrickSlab2) new BlockDyedStoneBrickSlab2(ConfigGwycraft.blockDyedStoneBrickSlab2ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneBrickSlab2").setHardness(2.0F).setCreativeTab(tabs);
+        blockDyedStoneBrickDoubleSlab2 = (BlockDyedStoneBrickSlab2) new BlockDyedStoneBrickSlab2(ConfigGwycraft.blockDyedStoneBrickDoubleSlab2ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneBrickDoubleSlab2").setHardness(2.0F);
         blockDyedFence = new BlockDyedFences(ConfigGwycraft.blockDyedFencesID, null , Material.wood).setUnlocalizedName("Gwycraft:DyedFences");
         
         itemFlawedGems = new ItemFlawedGems(ConfigGwycraft.itemFlawedGemsID).setUnlocalizedName("Gwycraft:itemFlawedGems").setCreativeTab(tabs);
@@ -204,6 +209,7 @@ public class Gwycraft {
         GameRegistry.registerBlock(blockDyedStonePaver1, ItemDyedStonePaver1.class, "blockDyedStonePaver1");
         GameRegistry.registerBlock(blockDyedStonePaver2, ItemDyedStonePaver2.class, "blockDyedStonePaver2");
         GameRegistry.registerBlock(blockDyedStoneBrickSlab1, "blockDyedStoneBrickSlab1");
+        GameRegistry.registerBlock(blockDyedStoneBrickSlab2, "blockDyedStoneBrickSlab2");
         GameRegistry.registerBlock(blockDyedFence, ItemDyedFences.class, "blockDyedFences");
         GameRegistry.registerBlock(blockDyedCobbleWalls, ItemDyedCobbleWalls.class, "blockDyedCobbleWalls");
 		
@@ -215,6 +221,7 @@ public class Gwycraft {
         Item.itemsList[ConfigGwycraft.itemDyedMudID] = (new Item (ConfigGwycraft.itemDyedMudID - 256)).setUnlocalizedName("itemDyedMud");
         Item.itemsList[ConfigGwycraft.itemDyedMudBricksID] = (new Item (ConfigGwycraft.itemDyedMudBricksID - 256)).setUnlocalizedName("itemDyedMudBricks");
         Item.itemsList[ConfigGwycraft.blockDyedStoneBrickSlab1ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneBrickSlab1ID - 256, blockDyedStoneBrickSlab1, blockDyedStoneBrickDoubleSlab1, false)).setUnlocalizedName("blockDyedStoneBrickSlab1");
+        Item.itemsList[ConfigGwycraft.blockDyedStoneBrickSlab2ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneBrickSlab2ID - 256, blockDyedStoneBrickSlab2, blockDyedStoneBrickDoubleSlab2, false)).setUnlocalizedName("blockDyedStoneBrickSlab2");
 
         // Language Registry
         // 16 Meta
@@ -290,6 +297,7 @@ public class Gwycraft {
             ItemStack dyedStone2Stack = new ItemStack(dyedStone, 8, i+8);
             ItemStack blockDyedStonePaver2Stack = new ItemStack(blockDyedStonePaver2, 1, i);
             ItemStack blockDyedStoneBrickSlab1Stack = new ItemStack(blockDyedStoneBrickSlab1, 1, i);
+            ItemStack blockDyedStoneBrickSlab2Stack = new ItemStack(blockDyedStoneBrickSlab2, 1, i);
             ItemStack blockDyedStonePaver1Stack = new ItemStack(blockDyedStonePaver1, 1, i);
 
             // Language Registry
@@ -298,6 +306,7 @@ public class Gwycraft {
             LanguageRegistry.addName(blockDyedStonePaver1Stack, gwyColorSlab1Names[blockDyedStonePaver1Stack.getItemDamage()] + " Stone Paver");
             LanguageRegistry.addName(blockDyedStonePaver2Stack, gwyColorSlab2Names[blockDyedStonePaver2Stack.getItemDamage()] + " Stone Paver2");
             LanguageRegistry.addName(blockDyedStoneBrickSlab1Stack, gwyColorSlab1Names[blockDyedStoneBrickSlab1Stack.getItemDamage()] + " Stone Brick Slab");
+            LanguageRegistry.addName(blockDyedStoneBrickSlab2Stack, gwyColorSlab2Names[blockDyedStoneBrickSlab2Stack.getItemDamage()] + " Stone Brick Slab");
 
             //  Add Recipes
             GameRegistry.addRecipe(new ItemStack(dyedStoneSlab1, 6, i), "XXX", 'X', dyedStone1Stack);
