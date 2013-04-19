@@ -128,7 +128,7 @@ public class ConfigGwycraft {
 	// public static int blockGlowyWoolDoubleSlab1ID = 1958;
 	// public static int blockGlowyWoolSlab2ID = 1959;
 	// public static int blockGlowyWoolDoubleSlab2D = 1960;
-	// public static int blockDyedFencesID = 1961;
+	   public static int blockDyedFencesID = 1961;
 	// public static int blockDyedCobbleWallsID = 1962;
 
 	public static int itemFlawedGemsID = 5001;
@@ -206,6 +206,7 @@ public class ConfigGwycraft {
 		blockDyedStoneBrickSlab1ID = config.getBlock(
 				"blockDyedStoneBrickSlab1", blockDyedStoneBrickSlab1ID)
 				.getInt();
+        blockDyedFencesID = config.getBlock("blockDyedFences", blockDyedFencesID).getInt();
 
 		blockDyedStoneBrickDoubleSlab1ID = config.getBlock(
 				"blockDyedStoneBrickDoubleSlab1",
