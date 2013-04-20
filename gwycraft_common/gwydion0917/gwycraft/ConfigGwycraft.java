@@ -130,6 +130,8 @@ public class ConfigGwycraft {
 	// public static int blockGlowyWoolDoubleSlab2D = 1960;
 	   public static int blockDyedFencesID = 1961;
 	   public static int blockDyedCobbleWallsID = 1962;
+	   public static int blockWhiteDyedTorchID = 1963;
+	   public static int blockOrangeDyedTorchID = 1964;
 
 	public static int itemFlawedGemsID = 5001;
 	public static int itemDyedClayID = 5002;
@@ -188,8 +190,10 @@ public class ConfigGwycraft {
 				dyedStonecobbleID).getInt();
 		dyedMudbrickStairsID = config.getBlock("dyedMudbrickStairs",
 				dyedMudbrickStairsID).getInt();
+        blockWhiteDyedTorchID = config.getBlock("blockWhiteDyedTorch", blockWhiteDyedTorchID).getInt();
+        blockOrangeDyedTorchID = config.getBlock("blockOrangeDyedTorch", blockOrangeDyedTorchID).getInt();
 		dyedLog1ID = config.getBlock("dyedLog1", dyedLog1ID).getInt();
-		dyedLog2ID = config.getBlock("dyedLog2", dyedLog2ID).getInt();
+        dyedLog2ID = config.getBlock("dyedLog2", dyedLog2ID).getInt();
 		dyedLog3ID = config.getBlock("dyedLog3", dyedLog3ID).getInt();
 		dyedLog4ID = config.getBlock("dyedLog4", dyedLog4ID).getInt();
 		dyedStoneDoubleSlab1ID = config.getBlock("dyedStoneDoubleSlab1",
