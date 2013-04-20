@@ -23,7 +23,7 @@ public class ItemDyedFences extends ItemBlock {
 
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack) {
-		return getUnlocalizedName() + "." + subNames[itemstack.getItemDamage()];
+		return getUnlocalizedName() + "_" + subNames[itemstack.getItemDamage()];
 	}
 
 }

@@ -2,9 +2,9 @@ package gwydion0917.gwycraft.blocks;
 
 import net.minecraft.block.BlockTorch;
 
-public class BlockWhiteDyedTorch extends BlockTorch {
+public class BlockDyedTorchGray extends BlockTorch {
 
-    public BlockWhiteDyedTorch(int par1) {
+    public BlockDyedTorchGray(int par1) {
         super(par1);
         // TODO Auto-generated constructor stub
     }
