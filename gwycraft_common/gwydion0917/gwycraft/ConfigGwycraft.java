@@ -6,7 +6,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class ConfigGwycraft {
 	// Glow blocks start at 1800 (100 less than standard)
 	public static int glowyWoolID = 1801;
-	// public static int glowydyedStoneID = 1802;
+	public static int glowydyedStoneID = 1802;
 	// public static int glowydyedStoneSlab1ID = 1803;
 	// public static int glowydyedStoneDoubleSlab1ID = 1804;
 	// public static int glowydyedStoneSlab2ID = 1805;
@@ -24,7 +24,7 @@ public class ConfigGwycraft {
 	// public static int glowydyedPlankID = 1817;
 	// public static int glowydyedSandID = 1818;
 	// public static int glowydyedStonebrickID = 1819;
-	// public static int glowydyedStonecobbleID = 1820;
+	public static int glowydyedStonecobbleID = 1820;
 	// public static int glowydyedMudbrickStairsID = 1821;
 	// public static int glowyblockGemOreID = 1822;
 	// public static int glowyblockGemCompressedID = 1823;
@@ -95,8 +95,8 @@ public class ConfigGwycraft {
 	public static int blockDyedStonePaver2ID = 1925;
 	public static int blockDyedStoneBrickSlab1ID = 1926;
 	public static int blockDyedStoneBrickDoubleSlab1ID = 1927;
-    public static int blockDyedStoneBrickSlab2ID = 1928;
-    public static int blockDyedStoneBrickDoubleSlab2ID = 1929;
+	public static int blockDyedStoneBrickSlab2ID = 1928;
+	public static int blockDyedStoneBrickDoubleSlab2ID = 1929;
 	// public static int blockDyedSandstoneID = 1930;
 	// public static int blockDyedSandstoneChiseledID = 1931;
 	// public static int blockDyedSandstoneSmoothID = 1932;
@@ -128,24 +128,24 @@ public class ConfigGwycraft {
 	// public static int blockGlowyWoolDoubleSlab1ID = 1958;
 	// public static int blockGlowyWoolSlab2ID = 1959;
 	// public static int blockGlowyWoolDoubleSlab2D = 1960;
-	   public static int blockDyedFencesID = 1961;
-	   public static int blockDyedCobbleWallsID = 1962;
-	   public static int blockWhiteDyedTorchID = 1963;
-       public static int blockOrangeDyedTorchID = 1964;
-	   public static int blockMagentaDyedTorchID = 1965;
-       public static int blockLBlueDyedTorchID = 1966;
-       public static int blockYellowDyedTorchID = 1967;
-       public static int blockLGreenDyedTorchID = 1968;
-       public static int blockPinkDyedTorchID = 1969;
-       public static int blockDGrayDyedTorchID = 1970;
-       public static int blockLGrayDyedTorchID = 1971;
-       public static int blockCyanDyedTorchID = 1972;
-       public static int blockPurpleDyedTorchID = 1973;
-       public static int blockBlueDyedTorchID = 1974;
-       public static int blockBrownDyedTorchID = 1975;
-       public static int blockGreenDyedTorchID = 1976;
-       public static int blockRedDyedTorchID = 1977;
-       public static int blockBlackDyedTorchID = 1978;
+	public static int blockDyedFencesID = 1961;
+	public static int blockDyedCobbleWallsID = 1962;
+	public static int blockWhiteDyedTorchID = 1963;
+	public static int blockOrangeDyedTorchID = 1964;
+	public static int blockMagentaDyedTorchID = 1965;
+	public static int blockLBlueDyedTorchID = 1966;
+	public static int blockYellowDyedTorchID = 1967;
+	public static int blockLGreenDyedTorchID = 1968;
+	public static int blockPinkDyedTorchID = 1969;
+	public static int blockDGrayDyedTorchID = 1970;
+	public static int blockLGrayDyedTorchID = 1971;
+	public static int blockCyanDyedTorchID = 1972;
+	public static int blockPurpleDyedTorchID = 1973;
+	public static int blockBlueDyedTorchID = 1974;
+	public static int blockBrownDyedTorchID = 1975;
+	public static int blockGreenDyedTorchID = 1976;
+	public static int blockRedDyedTorchID = 1977;
+	public static int blockBlackDyedTorchID = 1978;
 
 	public static int itemFlawedGemsID = 5001;
 	public static int itemDyedClayID = 5002;
@@ -183,6 +183,7 @@ public class ConfigGwycraft {
 
 		glowyWoolID = config.getBlock("Glow Wool", glowyWoolID).getInt();
 		dyedStoneID = config.getBlock("dyedStone", dyedStoneID).getInt();
+		glowydyedStoneID = config.getBlock("glowydyedStone", glowydyedStoneID).getInt();
 		dyedStoneSlab1ID = config.getBlock("dyedStoneSlab1", dyedStoneSlab1ID)
 				.getInt();
 		dyedStoneSlab2ID = config.getBlock("dyedStoneSlab2", dyedStoneSlab2ID)
@@ -194,34 +195,52 @@ public class ConfigGwycraft {
 				.getInt();
 		dyedGlassID = config.getBlock("dyedGlass", dyedGlassID).getInt();
 		dyedLeafID = config.getBlock("dyedLeaf", dyedLeafID).getInt();
-		blockDyedMudBrickID = config.getBlock("blockDyedMudBrick", blockDyedMudBrickID)
-				.getInt();
+		blockDyedMudBrickID = config.getBlock("blockDyedMudBrick",
+				blockDyedMudBrickID).getInt();
 		dyedPlankID = config.getBlock("dyedPlank", dyedPlankID).getInt();
 		dyedSandID = config.getBlock("dyedSand", dyedSandID).getInt();
 		dyedStonebrickID = config.getBlock("dyedStonebrick", dyedStonebrickID)
 				.getInt();
 		dyedStonecobbleID = config.getBlock("dyedStonecobble",
 				dyedStonecobbleID).getInt();
+		glowydyedStonecobbleID = config.getBlock("glowydyedStonecobble",
+				glowydyedStonecobbleID).getInt();
 		dyedMudbrickStairsID = config.getBlock("dyedMudbrickStairs",
 				dyedMudbrickStairsID).getInt();
-        blockWhiteDyedTorchID = config.getBlock("blockWhiteDyedTorch", blockWhiteDyedTorchID).getInt();
-        blockOrangeDyedTorchID = config.getBlock("blockOrangeDyedTorch", blockOrangeDyedTorchID).getInt();
-        blockMagentaDyedTorchID = config.getBlock("blockMagentaDyedTorch", blockMagentaDyedTorchID).getInt();
-        blockLBlueDyedTorchID = config.getBlock("blockLBlueDyedTorch", blockLBlueDyedTorchID).getInt();
-        blockYellowDyedTorchID = config.getBlock("blockYellowDyedTorch", blockYellowDyedTorchID).getInt();
-        blockLGreenDyedTorchID = config.getBlock("blockLGreenDyedTorch", blockLGreenDyedTorchID).getInt();
-        blockPinkDyedTorchID = config.getBlock("blockPinkDyedTorch", blockPinkDyedTorchID).getInt();
-        blockDGrayDyedTorchID = config.getBlock("blockDGrayDyedTorch", blockDGrayDyedTorchID).getInt();
-        blockLGrayDyedTorchID = config.getBlock("blockLGrayDyedTorch", blockLGrayDyedTorchID).getInt();
-        blockCyanDyedTorchID = config.getBlock("blockCyanDyedTorch", blockCyanDyedTorchID).getInt();
-        blockPurpleDyedTorchID = config.getBlock("blockPurpleDyedTorch", blockPurpleDyedTorchID).getInt();
-        blockBlueDyedTorchID = config.getBlock("blockBlueDyedTorch", blockBlueDyedTorchID).getInt();
-        blockBrownDyedTorchID = config.getBlock("blockBrownDyedTorch", blockBrownDyedTorchID).getInt();
-        blockGreenDyedTorchID = config.getBlock("blockGreenDyedTorch", blockGreenDyedTorchID).getInt();
-        blockRedDyedTorchID = config.getBlock("blockRedDyedTorch", blockRedDyedTorchID).getInt();
-        blockBlackDyedTorchID = config.getBlock("blockBlackDyedTorch", blockBlackDyedTorchID).getInt();
+		blockWhiteDyedTorchID = config.getBlock("blockWhiteDyedTorch",
+				blockWhiteDyedTorchID).getInt();
+		blockOrangeDyedTorchID = config.getBlock("blockOrangeDyedTorch",
+				blockOrangeDyedTorchID).getInt();
+		blockMagentaDyedTorchID = config.getBlock("blockMagentaDyedTorch",
+				blockMagentaDyedTorchID).getInt();
+		blockLBlueDyedTorchID = config.getBlock("blockLBlueDyedTorch",
+				blockLBlueDyedTorchID).getInt();
+		blockYellowDyedTorchID = config.getBlock("blockYellowDyedTorch",
+				blockYellowDyedTorchID).getInt();
+		blockLGreenDyedTorchID = config.getBlock("blockLGreenDyedTorch",
+				blockLGreenDyedTorchID).getInt();
+		blockPinkDyedTorchID = config.getBlock("blockPinkDyedTorch",
+				blockPinkDyedTorchID).getInt();
+		blockDGrayDyedTorchID = config.getBlock("blockDGrayDyedTorch",
+				blockDGrayDyedTorchID).getInt();
+		blockLGrayDyedTorchID = config.getBlock("blockLGrayDyedTorch",
+				blockLGrayDyedTorchID).getInt();
+		blockCyanDyedTorchID = config.getBlock("blockCyanDyedTorch",
+				blockCyanDyedTorchID).getInt();
+		blockPurpleDyedTorchID = config.getBlock("blockPurpleDyedTorch",
+				blockPurpleDyedTorchID).getInt();
+		blockBlueDyedTorchID = config.getBlock("blockBlueDyedTorch",
+				blockBlueDyedTorchID).getInt();
+		blockBrownDyedTorchID = config.getBlock("blockBrownDyedTorch",
+				blockBrownDyedTorchID).getInt();
+		blockGreenDyedTorchID = config.getBlock("blockGreenDyedTorch",
+				blockGreenDyedTorchID).getInt();
+		blockRedDyedTorchID = config.getBlock("blockRedDyedTorch",
+				blockRedDyedTorchID).getInt();
+		blockBlackDyedTorchID = config.getBlock("blockBlackDyedTorch",
+				blockBlackDyedTorchID).getInt();
 		dyedLog1ID = config.getBlock("dyedLog1", dyedLog1ID).getInt();
-        dyedLog2ID = config.getBlock("dyedLog2", dyedLog2ID).getInt();
+		dyedLog2ID = config.getBlock("dyedLog2", dyedLog2ID).getInt();
 		dyedLog3ID = config.getBlock("dyedLog3", dyedLog3ID).getInt();
 		dyedLog4ID = config.getBlock("dyedLog4", dyedLog4ID).getInt();
 		dyedStoneDoubleSlab1ID = config.getBlock("dyedStoneDoubleSlab1",
@@ -238,17 +257,19 @@ public class ConfigGwycraft {
 		blockDyedStoneBrickSlab1ID = config.getBlock(
 				"blockDyedStoneBrickSlab1", blockDyedStoneBrickSlab1ID)
 				.getInt();
-        blockDyedStoneBrickSlab2ID = config.getBlock(
-                "blockDyedStoneBrickSlab2", blockDyedStoneBrickSlab2ID)
-                .getInt();
-        blockDyedFencesID = config.getBlock("blockDyedFences", blockDyedFencesID).getInt();
-        blockDyedCobbleWallsID = config.getBlock("blockDyedCobbleWalls", blockDyedCobbleWallsID).getInt();
+		blockDyedStoneBrickSlab2ID = config.getBlock(
+				"blockDyedStoneBrickSlab2", blockDyedStoneBrickSlab2ID)
+				.getInt();
+		blockDyedFencesID = config.getBlock("blockDyedFences",
+				blockDyedFencesID).getInt();
+		blockDyedCobbleWallsID = config.getBlock("blockDyedCobbleWalls",
+				blockDyedCobbleWallsID).getInt();
 		blockDyedStoneBrickDoubleSlab1ID = config.getBlock(
 				"blockDyedStoneBrickDoubleSlab1",
 				blockDyedStoneBrickDoubleSlab1ID).getInt();
 		blockDyedStoneBrickDoubleSlab2ID = config.getBlock(
-                "blockDyedStoneBrickDoubleSlab2",
-                blockDyedStoneBrickDoubleSlab2ID).getInt();
+				"blockDyedStoneBrickDoubleSlab2",
+				blockDyedStoneBrickDoubleSlab2ID).getInt();
 
 		itemFlawedGemsID = config.getItem("Flawed Gems", itemFlawedGemsID)
 				.getInt();
