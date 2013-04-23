@@ -14,7 +14,9 @@ public class GwycraftWorldGenerator implements IWorldGenerator {
             IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 
     	// world.setBlock(x,y,z,ID)
-    	world.setBlock(chunkX*16 + random.nextInt(16), 100, chunkZ*16 + random.nextInt(16), ConfigGwycraft.blockGemOreID);
-        
+        for (int i = 0; i < 16; ++i) {
+            world.setBlock(chunkX*16 + random.nextInt(16), 100 + random.nextInt(16), chunkZ*16 + random.nextInt(16), ConfigGwycraft.blockGemOreID, i, 12);
+
+        }	
     }
 }

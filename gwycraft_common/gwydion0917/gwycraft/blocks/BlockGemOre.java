@@ -88,11 +88,6 @@ public class BlockGemOre extends Block {
 			subItems.add(new ItemStack(this, 1, i));
 		}
 	}
-	
-	
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-	    world.setBlock(chunkX*16 + random.nextInt(16), 100, chunkZ*16 + random.nextInt(16), Gwycraft.blockGemOre.blockID);
-	}
 
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
