@@ -112,6 +112,8 @@ public class Gwycraft {
     public static final String[] gwyColorSlab2Names = { "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};
     public static final String[] gwyGemNames = { "Flawed Agate", "Flawed Amethyst", "Flawed Aquamarine", "Flawed Citrine", "Flawed Emerald", "Flawed Garnet", "Flawed Hematite", "Flawed Lapis Lazuli", "Flawed Onyx", "Flawed Quartz", "Flawed Ruby", "Flawed Sapphire", "Flawed Tanzanite", "Flawed Tigerseye", "Flawed Topaz", "Flawed Moonstone"};
     
+    public static GwycraftWorldGenerator worldGen = new GwycraftWorldGenerator();
+    
     public static GwycraftTab tabs = new GwycraftTab("GwyCraft");
     
     public static Block glowyWool;
@@ -481,11 +483,10 @@ public class Gwycraft {
 	
     @Init 
     public void init(FMLInitializationEvent event) {
-
-
-	}
-
-	@PostInit
+        GameRegistry.registerWorldGenerator(worldGen);   // Add this in your @Init method. If you haven't already, import cpw.mods.fml.common.registry.GameRegistry.      
+    }
+	
+    @PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 		// Stub Method
 	}
