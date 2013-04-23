@@ -13,7 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class ItemFlawedGems extends ItemDye {
+public class ItemFlawedGems extends Item {
 
 	public String[] textureNames = new String[] { "Gwycraft:gem_agate",
 			"Gwycraft:gem_amethyst", "Gwycraft:gem_aquamarine",
@@ -30,7 +30,6 @@ public class ItemFlawedGems extends ItemDye {
 
 	public ItemFlawedGems(int par1) {
 		super(par1);
-		setUnlocalizedName("Gwycraft:flawedGems");
 		this.setHasSubtypes(true);
 	}
 

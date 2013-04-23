@@ -48,33 +48,11 @@ public class BlockGemOre extends Block {
 	/**
 	 * Returns the ID of the items to drop on destruction.
 	 */
-	// @Override
-	// public int idDropped(int par1, Random par2Random, int par3)
-	// {
-	// return this.blockID == ConfigGwycraft.blockGemOreID && damageDropped(0) ?
-	// ConfigGwycraft.flawedAgateID :
-	// (this.damageDropped(0) == 1 ? ConfigGwycraft.flawedAmethystID :
-	// (this.damageDropped(par3) == 2 ? ConfigGwycraft.flawedAquamarineID :
-	// (this.damageDropped(par3) == 3 ? ConfigGwycraft.flawedCitrineID :
-	// (this.damageDropped(par3) == 4 ? ConfigGwycraft.flawedEmeraldID :
-	// (this.damageDropped(par3) == 5 ? ConfigGwycraft.flawedGarnetID :
-	// (this.damageDropped(par3) == 6 ? ConfigGwycraft.flawedHematiteID :
-	// (this.damageDropped(par3) == 7 ? ConfigGwycraft.flawedLapisID :
-	// (this.damageDropped(par3) == 8 ? ConfigGwycraft.flawedOnyxID :
-	// (this.damageDropped(par3) == 9 ? ConfigGwycraft.flawedQuartzID :
-	// (this.damageDropped(par3) == 10 ? ConfigGwycraft.flawedRubyID :
-	// (this.damageDropped(par3) == 11 ? ConfigGwycraft.flawedSapphireID :
-	// (this.damageDropped(par3) == 12 ? ConfigGwycraft.flawedTanzaniteID :
-	// (this.damageDropped(par3) == 13 ? ConfigGwycraft.flawedTigerseyeID :
-	// (this.damageDropped(par3) == 14 ? ConfigGwycraft.flawedTopazID :
-	// (this.damageDropped(par3) == 15 ? ConfigGwycraft.flawedMoonstoneID :
-	// this.blockID)))))))))))))));
-	// }
-
-	// public int idDropped(int par1, Random par2Random, int par3)
-	// {
-	// return ConfigGwycraft.blockGemCompressedID;
-	// }
+	@Override
+	public int idDropped(int par1, Random par2Random, int par3)
+	{
+	return ConfigGwycraft.itemFlawedGemsID;
+	}
 
 	@Override
 	public int damageDropped(int metadata) {
