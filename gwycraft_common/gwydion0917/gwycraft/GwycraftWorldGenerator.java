@@ -33,21 +33,25 @@ public void generate(Random random, int chunkX, int chunkZ, World world, IChunkP
     case 1:
         generateEnd(world, random, chunkX * 16, chunkZ * 16);
         break;
+    default:
+    	generateSurface(world, random, chunkX * 16, chunkZ * 16);
+        break;
     }
 }
 
 private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 
-private void generateSurface(World world, Random rand, int chunkX, int chunkZ) {
-    for(int i=0; i < 16 ; i++){
-    for(int k = 0; k < 30; k++){
-        int firstBlockXCoord = chunkX + rand.nextInt(16);
-        int firstBlockYCoord = rand.nextInt(64);
-        int firstBlockZCoord = chunkZ + rand.nextInt(16);
-                (new WorldGenMinable(ConfigGwycraft.blockGemOreID, i, 13, Block.stone.blockID)).generate(world, rand, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
-        }
-        }   
-    }
+	private void generateSurface(World world, Random rand, int chunkX, int chunkZ) {
+		for (int i = 0; i < 16; i++) {
+			for (int k = 0; k < 8; k++) {
+				int firstBlockXCoord = chunkX + rand.nextInt(16);
+				int firstBlockYCoord = rand.nextInt(64);
+				int firstBlockZCoord = chunkZ + rand.nextInt(16);
+				(new WorldGenMinable(ConfigGwycraft.blockGemOreID, i, 4, Block.stone.blockID))
+					.generate(world, rand, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+			}
+		}
+	}
 
     private void generateNether(World world, Random rand, int chunkX, int chunkZ) {
     }
