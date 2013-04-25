@@ -30,7 +30,7 @@ local.properties
 
 # IC2
 gwycraft_common/ic2/
-
+.gitignore
 
 #################
 ## Visual Studio
