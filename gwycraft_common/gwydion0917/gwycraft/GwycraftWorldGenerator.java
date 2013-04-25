@@ -42,13 +42,18 @@ public void generate(Random random, int chunkX, int chunkZ, World world, IChunkP
 private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 
 	private void generateSurface(World world, Random rand, int chunkX, int chunkZ) {
-		for (int i = 0; i < 16; i++) {
-			for (int k = 0; k < 8; k++) {
-				int firstBlockXCoord = chunkX + rand.nextInt(16);
-				int firstBlockYCoord = rand.nextInt(64);
-				int firstBlockZCoord = chunkZ + rand.nextInt(16);
-				(new WorldGenMinable(ConfigGwycraft.blockGemOreID, i, 4, Block.stone.blockID))
-					.generate(world, rand, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+		// Check to see if gemGen is enabled
+		if (ConfigGwycraft.genGemsEnabled) {
+			for (int i = 0; i < 16; i++) {
+				for (int k = 0; k < ConfigGwycraft.genGemsVeins; k++) {
+					int firstBlockXCoord = chunkX + rand.nextInt(16);
+					int firstBlockYCoord = rand.nextInt(64);
+					int firstBlockZCoord = chunkZ + rand.nextInt(16);
+					(new WorldGenMinable(ConfigGwycraft.blockGemOreID, i, ConfigGwycraft.genGemsNumber,
+							Block.stone.blockID)).generate(world, rand,
+							firstBlockXCoord, firstBlockYCoord,
+							firstBlockZCoord);
+				}
 			}
 		}
 	}

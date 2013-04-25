@@ -1,6 +1,7 @@
 package gwydion0917.gwycraft;
 
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.Property;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ConfigGwycraft {
@@ -174,6 +175,11 @@ public class ConfigGwycraft {
 	// public static int itemDyedFuel14ID = 5024;
 	// public static int itemDyedFuel15ID = 5025;
 	// public static int itemDyedFuel16ID = 5026;
+	
+	// General Settings
+	public static boolean genGemsEnabled = true;
+	public static int genGemsVeins = 8;
+	public static int genGemsNumber = 4;
 
 	public static void initConfig(FMLPreInitializationEvent event) {
 
@@ -292,6 +298,20 @@ public class ConfigGwycraft {
 		itemDyedMudID = config.getItem("Dyed Mud", itemDyedMudID).getInt();
 		itemDyedMudBricksID = config.getItem("Dyed Mud Bricks",
 				itemDyedMudBricksID).getInt();
+		
+		// General Section
+		Property genGemsEnabledProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsEnabled", true);
+		genGemsEnabledProperty.comment = "Should gems generate in the world";
+		genGemsEnabled = genGemsEnabledProperty.getBoolean(true);
+		
+		Property genGemsVeinsProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsVeins", 8);
+		genGemsVeinsProperty.comment = "Attempt to generate X veins per chunk";
+		genGemsVeins = genGemsVeinsProperty.getInt(8);
+		
+		Property genGemsNumberProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsNumber", 4);
+		genGemsNumberProperty.comment = "Attemp to generate X ores per vein";
+		genGemsNumber = genGemsNumberProperty.getInt(4);
+		
 
 		config.save();
 	}
