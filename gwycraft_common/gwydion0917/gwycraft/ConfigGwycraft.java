@@ -312,7 +312,8 @@ public class ConfigGwycraft {
 		genGemsNumberProperty.comment = "Attemp to generate X ores per vein";
 		genGemsNumber = genGemsNumberProperty.getInt(4);
 		
-
-		config.save();
+		if (config.hasChanged()) {
+			config.save();
+		}
 	}
 }
