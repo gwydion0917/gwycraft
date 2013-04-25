@@ -29,7 +29,7 @@ local.properties
 .buildpath
 
 # IC2
-./gwycraft_common/ic2/
+gwycraft_common/ic2/
 
 
 #################
