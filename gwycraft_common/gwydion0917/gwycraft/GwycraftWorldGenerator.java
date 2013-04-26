@@ -10,16 +10,6 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
     public class GwycraftWorldGenerator implements IWorldGenerator {
-//    @Override
-//    public void generate(Random random, int chunkX, int chunkZ, World world,
-//            IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-
-    	// world.setBlock(x,y,z,ID)
-//        for (int i = 0; i < 16; ++i) {
-//            world.setBlock(chunkX*16 + random.nextInt(16), 100 + random.nextInt(16), chunkZ*16 + random.nextInt(16), ConfigGwycraft.blockGemOreID, i, 12);
-
-//        }	
-//    }
     
 @Override
 public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
@@ -44,16 +34,16 @@ private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 	private void generateSurface(World world, Random rand, int chunkX, int chunkZ) {
 		// Check to see if gemGen is enabled
 		if (ConfigGwycraft.genGemsEnabled) {
-			for (int i = 0; i < 16; i++) {
 				for (int k = 0; k < ConfigGwycraft.genGemsVeins; k++) {
 					int firstBlockXCoord = chunkX + rand.nextInt(16);
 					int firstBlockYCoord = rand.nextInt(64);
 					int firstBlockZCoord = chunkZ + rand.nextInt(16);
+					Random r = new Random();
+					int i = r.nextInt(15 - 0 + 1) + 0;
 					(new WorldGenMinable(ConfigGwycraft.blockGemOreID, i, ConfigGwycraft.genGemsNumber,
 							Block.stone.blockID)).generate(world, rand,
 							firstBlockXCoord, firstBlockYCoord,
 							firstBlockZCoord);
-				}
 			}
 		}
 	}
