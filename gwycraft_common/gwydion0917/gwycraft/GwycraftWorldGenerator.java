@@ -39,7 +39,7 @@ private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 					int firstBlockYCoord = rand.nextInt(64);
 					int firstBlockZCoord = chunkZ + rand.nextInt(16);
 					Random r = new Random();
-					int i = r.nextInt(15 - 0 + 1) + 0;
+					int i = r.nextInt(15);
 					(new WorldGenMinable(ConfigGwycraft.blockGemOreID, i, ConfigGwycraft.genGemsNumber,
 							Block.stone.blockID)).generate(world, rand,
 							firstBlockXCoord, firstBlockYCoord,
