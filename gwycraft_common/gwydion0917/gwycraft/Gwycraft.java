@@ -437,6 +437,39 @@ public class Gwycraft {
             FurnaceRecipes.smelting().addSmelting(glowydyedStonecobble.blockID, i, new ItemStack(glowydyedStone, 1, i ), 0.1F);
             FurnaceRecipes.smelting().addSmelting(dyedSand.blockID, i, new ItemStack(dyedGlass, 1, i ), 0.1F);
             FurnaceRecipes.smelting().addSmelting(glowydyedSand.blockID, i, new ItemStack(glowydyedGlass, 1, i ), 0.1F);
+
+            // Recipes for Dyed Torches
+            if ( i == 0)
+                GameRegistry.addRecipe(new ItemStack(blockWhiteDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 1)
+                GameRegistry.addRecipe(new ItemStack(blockOrangeDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 2)
+                GameRegistry.addRecipe(new ItemStack(blockMagentaDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 3)
+                GameRegistry.addRecipe(new ItemStack(blockLBlueDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 4)
+                GameRegistry.addRecipe(new ItemStack(blockYellowDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 5)
+                GameRegistry.addRecipe(new ItemStack(blockLGreenDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 6)
+                GameRegistry.addRecipe(new ItemStack(blockPinkDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 7)
+                GameRegistry.addRecipe(new ItemStack(blockDGrayDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 8)
+                GameRegistry.addRecipe(new ItemStack(blockLGrayDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 9)
+                GameRegistry.addRecipe(new ItemStack(blockCyanDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 10)
+                GameRegistry.addRecipe(new ItemStack(blockPurpleDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 11)
+                GameRegistry.addRecipe(new ItemStack(blockBlueDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 12)
+                GameRegistry.addRecipe(new ItemStack(blockBrownDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i == 13)
+                GameRegistry.addRecipe(new ItemStack(blockGreenDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            else if ( i ==14)
+                GameRegistry.addRecipe(new ItemStack(blockRedDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
+            GameRegistry.addRecipe(new ItemStack(blockBlackDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
         }
         
         // 8 Meta
@@ -490,42 +523,9 @@ public class Gwycraft {
         }
 
         // Items
-
-        ItemStack itemDyedSticks0Stack = new ItemStack(itemDyedSticks, 1, 0);
-        ItemStack itemDyedSticks1Stack = new ItemStack(itemDyedSticks, 1, 1);
-        ItemStack itemDyedSticks2Stack = new ItemStack(itemDyedSticks, 1, 2);
-        ItemStack itemDyedSticks3Stack = new ItemStack(itemDyedSticks, 1, 3);
-        ItemStack itemDyedSticks4Stack = new ItemStack(itemDyedSticks, 1, 4);
-        ItemStack itemDyedSticks5Stack = new ItemStack(itemDyedSticks, 1, 5);
-        ItemStack itemDyedSticks6Stack = new ItemStack(itemDyedSticks, 1, 6);
-        ItemStack itemDyedSticks7Stack = new ItemStack(itemDyedSticks, 1, 7);
-        ItemStack itemDyedSticks8Stack = new ItemStack(itemDyedSticks, 1, 8);
-        ItemStack itemDyedSticks9Stack = new ItemStack(itemDyedSticks, 1, 9);
-        ItemStack itemDyedSticks10Stack = new ItemStack(itemDyedSticks, 1, 10);
-        ItemStack itemDyedSticks11Stack = new ItemStack(itemDyedSticks, 1, 11);
-        ItemStack itemDyedSticks12Stack = new ItemStack(itemDyedSticks, 1, 12);
-        ItemStack itemDyedSticks13Stack = new ItemStack(itemDyedSticks, 1, 13);
-        ItemStack itemDyedSticks14Stack = new ItemStack(itemDyedSticks, 1, 14);
-        ItemStack itemDyedSticks15Stack = new ItemStack(itemDyedSticks, 1, 15);
-
         // Language Registry
         // Recipes
-        GameRegistry.addRecipe(new ItemStack(blockWhiteDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks0Stack);
-        GameRegistry.addRecipe(new ItemStack(blockOrangeDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks1Stack);
-        GameRegistry.addRecipe(new ItemStack(blockMagentaDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks2Stack);
-        GameRegistry.addRecipe(new ItemStack(blockLBlueDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks3Stack);
-        GameRegistry.addRecipe(new ItemStack(blockYellowDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks4Stack);
-        GameRegistry.addRecipe(new ItemStack(blockLGreenDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks5Stack);
-        GameRegistry.addRecipe(new ItemStack(blockPinkDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks6Stack);
-        GameRegistry.addRecipe(new ItemStack(blockDGrayDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks7Stack);
-        GameRegistry.addRecipe(new ItemStack(blockLGrayDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks8Stack);
-        GameRegistry.addRecipe(new ItemStack(blockCyanDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks9Stack);
-        GameRegistry.addRecipe(new ItemStack(blockPurpleDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks10Stack);
-        GameRegistry.addRecipe(new ItemStack(blockBlueDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks11Stack);
-        GameRegistry.addRecipe(new ItemStack(blockBrownDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks12Stack);
-        GameRegistry.addRecipe(new ItemStack(blockGreenDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks13Stack);
-        GameRegistry.addRecipe(new ItemStack(blockRedDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks14Stack);
-        GameRegistry.addRecipe(new ItemStack(blockBlackDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticks15Stack);
+
 
     }
 	
