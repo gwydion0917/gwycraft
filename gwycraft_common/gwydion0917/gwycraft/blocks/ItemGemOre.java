@@ -5,13 +5,9 @@ import net.minecraft.item.ItemStack;
 
 public class ItemGemOre extends ItemBlock {
 
-	private final static String[] subNames = { "Flawed Agate",
-			"Flawed Amethyst", "Flawed Aquamarine", "Flawed Citrine",
-			"Flawed Emerald", "Flawed Garnet", "Flawed Hematite",
-			"Flawed Lapis Lazuli", "Flawed Onyx", "Flawed Quartz",
-			"Flawed Ruby", "Flawed Sapphire", "Flawed Tanzanite",
-			"Flawed Tigerseye", "Flawed Topaz", "Flawed Moonstone" };
-
+    private final static String[] subNames = { "Enchanted Quartz", "Enchanted Citrine", "Enchanted Tanzanite", "Enchanted Sapphire", 
+	        "Enchanted Topaz", "Enchanted Agate", "Enchanted Garnet",  "Enchanted Moonstone", "Enchanted Hematite", "Enchanted Aquamarine",
+	        "Enchanted Amethyst",  "Enchanted Lapis Lazuli",  "Enchanted Tigerseye",  "Enchanted Emerald", "Enchanted Ruby", "Enchanted Onyx"};
 	public ItemGemOre(int id) {
 		super(id);
 		setHasSubtypes(true);

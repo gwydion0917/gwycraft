@@ -1,39 +1,30 @@
 package gwydion0917.gwycraft.blocks;
 
 import gwydion0917.gwycraft.ConfigGwycraft;
-import gwydion0917.gwycraft.GwycraftWorldGenerator;
-import gwydion0917.gwycraft.Gwycraft;
 
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
 
 public class BlockGemOre extends Block {
 	/** The type of tree this log came from. */
-	public static final String[] gemBlockTextures = new String[] {
-			"Gwycraft:ore_agate", "Gwycraft:ore_amethyst",
-			"Gwycraft:ore_aquamarine", "Gwycraft:ore_citrine",
-			"Gwycraft:ore_emerald", "Gwycraft:ore_garnet",
-			"Gwycraft:ore_hematite", "Gwycraft:ore_lapis_lazuli",
-			"Gwycraft:ore_onyx", "Gwycraft:ore_quartz", "Gwycraft:ore_ruby",
-			"Gwycraft:ore_sapphire", "Gwycraft:ore_tanzanite",
-			"Gwycraft:ore_tigerseye", "Gwycraft:ore_topaz",
-			"Gwycraft:ore_moonstone" };
-
-	@SideOnly(Side.CLIENT)
+	   public static final String[] gemBlockTextures = new String[] {
+	        "Gwycraft:ore_quartz", "Gwycraft:ore_citrine", "Gwycraft:ore_tanzanite", 
+	        "Gwycraft:ore_sapphire", "Gwycraft:ore_topaz", "Gwycraft:ore_agate", "Gwycraft:ore_garnet",
+	        "Gwycraft:ore_moonstone", "Gwycraft:ore_hematite", "Gwycraft:ore_aquamarine", "Gwycraft:ore_amethyst",
+	        "Gwycraft:ore_lapis_lazuli", "Gwycraft:ore_tigerseye", "Gwycraft:ore_emerald", 
+	        "Gwycraft:ore_ruby", "Gwycraft:ore_onyx"};
+	
+   @SideOnly(Side.CLIENT)
+	
 	private Icon[] iconArray;
 
 	public BlockGemOre(int id, Material mat) {

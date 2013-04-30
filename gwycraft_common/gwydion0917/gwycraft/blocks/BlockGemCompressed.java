@@ -17,14 +17,11 @@ import java.util.Random;
 public class BlockGemCompressed extends Block {
 	/** The type of tree this log came from. */
 	public static final String[] gemBlockTextures = new String[] {
-			"Gwycraft:gemblock_agate", "Gwycraft:gemblock_amethyst",
-			"Gwycraft:gemblock_aquamarine", "Gwycraft:gemblock_citrine",
-			"Gwycraft:gemblock_emerald", "Gwycraft:gemblock_garnet",
-			"Gwycraft:gemblock_hematite", "Gwycraft:gemblock_lapis_lazuli",
-			"Gwycraft:gemblock_onyx", "Gwycraft:gemblock_quartz",
-			"Gwycraft:gemblock_ruby", "Gwycraft:gemblock_sapphire",
-			"Gwycraft:gemblock_tanzanite", "Gwycraft:gemblock_tigerseye",
-			"Gwycraft:gemblock_topaz", "Gwycraft:gemblock_moonstone" };
+	    "Gwycraft:gemblock_quartz", "Gwycraft:gemblock_citrine", "Gwycraft:gemblock_tanzanite", 
+	    "Gwycraft:gemblock_sapphire", "Gwycraft:gemblock_topaz", "Gwycraft:gemblock_agate", "Gwycraft:gemblock_garnet",
+	    "Gwycraft:gemblock_moonstone", "Gwycraft:gemblock_hematite", "Gwycraft:gemblock_aquamarine", "Gwycraft:gemblock_amethyst",
+	    "Gwycraft:gemblock_lapis_lazuli", "Gwycraft:gemblock_tigerseye", "Gwycraft:gemblock_emerald", 
+	    "Gwycraft:gemblock_ruby", "Gwycraft:gemblock_onyx"};
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;

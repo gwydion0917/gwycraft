@@ -13,23 +13,23 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class ItemFlawedGems extends Item {
+public class ItemDyedSticks extends ItemDye {
 
-	public String[] textureNames = new String[] { "Gwycraft:gem_agate",
-			"Gwycraft:gem_amethyst", "Gwycraft:gem_aquamarine",
-			"Gwycraft:gem_citrine", "Gwycraft:gem_emerald",
-			"Gwycraft:gem_garnet", "Gwycraft:gem_hematite",
-			"Gwycraft:gem_lapis_lazuli", "Gwycraft:gem_onyx",
-			"Gwycraft:gem_quartz", "Gwycraft:gem_ruby",
-			"Gwycraft:gem_sapphire", "Gwycraft:gem_tanzanite",
-			"Gwycraft:gem_tigerseye", "Gwycraft:gem_topaz",
-			"Gwycraft:gem_moonstone" };
+	public String[] textureNames = new String[] { "Gwycraft:stick_white",
+			"Gwycraft:stick_orange", "Gwycraft:stick_magenta",
+			"Gwycraft:stick_lblue", "Gwycraft:stick_yellow",
+			"Gwycraft:stick_lime", "Gwycraft:stick_pink", "Gwycraft:stick_gray",
+			"Gwycraft:stick_lgray", "Gwycraft:stick_cyan",
+			"Gwycraft:stick_purple", "Gwycraft:stick_blue",
+			"Gwycraft:stick_brown", "Gwycraft:stick_green", "Gwycraft:stick_red",
+			"Gwycraft:stick_black" };
 	public Icon[] icons;
 
 	public int blockType;
 
-	public ItemFlawedGems(int par1) {
+	public ItemDyedSticks(int par1) {
 		super(par1);
+		setUnlocalizedName("Gwycraft:itemDyedSticks");
 		this.setHasSubtypes(true);
 	}
 
