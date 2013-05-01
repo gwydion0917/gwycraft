@@ -81,6 +81,7 @@ import gwydion0917.gwycraft.items.ItemDyedMud;
 import gwydion0917.gwycraft.items.ItemDyedMudBricks;
 import gwydion0917.gwycraft.items.ItemDyedSticks;
 import gwydion0917.gwycraft.items.ItemEnchantedGems;
+import gwydion0917.gwycraft.items.ItemGemShears;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
@@ -183,6 +184,7 @@ public class Gwycraft {
     public static Item itemDyedMud;
     public static Item itemDyedMudBricks;
     public static Item itemDyedSticks;
+    public static Item itemGemShears;
     
 	@Instance("Gwycraft")
 	public static Gwycraft instance;
@@ -257,6 +259,7 @@ public class Gwycraft {
         itemDyedMud = new ItemDyedMud(ConfigGwycraft.itemDyedMudID).setUnlocalizedName("Gwycraft:itemMud").setCreativeTab(tabs);
         itemDyedMudBricks = new ItemDyedMudBricks(ConfigGwycraft.itemDyedMudBricksID).setUnlocalizedName("Gwycraft:itemMudBricks").setCreativeTab(tabs);
         itemDyedSticks = new ItemDyedSticks(ConfigGwycraft.itemDyedSticksID).setUnlocalizedName("Gwycraft:itemDyedSticks").setCreativeTab(tabs);
+        itemGemShears = new ItemGemShears(ConfigGwycraft.itemGemShearsID).setUnlocalizedName("Gwycraft:itemgemshears").setCreativeTab(tabs);
 
         CommonProxy.registerRenderers();
 
@@ -320,6 +323,7 @@ public class Gwycraft {
         GameRegistry.registerItem(itemDyedMud, "itemDyedMud", null)   ;
         GameRegistry.registerItem(itemDyedMudBricks, "itemDyedMudBricks", null);
         GameRegistry.registerItem(itemDyedSticks, "itemDyedSticks", null);
+        GameRegistry.registerItem(itemGemShears, "itemGemShears", null);
         
         LanguageRegistry.addName(blockWhiteDyedTorch, "White Torch");
         LanguageRegistry.addName(blockOrangeDyedTorch, "Orange Torch");
@@ -337,7 +341,8 @@ public class Gwycraft {
         LanguageRegistry.addName(blockGreenDyedTorch, "Green Torch");
         LanguageRegistry.addName(blockRedDyedTorch, "Red Torch");
         LanguageRegistry.addName(blockBlackDyedTorch, "Black Torch");
-
+        LanguageRegistry.addName(itemGemShears, "Gem Shears");
+                
         Item.itemsList[ConfigGwycraft.dyedStoneSlab1ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, false)).setUnlocalizedName("blockDyedStoneSlab1");
         Item.itemsList[ConfigGwycraft.dyedStoneSlab2ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, false)).setUnlocalizedName("blockDyedStoneSlab2");
         Item.itemsList[ConfigGwycraft.itemFlawedGemsID] = (new ItemEnchantedGems (ConfigGwycraft.itemFlawedGemsID - 256)).setUnlocalizedName("Gwycraft:itemFlawedGems");
@@ -348,6 +353,7 @@ public class Gwycraft {
         Item.itemsList[ConfigGwycraft.blockDyedStoneBrickSlab1ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneBrickSlab1ID - 256, blockDyedStoneBrickSlab1, blockDyedStoneBrickDoubleSlab1, false)).setUnlocalizedName("blockDyedStoneBrickSlab1");
         Item.itemsList[ConfigGwycraft.blockDyedStoneBrickSlab2ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneBrickSlab2ID - 256, blockDyedStoneBrickSlab2, blockDyedStoneBrickDoubleSlab2, false)).setUnlocalizedName("blockDyedStoneBrickSlab2");
         Item.itemsList[ConfigGwycraft.itemDyedSticksID] = (new ItemDyedSticks (ConfigGwycraft.itemDyedSticksID - 256)).setUnlocalizedName("itemDyedSticks");
+        Item.itemsList[ConfigGwycraft.itemGemShearsID] = (new ItemGemShears (ConfigGwycraft.itemGemShearsID - 256)).setUnlocalizedName("Gwycraft:itemgemshears");
 
         // Language Registry
         // 16 Meta
@@ -439,6 +445,7 @@ public class Gwycraft {
             FurnaceRecipes.smelting().addSmelting(glowydyedStonecobble.blockID, i, new ItemStack(glowydyedStone, 1, i ), 0.1F);
             FurnaceRecipes.smelting().addSmelting(dyedSand.blockID, i, new ItemStack(dyedGlass, 1, i ), 0.1F);
             FurnaceRecipes.smelting().addSmelting(glowydyedSand.blockID, i, new ItemStack(glowydyedGlass, 1, i ), 0.1F);
+            GameRegistry.addRecipe(new ItemStack(itemGemShears, 1, 0), " X", "X ", 'X', itemFlawedGemsStack);
 
             // Recipes for Dyed Torches
             if ( i == 0)
@@ -527,7 +534,6 @@ public class Gwycraft {
         // Items
         // Language Registry
         // Recipes
-
 
     }
 	

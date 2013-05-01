@@ -175,7 +175,7 @@ public class ConfigGwycraft {
 	// public static int itemDyedFuel14ID = 5024;
 	// public static int itemDyedFuel15ID = 5025;
 	// public static int itemDyedFuel16ID = 5026;
-    // public static int itemPick1ID = 5011;
+    public static int itemGemShearsID = 5011;
     // public static int itemPick2ID = 5012;
     // public static int itemPick3ID = 5013;
     // public static int itemPick4ID = 5014;
@@ -380,6 +380,7 @@ public class ConfigGwycraft {
 		itemDyedMudBricksID = config.getItem("Dyed Mud Bricks",
 				itemDyedMudBricksID).getInt();
         itemDyedSticksID = config.getItem("Dyed Sticks", itemDyedSticksID).getInt();
+        itemGemShearsID = config.getItem("Gem Shears", itemGemShearsID).getInt();
 		
 		// General Section
 		Property genGemsEnabledProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsEnabled", true);
