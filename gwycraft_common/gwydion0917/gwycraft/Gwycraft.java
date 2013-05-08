@@ -220,7 +220,7 @@ public class Gwycraft {
 		dyedStonebrick = new BlockDyedStonebrick(ConfigGwycraft.dyedStonebrickID).setCreativeTab(tabs);
 		glowydyedStonebrick = new BlockGwyGeneric(ConfigGwycraft.glowydyedStonebrickID, Material.rock, "stonebrick").setLightValue(1F).setHardness(2f).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:glowydyedStonebrick").setCreativeTab(tabs);
 		dyedStonecobble = new BlockDyedCobble(ConfigGwycraft.dyedStonecobbleID, Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:dyedStonecobble").setCreativeTab(tabs);
-		glowydyedStonecobble = new BlockGwyGeneric(ConfigGwycraft.glowydyedStonecobbleID, Material.rock, "stonecobble").setLightValue(1F).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:dyedStonecobble").setCreativeTab(tabs);
+		glowydyedStonecobble = new BlockGwyGeneric(ConfigGwycraft.glowydyedStonecobbleID, Material.rock, "stonecobble").setLightValue(1F).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:glowydyedStonecobble").setCreativeTab(tabs);
 		blockDyedCobbleWalls = new BlockDyedCobbleWalls(ConfigGwycraft.blockDyedCobbleWallsID, dyedStonecobble).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:blockDyedCobbleWalls").setCreativeTab(tabs);
 		blockDyedMudBrickStairs = new BlockDyedMudBrickStairs(ConfigGwycraft.dyedMudbrickStairsID, blockDyedMudBrick, 0).setUnlocalizedName("Gwycraft:DyedMudbrickStairs").setCreativeTab(tabs);
         dyedLog1 = new BlockDyedLog1(ConfigGwycraft.dyedLog1ID).setCreativeTab(tabs);
