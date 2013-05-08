@@ -35,7 +35,7 @@ public class BlockDyedStonePaver2 extends BlockHalfSlab {
 
     @Override
     public int idDropped(int par1, Random par2Random, int par3) {
-        return ConfigGwycraft.dyedStoneSlab1ID;
+        return ConfigGwycraft.blockDyedStonePaver2ID;
     }
 
     @SideOnly(Side.CLIENT)
