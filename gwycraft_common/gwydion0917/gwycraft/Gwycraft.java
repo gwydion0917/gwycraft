@@ -431,6 +431,7 @@ public class Gwycraft {
             GameRegistry.addRecipe(new ItemStack(dyedBookcase, 1, i), "###", "XXX", "###", '#', dyedPlankStack, 'X', Item.book);
             GameRegistry.addRecipe(new ItemStack(itemDyedSticks, 4, i), "X", "X", 'X', dyedPlankStack);
             GameRegistry.addRecipe(new ItemStack(blockGemCompressed, 1, i), "XX", "XX", 'X', itemFlawedGemsStack);
+            GameRegistry.addRecipe(new ItemStack(itemFlawedGems, 4, i), "X", 'X', blockGemCompressedStack);
             GameRegistry.addRecipe(new ItemStack(dyedStonebrick, 4, i), "xx", "xx", 'x', dyedStoneStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedFences, 2, i), "XXX", "XXX", 'X', itemDyedSticksStack);
             GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Block.glowStone), cloth);
