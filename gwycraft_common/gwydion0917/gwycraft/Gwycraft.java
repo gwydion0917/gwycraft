@@ -447,6 +447,12 @@ public class Gwycraft {
             FurnaceRecipes.smelting().addSmelting(glowydyedSand.blockID, i, new ItemStack(glowydyedGlass, 1, i ), 0.1F);
             GameRegistry.addRecipe(new ItemStack(itemGemShears, 1, 0), " X", "X ", 'X', itemFlawedGemsStack);
 
+            // Recipes for Dyed Leaves
+            for (int j = 0; j < 4; j++) {
+                ItemStack leaf = new ItemStack(Block.leaves, 1, j);
+                GameRegistry.addShapelessRecipe(new ItemStack(dyedLeaf, 8, i), dye, leaf, leaf, leaf, leaf, leaf, leaf, leaf, leaf);
+            }
+
             // Recipes for Dyed Torches
             if ( i == 0)
                 GameRegistry.addRecipe(new ItemStack(blockWhiteDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
@@ -489,10 +495,10 @@ public class Gwycraft {
             ItemStack dyedStoneSlab2Stack = new ItemStack(dyedStoneSlab2, 1, i);
             ItemStack dyedStone1Stack = new ItemStack(dyedStone, 8, i);
             ItemStack dyedStone2Stack = new ItemStack(dyedStone, 8, i+8);
+            ItemStack blockDyedStonePaver1Stack = new ItemStack(blockDyedStonePaver1, 1, i);
             ItemStack blockDyedStonePaver2Stack = new ItemStack(blockDyedStonePaver2, 1, i);
             ItemStack blockDyedStoneBrickSlab1Stack = new ItemStack(blockDyedStoneBrickSlab1, 1, i);
             ItemStack blockDyedStoneBrickSlab2Stack = new ItemStack(blockDyedStoneBrickSlab2, 1, i);
-            ItemStack blockDyedStonePaver1Stack = new ItemStack(blockDyedStonePaver1, 1, i);
 
             // Language Registry
             LanguageRegistry.addName(dyedStoneSlab1Stack, gwyColorSlab1Names[dyedStoneSlab1Stack.getItemDamage()] + " Stone Slab");
@@ -517,6 +523,10 @@ public class Gwycraft {
             ItemStack dyedLog2Stack = new ItemStack(dyedLog2, 1, i);
             ItemStack dyedLog3Stack = new ItemStack(dyedLog3, 1, i);
             ItemStack dyedLog4Stack = new ItemStack(dyedLog4, 1, i);
+            ItemStack dye1 = new ItemStack(Item.dyePowder, 1, 15 - i);
+            ItemStack dye2 = new ItemStack(Item.dyePowder, 1, 11 - i);
+            ItemStack dye3 = new ItemStack(Item.dyePowder, 1, 7 - i);
+            ItemStack dye4 = new ItemStack(Item.dyePowder, 1, 3 - i);
 
             // Language Registry
             LanguageRegistry.addName(dyedLog1Stack, gwyColorLog1Names[dyedLog1Stack.getItemDamage()] + " Log");
@@ -529,6 +539,16 @@ public class Gwycraft {
             GameRegistry.addShapelessRecipe(new ItemStack(dyedPlank, 4, i+4), dyedLog2Stack);
             GameRegistry.addShapelessRecipe(new ItemStack(dyedPlank, 4, i+8), dyedLog3Stack);
             GameRegistry.addShapelessRecipe(new ItemStack(dyedPlank, 4, i+12), dyedLog4Stack);
+
+            // Recipes for Dyed Leaves
+            for (int j = 0; j < 4; j++) {
+                ItemStack log = new ItemStack(Block.wood, 1, j);
+
+                GameRegistry.addShapelessRecipe(new ItemStack(dyedLog1, 8, i), dye1, log, log, log, log, log, log, log, log);
+                GameRegistry.addShapelessRecipe(new ItemStack(dyedLog2, 8, i), dye2, log, log, log, log, log, log, log, log);
+                GameRegistry.addShapelessRecipe(new ItemStack(dyedLog3, 8, i), dye3, log, log, log, log, log, log, log, log);
+                GameRegistry.addShapelessRecipe(new ItemStack(dyedLog4, 8, i), dye4, log, log, log, log, log, log, log, log);
+            }
         }
 
         // Items
