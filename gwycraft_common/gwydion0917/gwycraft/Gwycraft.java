@@ -86,6 +86,7 @@ import gwydion0917.gwycraft.items.ItemGemShears;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.BlockHalfSlab;
+import net.minecraft.block.BlockStep;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSlab;
@@ -124,10 +125,10 @@ public class Gwycraft {
     public static Block glowyWool;
     public static Block dyedStone;
     public static Block glowydyedStone;
-    public static BlockDyedStoneSlab1 dyedStoneSlab1;
-    public static BlockDyedStoneSlab1 dyedStoneDoubleSlab1;
-    public static BlockDyedStoneSlab2 dyedStoneSlab2;
-    public static BlockDyedStoneSlab2 dyedStoneDoubleSlab2;
+    public static BlockHalfSlab dyedStoneSlab1;
+    public static BlockHalfSlab dyedStoneDoubleSlab1;
+    public static BlockHalfSlab dyedStoneSlab2;
+    public static BlockHalfSlab dyedStoneDoubleSlab2;
     public static BlockBookshelf dyedBookcase;
     public static Block dyedBrick;
     public static Block glowydyedBrick;
@@ -199,8 +200,8 @@ public class Gwycraft {
 		glowyWool = new BlockGlowyWool(ConfigGwycraft.glowyWoolID, Material.cloth).setHardness(0.8F).setStepSound(Block.cloth.stepSound).setUnlocalizedName("Gwycraft:glowyWool").setLightValue(1f).setCreativeTab(tabs);
 		dyedStone = new BlockDyedStone(ConfigGwycraft.dyedStoneID).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:dyedStone").setCreativeTab(tabs);
 		glowydyedStone = new BlockGwyGeneric(ConfigGwycraft.glowydyedStoneID, Material.rock, "stone").setLightValue(1F).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:glowydyedStone").setCreativeTab(tabs);
-		dyedStoneSlab1 = (BlockDyedStoneSlab1) new BlockDyedStoneSlab1(ConfigGwycraft.dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(tabs);
-		dyedStoneDoubleSlab1 = (BlockDyedStoneSlab1) new BlockDyedStoneSlab1(ConfigGwycraft.dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
+		dyedStoneSlab1 = (BlockHalfSlab) new BlockDyedStoneSlab1(ConfigGwycraft.dyedStoneSlab1ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab1").setHardness(2.0F).setCreativeTab(tabs);
+ 		dyedStoneDoubleSlab1 = (BlockHalfSlab) new BlockDyedStoneSlab1(ConfigGwycraft.dyedStoneDoubleSlab1ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab1").setHardness(2.0F);
 		dyedStoneSlab2 = (BlockDyedStoneSlab2) new BlockDyedStoneSlab2(ConfigGwycraft.dyedStoneSlab2ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneSlab2").setHardness(2.0F).setCreativeTab(tabs);
 		dyedStoneDoubleSlab2 = (BlockDyedStoneSlab2) new BlockDyedStoneSlab2(ConfigGwycraft.dyedStoneDoubleSlab2ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneDoubleSlab2").setHardness(2.0F);
 		dyedBookcase = (BlockBookshelf) new BlockDyedBookcase(ConfigGwycraft.dyedBookcaseID, Material.wood).setHardness(1.5F).setStepSound(Block.wood.stepSound).setUnlocalizedName("Gwycraft:dyedBookcase").setCreativeTab(tabs);
@@ -259,7 +260,7 @@ public class Gwycraft {
         itemDyedMud = new ItemDyedMud(ConfigGwycraft.itemDyedMudID).setUnlocalizedName("Gwycraft:itemMud").setCreativeTab(tabs);
         itemDyedMudBricks = new ItemDyedMudBricks(ConfigGwycraft.itemDyedMudBricksID).setUnlocalizedName("Gwycraft:itemMudBricks").setCreativeTab(tabs);
         itemDyedSticks = new ItemDyedSticks(ConfigGwycraft.itemDyedSticksID).setUnlocalizedName("Gwycraft:itemDyedSticks").setCreativeTab(tabs);
-        itemGemShears = new ItemGemShears(ConfigGwycraft.itemGemShearsID).setUnlocalizedName("Gwycraft:itemgemshears").setCreativeTab(tabs);
+        itemGemShears = new ItemGemShears(ConfigGwycraft.itemGemShearsID).setUnlocalizedName("Gwycraft:itemGemShears").setCreativeTab(tabs);
 
         CommonProxy.registerRenderers();
 
@@ -344,8 +345,9 @@ public class Gwycraft {
         LanguageRegistry.addName(itemGemShears, "Gem Shears");
                 
         Item.itemsList[ConfigGwycraft.dyedStoneSlab1ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, false)).setUnlocalizedName("blockDyedStoneSlab1");
+        Item.itemsList[ConfigGwycraft.dyedStoneDoubleSlab1ID] = (new ItemSlab (ConfigGwycraft.dyedStoneDoubleSlab1ID - 256, dyedStoneSlab1, dyedStoneDoubleSlab1, true)).setUnlocalizedName("blockDyedStoneSlab1");
         Item.itemsList[ConfigGwycraft.dyedStoneSlab2ID] = (new ItemSlab (ConfigGwycraft.dyedStoneSlab2ID - 256, dyedStoneSlab2, dyedStoneDoubleSlab2, false)).setUnlocalizedName("blockDyedStoneSlab2");
-        Item.itemsList[ConfigGwycraft.itemFlawedGemsID] = (new ItemEnchantedGems (ConfigGwycraft.itemFlawedGemsID - 256)).setUnlocalizedName("Gwycraft:itemFlawedGems");
+//        Item.itemsList[ConfigGwycraft.itemFlawedGemsID] = (new ItemEnchantedGems (ConfigGwycraft.itemFlawedGemsID)).setUnlocalizedName("Gwycraft:itemFlawedGems");
         Item.itemsList[ConfigGwycraft.itemDyedClayID] = (new ItemDyedClay (ConfigGwycraft.itemDyedClayID - 256)).setUnlocalizedName("itemDyedClay");
         Item.itemsList[ConfigGwycraft.itemDyedClayBricksID] = (new ItemDyedClayBricks (ConfigGwycraft.itemDyedClayBricksID - 256)).setUnlocalizedName("itemDyedClayBricks");
         Item.itemsList[ConfigGwycraft.itemDyedMudID] = (new ItemDyedMud (ConfigGwycraft.itemDyedMudID - 256)).setUnlocalizedName("itemDyedMud");
@@ -353,7 +355,7 @@ public class Gwycraft {
         Item.itemsList[ConfigGwycraft.blockDyedStoneBrickSlab1ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneBrickSlab1ID - 256, blockDyedStoneBrickSlab1, blockDyedStoneBrickDoubleSlab1, false)).setUnlocalizedName("blockDyedStoneBrickSlab1");
         Item.itemsList[ConfigGwycraft.blockDyedStoneBrickSlab2ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneBrickSlab2ID - 256, blockDyedStoneBrickSlab2, blockDyedStoneBrickDoubleSlab2, false)).setUnlocalizedName("blockDyedStoneBrickSlab2");
         Item.itemsList[ConfigGwycraft.itemDyedSticksID] = (new ItemDyedSticks (ConfigGwycraft.itemDyedSticksID - 256)).setUnlocalizedName("itemDyedSticks");
-        Item.itemsList[ConfigGwycraft.itemGemShearsID] = (new ItemGemShears (ConfigGwycraft.itemGemShearsID - 256)).setUnlocalizedName("Gwycraft:itemgemshears");
+//        Item.itemsList[ConfigGwycraft.itemGemShearsID] = (new ItemGemShears (ConfigGwycraft.itemGemShearsID)).setUnlocalizedName("Gwycraft:itemgemshears");
 
         // Language Registry
         // 16 Meta
