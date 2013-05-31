@@ -44,6 +44,24 @@ public class BlockGemOre extends Block {
 	{
 	return ConfigGwycraft.itemFlawedGemsID+256;
 	}
+	
+    /**
+     * Returns the usual quantity dropped by the block plus a bonus of 1 to 'i' (inclusive).
+     */
+	@Override
+    public int quantityDroppedWithBonus(int par1, Random par2Random)
+    {
+        return 1 + par2Random.nextInt(par1 + 1);
+    }
+
+    /**
+     * Returns the quantity of items to drop on block destruction.
+     */
+	@Override
+    public int quantityDropped(Random par1Random)
+    {
+        return 1;
+    }
 
 	@Override
 	public int damageDropped(int metadata) {
