@@ -15,7 +15,8 @@ public class ItemGemShears extends ItemShears
 
     public ItemGemShears(int par1) {
         super(par1);
-        // TODO Auto-generated constructor stub
+        setUnlocalizedName("Gwycraft:itemGemShears");
+        setHasSubtypes(true);
     }
     @SideOnly(Side.CLIENT)
 

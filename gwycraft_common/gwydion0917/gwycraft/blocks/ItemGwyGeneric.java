@@ -14,7 +14,7 @@ public class ItemGwyGeneric extends ItemBlock {
 		super(id);
 		setHasSubtypes(true);
 		// Can't pass string param from registerblock, may not be needed?
-		//setUnlocalizedName("dyedStonecobble");
+		// setUnlocalizedName("dyedStonecobble");
 	}
 
 	@Override
