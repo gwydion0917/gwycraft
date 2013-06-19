@@ -431,7 +431,7 @@ public class Gwycraft {
             GameRegistry.addShapelessRecipe(new ItemStack(glowydyedStonecobble, 8, i), itemFlawedGemsStack, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone);
             GameRegistry.addShapelessRecipe(new ItemStack(dyedPlank, 8, i), dye, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks);
             GameRegistry.addShapelessRecipe(new ItemStack(glowydyedPlank, 8, i), itemFlawedGemsStack, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks);
-            GameRegistry.addShapelessRecipe(new ItemStack(Item.dyePowder, 8, 15-i), itemFlawedGemsStack, Item.redstone, Item.glassBottle );
+            GameRegistry.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, 15-i), itemFlawedGemsStack, Item.gunpowder, Item.glassBottle );
             FurnaceRecipes.smelting().addSmelting(dyedStonecobble.blockID, i, new ItemStack(dyedStone, 1, i ), 0.1F);
             FurnaceRecipes.smelting().addSmelting(glowydyedStonecobble.blockID, i, new ItemStack(glowydyedStone, 1, i ), 0.1F);
             FurnaceRecipes.smelting().addSmelting(dyedSand.blockID, i, new ItemStack(dyedGlass, 1, i ), 0.1F);
