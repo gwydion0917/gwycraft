@@ -1,8 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
 import gwydion0917.gwycraft.ConfigGwycraft;
-import gwydion0917.gwycraft.Gwycraft;
-
 import java.util.List;
 
 import net.minecraft.block.Block;
