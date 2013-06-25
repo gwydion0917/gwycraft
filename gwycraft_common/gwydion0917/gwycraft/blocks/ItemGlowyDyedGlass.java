@@ -13,7 +13,7 @@ public class ItemGlowyDyedGlass extends ItemBlock {
 	public ItemGlowyDyedGlass(int id) {
 		super(id);
 		setHasSubtypes(true);
-		setUnlocalizedName("dyedGlass");
+		setUnlocalizedName("glowydyedGlass");
 	}
 
 	@Override

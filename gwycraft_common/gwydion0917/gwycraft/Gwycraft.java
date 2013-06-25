@@ -396,7 +396,7 @@ public class Gwycraft {
 			LanguageRegistry.addName(dyedClayblockStack, gwyColorNames[dyedClayblockStack.getItemDamage()] + " Clay Block");
 			LanguageRegistry.addName(glowydyedClayblockStack, "Glowy " + gwyColorNames[glowydyedClayblockStack.getItemDamage()] + " Clay Block");
 			LanguageRegistry.addName(dyedGlassStack, gwyColorNames[dyedGlassStack.getItemDamage()] + " Glass");
-            LanguageRegistry.addName(glowydyedGlassStack, gwyColorNames[glowydyedGlassStack.getItemDamage()] + " Glass");
+            LanguageRegistry.addName(glowydyedGlassStack, "Glowy " + gwyColorNames[glowydyedGlassStack.getItemDamage()] + " Glass");
 			LanguageRegistry.addName(dyedLeafStack, gwyColorNames[dyedLeafStack.getItemDamage()] + " Leaf");
             LanguageRegistry.addName(dyedMudbrickStack, gwyColorNames[dyedMudbrickStack.getItemDamage()] + " Mud Brick Block");
             LanguageRegistry.addName(glowydyedMudbrickStack, "Glowy " + gwyColorNames[glowydyedMudbrickStack.getItemDamage()] + " Mud Brick Block");
