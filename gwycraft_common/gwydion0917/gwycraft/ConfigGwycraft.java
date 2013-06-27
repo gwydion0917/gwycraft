@@ -12,15 +12,15 @@ public class ConfigGwycraft {
 	// public static int glowydyedStoneDoubleSlab1ID = 1804;
 	// public static int glowydyedStoneSlab2ID = 1805;
 	// public static int glowydyedStoneDoubleSlab2ID = 1806;
-	// public static int glowydyedBookcaseID = 1807;
+	public static int glowydyedBookcaseID = 1807;
 	public static int glowydyedBrickID = 1808;
 	public static int glowydyedClayblockID = 1809;
 	public static int glowydyedGlassID = 1810;
 	// public static int glowydyedLeafID = 1811;
-	// public static int glowydyedLog1ID = 1812;
-	// public static int glowydyedLog2ID = 1813;
-	// public static int glowydyedLog3ID = 1814;
-	// public static int glowydyedLog4ID = 1815;
+	public static int glowydyedLog1ID = 1812;
+	public static int glowydyedLog2ID = 1813;
+	public static int glowydyedLog3ID = 1814;
+	public static int glowydyedLog4ID = 1815;
 	public static int glowyBlockDyedMudBrickID = 1816;
 	public static int glowydyedPlankID = 1817;
 	public static int glowydyedSandID = 1818;
@@ -274,6 +274,8 @@ public class ConfigGwycraft {
 				.getInt();
 		dyedBookcaseID = config.getBlock("dyedBookcase", dyedBookcaseID)
 				.getInt();
+        glowydyedBookcaseID = config.getBlock("glowydyedBookcase", glowydyedBookcaseID)
+                .getInt();
 		dyedBrickID = config.getBlock("dyedBrick", dyedBrickID).getInt();
 		glowydyedBrickID = config.getBlock("glowydyedBrick", glowydyedBrickID)
 				.getInt();
@@ -340,6 +342,10 @@ public class ConfigGwycraft {
 		dyedLog2ID = config.getBlock("dyedLog2", dyedLog2ID).getInt();
 		dyedLog3ID = config.getBlock("dyedLog3", dyedLog3ID).getInt();
 		dyedLog4ID = config.getBlock("dyedLog4", dyedLog4ID).getInt();
+        glowydyedLog1ID = config.getBlock("glowydyedLog1", glowydyedLog1ID).getInt();
+        glowydyedLog2ID = config.getBlock("glowydyedLog2", glowydyedLog2ID).getInt();
+        glowydyedLog3ID = config.getBlock("glowydyedLog3", glowydyedLog3ID).getInt();
+        glowydyedLog4ID = config.getBlock("glowydyedLog4", glowydyedLog4ID).getInt();
 		dyedStoneDoubleSlab1ID = config.getBlock("dyedStoneDoubleSlab1",
 				dyedStoneDoubleSlab1ID).getInt();
 		dyedStoneDoubleSlab2ID = config.getBlock("dyedStoneDoubleSlab2",
