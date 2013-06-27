@@ -205,8 +205,8 @@ public class Gwycraft {
 		dyedPlank = new BlockGwyGeneric(ConfigGwycraft.dyedPlankID, Material.wood, "plank").setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Gwycraft:dyedPlank").setCreativeTab(tabs);
 		glowydyedPlank = new BlockGwyGeneric(ConfigGwycraft.glowydyedPlankID, Material.wood, "plank").setLightValue(1F).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Gwycraft:glowydyedPlank").setCreativeTab(tabs);
 		dyedSand = new BlockDyedSand(ConfigGwycraft.dyedSandID).setCreativeTab(tabs);
-		glowydyedSand = new BlockGwyGeneric(ConfigGwycraft.glowydyedSandID, Material.sand, "sand").setLightValue(1F).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("Gwycraft:glowydyedSand").setCreativeTab(tabs);
-		dyedStonebrick = new BlockGwyGeneric(ConfigGwycraft.dyedStonebrickID, Material.rock, "stonebrick").setCreativeTab(tabs);
+		glowydyedSand = new BlockDyedSand(ConfigGwycraft.glowydyedSandID).setLightValue(1F).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("Gwycraft:glowydyedSand").setCreativeTab(tabs);
+		dyedStonebrick = new BlockGwyGeneric(ConfigGwycraft.dyedStonebrickID, Material.rock, "stonebrick").setLightValue(1F).setHardness(2f).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:glowydyedStonebrick").setCreativeTab(tabs);
 		glowydyedStonebrick = new BlockGwyGeneric(ConfigGwycraft.glowydyedStonebrickID, Material.rock, "stonebrick").setLightValue(1F).setHardness(2f).setStepSound(Block.stone.stepSound).setUnlocalizedName("Gwycraft:glowydyedStonebrick").setCreativeTab(tabs);
 		dyedStonecobble = new BlockGwyGeneric(ConfigGwycraft.dyedStonecobbleID, Material.rock, "stonecobble").setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:dyedStonecobble").setCreativeTab(tabs);
 		glowydyedStonecobble = new BlockGwyGeneric(ConfigGwycraft.glowydyedStonecobbleID, Material.rock, "stonecobble").setLightValue(1F).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Gwycraft:glowydyedStonecobble").setCreativeTab(tabs);
@@ -277,7 +277,7 @@ public class Gwycraft {
         GameRegistry.registerBlock(blockDyedMudBrickStairs, "blockDyedMudBrickStairs");
         GameRegistry.registerBlock(dyedSand, ItemDyedSand.class, "dyedSand");
         GameRegistry.registerBlock(glowydyedSand, ItemGwyGeneric.class, "glowydyedSand");
-        GameRegistry.registerBlock(dyedStonebrick, ItemDyedStonebrick.class,"dyedStonebrick");
+        GameRegistry.registerBlock(dyedStonebrick, ItemGwyGeneric.class,"dyedStonebrick");
         GameRegistry.registerBlock(glowydyedStonebrick, ItemGwyGeneric.class, "glowydyedStonebrick");
         GameRegistry.registerBlock(dyedStonecobble, ItemDyedCobble.class, "dyedStonecobble");
         GameRegistry.registerBlock(glowydyedStonecobble, ItemGwyGeneric.class, "glowydyedStonecobble");

@@ -26,9 +26,6 @@ public class ConfigGwycraft {
 	public static int glowydyedSandID = 1818;
 	public static int glowydyedStonebrickID = 1819;
 	public static int glowydyedStonecobbleID = 1820;
-	// public static int glowydyedMudbrickStairsID = 1821;
-	// public static int glowyblockGemOreID = 1822;
-	// public static int glowyblockGemCompressedID = 1823;
 	// public static int glowyblockDyedStonePaver1ID = 1824;
 	// public static int glowyblockDyedStonePaver2ID = 1825;
 	// public static int glowyblockDyedStoneBrickSlab1ID = 1826;
