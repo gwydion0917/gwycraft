@@ -18,7 +18,6 @@ public class BlockDyedLeaf extends Block {
 
 	public BlockDyedLeaf(int id) {
 		super(id, Material.leaves);
-		setUnlocalizedName("dyedLeaf");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(0.2F);
 		setStepSound(Block.leaves.stepSound);

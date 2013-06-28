@@ -16,7 +16,7 @@ public class ConfigGwycraft {
 	public static int glowydyedBrickID = 1808;
 	public static int glowydyedClayblockID = 1809;
 	public static int glowydyedGlassID = 1810;
-	// public static int glowydyedLeafID = 1811;
+	public static int glowydyedLeafID = 1811;
 	public static int glowydyedLog1ID = 1812;
 	public static int glowydyedLog2ID = 1813;
 	public static int glowydyedLog3ID = 1814;
@@ -285,7 +285,8 @@ public class ConfigGwycraft {
 				glowydyedClayblockID).getInt();
 		dyedGlassID = config.getBlock("dyedGlass", dyedGlassID).getInt();
         glowydyedGlassID = config.getBlock("glowydyedGlass", glowydyedGlassID).getInt();
-		dyedLeafID = config.getBlock("dyedLeaf", dyedLeafID).getInt();
+        dyedLeafID = config.getBlock("dyedLeaf", dyedLeafID).getInt();
+        glowydyedLeafID = config.getBlock("glowydyedLeaf", glowydyedLeafID).getInt();
 		blockDyedMudBrickID = config.getBlock("blockDyedMudBrick",
 				blockDyedMudBrickID).getInt();
 		glowyBlockDyedMudBrickID = config.getBlock("glowyblockDyedMudBrick",
