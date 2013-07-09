@@ -89,8 +89,8 @@ public class ConfigGwycraft {
 	public static int dyedMudbrickStairsID = 1921;
 	public static int blockGemOreID = 1922;
 	public static int blockGemCompressedID = 1923;
-	public static int blockDyedStonePaver1ID = 1924;
-	public static int blockDyedStonePaver2ID = 1925;
+	public static int blockDyedStonePaverID = 1924;
+//	public static int blockDyedStonePaver2ID = 1925;
 	public static int blockDyedStoneBrickSlab1ID = 1926;
 	public static int blockDyedStoneBrickDoubleSlab1ID = 1927;
 	public static int blockDyedStoneBrickSlab2ID = 1928;
@@ -145,7 +145,7 @@ public class ConfigGwycraft {
 	public static int blockRedDyedTorchID = 1977;
 	public static int blockBlackDyedTorchID = 1978;
 
-	public static int itemFlawedGemsID = 5001;
+	public static int itemEnchantedGemsID = 5001;
 	public static int itemDyedClayID = 5002;
 	public static int itemDyedClayBricksID = 5003;
 	public static int itemDyedMudID = 5004;
@@ -354,10 +354,10 @@ public class ConfigGwycraft {
 		blockGemOreID = config.getBlock("blockGemOre", blockGemOreID).getInt();
 		blockGemCompressedID = config.getBlock("blockGemCompressed",
 				blockGemCompressedID).getInt();
-		blockDyedStonePaver1ID = config.getBlock("blockDyedStonePaver1",
-				blockDyedStonePaver1ID).getInt();
-		blockDyedStonePaver2ID = config.getBlock("blockDyedStonePaver2",
-				blockDyedStonePaver2ID).getInt();
+		blockDyedStonePaverID = config.getBlock("blockDyedStonePaver",
+				blockDyedStonePaverID).getInt();
+//		blockDyedStonePaver2ID = config.getBlock("blockDyedStonePaver2",
+//				blockDyedStonePaver2ID).getInt();
 		blockDyedStoneBrickSlab1ID = config.getBlock(
 				"blockDyedStoneBrickSlab1", blockDyedStoneBrickSlab1ID)
 				.getInt();
@@ -375,7 +375,7 @@ public class ConfigGwycraft {
 				"blockDyedStoneBrickDoubleSlab2",
 				blockDyedStoneBrickDoubleSlab2ID).getInt();
 
-		itemFlawedGemsID = config.getItem("Flawed Gems", itemFlawedGemsID)
+		itemEnchantedGemsID = config.getItem("Enchanted Gems", itemEnchantedGemsID)
 				.getInt();
 		itemDyedClayID = config.getItem("Dyed Clay", itemDyedClayID).getInt();
 		itemDyedClayBricksID = config.getItem("Dyed Clay Bricks",
