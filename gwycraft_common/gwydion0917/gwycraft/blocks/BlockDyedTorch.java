@@ -1,12 +1,21 @@
 package gwydion0917.gwycraft.blocks;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockTorch;
+import net.minecraft.client.renderer.texture.IconRegister;
 
 public class BlockDyedTorch extends BlockTorch {
-
-    public BlockDyedTorch(int par1) {
+    private String tName;
+    
+    public BlockDyedTorch(int par1, String textureName) {
         super(par1);
-        // TODO Auto-generated constructor stub
+        tName = textureName;
     }
 
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IconRegister par1IconRegister) {
+        par1IconRegister.registerIcon("gwycraft:" + tName);
+        }
 }

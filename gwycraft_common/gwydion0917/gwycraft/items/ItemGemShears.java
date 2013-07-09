@@ -16,7 +16,7 @@ public class ItemGemShears extends ItemShears
 	// FIXME: Broken Texture
     public ItemGemShears(int par1) {
         super(par1);
-        setUnlocalizedName("Gwycraft:itemGemShears");
+        setUnlocalizedName("gwycraft:itemgemshears");
         setHasSubtypes(true);
     }
     @SideOnly(Side.CLIENT)
