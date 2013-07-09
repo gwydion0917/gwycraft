@@ -252,8 +252,7 @@ public class ConfigGwycraft {
     // public static int itemSword14ID = 5024;
     // public static int itemSword15ID = 5025;
     // public static int itemSword16ID = 5026;
-	
-	// General Settings
+		// General Settings
 	public static boolean genGemsEnabled = true;
 	public static int genGemsVeins = 8;
 	public static int genGemsNumber = 4;

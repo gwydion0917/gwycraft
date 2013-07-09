@@ -10,14 +10,14 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockGwyPaverGeneric extends BlockCarpet {
+public class BlockGwyGenericPaver extends BlockCarpet {
 	// textureName from constructor, ie: stonecobble
 	private String tName;
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
-	public BlockGwyPaverGeneric(int id, String textureName) {
+	public BlockGwyGenericPaver(int id, String textureName) {
 		super(id);
 		tName = textureName;
 	}
