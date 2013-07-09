@@ -38,7 +38,9 @@ public class BlockGlowyWool extends Block {
 			subItems.add(new ItemStack(this, 1, i));
 		}
 	}
-
+	
+	
+	// FIXME: Broken Texture
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {

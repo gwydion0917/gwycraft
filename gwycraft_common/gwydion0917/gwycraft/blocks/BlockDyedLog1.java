@@ -19,11 +19,11 @@ public class BlockDyedLog1 extends Block {
 	public static final String[] woodType = new String[] { "white", "orange",
 			"magenta", "light blue" };
 	public static final String[] treeTextureTypes = new String[] {
-			"Gwycraft:logside_0", "Gwycraft:logside_1", "Gwycraft:logside_2",
-			"Gwycraft:logside_3" };
+			"gwycraft:logside_0", "gwycraft:logside_1", "gwycraft:logside_2",
+			"gwycraft:logside_3" };
 	public static final String[] treeTopTextureTypes = new String[] {
-			"Gwycraft:logtop_0", "Gwycraft:logtop_1", "Gwycraft:logtop_2",
-			"Gwycraft:logtop_3" };
+			"gwycraft:logtop_0", "gwycraft:logtop_1", "gwycraft:logtop_2",
+			"gwycraft:logtop_3" };
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 	@SideOnly(Side.CLIENT)

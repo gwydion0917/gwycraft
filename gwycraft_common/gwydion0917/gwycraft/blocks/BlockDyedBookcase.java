@@ -52,9 +52,9 @@ public class BlockDyedBookcase extends BlockBookshelf {
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray1[i] = par1IconRegister
-					.registerIcon("Gwycraft:plank_" + i);
+					.registerIcon("gwycraft:plank_" + i);
 			this.iconArray[i] = par1IconRegister
-					.registerIcon("Gwycraft:bookcase_" + i);
+					.registerIcon("gwycraft:bookcase_" + i);
 		}
 	}
 	

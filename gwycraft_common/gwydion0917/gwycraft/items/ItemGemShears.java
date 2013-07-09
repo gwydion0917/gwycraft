@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 public class ItemGemShears extends ItemShears
 {
 
+	// FIXME: Broken Texture
     public ItemGemShears(int par1) {
         super(par1);
         setUnlocalizedName("Gwycraft:itemGemShears");

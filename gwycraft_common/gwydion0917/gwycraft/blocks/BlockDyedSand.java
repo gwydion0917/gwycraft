@@ -50,7 +50,7 @@ public class BlockDyedSand extends BlockSand {
 		this.iconArray = new Icon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:sand_"
+			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:sand_"
 					+ i);
 		}
 	}

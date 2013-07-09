@@ -19,12 +19,12 @@ public class BlockDyedStonePaver2 extends BlockHalfSlab {
 	public static final String[] colorSlab = new String[] { "Light Gray",
 			"Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
 	public static final String[] slabTextures = new String[] {
-			"Gwycraft:stone_8", "Gwycraft:stone_9", "Gwycraft:stone_10",
-			"Gwycraft:stone_11", "Gwycraft:stone_12", "Gwycraft:stone_13",
-			"Gwycraft:stone_14", "Gwycraft:stone_15", "Gwycraft:stone_8",
-			"Gwycraft:stone_9", "Gwycraft:stone_10", "Gwycraft:stone_11",
-			"Gwycraft:stone_12", "Gwycraft:stone_13", "Gwycraft:stone_14",
-			"Gwycraft:stone_15" };
+			"gwycraft:stone_8", "gwycraft:stone_9", "gwycraft:stone_10",
+			"gwycraft:stone_11", "gwycraft:stone_12", "gwycraft:stone_13",
+			"gwycraft:stone_14", "gwycraft:stone_15", "gwycraft:stone_8",
+			"gwycraft:stone_9", "gwycraft:stone_10", "gwycraft:stone_11",
+			"gwycraft:stone_12", "gwycraft:stone_13", "gwycraft:stone_14",
+			"gwycraft:stone_15" };
 
 	private Icon[] iconArray;
 

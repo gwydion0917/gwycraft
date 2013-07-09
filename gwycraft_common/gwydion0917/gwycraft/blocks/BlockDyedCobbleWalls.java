@@ -46,7 +46,7 @@ public class BlockDyedCobbleWalls extends BlockWall {
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray[i] = par1IconRegister
-					.registerIcon("Gwycraft:stonecobble_" + i);
+					.registerIcon("gwycraft:stonecobble_" + i);
 		}
 	}
 

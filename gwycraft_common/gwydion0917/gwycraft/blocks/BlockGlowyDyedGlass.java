@@ -56,7 +56,7 @@ public class BlockGlowyDyedGlass extends BlockGlass {
 		this.iconArray = new Icon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:glass_"
+			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:glass_"
 					+ i);
 		}
 	}

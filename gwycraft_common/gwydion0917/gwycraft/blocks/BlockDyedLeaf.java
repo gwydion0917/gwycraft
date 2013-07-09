@@ -48,7 +48,7 @@ public class BlockDyedLeaf extends Block {
 		this.iconArray = new Icon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("Gwycraft:leaf_"
+			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:leaf_"
 					+ i);
 		}
 	}

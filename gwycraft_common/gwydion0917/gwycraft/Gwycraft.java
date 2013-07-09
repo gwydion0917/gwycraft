@@ -1,8 +1,5 @@
 package gwydion0917.gwycraft;
 
-// This Import list will grow longer with each additional tutorial.
-// It's not pruned between full class postings, unlike other tutorial code.
-
 import gwydion0917.gwycraft.blocks.BlockDyedBookcase;
 import gwydion0917.gwycraft.blocks.BlockDyedCobbleWalls;
 import gwydion0917.gwycraft.blocks.BlockDyedFences;
@@ -238,6 +235,7 @@ public class Gwycraft {
         blockDyedStoneBrickSlab2 = (BlockDyedStoneBrickSlab2) new BlockDyedStoneBrickSlab2(ConfigGwycraft.blockDyedStoneBrickSlab2ID, false, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneBrickSlab2").setHardness(2.0F).setCreativeTab(tabs);
         blockDyedStoneBrickDoubleSlab2 = (BlockDyedStoneBrickSlab2) new BlockDyedStoneBrickSlab2(ConfigGwycraft.blockDyedStoneBrickDoubleSlab2ID, true, Material.rock).setUnlocalizedName("Gwycraft:DyedStoneBrickDoubleSlab2").setHardness(2.0F);
         blockDyedFences = new BlockDyedFences(ConfigGwycraft.blockDyedFencesID, null , Material.wood).setCreativeTab(tabs);
+        // FIXME: Broken Textures (Torches)
         blockWhiteDyedTorch = new BlockDyedTorchWhite(ConfigGwycraft.blockWhiteDyedTorchID).setHardness(0.0F).setLightValue(0.9375F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Gwycraft:torch_white").setCreativeTab(tabs);
         blockOrangeDyedTorch = new BlockDyedTorchOrange(ConfigGwycraft.blockOrangeDyedTorchID).setHardness(0.0F).setLightValue(0.9375F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Gwycraft:torch_orange").setCreativeTab(tabs);
         blockMagentaDyedTorch = new BlockDyedTorchMagenta(ConfigGwycraft.blockMagentaDyedTorchID).setHardness(0.0F).setLightValue(0.9375F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Gwycraft:torch_magenta").setCreativeTab(tabs);

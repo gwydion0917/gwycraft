@@ -17,11 +17,11 @@ import java.util.Random;
 public class BlockGemOre extends Block {
 	/** The type of tree this log came from. */
 	   public static final String[] gemBlockTextures = new String[] {
-	        "Gwycraft:ore_quartz", "Gwycraft:ore_citrine", "Gwycraft:ore_tanzanite", 
-	        "Gwycraft:ore_sapphire", "Gwycraft:ore_topaz", "Gwycraft:ore_agate", "Gwycraft:ore_garnet",
-	        "Gwycraft:ore_moonstone", "Gwycraft:ore_hematite", "Gwycraft:ore_aquamarine", "Gwycraft:ore_amethyst",
-	        "Gwycraft:ore_lapis_lazuli", "Gwycraft:ore_tigerseye", "Gwycraft:ore_emerald", 
-	        "Gwycraft:ore_ruby", "Gwycraft:ore_onyx"};
+	        "gwycraft:ore_quartz", "gwycraft:ore_citrine", "gwycraft:ore_tanzanite", 
+	        "gwycraft:ore_sapphire", "gwycraft:ore_topaz", "gwycraft:ore_agate", "gwycraft:ore_garnet",
+	        "gwycraft:ore_moonstone", "gwycraft:ore_hematite", "gwycraft:ore_aquamarine", "gwycraft:ore_amethyst",
+	        "gwycraft:ore_lapis_lazuli", "gwycraft:ore_tigerseye", "gwycraft:ore_emerald", 
+	        "gwycraft:ore_ruby", "gwycraft:ore_onyx"};
 	
    @SideOnly(Side.CLIENT)
 	
