@@ -66,11 +66,11 @@ public class BlockDyedBookcase extends BlockBookshelf {
      * @param z Z position
      * @return The amount of enchanting power this block produces.
      */
-	//FIXME: Fix bookshelf power
-	//@Override
-    public int getEnchantPower(World world, int x, int y, int z)
+
+	@Override
+    public float getEnchantPowerBonus(World world, int x, int y, int z)
     {
-        return 1;
+        return 1f;
     }
 
 }
