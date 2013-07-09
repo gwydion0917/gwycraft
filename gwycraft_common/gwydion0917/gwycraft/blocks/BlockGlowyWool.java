@@ -12,6 +12,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGlowyWool extends Block {
+	
+	public static final String[] dyeColorNames = new String[] {"black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "light_blue", "magenta", "orange", "white"};
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
@@ -40,14 +42,13 @@ public class BlockGlowyWool extends Block {
 	}
 	
 	
-	// FIXME: Broken Texture
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("cloth_" + i);
+			this.iconArray[i] = par1IconRegister.registerIcon("wool_colored_" + dyeColorNames[15 - i]);
 		}
 	}
 
