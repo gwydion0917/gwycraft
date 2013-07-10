@@ -59,7 +59,7 @@ public class BlockDyedLog1 extends Block {
 	 */
 	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return ConfigGwycraft.dyedLog1ID;
+		return ConfigGwycraft.blockDyedLog1ID;
 	}
 
 	/**

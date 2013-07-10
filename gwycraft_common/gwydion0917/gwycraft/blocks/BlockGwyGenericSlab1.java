@@ -1,6 +1,5 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.ConfigGwycraft;
 import java.util.List;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
@@ -10,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import java.util.Random;
 
 public class BlockGwyGenericSlab1 extends BlockHalfSlab {
     // textureName from constructor, ie: stonecobble
@@ -38,9 +36,14 @@ public class BlockGwyGenericSlab1 extends BlockHalfSlab {
 		return super.getUnlocalizedName() + "." + colorSlab[par1];
 	}
 
-	public int idDropped(int par1, Random par2Random, int par3) {
-		return ConfigGwycraft.dyedStoneSlab1ID;
-	}
+	   @Override
+	    public int damageDropped(int metadata) {
+	        return metadata;
+	    }
+	   
+//	public int idDropped(int par1, Random par2Random, int par3) {
+//		return ConfigGwycraft.dyedStoneSlab1ID;
+//	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
