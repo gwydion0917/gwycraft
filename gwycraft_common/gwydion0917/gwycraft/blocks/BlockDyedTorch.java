@@ -15,7 +15,10 @@ public class BlockDyedTorch extends BlockTorch {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void registerIcons(IconRegister par1IconRegister) {
-        par1IconRegister.registerIcon("gwycraft:" + tName);
-        }
+    public void registerIcons(IconRegister reg){
+        this.blockIcon = reg.registerIcon("Gwycraft:" + tName);
+}
+//    public void registerIcons(IconRegister par1IconRegister) {
+//        par1IconRegister.registerIcon("Gwycraft:" + tName);
+//        }
 }

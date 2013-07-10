@@ -17,9 +17,6 @@ import gwydion0917.gwycraft.blocks.BlockGlowyDyedGlass;
 import gwydion0917.gwycraft.blocks.BlockGlowyWool;
 import gwydion0917.gwycraft.blocks.BlockGwyGenericBlock;
 import gwydion0917.gwycraft.blocks.ItemDyedBookshelf;
-import gwydion0917.gwycraft.blocks.ItemDyedBrick;
-import gwydion0917.gwycraft.blocks.ItemDyedClayblock;
-import gwydion0917.gwycraft.blocks.ItemDyedCobble;
 import gwydion0917.gwycraft.blocks.ItemDyedCobbleWalls;
 import gwydion0917.gwycraft.blocks.ItemDyedFences;
 import gwydion0917.gwycraft.blocks.ItemDyedGlass;
@@ -28,10 +25,7 @@ import gwydion0917.gwycraft.blocks.ItemDyedLog1;
 import gwydion0917.gwycraft.blocks.ItemDyedLog2;
 import gwydion0917.gwycraft.blocks.ItemDyedLog3;
 import gwydion0917.gwycraft.blocks.ItemDyedLog4;
-import gwydion0917.gwycraft.blocks.ItemDyedMudBrick;
 import gwydion0917.gwycraft.blocks.ItemDyedPlank;
-import gwydion0917.gwycraft.blocks.ItemDyedSand;
-import gwydion0917.gwycraft.blocks.ItemDyedStone;
 import gwydion0917.gwycraft.blocks.ItemGemCompressed;
 import gwydion0917.gwycraft.blocks.ItemGemOre;
 import gwydion0917.gwycraft.blocks.ItemGlowyDyedGlass;
@@ -266,7 +260,7 @@ public class Gwycraft {
         itemDyedMud = new ItemDyedMud(ConfigGwycraft.itemDyedMudID).setUnlocalizedName("Gwycraft:itemMud").setCreativeTab(tabs);
         itemDyedMudBricks = new ItemDyedMudBricks(ConfigGwycraft.itemDyedMudBricksID).setUnlocalizedName("Gwycraft:itemMudBricks").setCreativeTab(tabs);
         itemDyedSticks = new ItemDyedSticks(ConfigGwycraft.itemDyedSticksID).setUnlocalizedName("Gwycraft:itemDyedSticks").setCreativeTab(tabs);
-        itemGemShears = new ItemGemShears(ConfigGwycraft.itemGemShearsID).setUnlocalizedName("gwycraft:itemgemshears").setCreativeTab(tabs);
+        itemGemShears = new ItemGemShears(ConfigGwycraft.itemGemShearsID).setUnlocalizedName("Gwycraft:gemshears").setCreativeTab(tabs);
 
         CommonProxy.registerRenderers();
 
@@ -333,22 +327,22 @@ public class Gwycraft {
         GameRegistry.registerBlock(blockGemCompressed, ItemGemCompressed.class, "blockGemCompressed");
         GameRegistry.registerBlock(blockGemOre, ItemGemOre.class, "blockGemOre");
      // Torches        
-        GameRegistry.registerBlock(blockWhiteDyedTorch, ItemGwyGeneric.class, "blockWhiteDyedTorch");
-        GameRegistry.registerBlock(blockOrangeDyedTorch, ItemGwyGeneric.class, "blockOrangeDyedTorch");
-        GameRegistry.registerBlock(blockMagentaDyedTorch, ItemGwyGeneric.class, "blockMagentaDyedTorch");
-        GameRegistry.registerBlock(blockLBlueDyedTorch, ItemGwyGeneric.class, "blockLBlueDyedTorch");
-        GameRegistry.registerBlock(blockYellowDyedTorch, ItemGwyGeneric.class, "blockYellowDyedTorch");
-        GameRegistry.registerBlock(blockLGreenDyedTorch, ItemGwyGeneric.class, "blockLGreenDyedTorch");
-        GameRegistry.registerBlock(blockPinkDyedTorch, ItemGwyGeneric.class, "blockPinkDyedTorch");
-        GameRegistry.registerBlock(blockDGrayDyedTorch, ItemGwyGeneric.class, "blockDGrayDyedTorch");
-        GameRegistry.registerBlock(blockLGrayDyedTorch, ItemGwyGeneric.class, "blockLGrayDyedTorch");
-        GameRegistry.registerBlock(blockCyanDyedTorch, ItemGwyGeneric.class, "blockCyanDyedTorch");
-        GameRegistry.registerBlock(blockPurpleDyedTorch, ItemGwyGeneric.class, "blockPurpleDyedTorch");
-        GameRegistry.registerBlock(blockBlueDyedTorch, ItemGwyGeneric.class, "blockBlueDyedTorch");
-        GameRegistry.registerBlock(blockBrownDyedTorch, ItemGwyGeneric.class, "blockBrownDyedTorch");
-        GameRegistry.registerBlock(blockGreenDyedTorch, ItemGwyGeneric.class, "blockGreenDyedTorch");
-        GameRegistry.registerBlock(blockRedDyedTorch, ItemGwyGeneric.class, "blockRedDyedTorch");
-        GameRegistry.registerBlock(blockBlackDyedTorch, ItemGwyGeneric.class, "blockBlackDyedTorch");
+        GameRegistry.registerBlock(blockWhiteDyedTorch, "blockWhiteDyedTorch");
+        GameRegistry.registerBlock(blockOrangeDyedTorch, "blockOrangeDyedTorch");
+        GameRegistry.registerBlock(blockMagentaDyedTorch, "blockMagentaDyedTorch");
+        GameRegistry.registerBlock(blockLBlueDyedTorch, "blockLBlueDyedTorch");
+        GameRegistry.registerBlock(blockYellowDyedTorch, "blockYellowDyedTorch");
+        GameRegistry.registerBlock(blockLGreenDyedTorch, "blockLGreenDyedTorch");
+        GameRegistry.registerBlock(blockPinkDyedTorch, "blockPinkDyedTorch");
+        GameRegistry.registerBlock(blockDGrayDyedTorch, "blockDGrayDyedTorch");
+        GameRegistry.registerBlock(blockLGrayDyedTorch, "blockLGrayDyedTorch");
+        GameRegistry.registerBlock(blockCyanDyedTorch, "blockCyanDyedTorch");
+        GameRegistry.registerBlock(blockPurpleDyedTorch, "blockPurpleDyedTorch");
+        GameRegistry.registerBlock(blockBlueDyedTorch, "blockBlueDyedTorch");
+        GameRegistry.registerBlock(blockBrownDyedTorch, "blockBrownDyedTorch");
+        GameRegistry.registerBlock(blockGreenDyedTorch, "blockGreenDyedTorch");
+        GameRegistry.registerBlock(blockRedDyedTorch, "blockRedDyedTorch");
+        GameRegistry.registerBlock(blockBlackDyedTorch, "blockBlackDyedTorch");
 
         GameRegistry.registerItem(itemEnchantedGems, "itemEnchantedGems", null);
         GameRegistry.registerItem(itemDyedClay, "itemDyedClay", null);
@@ -532,7 +526,7 @@ public class Gwycraft {
                 GameRegistry.addRecipe(new ItemStack(blockRedDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
             GameRegistry.addRecipe(new ItemStack(blockBlackDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
         }
-        
+
         // 8 Meta
         for (int i = 0; i < 8; i++) {
 

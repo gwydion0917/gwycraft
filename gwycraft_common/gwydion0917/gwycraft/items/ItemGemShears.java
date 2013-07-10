@@ -4,6 +4,7 @@ import java.util.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -16,7 +17,7 @@ public class ItemGemShears extends ItemShears
 	// FIXME: Broken Texture
     public ItemGemShears(int par1) {
         super(par1);
-        setUnlocalizedName("gwycraft:itemgemshears");
+        setUnlocalizedName("Gwycraft:gemshears");
         setHasSubtypes(true);
     }
     @SideOnly(Side.CLIENT)
@@ -31,6 +32,10 @@ public class ItemGemShears extends ItemShears
         stack.addEnchantment(Enchantment.silkTouch, 1);
         par3List.add(stack);
     }
+    @Override
+    public void registerIcons(IconRegister reg){
+        this.itemIcon = reg.registerIcon("Gwycraft:gemshears");
+}
 
     /**
      * Return whether this item is repairable in an anvil.
