@@ -25,7 +25,7 @@ public class ConfigGwycraft {
 	public static int glowyblockDyedPlankID = 1817;
 	public static int glowyblockDyedSandID = 1818;
 	public static int glowyblockDyedStoneBrickID = 1819;
-	public static int glowyblockDyedStonecobbleID = 1820;
+	public static int glowyblockDyedStoneCobbleID = 1820;
 	// public static int glowyblockDyedStonePaver1ID = 1824;
 	// public static int glowyblockDyedStonePaver2ID = 1825;
 	// public static int glowyblockDyedStoneBrickSlab1ID = 1826;
@@ -85,7 +85,7 @@ public class ConfigGwycraft {
 	public static int blockDyedPlankID = 1917;
 	public static int blockDyedSandID = 1918;
 	public static int blockDyedStoneBrickID = 1919;
-	public static int blockDyedStonecobbleID = 1920;
+	public static int blockDyedStoneCobbleID = 1920;
 	public static int blockGemOreID = 1922;
 	public static int blockGemCompressedID = 1923;
 	public static int blockDyedStoneBrickSlab1ID = 1926;
@@ -96,10 +96,10 @@ public class ConfigGwycraft {
 	// public static int blockDyedSandstoneID = 1930;
 	// public static int blockDyedSandstoneChiseledID = 1931;
 	// public static int blockDyedSandstoneSmoothID = 1932;
-	// public static int blockDyedCobbleSlab1ID = 1933;
-	// public static int blockDyedCobbleDoubleSlab1ID = 1934;
-	// public static int blockDyedCobbleSlab2ID = 1935;
-	// public static int blockDyedCobbleDoubleSlab2D = 1936;
+	public static int blockDyedStoneCobbleSlab1ID = 1933;
+	public static int blockDyedStoneCobbleDoubleSlab1ID = 1934;
+	public static int blockDyedStoneCobbleSlab2ID = 1935;
+	public static int blockDyedStoneCobbleDoubleSlab2ID = 1936;
 	public static int blockDyedBrickSlab1ID = 1937;
 	public static int blockDyedBrickDoubleSlab1ID = 1938;
 	public static int blockDyedBrickSlab2ID = 1939;
@@ -108,7 +108,7 @@ public class ConfigGwycraft {
 	// public static int blockDyedLogSlab1ID = 1941;
 	// public static int blockDyedLogDoubleSlab1ID = 1942;
 	// public static int blockDyedLogSlab2ID = 1943;
-	// public static int blockDyedLogDoubleSlab2D = 1944;
+	// public static int blockDyedLogDoubleSlab2ID = 1944;
 	public static int blockDyedMudBrickSlab1ID = 1945;
 	public static int blockDyedMudBrickDoubleSlab1ID = 1946;
 	public static int blockDyedMudBrickSlab2ID = 1947;
@@ -117,19 +117,12 @@ public class ConfigGwycraft {
 	// public static int blockDyedPlankDoubleSlab1ID = 1950;
 	// public static int blockDyedPlankSlab2ID = 1951;
 	// public static int blockDyedPlankDoubleSlab2D = 1952;
-	// public static int blockGemCompressedSlab1ID = 1953;
-	// public static int blockGemCompressedDoubleSlab1ID = 1954;
-	// public static int blockGemCompressedSlab2ID = 1955;
-	// public static int blockGemCompressedDoubleSlab2D = 1956;
-	// public static int blockGlowyWoolSlab1ID = 1957;
-	// public static int blockGlowyWoolDoubleSlab1ID = 1958;
-	// public static int blockGlowyWoolSlab2ID = 1959;
-	// public static int blockGlowyWoolDoubleSlab2D = 1960;
 	public static int blockDyedFencesID = 1961;
 	public static int blockDyedMudBrickPaverID = 1948;
 	public static int blockDyedStoneBrickPaverID = 1979;
+	public static int blockDyedStoneCobblePaverID = 1980;
     
-	public static int blockDyedCobbleWallsID = 1962;
+	public static int blockDyedStoneCobbleWallsID = 1962;
 	public static int blockWhiteDyedTorchID = 1963;
 	public static int blockOrangeDyedTorchID = 1964;
 	public static int blockMagentaDyedTorchID = 1965;
@@ -318,9 +311,14 @@ public class ConfigGwycraft {
         blockDyedStoneBrickDoubleSlab2ID = config.getBlock( "blockDyedStoneBrickDoubleSlab2", blockDyedStoneBrickDoubleSlab2ID).getInt();
         blockDyedStoneBrickPaverID = config.getBlock("blockDyedStoneBrickPaver", blockDyedStoneBrickPaverID).getInt();
 // Stone Cobble
-        blockDyedStonecobbleID = config.getBlock("blockDyedStonecobble", blockDyedStonecobbleID).getInt();
-		glowyblockDyedStonecobbleID = config.getBlock("glowyblockDyedStonecobble", glowyblockDyedStonecobbleID).getInt();
-        blockDyedCobbleWallsID = config.getBlock("blockDyedCobbleWalls", blockDyedCobbleWallsID).getInt();
+        blockDyedStoneCobbleID = config.getBlock("blockDyedStoneCobble", blockDyedStoneCobbleID).getInt();
+		glowyblockDyedStoneCobbleID = config.getBlock("glowyblockDyedStoneCobble", glowyblockDyedStoneCobbleID).getInt();
+        blockDyedStoneCobbleWallsID = config.getBlock("blockDyedCobbleWalls", blockDyedStoneCobbleWallsID).getInt();
+        blockDyedStoneCobbleSlab1ID = config.getBlock("blockDyedCobbleSlab1", blockDyedStoneCobbleSlab1ID).getInt();
+        blockDyedStoneCobbleSlab2ID = config.getBlock("blockDyedCobbleSlab2", blockDyedStoneCobbleSlab2ID).getInt();
+        blockDyedStoneCobbleDoubleSlab1ID = config.getBlock("blockDyedCobbleDoubleSlab1", blockDyedStoneCobbleDoubleSlab1ID).getInt();
+        blockDyedStoneCobbleDoubleSlab2ID = config.getBlock("blockDyedCobbleDoubleSlab2", blockDyedStoneCobbleDoubleSlab2ID).getInt();
+        blockDyedStoneCobblePaverID = config.getBlock("blockDyedCobblePaver", blockDyedStoneCobblePaverID).getInt();
 // Torch
 		blockWhiteDyedTorchID = config.getBlock("blockWhiteDyedTorch", blockWhiteDyedTorchID).getInt();
 		blockOrangeDyedTorchID = config.getBlock("blockOrangeDyedTorch", blockOrangeDyedTorchID).getInt();
