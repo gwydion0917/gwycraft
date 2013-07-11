@@ -246,7 +246,6 @@ public class Gwycraft {
         blockGemOre = new BlockGemOre(ConfigGwycraft.blockGemOreID, Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("gemOre").setCreativeTab(tabs);
         blockGemCompressed = new BlockGemCompressed(ConfigGwycraft.blockGemCompressedID, Material.rock).setLightValue(1F).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockGemCompressed").setCreativeTab(tabs);
 // Torches        
-        // FIXME: Broken Textures (Torches)
         blockWhiteDyedTorch = new BlockDyedTorch(ConfigGwycraft.blockWhiteDyedTorchID, "torch_white").setHardness(0.0F).setLightValue(0.9375F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("gwycraft:torch_white").setCreativeTab(tabs);
         blockOrangeDyedTorch = new BlockDyedTorch(ConfigGwycraft.blockOrangeDyedTorchID, "torch_orange").setHardness(0.0F).setLightValue(0.9375F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("gwycraft:torch_orange").setCreativeTab(tabs);
         blockMagentaDyedTorch = new BlockDyedTorch(ConfigGwycraft.blockMagentaDyedTorchID, "torch_magenta").setHardness(0.0F).setLightValue(0.9375F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("gwycraft:torch_magenta").setCreativeTab(tabs);
