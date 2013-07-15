@@ -46,6 +46,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -393,6 +395,8 @@ public class Gwycraft {
         Item.itemsList[ConfigGwycraft.blockDyedStoneCobbleSlab1ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneCobbleSlab1ID - 256, blockDyedStoneCobbleSlab1, blockDyedStoneCobbleDoubleSlab1, false)).setUnlocalizedName("blockDyedStoneCobbleSlab1");
         Item.itemsList[ConfigGwycraft.blockDyedStoneCobbleSlab2ID] = (new ItemSlab (ConfigGwycraft.blockDyedStoneCobbleSlab2ID - 256, blockDyedStoneCobbleSlab2, blockDyedStoneCobbleDoubleSlab2, false)).setUnlocalizedName("blockDyedStoneCobbleSlab2");
 
+        OreDictionary.registerOre("blockCobble", Block.cobblestone);
+        
         // Language Registry
         // 16 Meta
         for (int i = 0; i < 16; i++) {
@@ -491,8 +495,8 @@ public class Gwycraft {
             GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Block.glowStone), cloth);
             GameRegistry.addShapelessRecipe(new ItemStack(blockDyedSand, 8, i), dye, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand);
             GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedSand, 8, i), itemEnchantedGemsStack, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand, Block.sand);
-            GameRegistry.addShapelessRecipe(new ItemStack(blockDyedStoneCobble, 8, i), dye, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone);
-            GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedStoneCobble, 8, i), itemEnchantedGemsStack, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone, Block.cobblestone);
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(blockDyedStoneCobble, 8, i), dye, "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble"));
+        	GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(glowyblockDyedStoneCobble, 8, i), itemEnchantedGemsStack, "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble", "blockCobble"));
             GameRegistry.addShapelessRecipe(new ItemStack(blockDyedPlank, 8, i), dye, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks);
             GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedPlank, 8, i), itemEnchantedGemsStack, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks, Block.planks);
             GameRegistry.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, 15-i), itemEnchantedGemsStack, Item.gunpowder, Item.glassBottle );
