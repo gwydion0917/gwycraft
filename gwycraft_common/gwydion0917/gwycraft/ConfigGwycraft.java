@@ -249,8 +249,8 @@ public class ConfigGwycraft {
     // public static int itemSword16ID = 5026;
 		// General Settings
 	public static boolean genGemsEnabled = true;
-	public static int genGemsVeins = 8;
-	public static int genGemsNumber = 4;
+	public static int genGemsVeins = 9;
+	public static int genGemsNumber = 5;
 
 	public static void initConfig(FMLPreInitializationEvent event) {
 
@@ -365,11 +365,11 @@ public class ConfigGwycraft {
 		genGemsEnabledProperty.comment = "Should gems generate in the world";
 		genGemsEnabled = genGemsEnabledProperty.getBoolean(true);
 		
-		Property genGemsVeinsProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsVeins", 8);
+		Property genGemsVeinsProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsVeins", 9);
 		genGemsVeinsProperty.comment = "Attempt to generate X veins per chunk";
 		genGemsVeins = genGemsVeinsProperty.getInt(8);
 		
-		Property genGemsNumberProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsNumber", 4);
+		Property genGemsNumberProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsNumber", 5);
 		genGemsNumberProperty.comment = "Attemp to generate X ores per vein";
 		genGemsNumber = genGemsNumberProperty.getInt(4);
 		
