@@ -86,13 +86,15 @@ public class ConfigGwycraft {
 	public static int blockDyedSandID = 1918;
 	public static int blockDyedStoneBrickID = 1919;
 	public static int blockDyedStoneCobbleID = 1920;
+	// 1921?
 	public static int blockGemOreID = 1922;
 	public static int blockGemCompressedID = 1923;
+	public static int blockDyedStonePaverID = 1924;
+	public static int blockDyedBrickPaverID = 1925;
 	public static int blockDyedStoneBrickSlab1ID = 1926;
 	public static int blockDyedStoneBrickDoubleSlab1ID = 1927;
 	public static int blockDyedStoneBrickSlab2ID = 1928;
 	public static int blockDyedStoneBrickDoubleSlab2ID = 1929;
-    public static int blockDyedStonePaverID = 1924;
 	// public static int blockDyedSandstoneID = 1930;
 	// public static int blockDyedSandstoneChiseledID = 1931;
 	// public static int blockDyedSandstoneSmoothID = 1932;
@@ -104,7 +106,6 @@ public class ConfigGwycraft {
 	public static int blockDyedBrickDoubleSlab1ID = 1938;
 	public static int blockDyedBrickSlab2ID = 1939;
 	public static int blockDyedBrickDoubleSlab2ID = 1940;
-    public static int blockDyedBrickPaverID = 1925;
 	// public static int blockDyedLogSlab1ID = 1941;
 	// public static int blockDyedLogDoubleSlab1ID = 1942;
 	// public static int blockDyedLogSlab2ID = 1943;
@@ -117,11 +118,8 @@ public class ConfigGwycraft {
 	// public static int blockDyedPlankDoubleSlab1ID = 1950;
 	// public static int blockDyedPlankSlab2ID = 1951;
 	// public static int blockDyedPlankDoubleSlab2D = 1952;
+	// gap
 	public static int blockDyedFencesID = 1961;
-	public static int blockDyedMudBrickPaverID = 1948;
-	public static int blockDyedStoneBrickPaverID = 1979;
-	public static int blockDyedStoneCobblePaverID = 1980;
-    
 	public static int blockDyedStoneCobbleWallsID = 1962;
 	public static int blockWhiteDyedTorchID = 1963;
 	public static int blockOrangeDyedTorchID = 1964;
@@ -139,7 +137,10 @@ public class ConfigGwycraft {
 	public static int blockGreenDyedTorchID = 1976;
 	public static int blockRedDyedTorchID = 1977;
 	public static int blockBlackDyedTorchID = 1978;
-
+	public static int blockDyedStoneBrickPaverID = 1979;
+	public static int blockDyedStoneCobblePaverID = 1980;
+	public static int blockDyedMudBrickPaverID = 1981;
+	
 	public static int itemEnchantedGemsID = 5001;
 	public static int itemDyedClayID = 5002;
 	public static int itemDyedClayBricksID = 5003;
