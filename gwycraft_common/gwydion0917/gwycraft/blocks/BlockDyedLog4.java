@@ -143,7 +143,6 @@ public class BlockDyedLog4 extends Block {
 	/**
 	 * returns a number between 0 and 3
 	 */
-	// TODO: Is this needed?
 	public static int limitToValidMetadata(int par0) {
 		return par0 & 3;
 	}

@@ -63,8 +63,8 @@ public class ConfigGwycraft {
 	// public static int glowyblockGlowyWoolDoubleSlab1ID = 1858;
 	// public static int glowyblockGlowyWoolSlab2ID = 1859;
 	// public static int glowyblockGlowyWoolDoubleSlab2D = 1860;
-	// public static int glowyblockDyedFencesID = 1861;
-	// public static int glowyblockDyedCobbleWallsID = 1862;
+	public static int glowyblockDyedFencesID = 1861;
+	public static int glowyblockDyedStoneCobbleWallsID = 1862;
 
 	// Standard (non-glow) Blocks
 	public static int blockDyedStoneID = 1902;
@@ -141,6 +141,7 @@ public class ConfigGwycraft {
 	public static int blockDyedStoneCobblePaverID = 1980;
 	public static int blockDyedMudBrickPaverID = 1981;
 	
+	// Items
 	public static int itemEnchantedGemsID = 5001;
 	public static int itemDyedClayID = 5002;
 	public static int itemDyedClayBricksID = 5003;
@@ -248,7 +249,8 @@ public class ConfigGwycraft {
     // public static int itemSword14ID = 5024;
     // public static int itemSword15ID = 5025;
     // public static int itemSword16ID = 5026;
-		// General Settings
+
+    // General Settings
 	public static boolean genGemsEnabled = true;
 	public static int genGemsVeins = 9;
 	public static int genGemsNumber = 5;
@@ -300,6 +302,7 @@ public class ConfigGwycraft {
 		blockDyedPlankID = config.getBlock("blockDyedPlank", blockDyedPlankID).getInt();
 		glowyblockDyedPlankID = config.getBlock("glowyblockDyedPlank", glowyblockDyedPlankID).getInt();
         blockDyedFencesID = config.getBlock("blockDyedFences", blockDyedFencesID).getInt();
+        glowyblockDyedFencesID = config.getBlock("glowyblockDyedFences", glowyblockDyedFencesID).getInt();
 // Sand
 		blockDyedSandID = config.getBlock("blockDyedSand", blockDyedSandID).getInt();
 		glowyblockDyedSandID = config.getBlock("glowyblockDyedSand", glowyblockDyedSandID).getInt();
@@ -315,6 +318,7 @@ public class ConfigGwycraft {
         blockDyedStoneCobbleID = config.getBlock("blockDyedStoneCobble", blockDyedStoneCobbleID).getInt();
 		glowyblockDyedStoneCobbleID = config.getBlock("glowyblockDyedStoneCobble", glowyblockDyedStoneCobbleID).getInt();
         blockDyedStoneCobbleWallsID = config.getBlock("blockDyedCobbleWalls", blockDyedStoneCobbleWallsID).getInt();
+        glowyblockDyedStoneCobbleWallsID = config.getBlock("glowyblockDyedCobbleWalls", glowyblockDyedStoneCobbleWallsID).getInt();
         blockDyedStoneCobbleSlab1ID = config.getBlock("blockDyedCobbleSlab1", blockDyedStoneCobbleSlab1ID).getInt();
         blockDyedStoneCobbleSlab2ID = config.getBlock("blockDyedCobbleSlab2", blockDyedStoneCobbleSlab2ID).getInt();
         blockDyedStoneCobbleDoubleSlab1ID = config.getBlock("blockDyedCobbleDoubleSlab1", blockDyedStoneCobbleDoubleSlab1ID).getInt();
@@ -350,7 +354,7 @@ public class ConfigGwycraft {
         blockGemOreID = config.getBlock("blockGemOre", blockGemOreID).getInt();
 		blockGemCompressedID = config.getBlock("blockGemCompressed", blockGemCompressedID).getInt();
 
-
+// Item
 		itemEnchantedGemsID = config.getItem("Enchanted Gems", itemEnchantedGemsID).getInt();
 		itemDyedClayID = config.getItem("Dyed Clay", itemDyedClayID).getInt();
 		itemDyedClayBricksID = config.getItem("Dyed Clay Bricks",
@@ -361,7 +365,7 @@ public class ConfigGwycraft {
         itemDyedSticksID = config.getItem("Dyed Sticks", itemDyedSticksID).getInt();
         itemGemShearsID = config.getItem("Gem Shears", itemGemShearsID).getInt();
 		
-		// General Section
+// General Section
 		Property genGemsEnabledProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsEnabled", true);
 		genGemsEnabledProperty.comment = "Should gems generate in the world";
 		genGemsEnabled = genGemsEnabledProperty.getBoolean(true);
