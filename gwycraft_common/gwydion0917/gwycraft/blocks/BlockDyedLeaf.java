@@ -3,6 +3,7 @@ package gwydion0917.gwycraft.blocks;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,17 +12,16 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDyedLeaf extends Block {
+public class BlockDyedLeaf extends BlockLeavesBase {
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
 	public BlockDyedLeaf(int id) {
-		super(id, Material.leaves);
+		super(id, Material.leaves, false);
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(0.2F);
 		setStepSound(Block.leaves.stepSound);
-
 	}
 
 	@Override
