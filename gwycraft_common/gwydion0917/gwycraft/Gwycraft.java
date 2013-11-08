@@ -240,10 +240,10 @@ public class Gwycraft {
         blockDyedLog2 = new BlockDyedLog2(ConfigGwycraft.blockDyedLog2ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:blockDyedLog2");
         blockDyedLog3 = new BlockDyedLog3(ConfigGwycraft.blockDyedLog3ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:blockDyedLog3");
         blockDyedLog4 = new BlockDyedLog4(ConfigGwycraft.blockDyedLog4ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:blockDyedLog4");
-        glowyblockDyedLog1 = new BlockDyedLog1(ConfigGwycraft.glowyblockDyedLog1ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog1");
-        glowyblockDyedLog2 = new BlockDyedLog2(ConfigGwycraft.glowyblockDyedLog2ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog2");
-        glowyblockDyedLog3 = new BlockDyedLog3(ConfigGwycraft.glowyblockDyedLog3ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog3");
-        glowyblockDyedLog4 = new BlockDyedLog4(ConfigGwycraft.glowyblockDyedLog4ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog4");
+        glowyblockDyedLog1 = new BlockDyedLog1(ConfigGwycraft.glowyblockDyedLog1ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog1").setLightValue(1F);
+        glowyblockDyedLog2 = new BlockDyedLog2(ConfigGwycraft.glowyblockDyedLog2ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog2").setLightValue(1F);
+        glowyblockDyedLog3 = new BlockDyedLog3(ConfigGwycraft.glowyblockDyedLog3ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog3").setLightValue(1F);
+        glowyblockDyedLog4 = new BlockDyedLog4(ConfigGwycraft.glowyblockDyedLog4ID).setCreativeTab(tabs).setUnlocalizedName("Gwycraft:glowyblockDyedLog4").setLightValue(1F);
 // Gems
         blockGemOre = new BlockGemOre(ConfigGwycraft.blockGemOreID, Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("gemOre").setCreativeTab(tabs);
         blockGemCompressed = new BlockGemCompressed(ConfigGwycraft.blockGemCompressedID, Material.rock).setLightValue(1F).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockGemCompressed").setCreativeTab(tabs);
