@@ -701,7 +701,8 @@ public class Gwycraft {
 	@EventHandler 
     public void init(FMLInitializationEvent event) {
         LanguageRegistry.instance().addStringLocalization("itemGroup.GwyCraft", "en_US", "GwyCraft");
-        GameRegistry.registerWorldGenerator(worldGen);   // Add this in your @Init method. If you haven't already, import cpw.mods.fml.common.registry.GameRegistry.      
+        GameRegistry.registerWorldGenerator(worldGen);
+        InterModCommunication.initIMC();
     }
 	
 	@EventHandler
