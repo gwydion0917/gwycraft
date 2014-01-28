@@ -1,5 +1,6 @@
 package gwydion0917.gwycraft;
 
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.event.FMLInterModComms;
 
 public class InterModCommunication {
@@ -55,5 +56,9 @@ public class InterModCommunication {
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "miner@" + Gwycraft.itemEnchantedGems.itemID + ":*");
 		
 		// End Forestry
+		
+		// Forge MultiPart
+		FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.glowyblockDyedLog1));
+
 	}
 }
