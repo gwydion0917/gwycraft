@@ -59,7 +59,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
-@Mod(modid = "GwyCraft", name = "GwyCraft", version = "0.1.5", dependencies = "required-after:Forge@[7.7.1.650,)" )
+@Mod(modid = "GwyCraft", name = "GwyCraft", version = "0.1.6", dependencies = "required-after:Forge@[7.7.1.650,)" )
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Gwycraft {
 
