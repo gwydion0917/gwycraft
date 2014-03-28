@@ -445,6 +445,13 @@ public class Gwycraft {
             GameRegistry.addRecipe(new ItemStack(blockDyedBrick, 1, i), "XX", "XX", 'X', itemDyedClayBricksStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', blockDyedStonecobbleStack);
             GameRegistry.addRecipe(new ItemStack(glowyblockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', glowyblockDyedStonecobbleStack);
+
+            // TODO: Fix Paver recipes
+            GameRegistry.addRecipe(new ItemStack(blockDyedStonePaver, 3, i), "XX", 'X', blockDyedStoneStack);
+            GameRegistry.addRecipe(new ItemStack(blockDyedBrickPaver, 3, i), "XX", 'X', blockDyedBrickStack);
+            GameRegistry.addRecipe(new ItemStack(blockDyedMudBrickPaver, 3, i), "XX", 'X', blockDyedMudBrickStack);
+            GameRegistry.addRecipe(new ItemStack(blockDyedStoneCobblePaver, 3, i), "XX", 'X', blockDyedStonecobbleStack);
+
             
             // Add Shapeless Recipes
             GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Block.glowStone), cloth);
@@ -513,37 +520,6 @@ public class Gwycraft {
             GameRegistry.addRecipe(new ItemStack(blockBlackDyedTorch, 4), "X", "#", 'X', Item.coal, '#', itemDyedSticksStack);
         }
 
-        // 8 Meta
-        for (int i = 0; i < 8; i++) {
-
-            // Item Stacks
-            ItemStack blockDyedStone1Stack = new ItemStack(blockDyedStone, 8, i);
-            ItemStack blockDyedStone2Stack = new ItemStack(blockDyedStone, 8, i+8);
-            ItemStack blockDyedStoneBrick1Stack = new ItemStack(blockDyedStoneBrick, 8, i);
-            ItemStack blockDyedStoneBrick2Stack = new ItemStack(blockDyedStoneBrick, 8, i+8);
-            ItemStack blockDyedBrick1Stack = new ItemStack(blockDyedBrick, 8, i);
-            ItemStack blockDyedBrick2Stack = new ItemStack(blockDyedBrick, 8, i+8);
-            ItemStack blockDyedMudBrick1Stack = new ItemStack(blockDyedMudBrick, 8, i);
-            ItemStack blockDyedMudBrick2Stack = new ItemStack(blockDyedMudBrick, 8, i+8);
-            ItemStack blockDyedStoneCobble1Stack = new ItemStack(blockDyedStoneCobble, 8, i);
-            ItemStack blockDyedStoneCobble2Stack = new ItemStack(blockDyedStoneCobble, 8, i+8);
-
-            // Language Registry
-            
-            //  Add Recipes
-            // TODO: Fix Paver recipes
-            /*
-            GameRegistry.addRecipe(new ItemStack(blockDyedStonePaver, 12, i), "XXX", 'X', blockDyedStoneSlab1Stack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedStonePaver, 12, i+8), "XXX", 'X', blockDyedStoneSlab2Stack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedBrickPaver, 12, i), "XXX", 'X', blockDyedBrickSlab1Stack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedBrickPaver, 12, i+8), "XXX", 'X', blockDyedBrickSlab2Stack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedMudBrickPaver, 12, i), "XXX", 'X', blockDyedMudBrickSlab1Stack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedMudBrickPaver, 12, i+8), "XXX", 'X', blockDyedMudBrickSlab2Stack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedStoneCobblePaver, 12, i), "XXX", 'X', blockDyedStoneCobbleSlab1Stack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedStoneCobblePaver, 12, i+8), "XXX", 'X', blockDyedStoneCobbleSlab2Stack);
-            */
-        }        
-   
         // 4 Meta
         for (int i = 0; i < 4; i++) {
 
