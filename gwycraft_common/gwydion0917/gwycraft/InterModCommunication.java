@@ -85,7 +85,6 @@ public class InterModCommunication {
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.glowyblockDyedStoneCobble, 1, i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockGemCompressed, 1, i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockGemOre, 1, i));
-            FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.itemEnchantedGems, 1, i));
             }
         // 8 Meta
         for (int i = 0; i < 8; i++) {

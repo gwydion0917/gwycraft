@@ -1,0 +1,20 @@
+{
+	"modinfoversion": 2,
+	"modlist": [{
+		"modid": "GwyCraft",
+		"name": "GwyCraft",
+		"description": "",
+		"version": "0.1.5",
+		"mcversion": "1.6.4",
+		"credits": "",
+		"logoFile": "/mods/Gwycraft/logo.png",
+		"mcversion": "",
+		"url": "https://github.com/gwydion0917/gwycraft",
+		"updateUrl": "",
+		"authors": [ "gwydion0917", "zepanv" ],
+		"parent":"",
+		"screenshots": [],
+		"requiredMods": [ "Forge" ],
+		"useDependencyInformation": "true"
+	}]
+}
