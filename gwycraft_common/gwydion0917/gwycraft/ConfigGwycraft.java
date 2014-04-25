@@ -22,6 +22,7 @@ public class ConfigGwycraft {
 	public static int glowyblockDyedSandID = 1818;
 	public static int glowyblockDyedStoneBrickID = 1819;
 	public static int glowyblockDyedStoneCobbleID = 1820;
+	public static int glowyblockDyedSandstoneID = 1830;
 	public static int glowyblockDyedFencesID = 1861;
 	public static int glowyblockDyedStoneCobbleWallsID = 1862;
 
@@ -46,7 +47,7 @@ public class ConfigGwycraft {
 	public static int blockGemCompressedID = 1923;
 	public static int blockDyedStonePaverID = 1924;
 	public static int blockDyedBrickPaverID = 1925;
-	// public static int blockDyedSandstoneID = 1930;
+	public static int blockDyedSandstoneID = 1930;
 	// public static int blockDyedSandstoneChiseledID = 1931;
 	// public static int blockDyedSandstoneSmoothID = 1932;
 	// gap
@@ -226,6 +227,8 @@ public class ConfigGwycraft {
 // Sand
 		blockDyedSandID = config.getBlock("blockDyedSand", blockDyedSandID).getInt();
 		glowyblockDyedSandID = config.getBlock("glowyblockDyedSand", glowyblockDyedSandID).getInt();
+		blockDyedSandstoneID = config.getBlock("blockDyedSandstone", blockDyedSandstoneID).getInt();
+		glowyblockDyedSandstoneID = config.getBlock("glowyblockDyedSandstone", glowyblockDyedSandstoneID).getInt();
 // Stone Brick
 		blockDyedStoneBrickID = config.getBlock("blockDyedStoneBrick", blockDyedStoneBrickID).getInt();
 		glowyblockDyedStoneBrickID = config.getBlock("glowyblockDyedStoneBrick", glowyblockDyedStoneBrickID).getInt();

@@ -37,6 +37,8 @@ public class InterModCommunication {
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + Gwycraft.blockDyedCobbleWalls.blockID + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + Gwycraft.glowyblockDyedCobbleWalls.blockID + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + Gwycraft.itemDyedSticks.itemID + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + Gwycraft.blockDyedSandstone.blockID + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + Gwycraft.glowyblockDyedSandstone.blockID + ":*");
 		
 		// Forester
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + Gwycraft.blockDyedLeaf.blockID + ":*");
@@ -79,6 +81,8 @@ public class InterModCommunication {
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.glowyblockDyedMudBrick, 1, i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedSand, 1, i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.glowyblockDyedSand, 1, i));
+            FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedSandstone, 1, i));
+            FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.glowyblockDyedSandstone, 1, i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedStoneBrick, 1, i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.glowyblockDyedStoneBrick, 1, i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedStoneCobble, 1, i));
