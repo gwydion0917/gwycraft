@@ -1,10 +1,12 @@
 package gwydion0917.gwycraft;
 
-import net.minecraftforge.common.Configuration;
-import net.minecraftforge.common.Property;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ConfigGwycraft {
+	/* ID's be gone
+	
 	// Glow blocks start at 1800 (100 less than standard)
 	public static int glowyWoolID = 1801;
 	public static int glowyblockDyedStoneID = 1802;
@@ -181,7 +183,7 @@ public class ConfigGwycraft {
     // public static int itemSword14ID = 5024;
     // public static int itemSword15ID = 5025;
     // public static int itemSword16ID = 5026;
-
+*/
     // General Settings
 	public static boolean genGemsEnabled = true;
 	public static int genGemsVeins = 9;
@@ -192,7 +194,7 @@ public class ConfigGwycraft {
 		Configuration config = new Configuration(
 				event.getSuggestedConfigurationFile());
 		config.load();
-
+/* Poof
 // Wool
 		glowyWoolID = config.getBlock("Glow Wool", glowyWoolID).getInt();
 		
@@ -278,7 +280,7 @@ public class ConfigGwycraft {
 		itemDyedMudBricksID = config.getItem("Dyed Mud Bricks",
 				itemDyedMudBricksID).getInt();
         itemDyedSticksID = config.getItem("Dyed Sticks", itemDyedSticksID).getInt();
-        itemGemShearsID = config.getItem("Gem Shears", itemGemShearsID).getInt();
+        itemGemShearsID = config.getItem("Gem Shears", itemGemShearsID).getInt();*/
 		
 // General Section
 		Property genGemsEnabledProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsEnabled", true);

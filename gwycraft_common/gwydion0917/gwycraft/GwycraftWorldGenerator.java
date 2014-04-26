@@ -1,12 +1,13 @@
 package gwydion0917.gwycraft;
 
+import gwydion0917.gwycraft.blocks.BlockGemOre;
+
 import java.util.Random;
 
-import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-
 import cpw.mods.fml.common.IWorldGenerator;
 
     public class GwycraftWorldGenerator implements IWorldGenerator {
@@ -40,8 +41,8 @@ private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 					int firstBlockZCoord = chunkZ + rand.nextInt(16);
 					Random r = new Random();
 					int i = r.nextInt(16);
-					(new WorldGenMinable(ConfigGwycraft.blockGemOreID, i, ConfigGwycraft.genGemsNumber,
-							Block.stone.blockID)).generate(world, rand,
+					(new WorldGenMinable(Gwycraft.blockGemOre, i, ConfigGwycraft.genGemsNumber,
+							Blocks.stone)).generate(world, rand,
 							firstBlockXCoord, firstBlockYCoord,
 							firstBlockZCoord);
 			}

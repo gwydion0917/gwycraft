@@ -1,18 +1,18 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.ConfigGwycraft;
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import java.util.Random;
-import net.minecraft.world.World;
 
 public class BlockDyedLog1 extends Block {
 	/** The type of tree this log came from. */
@@ -25,13 +25,13 @@ public class BlockDyedLog1 extends Block {
 			"gwycraft:logtop_0", "gwycraft:logtop_1", "gwycraft:logtop_2",
 			"gwycraft:logtop_3" };
 	@SideOnly(Side.CLIENT)
-	private Icon[] iconArray;
+	private IIcon[] iconArray;
 	@SideOnly(Side.CLIENT)
-	private Icon[] iconArray1;
+	private IIcon[] iconArray1;
 
 	public BlockDyedLog1(int id) {
-		super(id, Material.wood);
-		setUnlocalizedName("dyedLog1");
+		super(Material.wood);
+		//setUnlocalizedName("dyedLog1");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(2.0F);
 		setStepSound(Block.wood.stepSound);
@@ -57,10 +57,10 @@ public class BlockDyedLog1 extends Block {
 	/**
 	 * Returns the ID of the items to drop on destruction.
 	 */
-	@Override
-	public int idDropped(int par1, Random par2Random, int par3) {
-		return ConfigGwycraft.blockDyedLog1ID;
-	}
+	//FIXME: Broke @Override
+	//public int idDropped(int par1, Random par2Random, int par3) {
+	//	return ConfigGwycraft.blockDyedLog1ID;
+	//}
 
 	/**
 	 * ejects contained items into the world, and notifies neighbours of an
@@ -122,7 +122,7 @@ public class BlockDyedLog1 extends Block {
 	 * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
 	 */
 	@Override
-	public Icon getIcon(int par1, int par2) {
+	public IIcon getIcon(int par1, int par2) {
 		int k = par2 & 12;
 		int l = par2 & 3;
 		return k == 0 && (par1 == 1 || par1 == 0) ? this.iconArray1[l]
@@ -152,7 +152,7 @@ public class BlockDyedLog1 extends Block {
 	 * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
 	 */
 	@Override
-	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs,
+	public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs,
 			List par3List) {
 		par3List.add(new ItemStack(par1, 1, 0));
 		par3List.add(new ItemStack(par1, 1, 1));
@@ -177,9 +177,9 @@ public class BlockDyedLog1 extends Block {
 	 * is the only chance you get to register icons.
 	 */
 	@Override
-	public void registerIcons(IconRegister par1IconRegister) {
-		this.iconArray1 = new Icon[treeTopTextureTypes.length];
-		this.iconArray = new Icon[treeTextureTypes.length];
+	public void registerIcons(IIconRegister par1IconRegister) {
+		this.iconArray1 = new IIcon[treeTopTextureTypes.length];
+		this.iconArray = new IIcon[treeTextureTypes.length];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray[i] = par1IconRegister

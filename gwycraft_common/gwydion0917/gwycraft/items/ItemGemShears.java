@@ -2,37 +2,38 @@ package gwydion0917.gwycraft.items;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemGemShears extends ItemShears
 {
 
-    public ItemGemShears(int par1) {
-        super(par1);
+    public ItemGemShears() {
+        super();
         setUnlocalizedName("Gwycraft:gemshears");
         setHasSubtypes(true);
     }
-    @SideOnly(Side.CLIENT)
-
+    
     /**
      * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
      */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SideOnly(Side.CLIENT)
     @Override
-    public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
+    public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List)
     {
         ItemStack stack = new ItemStack(par1, 1, 0);
         stack.addEnchantment(Enchantment.silkTouch, 1);
         par3List.add(stack);
     }
     @Override
-    public void registerIcons(IconRegister reg){
+    public void registerIcons(IIconRegister reg){
         this.itemIcon = reg.registerIcon("Gwycraft:gemshears");
 }
 
@@ -42,6 +43,7 @@ public class ItemGemShears extends ItemShears
     @Override
     public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
     {
-        return par2ItemStack.itemID == Item.diamond.itemID;
+    	//FIXME: This is probably wrong
+        return true;
     }
 }
