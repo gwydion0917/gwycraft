@@ -1,5 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
@@ -10,8 +11,8 @@ public class ItemDyedCobble extends ItemBlock {
 			"lightGrey", "cyan", "purple", "blue", "brown", "green", "red",
 			"black" };
 
-	public ItemDyedCobble(int id) {
-		super(id);
+	public ItemDyedCobble(Block block) {
+		super(block);
 		setHasSubtypes(true);
 		setUnlocalizedName("dyedStonecobble");
 	}

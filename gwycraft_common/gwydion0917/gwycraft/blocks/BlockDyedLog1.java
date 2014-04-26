@@ -10,6 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,12 +30,12 @@ public class BlockDyedLog1 extends Block {
 	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray1;
 
-	public BlockDyedLog1(int id) {
+	public BlockDyedLog1() {
 		super(Material.wood);
 		//setUnlocalizedName("dyedLog1");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(2.0F);
-		setStepSound(Block.wood.stepSound);
+		setStepSound(Block.soundTypeWood);
 
 	}
 
@@ -66,8 +67,8 @@ public class BlockDyedLog1 extends Block {
 	 * ejects contained items into the world, and notifies neighbours of an
 	 * update, as appropriate
 	 */
-	@Override
-	public void breakBlock(World par1World, int par2, int par3, int par4,
+	// FIXME: Broke @Override
+/*	public void breakBlock(World par1World, int par2, int par3, int par4,
 			int par5, int par6) {
 		byte b0 = 4;
 		int j1 = b0 + 1;
@@ -88,7 +89,7 @@ public class BlockDyedLog1 extends Block {
 				}
 			}
 		}
-	}
+	}*/
 
 	/**
 	 * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z,
@@ -166,17 +167,17 @@ public class BlockDyedLog1 extends Block {
 	 * do not support subtypes. Blocks which cannot be harvested should return
 	 * null.
 	 */
-	@Override
+/*	@Override
 	protected ItemStack createStackedBlock(int par1) {
 		return new ItemStack(this.blockID, 1, limitToValidMetadata(par1));
-	}
+	}*/
 
 	@SideOnly(Side.CLIENT)
 	/**
 	 * When this method is called, your block should register all the icons it needs with the given IconRegister. This
 	 * is the only chance you get to register icons.
 	 */
-	@Override
+	// FIXME: Broke @Override
 	public void registerIcons(IIconRegister par1IconRegister) {
 		this.iconArray1 = new IIcon[treeTopTextureTypes.length];
 		this.iconArray = new IIcon[treeTextureTypes.length];
@@ -189,13 +190,15 @@ public class BlockDyedLog1 extends Block {
 		}
 	}
 
-	@Override
-	public boolean canSustainLeaves(World world, int x, int y, int z) {
-		return true;
-	}
+    @Override
+    public boolean canSustainLeaves(IBlockAccess world, int x, int y, int z)
+    {
+        return true;
+    }
 
-	@Override
-	public boolean isWood(World world, int x, int y, int z) {
-		return true;
-	}
+    @Override
+    public boolean isWood(IBlockAccess world, int x, int y, int z)
+    {
+        return true;
+    }
 }

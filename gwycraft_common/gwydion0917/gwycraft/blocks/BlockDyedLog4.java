@@ -1,18 +1,16 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.ConfigGwycraft;
-import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import java.util.Random;
-import net.minecraft.world.World;
 
 public class BlockDyedLog4 extends Block {
 	/** The type of tree this log came from. */
@@ -25,16 +23,16 @@ public class BlockDyedLog4 extends Block {
 			"gwycraft:logtop_12", "gwycraft:logtop_13", "gwycraft:logtop_14",
 			"gwycraft:logtop_15" };
 	@SideOnly(Side.CLIENT)
-	private Icon[] iconArray;
+	private IIcon[] iconArray;
 	@SideOnly(Side.CLIENT)
-	private Icon[] iconArray1;
+	private IIcon[] iconArray1;
 
-	public BlockDyedLog4(int id) {
-		super(id, Material.wood);
-		setUnlocalizedName("dyedLog4");
+	public BlockDyedLog4() {
+		super(Material.wood);
+		//setUnlocalizedName("dyedLog4");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(2.0F);
-		setStepSound(Block.wood.stepSound);
+		setStepSound(Block.soundTypeWood);
 
 	}
 
@@ -57,16 +55,16 @@ public class BlockDyedLog4 extends Block {
 	/**
 	 * Returns the ID of the items to drop on destruction.
 	 */
-	@Override
+	//@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return ConfigGwycraft.blockDyedLog4ID;
+		return 0;//ConfigGwycraft.blockDyedLog4ID;
 	}
 
 	/**
 	 * ejects contained items into the world, and notifies neighbours of an
 	 * update, as appropriate
 	 */
-	@Override
+	/*@Override
 	public void breakBlock(World par1World, int par2, int par3, int par4,
 			int par5, int par6) {
 		byte b0 = 4;
@@ -88,7 +86,7 @@ public class BlockDyedLog4 extends Block {
 				}
 			}
 		}
-	}
+	}*/
 
 	/**
 	 * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z,
@@ -122,7 +120,7 @@ public class BlockDyedLog4 extends Block {
 	 * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
 	 */
 	@Override
-	public Icon getIcon(int par1, int par2) {
+	public IIcon getIcon(int par1, int par2) {
 		int k = par2 & 12;
 		int l = par2 & 3;
 		return k == 0 && (par1 == 1 || par1 == 0) ? this.iconArray1[l]
@@ -147,10 +145,10 @@ public class BlockDyedLog4 extends Block {
 		return par0 & 3;
 	}
 
-	@SideOnly(Side.CLIENT)
-	/**
+/*	@SideOnly(Side.CLIENT)
+	*//**
 	 * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-	 */
+	 *//*
 	@Override
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs,
 			List par3List) {
@@ -158,7 +156,7 @@ public class BlockDyedLog4 extends Block {
 		par3List.add(new ItemStack(par1, 1, 1));
 		par3List.add(new ItemStack(par1, 1, 2));
 		par3List.add(new ItemStack(par1, 1, 3));
-	}
+	}*/
 
 	/**
 	 * Returns an item stack containing a single instance of the current block
@@ -166,20 +164,20 @@ public class BlockDyedLog4 extends Block {
 	 * do not support subtypes. Blocks which cannot be harvested should return
 	 * null.
 	 */
-	@Override
+/*	@Override
 	protected ItemStack createStackedBlock(int par1) {
-		return new ItemStack(this.blockID, 1, limitToValidMetadata(par1));
-	}
+		return 0;// new ItemStack(this.blockID, 1, limitToValidMetadata(par1));
+	}*/
 
 	@SideOnly(Side.CLIENT)
 	/**
 	 * When this method is called, your block should register all the icons it needs with the given IconRegister. This
 	 * is the only chance you get to register icons.
 	 */
-	@Override
-	public void registerIcons(IconRegister par1IconRegister) {
-		this.iconArray1 = new Icon[treeTopTextureTypes.length];
-		this.iconArray = new Icon[treeTextureTypes.length];
+	//@Override
+	public void registerIcons(IIconRegister par1IconRegister) {
+		this.iconArray1 = new IIcon[treeTopTextureTypes.length];
+		this.iconArray = new IIcon[treeTextureTypes.length];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray[i] = par1IconRegister
@@ -189,13 +187,15 @@ public class BlockDyedLog4 extends Block {
 		}
 	}
 
-	@Override
-	public boolean canSustainLeaves(World world, int x, int y, int z) {
-		return true;
-	}
+    @Override
+    public boolean canSustainLeaves(IBlockAccess world, int x, int y, int z)
+    {
+        return true;
+    }
 
-	@Override
-	public boolean isWood(World world, int x, int y, int z) {
-		return true;
-	}
+    @Override
+    public boolean isWood(IBlockAccess world, int x, int y, int z)
+    {
+        return true;
+    }
 }

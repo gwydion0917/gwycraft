@@ -1,5 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
@@ -10,8 +11,8 @@ public class ItemDyedLog2 extends ItemBlock {
 			"lightGrey", "cyan", "purple", "blue", "brown", "green", "red",
 			"black" };
 
-	public ItemDyedLog2(int id) {
-		super(id);
+	public ItemDyedLog2(Block block) {
+		super(block);
 		setHasSubtypes(true);
 		setUnlocalizedName("dyedLog2");
 	}

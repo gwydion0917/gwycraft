@@ -16,9 +16,12 @@ public class BlockDyedFences extends BlockFence {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray;
+	
+	private final String field_149827_a;
 
-	public BlockDyedFences(Object par2Str, Material mat) {
-		super(null , Material.wood);
+	public BlockDyedFences(String par2Str, Material mat) {
+		super(par2Str , Material.wood);
+		this.field_149827_a = par2Str;
 	}
 
 	@Override
@@ -39,7 +42,7 @@ public class BlockDyedFences extends BlockFence {
 		}
 	}
 
-	@SideOnly(Side.CLIENT)
+/*	@SideOnly(Side.CLIENT)
 	// FIXME: Broke @Override
 	public void registerIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[16];
@@ -48,6 +51,12 @@ public class BlockDyedFences extends BlockFence {
 			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:plank_"
 					+ i);
 		}
-	}
+	}*/
+	
+    @SideOnly(Side.CLIENT)
+    public void registerBlockIcons(IIconRegister p_149651_1_)
+    {
+        this.blockIcon = p_149651_1_.registerIcon(this.field_149827_a);
+    }
 
 }

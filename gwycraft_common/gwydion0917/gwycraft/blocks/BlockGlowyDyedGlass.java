@@ -2,27 +2,30 @@ package gwydion0917.gwycraft.blocks;
 
 import java.util.List;
 
+import javax.swing.Icon;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGlowyDyedGlass extends BlockGlass {
 
 	@SideOnly(Side.CLIENT)
-	private Icon[] iconArray;
+	private IIcon[] iconArray;
 
-	public BlockGlowyDyedGlass(int id) {
-		super(id, Material.glass, false);
-		setUnlocalizedName("glowydyedGlass");
+	public BlockGlowyDyedGlass() {
+		super(Material.glass, false);
+		//setUnlocalizedName("glowydyedGlass");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(0.3F);
-		setStepSound(Block.glass.stepSound);
+		setStepSound(Block.soundTypeGlass);
 
 	}
 
@@ -32,8 +35,8 @@ public class BlockGlowyDyedGlass extends BlockGlass {
 		return 1;
 	}
 
-	@Override
-	public Icon getIcon(int par1, int par2) {
+	//FIXME: Broke @Override
+	public IIcon getIIcon(int par1, int par2) {
 		return this.iconArray[par2 % this.iconArray.length];
 	}
 
@@ -44,16 +47,16 @@ public class BlockGlowyDyedGlass extends BlockGlass {
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
+	public void getSubBlocks(Item par1, CreativeTabs tab, List subItems) {
 		for (int i = 0; i < 16; i++) {
 			subItems.add(new ItemStack(this, 1, i));
 		}
 	}
 
 	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IconRegister par1IconRegister) {
-		this.iconArray = new Icon[16];
+	//FIXME: Broke @Override
+	public void registerIcons(IIconRegister par1IconRegister) {
+		this.iconArray = new IIcon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:glass_"

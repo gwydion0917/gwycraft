@@ -4,26 +4,27 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDyedSandstone extends Block {
 
 	@SideOnly(Side.CLIENT)
-	private Icon[] iconArray;
-	private Icon[] iconArray1;
-	private Icon[] iconArray2;
+	private IIcon[] iconArray;
+	private IIcon[] iconArray1;
+	private IIcon[] iconArray2;
 
-	public BlockDyedSandstone(int id, Material mat ) {
-		super(id, mat);
+	public BlockDyedSandstone(Material mat ) {
+		super(mat);
 	}
 
 	@Override
-	public Icon getIcon(int side, int meta) {
+	public IIcon getIcon(int side, int meta) {
 		int l = meta & 15;
 		if(side == 0) {
 			return iconArray2[l]; // bottom
@@ -41,19 +42,19 @@ public class BlockDyedSandstone extends Block {
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs,
+	public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs,
 			List par3List) {
 		for (int j = 0; j < 16; ++j) {
-			par3List.add(new ItemStack(par1, 1, j));
+			par3List.add(new ItemStack(this, 1, j));
 		}
 	}
 
 	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IconRegister par1IconRegister) {
-		this.iconArray = new Icon[16];
-		this.iconArray1 = new Icon[16];
-		this.iconArray2 = new Icon[16];
+	//FIXME: Broke @Override
+	public void registerIcons(IIconRegister par1IconRegister) {
+		this.iconArray = new IIcon[16];
+		this.iconArray1 = new IIcon[16];
+		this.iconArray2 = new IIcon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray2[i] = par1IconRegister
