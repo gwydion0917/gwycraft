@@ -46,8 +46,8 @@ public class BlockDyedBookcase extends BlockBookshelf {
 	}
 
 	@SideOnly(Side.CLIENT)
-	// TODO: Broke @Override
-	public void registerIcons(IIconRegister par1IconRegister) {
+	@Override
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[16];
 		this.iconArray1 = new IIcon[16];
 

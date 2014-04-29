@@ -50,8 +50,8 @@ public class BlockDyedSandstone extends Block {
 	}
 
 	@SideOnly(Side.CLIENT)
-	//FIXME: Broke @Override
-	public void registerIcons(IIconRegister par1IconRegister) {
+	@Override
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[16];
 		this.iconArray1 = new IIcon[16];
 		this.iconArray2 = new IIcon[16];

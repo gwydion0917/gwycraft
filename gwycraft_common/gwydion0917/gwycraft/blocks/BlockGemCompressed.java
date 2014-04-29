@@ -54,8 +54,8 @@ public class BlockGemCompressed extends Block {
 		}
 	}
 
-	//FIXME: Broke @Override
-	public void registerIcons(IIconRegister par1IconRegister) {
+	@Override
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[gemBlockTextures.length];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {

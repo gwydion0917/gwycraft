@@ -54,8 +54,8 @@ public class BlockGlowyDyedGlass extends BlockGlass {
 	}
 
 	@SideOnly(Side.CLIENT)
-	//FIXME: Broke @Override
-	public void registerIcons(IIconRegister par1IconRegister) {
+	@Override
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {

@@ -14,8 +14,8 @@ public class BlockDyedTorch extends BlockTorch {
     }
 
     @SideOnly(Side.CLIENT)
-  //FIXME: Broke @Override
-    public void registerIcons(IIconRegister reg){
+	@Override
+    public void registerBlockIcons(IIconRegister reg){
         this.blockIcon = reg.registerIcon("Gwycraft:" + tName);
 }
 //    public void registerIcons(IconRegister par1IconRegister) {

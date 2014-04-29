@@ -42,21 +42,17 @@ public class BlockDyedFences extends BlockFence {
 		}
 	}
 
-/*	@SideOnly(Side.CLIENT)
-	// FIXME: Broke @Override
-	public void registerIcons(IIconRegister par1IconRegister) {
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:plank_"
 					+ i);
 		}
-	}*/
+	}
 	
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister p_149651_1_)
-    {
-        this.blockIcon = p_149651_1_.registerIcon(this.field_149827_a);
-    }
+
 
 }

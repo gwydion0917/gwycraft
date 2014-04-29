@@ -24,7 +24,7 @@ public class BlockGemOre extends Block {
 	
    @SideOnly(Side.CLIENT)
 	
-	//private IIcon[] iconArray;
+	private IIcon[] iconArray;
 
 	public BlockGemOre(Material mat) {
 		super(mat);
@@ -75,13 +75,14 @@ public class BlockGemOre extends Block {
 		}
 	}
 
-/*	//FIXME: Broke @Override
-	public void registerIcons(IIconRegister par1IconRegister) {
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[gemBlockTextures.length];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray[i] = par1IconRegister
 					.registerIcon(gemBlockTextures[i]);
 		}
-	}*/
+	}
 }

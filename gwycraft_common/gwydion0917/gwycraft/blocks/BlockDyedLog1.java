@@ -177,8 +177,8 @@ public class BlockDyedLog1 extends Block {
 	 * When this method is called, your block should register all the icons it needs with the given IconRegister. This
 	 * is the only chance you get to register icons.
 	 */
-	// FIXME: Broke @Override
-	public void registerIcons(IIconRegister par1IconRegister) {
+	@Override
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray1 = new IIcon[treeTopTextureTypes.length];
 		this.iconArray = new IIcon[treeTextureTypes.length];
 
