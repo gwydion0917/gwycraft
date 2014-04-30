@@ -14,14 +14,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGwyGenericBlock extends Block {
 	// textureName from constructor, ie: stonecobble
-	private String tName;
+	//private String tName;
 
 	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray;
 
-	public BlockGwyGenericBlock(Material mat, String textureName) {
+	public BlockGwyGenericBlock(Material mat) {
 		super(mat);
-		tName = textureName;
+		//tName = textureName;
 		
 	 }
 
@@ -50,8 +50,7 @@ public class BlockGwyGenericBlock extends Block {
 		this.iconArray = new IIcon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:"
-					+ tName + "_" + i);
+			this.iconArray[i] = par1IconRegister.registerIcon(this.getTextureName() + "_" + i);
 		}
 	}
 
