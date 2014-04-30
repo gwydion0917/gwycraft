@@ -1,7 +1,5 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.ConfigGwycraft;
-
 import java.util.List;
 import java.util.Random;
 
@@ -18,11 +16,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockGemCompressed extends Block {
 	/** The type of tree this log came from. */
 	public static final String[] gemBlockTextures = new String[] {
-	    "gwycraft:gemblock_quartz", "gwycraft:gemblock_citrine", "gwycraft:gemblock_tanzanite", 
-	    "gwycraft:gemblock_sapphire", "gwycraft:gemblock_topaz", "gwycraft:gemblock_agate", "gwycraft:gemblock_garnet",
-	    "gwycraft:gemblock_moonstone", "gwycraft:gemblock_hematite", "gwycraft:gemblock_aquamarine", "gwycraft:gemblock_amethyst",
-	    "gwycraft:gemblock_lapis_lazuli", "gwycraft:gemblock_tigerseye", "gwycraft:gemblock_emerald", 
-	    "gwycraft:gemblock_ruby", "gwycraft:gemblock_onyx"};
+			"gwycraft:gemblock_quartz", "gwycraft:gemblock_citrine",
+			"gwycraft:gemblock_tanzanite", "gwycraft:gemblock_sapphire",
+			"gwycraft:gemblock_topaz", "gwycraft:gemblock_agate",
+			"gwycraft:gemblock_garnet", "gwycraft:gemblock_moonstone",
+			"gwycraft:gemblock_hematite", "gwycraft:gemblock_aquamarine",
+			"gwycraft:gemblock_amethyst", "gwycraft:gemblock_lapis_lazuli",
+			"gwycraft:gemblock_tigerseye", "gwycraft:gemblock_emerald",
+			"gwycraft:gemblock_ruby", "gwycraft:gemblock_onyx" };
 
 	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray;
@@ -31,12 +32,13 @@ public class BlockGemCompressed extends Block {
 		super(mat);
 	}
 
+	@SideOnly(Side.CLIENT)
 	@Override
 	public IIcon getIcon(int par1, int par2) {
 		return this.iconArray[par2 % this.iconArray.length];
 	}
 
-	//FIXME: Broke @Override
+	// FIXME: Broke @Override
 	public int idDropped(int par1, Random par2Random, int par3) {
 		return 0; // ConfigGwycraft.blockGemCompressedID;
 	}
@@ -54,6 +56,7 @@ public class BlockGemCompressed extends Block {
 		}
 	}
 
+	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.iconArray = new IIcon[gemBlockTextures.length];

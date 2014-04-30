@@ -10,57 +10,48 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGemOre extends Block {
 	/** The type of tree this log came from. */
-	   public static final String[] gemBlockTextures = new String[] {
-	        "gwycraft:ore_quartz", "gwycraft:ore_citrine", "gwycraft:ore_tanzanite", 
-	        "gwycraft:ore_sapphire", "gwycraft:ore_topaz", "gwycraft:ore_agate", "gwycraft:ore_garnet",
-	        "gwycraft:ore_moonstone", "gwycraft:ore_hematite", "gwycraft:ore_aquamarine", "gwycraft:ore_amethyst",
-	        "gwycraft:ore_lapis_lazuli", "gwycraft:ore_tigerseye", "gwycraft:ore_emerald", 
-	        "gwycraft:ore_ruby", "gwycraft:ore_onyx"};
-	
-   @SideOnly(Side.CLIENT)
-	
+	public static final String[] gemBlockTextures = new String[] {
+			"gwycraft:ore_quartz", "gwycraft:ore_citrine",
+			"gwycraft:ore_tanzanite", "gwycraft:ore_sapphire",
+			"gwycraft:ore_topaz", "gwycraft:ore_agate", "gwycraft:ore_garnet",
+			"gwycraft:ore_moonstone", "gwycraft:ore_hematite",
+			"gwycraft:ore_aquamarine", "gwycraft:ore_amethyst",
+			"gwycraft:ore_lapis_lazuli", "gwycraft:ore_tigerseye",
+			"gwycraft:ore_emerald", "gwycraft:ore_ruby", "gwycraft:ore_onyx" };
+
+	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray;
 
 	public BlockGemOre(Material mat) {
 		super(mat);
 	}
 
-/*	@Override
+	@SideOnly(Side.CLIENT)
+	@Override
 	public IIcon getIcon(int par1, int par2) {
 		return this.iconArray[par2 % this.iconArray.length];
 	}
-*/
-	/**
-	 * Returns the ID of the items to drop on destruction.
-	 */
-	//FIXME: Broke @Override
-	public int idDropped(int par1, Random par2Random, int par3)
-	{
-	return 0; //ConfigGwycraft.itemEnchantedGemsID+256;
-	}
-	
-    /**
-     * Returns the usual quantity dropped by the block plus a bonus of 1 to 'i' (inclusive).
-     */
-	@Override
-    public int quantityDroppedWithBonus(int par1, Random par2Random)
-    {
-        return 1 + par2Random.nextInt(par1 + 1);
-    }
 
-    /**
-     * Returns the quantity of items to drop on block destruction.
-     */
+	// FIXME: Broke @Override
+	public int idDropped(int par1, Random par2Random, int par3) {
+		return 0; // ConfigGwycraft.itemEnchantedGemsID+256;
+	}
+
 	@Override
-    public int quantityDropped(Random par1Random)
-    {
-        return 1;
-    }
+	public int quantityDroppedWithBonus(int par1, Random par2Random) {
+		return 1 + par2Random.nextInt(par1 + 1);
+	}
+
+	@Override
+	public int quantityDropped(Random par1Random) {
+		return 1;
+	}
 
 	@Override
 	public int damageDropped(int metadata) {

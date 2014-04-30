@@ -15,7 +15,7 @@ public class GwycraftTab extends CreativeTabs {
 	@Override
 	 public Item getTabIconItem()
     {
-        return Item.getItemFromBlock(Blocks.golden_rail);
-      //return Item.getItemFromBlock(Gwycraft.blockGemCompressed);
+        //return Item.getItemFromBlock(Blocks.golden_rail);
+		return Item.getItemFromBlock(Gwycraft.blockGemCompressed);
     }
 }
