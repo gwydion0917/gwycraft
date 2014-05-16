@@ -1,16 +1,11 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.ConfigGwycraft;
-
 import java.util.List;
-import java.util.Random;
 
-import javax.swing.Icon;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
@@ -18,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDyedLog2 extends Block {
+public class BlockDyedLog2 extends BlockLog {
 	/** The type of tree this log came from. */
 	public static final String[] woodType = new String[] { "yellow",
 			"light green", "pink", "dark gray" };
@@ -34,65 +29,9 @@ public class BlockDyedLog2 extends Block {
 	private IIcon[] iconArray1;
 
 	public BlockDyedLog2() {
-		super(Material.wood);
+		super();
 		//setUnlocalizedName("dyedLog2");
-		setCreativeTab(CreativeTabs.tabBlock);
-		setHardness(2.0F);
-		setStepSound(Block.soundTypeWood);
-
 	}
-
-	/**
-	 * The type of render function that is called for this block
-	 */
-	@Override
-	public int getRenderType() {
-		return 31;
-	}
-
-	/**
-	 * Returns the quantity of items to drop on block destruction.
-	 */
-	@Override
-	public int quantityDropped(Random par1Random) {
-		return 1;
-	}
-
-	/**
-	 * Returns the ID of the items to drop on destruction.
-	 */
-	//FIXME: BROKE @Override
-	public int idDropped(int par1, Random par2Random, int par3) {
-		return 0; //ConfigGwycraft.blockDyedLog2ID;
-	}
-
-	/**
-	 * ejects contained items into the world, and notifies neighbours of an
-	 * update, as appropriate
-	 */
-/*	@Override
-	public void breakBlock(World par1World, int par2, int par3, int par4,
-			int par5, int par6) {
-		byte b0 = 4;
-		int j1 = b0 + 1;
-
-		if (par1World.checkChunksExist(par2 - j1, par3 - j1, par4 - j1, par2
-				+ j1, par3 + j1, par4 + j1)) {
-			for (int k1 = -b0; k1 <= b0; ++k1) {
-				for (int l1 = -b0; l1 <= b0; ++l1) {
-					for (int i2 = -b0; i2 <= b0; ++i2) {
-						int j2 = par1World.getBlockId(par2 + k1, par3 + l1,
-								par4 + i2);
-
-						if (Block.blocksList[j2] != null) {
-							Block.blocksList[j2].beginLeavesDecay(par1World,
-									par2 + k1, par3 + l1, par4 + i2);
-						}
-					}
-				}
-			}
-		}
-	}*/
 
 	/**
 	 * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z,
@@ -121,19 +60,20 @@ public class BlockDyedLog2 extends Block {
 		return j1 | b0;
 	}
 
-/*	@SideOnly(Side.CLIENT)
-	*//**
+	@SideOnly(Side.CLIENT)
+	/**
 	 * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-	 *//*
+	 */
 	@Override
-	public Icon getIcon(int par1, int par2) {
+	public IIcon getIcon(int par1, int par2) {
 		int k = par2 & 12;
 		int l = par2 & 3;
 		return k == 0 && (par1 == 1 || par1 == 0) ? this.iconArray1[l]
 				: (k == 4 && (par1 == 5 || par1 == 4) ? this.iconArray1[l]
 						: (k == 8 && (par1 == 2 || par1 == 3) ? this.iconArray1[l]
 								: this.iconArray[l]));
-	}*/
+	}
+
 
 	/**
 	 * Determines the damage on the item the block drops. Used in cloth and
@@ -151,18 +91,18 @@ public class BlockDyedLog2 extends Block {
 		return par0 & 3;
 	}
 
-//	@SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	/**
 	 * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
 	 */
-/*	@Override
-	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs,
+	@Override
+	public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs,
 			List par3List) {
 		par3List.add(new ItemStack(par1, 1, 0));
 		par3List.add(new ItemStack(par1, 1, 1));
 		par3List.add(new ItemStack(par1, 1, 2));
 		par3List.add(new ItemStack(par1, 1, 3));
-	}*/
+	}
 
 	/**
 	 * Returns an item stack containing a single instance of the current block

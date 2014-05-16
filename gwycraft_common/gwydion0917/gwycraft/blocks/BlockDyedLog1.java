@@ -1,10 +1,8 @@
 package gwydion0917.gwycraft.blocks;
 
 import java.util.List;
-import java.util.Random;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -15,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDyedLog1 extends Block {
+public class BlockDyedLog1 extends BlockLog {
 	/** The type of tree this log came from. */
 	public static final String[] woodType = new String[] { "white", "orange",
 			"magenta", "light blue" };
@@ -31,65 +29,10 @@ public class BlockDyedLog1 extends Block {
 	private IIcon[] iconArray1;
 
 	public BlockDyedLog1() {
-		super(Material.wood);
+		super();
 		//setUnlocalizedName("dyedLog1");
-		setCreativeTab(CreativeTabs.tabBlock);
-		setHardness(2.0F);
-		setStepSound(Block.soundTypeWood);
 
 	}
-
-	/**
-	 * The type of render function that is called for this block
-	 */
-	@Override
-	public int getRenderType() {
-		return 31;
-	}
-
-	/**
-	 * Returns the quantity of items to drop on block destruction.
-	 */
-	@Override
-	public int quantityDropped(Random par1Random) {
-		return 1;
-	}
-
-	/**
-	 * Returns the ID of the items to drop on destruction.
-	 */
-	//FIXME: Broke @Override
-	//public int idDropped(int par1, Random par2Random, int par3) {
-	//	return ConfigGwycraft.blockDyedLog1ID;
-	//}
-
-	/**
-	 * ejects contained items into the world, and notifies neighbours of an
-	 * update, as appropriate
-	 */
-	// FIXME: Broke @Override
-/*	public void breakBlock(World par1World, int par2, int par3, int par4,
-			int par5, int par6) {
-		byte b0 = 4;
-		int j1 = b0 + 1;
-
-		if (par1World.checkChunksExist(par2 - j1, par3 - j1, par4 - j1, par2
-				+ j1, par3 + j1, par4 + j1)) {
-			for (int k1 = -b0; k1 <= b0; ++k1) {
-				for (int l1 = -b0; l1 <= b0; ++l1) {
-					for (int i2 = -b0; i2 <= b0; ++i2) {
-						int j2 = par1World.getBlockId(par2 + k1, par3 + l1,
-								par4 + i2);
-
-						if (Block.blocksList[j2] != null) {
-							Block.blocksList[j2].beginLeavesDecay(par1World,
-									par2 + k1, par3 + l1, par4 + i2);
-						}
-					}
-				}
-			}
-		}
-	}*/
 
 	/**
 	 * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z,

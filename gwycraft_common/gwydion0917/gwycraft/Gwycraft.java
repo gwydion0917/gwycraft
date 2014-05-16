@@ -44,6 +44,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -201,14 +202,14 @@ public class Gwycraft {
         glowyblockDyedCobbleWalls = new BlockDyedCobbleWalls(blockDyedStoneCobble).setLightLevel(1F).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.glowyblockDyedCobbleWalls").setCreativeTab(tabs);
         blockDyedStoneCobblePaver = new BlockGwyGenericPaver().setBlockName("gwycraft.blockDyedStonePaver").setHardness(2.0F).setCreativeTab(tabs).setBlockTextureName("gwycraft:stonecobble");
 // Logs
-        blockDyedLog1 = new BlockDyedLog1().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog1");
-        blockDyedLog2 = new BlockDyedLog2().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog2");
-        blockDyedLog3 = new BlockDyedLog3().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog3");
-        blockDyedLog4 = new BlockDyedLog4().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog4");
-        glowyblockDyedLog1 = new BlockDyedLog1().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog1").setLightLevel(1F);
-        glowyblockDyedLog2 = new BlockDyedLog2().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog2").setLightLevel(1F);
-        glowyblockDyedLog3 = new BlockDyedLog3().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog3").setLightLevel(1F);
-        glowyblockDyedLog4 = new BlockDyedLog4().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog4").setLightLevel(1F);
+        blockDyedLog1 = new BlockDyedLog1().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog1").setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
+        blockDyedLog2 = new BlockDyedLog2().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog2").setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
+        blockDyedLog3 = new BlockDyedLog3().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog3").setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
+        blockDyedLog4 = new BlockDyedLog4().setCreativeTab(tabs).setBlockName("gwycraft.blockDyedLog4").setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
+        glowyblockDyedLog1 = new BlockDyedLog1().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog1").setLightLevel(1F).setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
+        glowyblockDyedLog2 = new BlockDyedLog2().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog2").setLightLevel(1F).setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
+        glowyblockDyedLog3 = new BlockDyedLog3().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog3").setLightLevel(1F).setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
+        glowyblockDyedLog4 = new BlockDyedLog4().setCreativeTab(tabs).setBlockName("gwycraft.glowyblockDyedLog4").setLightLevel(1F).setBlockTextureName("gwycraft:logside").setCreativeTab(tabs).setHardness(2.0F).setStepSound(Block.soundTypeWood);
 // Gems
         blockGemOre = new BlockGemOre(Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypeStone).setBlockName("gemOre").setCreativeTab(tabs);
         blockGemCompressed = new BlockGemCompressed(Material.rock).setLightLevel(1F).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("blockGemCompressed").setCreativeTab(tabs);
