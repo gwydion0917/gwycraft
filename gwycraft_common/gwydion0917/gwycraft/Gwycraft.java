@@ -45,6 +45,7 @@ import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -343,6 +344,15 @@ public class Gwycraft {
         LanguageRegistry.addName(blockRedDyedTorch, "Red Torch");
         LanguageRegistry.addName(blockBlackDyedTorch, "Black Torch");
         LanguageRegistry.addName(itemGemShears, "Gem Shears");*/
+
+        // Shears Enchant
+        ItemStack enchantedGemShears = new ItemStack(Gwycraft.itemGemShears);
+        enchantedGemShears.addEnchantment(Enchantment.silkTouch, 1);
+        
+//        GameRegistry.addRecipe(enchantedGemShears, new ItemStack(itemGemShears, 1, 0), " X", "X ", 'X', itemEnchantedGemsStack);
+//        GameRegistry.addRecipe(enchantedGemShears, new Object[]{new ItemStack(itemGemShears), new ItemStack(Item.flint), new ItemStack(tutorialBlock)});
+
+        
         
         // Language Registry
         // 16 Meta
@@ -447,12 +457,13 @@ public class Gwycraft {
             GameRegistry.addRecipe(new ItemStack(blockDyedStoneBrick, 4, i), "xx", "xx", 'x', blockDyedStoneStack);
             GameRegistry.addRecipe(new ItemStack(glowyblockDyedStoneBrick, 4, i), "XX", "XX", 'X', glowyblockDyedStoneStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedFences, 2, i), "XXX", "XXX", 'X', itemDyedSticksStack);
-            GameRegistry.addRecipe(new ItemStack(itemGemShears, 1, 0), " X", "X ", 'X', itemEnchantedGemsStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedMudBrick, 4, i), "XX", "XX", 'X', itemDyedMudBricksStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedClayblock, 1, i), "XX", "XX", 'X', itemDyedClayStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedBrick, 1, i), "XX", "XX", 'X', itemDyedClayBricksStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', blockDyedStonecobbleStack);
             GameRegistry.addRecipe(new ItemStack(glowyblockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', glowyblockDyedStonecobbleStack);
+
+            GameRegistry.addRecipe(enchantedGemShears, new Object[]{" X", "X ", 'X', new ItemStack(itemEnchantedGems, 1, i)});
 
             // TODO: Fix Paver recipes
             GameRegistry.addRecipe(new ItemStack(blockDyedStonePaver, 3, i), "XX", 'X', blockDyedStoneStack);
