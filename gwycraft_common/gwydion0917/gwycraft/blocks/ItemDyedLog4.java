@@ -6,10 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public class ItemDyedLog4 extends ItemBlock {
 
-	private final static String[] subNames = { "white", "orange", "magenta",
-			"lightBlue", "yellow", "lightGreen", "pink", "darkGrey",
-			"lightGrey", "cyan", "purple", "blue", "brown", "green", "red",
-			"black" };
+	private final static String[] subNames = { "brown", "green", "red", "black" };
 
 	public ItemDyedLog4(Block block) {
 		super(block);
