@@ -19,7 +19,7 @@ apply plugin: 'forge'
 minecraft { version = "1.7.2-10.12.1.1065" }
 version = "0.1.7"
 group= "gwydion0917.gwycraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "gwycraft"
+archivesBaseName = "gwycraft-mc172"
 
 sourceSets.main{
   java{ srcDirs 'gwycraft_common' }
@@ -37,7 +37,7 @@ processResources
         include 'mcmod.info'
                 
         // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        //expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
     // copy everything else, thats not the mcmod.info
