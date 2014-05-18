@@ -38,11 +38,6 @@ public class BlockGemCompressed extends Block {
 		return this.iconArray[par2 % this.iconArray.length];
 	}
 
-	// FIXME: Broke @Override
-	public int idDropped(int par1, Random par2Random, int par3) {
-		return 0; // ConfigGwycraft.blockGemCompressedID;
-	}
-
 	@Override
 	public int damageDropped(int metadata) {
 		return metadata;

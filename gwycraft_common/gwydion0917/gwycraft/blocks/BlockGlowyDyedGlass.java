@@ -35,11 +35,6 @@ public class BlockGlowyDyedGlass extends BlockGlass {
 		return 1;
 	}
 
-	//FIXME: Broke @Override
-	public IIcon getIIcon(int par1, int par2) {
-		return this.iconArray[par2 % this.iconArray.length];
-	}
-
 	@Override
 	public int damageDropped(int metadata) {
 		return metadata;

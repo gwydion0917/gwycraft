@@ -1,5 +1,7 @@
 package gwydion0917.gwycraft.blocks;
 
+import gwydion0917.gwycraft.Gwycraft;
+
 import java.util.List;
 import java.util.Random;
 
@@ -7,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -38,11 +41,13 @@ public class BlockGemOre extends Block {
 		return this.iconArray[par2 % this.iconArray.length];
 	}
 
-	// FIXME: Broke @Override
-	public int idDropped(int par1, Random par2Random, int par3) {
-		return 0; // ConfigGwycraft.itemEnchantedGemsID+256;
-	}
-
+	@Override
+    public Item getItemDropped(int par1, Random par2Random, int par3)
+    {
+        return Gwycraft.itemEnchantedGems;
+        // ConfigGwycraft.itemEnchantedGemsID+256;
+    }
+	
 	@Override
 	public int quantityDroppedWithBonus(int par1, Random par2Random) {
 		return 1 + par2Random.nextInt(par1 + 1);
