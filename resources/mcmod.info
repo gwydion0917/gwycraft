@@ -1,21 +1,19 @@
-{
-	[{
-		"modid": "GwyCraft",
-		"name": "GwyCraft",
-		"description": "",
-		"version": "0.1.7",
-		"mcversion": "1.7.2",
-		"credits": "",
-		"logoFile": "/mods/gwycraft/logo.png",
-		"mcversion": "",
-		"url": "https://github.com/gwydion0917/gwycraft",
-		"updateUrl": "",
-		"authorList": [ "gwydion0917", "zepanv" ],
-		"parent":"",
-		"screenshots": [],
-		"requiredMods": [ "Forge" ],
-		"dependancies" : [] ,
-		"dependants" : [],
-		"useDependencyInformation": "true"
-	}]
-}
+[{
+	"modid": "GwyCraft",
+	"name": "GwyCraft",
+	"description": "",
+	"version": "0.1.7",
+	"mcversion": "1.7.2",
+	"credits": "",
+	"logoFile": "/mods/gwycraft/logo.png",
+	"mcversion": "",
+	"url": "https://github.com/gwydion0917/gwycraft",
+	"updateUrl": "",
+	"authorList": [ "gwydion0917", "zepanv" ],
+	"parent":"",
+	"screenshots": [],
+	"requiredMods": [ "Forge" ],
+	"dependancies" : [] ,
+	"dependants" : [],
+	"useDependencyInformation": "true"
+}]
