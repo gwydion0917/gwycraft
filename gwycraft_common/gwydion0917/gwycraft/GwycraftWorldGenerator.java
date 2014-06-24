@@ -1,7 +1,5 @@
 package gwydion0917.gwycraft;
 
-import gwydion0917.gwycraft.blocks.BlockGemOre;
-
 import java.util.Random;
 
 import net.minecraft.init.Blocks;

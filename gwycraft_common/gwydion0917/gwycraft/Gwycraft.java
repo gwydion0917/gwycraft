@@ -14,7 +14,6 @@ import gwydion0917.gwycraft.blocks.BlockDyedSandstone;
 import gwydion0917.gwycraft.blocks.BlockDyedTorch;
 import gwydion0917.gwycraft.blocks.BlockGemCompressed;
 import gwydion0917.gwycraft.blocks.BlockGemOre;
-import gwydion0917.gwycraft.blocks.BlockGlowyDyedGlass;
 import gwydion0917.gwycraft.blocks.BlockGlowyWool;
 import gwydion0917.gwycraft.blocks.BlockGwyGenericBlock;
 import gwydion0917.gwycraft.blocks.BlockGwyGenericPaver;
@@ -42,9 +41,7 @@ import gwydion0917.gwycraft.items.ItemEnchantedGems;
 import gwydion0917.gwycraft.items.ItemGemShears;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
-import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -62,7 +59,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
-@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.7a")
+@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.7b")
 public class Gwycraft {
 
 	public static final String[] gwyColorNames = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
@@ -425,8 +422,6 @@ public class Gwycraft {
             GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedMudBrick, 8, i), Blocks.glowstone, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack);
             
             // Add Furnace Recipes
-            
-            // 	FIXME: Broken furnace recipes?
             GameRegistry.addSmelting(new ItemStack(blockDyedStoneCobble, 1, i ), new ItemStack(blockDyedStone, 1, i ), 0.1F);
             GameRegistry.addSmelting(new ItemStack(glowyblockDyedStoneCobble, 1, i), new ItemStack(glowyblockDyedStone, 1, i ), 0.1F);
             GameRegistry.addSmelting(new ItemStack(blockDyedSand, 1, i), new ItemStack(blockDyedGlass, 1, i ), 0.1F);
@@ -476,7 +471,8 @@ public class Gwycraft {
                 GameRegistry.addRecipe(new ItemStack(blockGreenDyedTorch, 4), "X", "#", 'X', Items.coal, '#', itemDyedSticksStack);
             else if ( i ==14)
                 GameRegistry.addRecipe(new ItemStack(blockRedDyedTorch, 4), "X", "#", 'X', Items.coal, '#', itemDyedSticksStack);
-            GameRegistry.addRecipe(new ItemStack(blockBlackDyedTorch, 4), "X", "#", 'X', Items.coal, '#', itemDyedSticksStack);
+            else if ( i ==15)
+            	GameRegistry.addRecipe(new ItemStack(blockBlackDyedTorch, 4), "X", "#", 'X', Items.coal, '#', itemDyedSticksStack);
         }
 
         // 4 Meta

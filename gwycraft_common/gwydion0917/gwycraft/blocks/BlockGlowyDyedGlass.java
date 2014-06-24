@@ -2,8 +2,6 @@ package gwydion0917.gwycraft.blocks;
 
 import java.util.List;
 
-import javax.swing.Icon;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
