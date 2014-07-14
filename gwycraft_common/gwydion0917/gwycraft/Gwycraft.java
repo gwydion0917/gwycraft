@@ -48,6 +48,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -59,7 +60,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
-@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.7b")
+@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.7b", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory", dependencies = "required-after:Forge@[10.12.2.1147]")
 public class Gwycraft {
 
 	public static final String[] gwyColorNames = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
@@ -72,7 +73,6 @@ public class Gwycraft {
     public static final String[] gwyGemNames = { "Enchanted Quartz", "Enchanted Citrine", "Enchanted Tanzanite", "Enchanted Sapphire", "Enchanted Topaz", "Enchanted Agate", "Enchanted Garnet",  "Enchanted Moonstone", "Enchanted Hematite", "Enchanted Aquamarine", "Enchanted Amethyst",  "Enchanted Lapis Lazuli",  "Enchanted Tigerseye",  "Enchanted Emerald", "Enchanted Ruby", "Enchanted Onyx"};
 
     public static GwycraftWorldGenerator worldGen = new GwycraftWorldGenerator();
-    
     public static GwycraftTab tabs = new GwycraftTab("GwyCraft");
     
     public static Block glowyWool;
@@ -152,7 +152,9 @@ public class Gwycraft {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		FMLCommonHandler.instance().bus().register( new ConfigGwycraft());
         ConfigGwycraft.initConfig(event);
+        
 // Wool        
 		glowyWool = new BlockGlowyWool(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("gwycraft.glowyWool").setLightLevel(1f).setCreativeTab(tabs);
 // Stone
@@ -550,4 +552,5 @@ public class Gwycraft {
 		// Stub Method
 
 	}
+
 }

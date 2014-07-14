@@ -1,10 +1,13 @@
 package gwydion0917.gwycraft;
 
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
+import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ConfigGwycraft {
+	
+	public static Configuration config;
 
     // General Settings
 	public static boolean genGemsEnabled = true;
@@ -13,25 +16,27 @@ public class ConfigGwycraft {
 
 	public static void initConfig(FMLPreInitializationEvent event) {
 
-		Configuration config = new Configuration(
+		config = new Configuration(
 				event.getSuggestedConfigurationFile());
 		config.load();
-		
-// General Section
-		Property genGemsEnabledProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsEnabled", true);
-		genGemsEnabledProperty.comment = "Should gems generate in the world";
-		genGemsEnabled = genGemsEnabledProperty.getBoolean(true);
-		
-		Property genGemsVeinsProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsVeins", 15);
-		genGemsVeinsProperty.comment = "Attempt to generate X veins per chunk";
-		genGemsVeins = genGemsVeinsProperty.getInt(8);
-		
-		Property genGemsNumberProperty = config.get(Configuration.CATEGORY_GENERAL, "genGemsNumber", 7);
-		genGemsNumberProperty.comment = "Attemp to generate X ores per vein";
-		genGemsNumber = genGemsNumberProperty.getInt(4);
+		syncConfig();
+
+	}
+	public static void syncConfig() {
+		genGemsEnabled = config.getBoolean("genGemsEnabled", Configuration.CATEGORY_GENERAL, true, "Should gems generate in the world");
+		genGemsVeins = config.getInt("genGemsVeins", Configuration.CATEGORY_GENERAL, 15, 0, 256, "Attempt to generate X veins per chunk");
+		genGemsNumber = config.getInt("genGemsNumber", Configuration.CATEGORY_GENERAL, 7, 0, 256, "Attemp to generate X ores per vein");
 		
 		if (config.hasChanged()) {
 			config.save();
 		}
 	}
+	
+	
+	 @SubscribeEvent
+	    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
+	        if(eventArgs.modID.equalsIgnoreCase("gwycraft"))
+	            syncConfig();
+	    }
+	
 }
