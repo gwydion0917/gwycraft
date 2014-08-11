@@ -1,13 +1,26 @@
 package gwydion0917.gwycraft;
 
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInterModComms;
 
 public class InterModCommunication {
 
 	public static void initIMC()
 	{
-		// Forestry
+		Loader.instance();
+		if (Loader.isModLoaded("Forestry"))
+			imcForestry();
+		
+		if (Loader.isModLoaded("ForgeMicroblock"))
+			imcFMP();
+		
+		//if (Loader.isModLoaded("imb-modid?"))
+		//imcIMB();
+	}
+	
+	public static void imcForestry(){
+		// Forestry Backpack support
 		// Digger
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + Gwycraft.blockDyedStoneCobble + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + Gwycraft.glowyblockDyedStoneCobble + ":*");
@@ -56,10 +69,11 @@ public class InterModCommunication {
 		
 		// Miner
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "miner@" + Gwycraft.itemEnchantedGems + ":*");
-		
-		// End Forestry
-		
-		// Forge MultiPart
+
+	}
+	
+	public static void imcFMP(){
+		// Forge MicroBlock support
         // 16 Meta
         for (int i = 0; i < 16; i++) {
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.glowyWool, 1, i));
@@ -107,5 +121,12 @@ public class InterModCommunication {
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedLog3,1,i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedLog4,1,i));
         }
+		
 	}
+	
+	public static void imcIMB(){
+		// Immibis MicroBlock support
+		
+	}
+	
 }
