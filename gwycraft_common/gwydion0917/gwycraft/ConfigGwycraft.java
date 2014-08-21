@@ -11,6 +11,7 @@ public class ConfigGwycraft {
 
     // General Settings
 	public static boolean genGemsEnabled = true;
+	public static boolean toolsEnabled = true;
 	public static int genGemsVeins = 15; //was 9
 	public static int genGemsNumber = 7; //was 5
 
@@ -26,6 +27,7 @@ public class ConfigGwycraft {
 		genGemsEnabled = config.getBoolean("genGemsEnabled", Configuration.CATEGORY_GENERAL, true, "Should gems generate in the world");
 		genGemsVeins = config.getInt("genGemsVeins", Configuration.CATEGORY_GENERAL, 15, 0, 256, "Attempt to generate X veins per chunk");
 		genGemsNumber = config.getInt("genGemsNumber", Configuration.CATEGORY_GENERAL, 7, 0, 256, "Attemp to generate X ores per vein");
+		toolsEnabled = config.getBoolean("toolsEnabled", Configuration.CATEGORY_GENERAL, true, "Should gem tools be craftable");
 		
 		if (config.hasChanged()) {
 			config.save();

@@ -15,8 +15,6 @@ public class InterModCommunication {
 		if (Loader.isModLoaded("ForgeMicroblock"))
 			imcFMP();
 		
-		//if (Loader.isModLoaded("imb-modid?"))
-		//imcIMB();
 	}
 	
 	public static void imcForestry(){
@@ -121,11 +119,6 @@ public class InterModCommunication {
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedLog3,1,i));
             FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(Gwycraft.blockDyedLog4,1,i));
         }
-		
-	}
-	
-	public static void imcIMB(){
-		// Immibis MicroBlock support
 		
 	}
 	

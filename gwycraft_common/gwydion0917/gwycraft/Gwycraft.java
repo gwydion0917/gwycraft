@@ -38,7 +38,12 @@ import gwydion0917.gwycraft.items.ItemDyedMud;
 import gwydion0917.gwycraft.items.ItemDyedMudBricks;
 import gwydion0917.gwycraft.items.ItemDyedSticks;
 import gwydion0917.gwycraft.items.ItemEnchantedGems;
+import gwydion0917.gwycraft.items.ItemGemHatchet;
+import gwydion0917.gwycraft.items.ItemGemHoe;
+import gwydion0917.gwycraft.items.ItemGemPickaxe;
 import gwydion0917.gwycraft.items.ItemGemShears;
+import gwydion0917.gwycraft.items.ItemGemShovel;
+import gwydion0917.gwycraft.items.ItemGemSword;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.material.Material;
@@ -46,7 +51,11 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -57,7 +66,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 @Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.7b", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory", dependencies = "required-after:Forge@[10.12.2.1147]")
@@ -143,6 +151,13 @@ public class Gwycraft {
     public static Item itemDyedMudBricks;
     public static Item itemDyedSticks;
     public static Item itemGemShears;
+    public static Item itemGemHatchet;
+    public static Item itemGemHoe;
+    public static Item itemGemPickaxe;
+    public static Item itemGemShovel;
+    public static Item itemGemSword;
+    
+    public static ToolMaterial GWYCRAFT_MATERIAL = EnumHelper.addToolMaterial("GWYCRAFT_MATERIAL", 2, 500, 8.0F, 2.0F, 22);
     
 	@Instance("Gwycraft")
 	public static Gwycraft instance;
@@ -238,7 +253,12 @@ public class Gwycraft {
         itemDyedMudBricks = new ItemDyedMudBricks().setUnlocalizedName("Gwycraft:itemMudBricks").setCreativeTab(tabs);
         itemDyedSticks = new ItemDyedSticks().setUnlocalizedName("Gwycraft:itemDyedSticks").setCreativeTab(tabs);
         itemGemShears = new ItemGemShears().setUnlocalizedName("Gwycraft:gemshears").setCreativeTab(tabs);
-
+        itemGemHatchet = new ItemGemHatchet(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemhatchet").setCreativeTab(tabs);
+        itemGemHoe = new ItemGemHoe(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemhoe").setCreativeTab(tabs);
+        itemGemPickaxe = new ItemGemPickaxe(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gempickaxe").setCreativeTab(tabs);
+        itemGemShovel = new ItemGemShovel(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemshovel").setCreativeTab(tabs);
+        itemGemSword = new ItemGemSword(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemsword").setCreativeTab(tabs);
+        
         CommonProxy.registerRenderers();
 
         //  GameRegistry Register Blocks
@@ -325,14 +345,15 @@ public class Gwycraft {
         GameRegistry.registerItem(itemDyedMudBricks, "itemDyedMudBricks", null);
         GameRegistry.registerItem(itemDyedSticks, "itemDyedSticks", null);
         GameRegistry.registerItem(itemGemShears, "itemGemShears", null);
+        GameRegistry.registerItem(itemGemHatchet, "itemGemHatchet", null);
+        GameRegistry.registerItem(itemGemHoe, "itemGemHoe", null);
+        GameRegistry.registerItem(itemGemPickaxe, "itemGemPickaxe", null);
+        GameRegistry.registerItem(itemGemShovel, "itemGemShovel", null);
+        GameRegistry.registerItem(itemGemSword, "itemGemSword", null);
 
         // Shears Enchant
         ItemStack enchantedGemShears = new ItemStack(Gwycraft.itemGemShears);
         enchantedGemShears.addEnchantment(Enchantment.silkTouch, 1);
-        
-//        GameRegistry.addRecipe(enchantedGemShears, new ItemStack(itemGemShears, 1, 0), " X", "X ", 'X', itemEnchantedGemsStack);
-//        GameRegistry.addRecipe(enchantedGemShears, new Object[]{new ItemStack(itemGemShears), new ItemStack(Item.flint), new ItemStack(tutorialBlock)});
-        
         
         // Language Registry
         // 16 Meta
@@ -398,14 +419,10 @@ public class Gwycraft {
             GameRegistry.addRecipe(new ItemStack(blockDyedBrick, 1, i), "XX", "XX", 'X', itemDyedClayBricksStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', blockDyedStonecobbleStack);
             GameRegistry.addRecipe(new ItemStack(glowyblockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', glowyblockDyedStonecobbleStack);
-
-            GameRegistry.addRecipe(enchantedGemShears, new Object[]{" X", "X ", 'X', new ItemStack(itemEnchantedGems, 1, i)});
-
             GameRegistry.addRecipe(new ItemStack(blockDyedStonePaver, 3, i), "XX", 'X', blockDyedStoneStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedBrickPaver, 3, i), "XX", 'X', blockDyedBrickStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedMudBrickPaver, 3, i), "XX", 'X', blockDyedMudBrickStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedStoneCobblePaver, 3, i), "XX", 'X', blockDyedStonecobbleStack);
-
             
             // Add Shapeless Recipes
             GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Blocks.glowstone), cloth);
@@ -532,17 +549,28 @@ public class Gwycraft {
                 GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedLog4, 8, i), itemEnchantedGemsStack4, log, log, log, log, log, log, log, log);
             }
         }
-
-        // Items
-        // Language Registry
-        // Recipes
         
-            
+        // Ore Dictionary
+        OreDictionary.registerOre("gemGwycraft", new ItemStack(itemEnchantedGems, 1, OreDictionary.WILDCARD_VALUE));
+
+        // Recipes
+        if (ConfigGwycraft.toolsEnabled) {       
+		    GameRegistry.addRecipe(new ShapedOreRecipe(enchantedGemShears, " X", "X ", 'X', "gemGwycraft"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHatchet, 1), "XX ", "XY ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHatchet, 1), " XX", " YX", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHoe, 1), "XX ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHoe, 1), " XX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemPickaxe, 1), "XXX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemShovel, 1), " X ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), "X  ", "X  ", "Y  ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), " X ", " X ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), "  X", "  X", "  Y", 'X', "gemGwycraft", 'Y', "stickWood"));
+        }
+        
     }
 	
 	@EventHandler 
     public void init(FMLInitializationEvent event) {
-        LanguageRegistry.instance().addStringLocalization("itemGroup.GwyCraft", "en_US", "GwyCraft");
         GameRegistry.registerWorldGenerator(worldGen, 0);
         InterModCommunication.initIMC();
     }
@@ -552,5 +580,6 @@ public class Gwycraft {
 		// Stub Method
 
 	}
+	
 
 }

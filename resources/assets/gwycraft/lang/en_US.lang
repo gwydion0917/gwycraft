@@ -1,3 +1,4 @@
+itemGroup.GwyCraft=GwyCraft
 tile.gwycraft.blockDyedStone.white.name=Dyed White Stone
 tile.gwycraft.blockDyedStone.orange.name=Dyed Orange Stone
 tile.gwycraft.blockDyedStone.blue.name=Dyed Blue Stone
@@ -797,4 +798,9 @@ item.Gwycraft:gem_lapis_lazuli.name=Enchanted Lapis Lazuli
 item.Gwycraft:gem_tigerseye.name=Enchanted Tigerseye 
 item.Gwycraft:gem_emerald.name=Enchanted Emerald 
 item.Gwycraft:gem_ruby.name=Enchanted Ruby 
-item.Gwycraft:gem_onyx.name=Enchanted Onyx 
+item.Gwycraft:gem_onyx.name=Enchanted Onyx
+item.Gwycraft:gemhatchet.name=Gem Hatchet
+item.Gwycraft:gemhoe.name=Gem Hoe
+item.Gwycraft:gemshovel.name=Gem Shovel
+item.Gwycraft:gempickaxe.name=Gem Pickaxe
+item.Gwycraft:gemsword.name=Gem Sword  
