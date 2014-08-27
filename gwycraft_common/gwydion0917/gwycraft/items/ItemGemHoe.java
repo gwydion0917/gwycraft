@@ -48,4 +48,5 @@ public class ItemGemHoe extends ItemHoe {
 		// FIXME: This is probably wrong
 		return true;
 	}
+
 }

@@ -49,4 +49,9 @@ public class ItemGemShovel extends ItemSpade {
 		// FIXME: This is probably wrong
 		return true;
 	}
+
+	@Override
+	public int getItemEnchantability() {
+		return this.toolMaterial.getEnchantability();
+	}
 }

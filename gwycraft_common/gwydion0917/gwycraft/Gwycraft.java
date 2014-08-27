@@ -68,7 +68,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.8-pre1", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
+@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.8-pre2", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
 public class Gwycraft {
 
 	public static final String[] gwyColorNames = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
@@ -167,6 +167,7 @@ public class Gwycraft {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		LogHelper.info("Starting Pre-Init");
 		FMLCommonHandler.instance().bus().register( new ConfigGwycraft());
         ConfigGwycraft.initConfig(event);
         
@@ -355,14 +356,18 @@ public class Gwycraft {
         ItemStack enchantedGemShears = new ItemStack(Gwycraft.itemGemShears);
         enchantedGemShears.addEnchantment(Enchantment.silkTouch, 1);
         
+        // Any kind
+        ItemStack anyCloth = new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE);
+        ItemStack anyPlank = new ItemStack(Blocks.planks, 1, OreDictionary.WILDCARD_VALUE);
+        
         // Language Registry
         // 16 Meta
         for (int i = 0; i < 16; i++) {
         	// Dye is inverted compared to wool
         	ItemStack dye = new ItemStack(Items.dye, 1, 15 - i);
-        	
 			ItemStack cloth = new ItemStack(Blocks.wool, 1, i);
-			ItemStack glowyWoolStack = new ItemStack(glowyWool, 1, i);
+			ItemStack glowyWoolStack = new ItemStack(glowyWool, 4, i);
+			ItemStack blockglowyWool = new ItemStack(glowyWool, 1, i);
             ItemStack blockDyedStoneStack = new ItemStack(blockDyedStone, 1, i);
             ItemStack glowyblockDyedStoneStack = new ItemStack(glowyblockDyedStone, 1, i);
             ItemStack blockDyedBookcaseStack = new ItemStack(blockDyedBookcase, 1, i);
@@ -417,21 +422,23 @@ public class Gwycraft {
             GameRegistry.addRecipe(new ItemStack(blockDyedMudBrick, 4, i), "XX", "XX", 'X', itemDyedMudBricksStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedClayblock, 1, i), "XX", "XX", 'X', itemDyedClayStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedBrick, 1, i), "XX", "XX", 'X', itemDyedClayBricksStack);
-            GameRegistry.addRecipe(new ItemStack(blockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', blockDyedStonecobbleStack);
-            GameRegistry.addRecipe(new ItemStack(glowyblockDyedCobbleWalls, 1, i), "XXX", "XXX", 'X', glowyblockDyedStonecobbleStack);
+            GameRegistry.addRecipe(new ItemStack(blockDyedCobbleWalls, 6, i), "XXX", "XXX", 'X', blockDyedStonecobbleStack);
+            GameRegistry.addRecipe(new ItemStack(glowyblockDyedCobbleWalls, 6, i), "XXX", "XXX", 'X', glowyblockDyedStonecobbleStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedStonePaver, 3, i), "XX", 'X', blockDyedStoneStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedBrickPaver, 3, i), "XX", 'X', blockDyedBrickStack);
+            GameRegistry.addRecipe(new ItemStack(blockDyedStoneBrickPaver, 3, i), "XX", 'X', blockDyedStoneBrickStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedMudBrickPaver, 3, i), "XX", 'X', blockDyedMudBrickStack);
             GameRegistry.addRecipe(new ItemStack(blockDyedStoneCobblePaver, 3, i), "XX", 'X', blockDyedStonecobbleStack);
             
             // Add Shapeless Recipes
-            GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Blocks.glowstone), cloth);
+            GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Blocks.glowstone), cloth, cloth, cloth, cloth);
+            GameRegistry.addShapelessRecipe(new ItemStack(glowyWool, 8, i), itemEnchantedGemsStack, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth);
             GameRegistry.addShapelessRecipe(new ItemStack(blockDyedSand, 8, i), dye, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand);
             GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedSand, 8, i), itemEnchantedGemsStack, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand);
             GameRegistry.addShapelessRecipe(new ItemStack(blockDyedSandstone, 8, i), dye, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone);
             GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedSandstone, 8, i), itemEnchantedGemsStack, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone, Blocks.sandstone);
-            GameRegistry.addShapelessRecipe(new ItemStack(blockDyedPlank, 8, i), dye, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks);
-            GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedPlank, 8, i), itemEnchantedGemsStack, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks, Blocks.planks);
+            GameRegistry.addShapelessRecipe(new ItemStack(blockDyedPlank, 8, i), dye, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank);
+            GameRegistry.addShapelessRecipe(new ItemStack(glowyblockDyedPlank, 8, i), itemEnchantedGemsStack, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank);
             GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 4, 15-i), itemEnchantedGemsStack, Items.gunpowder, Items.glass_bottle );
             GameRegistry.addShapelessRecipe(new ItemStack(itemDyedMud, 16, i), Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Items.clay_ball, Items.potionitem, dye);
             GameRegistry.addShapelessRecipe(new ItemStack(itemDyedClay, 8, i), Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, dye);
@@ -515,16 +522,6 @@ public class Gwycraft {
             ItemStack itemEnchantedGemsStack3 = new ItemStack(itemEnchantedGems, 1, i+8);
             ItemStack itemEnchantedGemsStack4 = new ItemStack(itemEnchantedGems, 1, i+12);
 
-            // Language Registry
-         /*   LanguageRegistry.addName(blockDyedLog1Stack, gwyColorLog1Names[blockDyedLog1Stack.getItemDamage()] + " Log");
-            LanguageRegistry.addName(blockDyedLog2Stack, gwyColorLog2Names[blockDyedLog2Stack.getItemDamage()] + " Log");
-            LanguageRegistry.addName(blockDyedLog3Stack, gwyColorLog3Names[blockDyedLog3Stack.getItemDamage()] + " Log");
-            LanguageRegistry.addName(blockDyedLog4Stack, gwyColorLog4Names[blockDyedLog4Stack.getItemDamage()] + " Log");
-            LanguageRegistry.addName(glowyblockDyedLog1Stack, "Glowy " + gwyColorLog1Names[glowyblockDyedLog1Stack.getItemDamage()] + " Log");
-            LanguageRegistry.addName(glowyblockDyedLog2Stack, "Glowy " + gwyColorLog2Names[glowyblockDyedLog2Stack.getItemDamage()] + " Log");
-            LanguageRegistry.addName(glowyblockDyedLog3Stack, "Glowy " + gwyColorLog3Names[glowyblockDyedLog3Stack.getItemDamage()] + " Log");
-            LanguageRegistry.addName(glowyblockDyedLog4Stack, "Glowy " + gwyColorLog4Names[glowyblockDyedLog4Stack.getItemDamage()] + " Log");*/
-
             //  Add Recipes
             GameRegistry.addShapelessRecipe(new ItemStack(blockDyedPlank, 4, i), blockDyedLog1Stack);
             GameRegistry.addShapelessRecipe(new ItemStack(blockDyedPlank, 4, i+4), blockDyedLog2Stack);
@@ -566,19 +563,23 @@ public class Gwycraft {
 		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), " X ", " X ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
 		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), "  X", "  X", "  Y", 'X', "gemGwycraft", 'Y', "stickWood"));
         }
-        
+        LogHelper.info("Pre-Init Complete");
     }
 	
 	@EventHandler 
     public void init(FMLInitializationEvent event) {
+		LogHelper.info("Starting Init");
         GameRegistry.registerWorldGenerator(worldGen, 0);
+        LogHelper.info("Doing IMC");
         InterModCommunication.initIMC();
+        LogHelper.info("Init Complete");
     }
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		// Stub Method
-
+		LogHelper.info("Starting Post-Init");
+		LogHelper.info("Post-Init Complete");
 	}
 	
 

@@ -48,4 +48,11 @@ public class ItemGemHatchet extends ItemAxe {
 		// FIXME: This is probably wrong
 		return true;
 	}
+
+	@Override
+	public int getItemEnchantability() {
+		// FIXME: This never gets called, and can't figure it out
+		return this.toolMaterial.getEnchantability();
+	}
+
 }

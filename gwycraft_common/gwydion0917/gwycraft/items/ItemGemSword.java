@@ -50,4 +50,10 @@ public class ItemGemSword extends ItemSword {
 		// FIXME: This is probably wrong
 		return true;
 	}
+	
+	@Override
+	public int getItemEnchantability() {
+		//return this.toolMaterial.getEnchantability();
+		return 22;
+	}
 }
