@@ -19,7 +19,7 @@ buildscript {
 
 apply plugin: 'forge'
 minecraft { version = "1.7.2-10.12.2.1147" }
-version = "0.1.8-pre2"
+version = "0.1.8-pre3"
 group= "gwydion0917.gwycraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "gwycraft-mc172"
 

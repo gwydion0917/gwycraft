@@ -47,7 +47,6 @@ import gwydion0917.gwycraft.items.ItemGemSword;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.material.Material;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -68,7 +67,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.8-pre2", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
+@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.8-pre3", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
 public class Gwycraft {
 
 	public static final String[] gwyColorNames = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
@@ -351,10 +350,6 @@ public class Gwycraft {
         GameRegistry.registerItem(itemGemPickaxe, "itemGemPickaxe", null);
         GameRegistry.registerItem(itemGemShovel, "itemGemShovel", null);
         GameRegistry.registerItem(itemGemSword, "itemGemSword", null);
-
-        // Shears Enchant
-        ItemStack enchantedGemShears = new ItemStack(Gwycraft.itemGemShears);
-        enchantedGemShears.addEnchantment(Enchantment.silkTouch, 1);
         
         // Any kind
         ItemStack anyCloth = new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE);
@@ -552,7 +547,7 @@ public class Gwycraft {
 
         // Recipes
         if (ConfigGwycraft.toolsEnabled) {       
-		    GameRegistry.addRecipe(new ShapedOreRecipe(enchantedGemShears, " X", "X ", 'X', "gemGwycraft"));
+		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Gwycraft.itemGemShears, 1), " X", "X ", 'X', "gemGwycraft"));
 		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHatchet, 1), "XX ", "XY ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
 		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHatchet, 1), " XX", " YX", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
 		    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHoe, 1), "XX ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));

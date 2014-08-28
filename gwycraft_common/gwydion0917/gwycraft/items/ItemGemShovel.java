@@ -1,13 +1,18 @@
 package gwydion0917.gwycraft.items;
 
+import gwydion0917.gwycraft.ConfigGwycraft;
+
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -30,8 +35,6 @@ public class ItemGemShovel extends ItemSpade {
 	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs,
 			List par3List) {
 		ItemStack stack = new ItemStack(par1, 1, 0);
-		// TODO: Random enchant?
-		// stack.addEnchantment(Enchantment.silkTouch, 1);
 		par3List.add(stack);
 	}
 
@@ -46,12 +49,20 @@ public class ItemGemShovel extends ItemSpade {
 	@Override
 	public boolean getIsRepairable(ItemStack par1ItemStack,
 			ItemStack par2ItemStack) {
-		// FIXME: This is probably wrong
-		return true;
+		// FIXME: This needs work
+		return false;
 	}
 
 	@Override
 	public int getItemEnchantability() {
 		return this.toolMaterial.getEnchantability();
 	}
+	
+    @Override
+    public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+    	if (ConfigGwycraft.toolsHaveEnchants){
+    		int level = new Random().nextInt(30) + 1;
+    		par1ItemStack = EnchantmentHelper.addRandomEnchantment(new Random(), par1ItemStack, level);
+    	}
+    }
 }
