@@ -1,3 +1,5 @@
 /build.cmd
 /.gradle
 /build
+/.idea
+gwycraft.iml

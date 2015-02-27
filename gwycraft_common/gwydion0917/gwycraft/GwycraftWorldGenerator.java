@@ -48,5 +48,19 @@ private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 	}
 
     private void generateNether(World world, Random rand, int chunkX, int chunkZ) {
+    	// Check to see if genGemsNether is enabled
+    			if (ConfigGwycraft.genGemsNether) {
+    					for (int k = 0; k < ConfigGwycraft.genGemsVeins; k++) {
+    						int firstBlockXCoord = chunkX + rand.nextInt(16);
+    						int firstBlockYCoord = rand.nextInt(64);
+    						int firstBlockZCoord = chunkZ + rand.nextInt(16);
+    						Random r = new Random();
+    						int i = r.nextInt(16);
+    						(new WorldGenMinable(Gwycraft.blockGemOre, i, ConfigGwycraft.genGemsNumber,
+    								Blocks.netherrack)).generate(world, rand,
+    								firstBlockXCoord, firstBlockYCoord,
+    								firstBlockZCoord);
+    				}
+    			}
     }
 }
