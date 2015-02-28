@@ -804,3 +804,6 @@ item.Gwycraft:gemhoe.name=Gem Hoe
 item.Gwycraft:gemshovel.name=Gem Shovel
 item.Gwycraft:gempickaxe.name=Gem Pickaxe
 item.Gwycraft:gemsword.name=Gem Sword  
+tile.gwycraft.dyeVat.name=Dye Vat
+tile.gwycraft.kiln.name=Kiln
+tile.gwycraft.tableSaw.name=Table Saw
