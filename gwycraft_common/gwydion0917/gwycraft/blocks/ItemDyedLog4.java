@@ -21,7 +21,11 @@ public class ItemDyedLog4 extends ItemBlock {
 
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack) {
-		return getUnlocalizedName() + "." + subNames[itemstack.getItemDamage()];
+        if (itemstack.getItemDamage() < subNames.length) {
+            return getUnlocalizedName() + "." + subNames[itemstack.getItemDamage()];
+        } else {
+            return getUnlocalizedName() + ".ERROR";
+        }
 	}
 
 }
