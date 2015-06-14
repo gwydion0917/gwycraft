@@ -39,7 +39,7 @@ private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 					int firstBlockZCoord = chunkZ + rand.nextInt(16);
 					Random r = new Random();
 					int i = r.nextInt(16);
-					(new WorldGenMinable(Gwycraft.blockGemOre, i, ConfigGwycraft.genGemsNumber,
+					(new WorldGenMinable(GwycraftBlocks.blockGemOre, i, ConfigGwycraft.genGemsNumber,
 							Blocks.stone)).generate(world, rand,
 							firstBlockXCoord, firstBlockYCoord,
 							firstBlockZCoord);
@@ -56,7 +56,7 @@ private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
     						int firstBlockZCoord = chunkZ + rand.nextInt(16);
     						Random r = new Random();
     						int i = r.nextInt(16);
-    						(new WorldGenMinable(Gwycraft.blockGemOre, i, ConfigGwycraft.genGemsNumber,
+    						(new WorldGenMinable(GwycraftBlocks.blockGemOre, i, ConfigGwycraft.genGemsNumber,
     								Blocks.netherrack)).generate(world, rand,
     								firstBlockXCoord, firstBlockYCoord,
     								firstBlockZCoord);

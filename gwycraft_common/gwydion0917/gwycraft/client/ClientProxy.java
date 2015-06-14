@@ -4,9 +4,10 @@ import gwydion0917.gwycraft.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
 
-	public static void registerRenderers() {
-		// We'll have none of that here!
+    @Override
+    public void registerRenderers() {
+        //We'll have none of that here!
 
-	}
+    }
 
 }

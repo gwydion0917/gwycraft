@@ -25,7 +25,7 @@ public class CommonProxy implements IGuiHandler {
 	}
 
 	// Client stuff
-	public static void registerRenderers() {
+	public void registerRenderers() {
 		// Nothing here as this is the server side proxy
 	}
 

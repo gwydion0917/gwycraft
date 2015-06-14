@@ -4,3 +4,9 @@
 /.idea
 gwycraft.iml
 /run
+
+# Eclipse
+/bin/
+.classpath
+.project
+.settings/
