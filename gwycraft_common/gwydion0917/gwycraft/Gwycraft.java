@@ -33,7 +33,7 @@ public class Gwycraft {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.info("Starting Pre-Init");
+        LogHelper.trace("Starting Pre-Init");
         FMLCommonHandler.instance().bus().register(new ConfigGwycraft());
         ConfigGwycraft.initConfig(event);
 
@@ -44,23 +44,23 @@ public class Gwycraft {
 
         GwycraftRecipes.init();
        
-        LogHelper.info("Pre-Init Complete");
+        LogHelper.trace("Pre-Init Complete");
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        LogHelper.info("Starting Init");
+        LogHelper.trace("Starting Init");
         GameRegistry.registerWorldGenerator(worldGen, 0);
-        LogHelper.info("Doing IMC");
+        LogHelper.trace("Doing IMC");
         InterModCommunication.initIMC();
-        LogHelper.info("Init Complete");
+        LogHelper.trace("Init Complete");
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         // Stub Method
-        LogHelper.info("Starting Post-Init");
-        LogHelper.info("Post-Init Complete");
+        LogHelper.trace("Starting Post-Init");
+        LogHelper.trace("Post-Init Complete");
     }
 
 
