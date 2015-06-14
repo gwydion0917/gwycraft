@@ -24,10 +24,10 @@ public class InterModCommunication {
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftBlocks.glowyblockDyedStoneCobble + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftBlocks.blockDyedSand + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftBlocks.glowyblockDyedSand + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + Gwycraft.itemDyedClay + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + Gwycraft.itemDyedClayBricks + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + Gwycraft.itemDyedMud + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + Gwycraft.itemDyedMudBricks + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedClay + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedClayBricks + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedMud + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedMudBricks + ":*");
 		
 		// Builder
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyWool + ":*");
@@ -47,7 +47,7 @@ public class InterModCommunication {
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedFences + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedCobbleWalls + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedCobbleWalls + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + Gwycraft.itemDyedSticks + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftItems.itemDyedSticks + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedSandstone + ":*");
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedSandstone + ":*");
 		
@@ -66,7 +66,7 @@ public class InterModCommunication {
 		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.glowyblockDyedPlank + ":*");
 		
 		// Miner
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "miner@" + Gwycraft.itemEnchantedGems + ":*");
+		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "miner@" + GwycraftItems.itemEnchantedGems + ":*");
 
 	}
 	

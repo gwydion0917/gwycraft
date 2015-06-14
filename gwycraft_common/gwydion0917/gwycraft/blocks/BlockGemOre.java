@@ -1,6 +1,6 @@
 package gwydion0917.gwycraft.blocks;
 
-import gwydion0917.gwycraft.Gwycraft;
+import gwydion0917.gwycraft.GwycraftItems;
 
 import java.util.List;
 import java.util.Random;
@@ -42,7 +42,7 @@ public class BlockGemOre extends Block {
 	@Override
     public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return Gwycraft.itemEnchantedGems;
+        return GwycraftItems.itemEnchantedGems;
         // ConfigGwycraft.itemEnchantedGemsID+256;
     }
 	

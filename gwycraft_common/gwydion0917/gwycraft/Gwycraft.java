@@ -40,23 +40,6 @@ public class Gwycraft {
     public static GwycraftWorldGenerator worldGen = new GwycraftWorldGenerator();
     public static GwycraftTab tabs = new GwycraftTab("GwyCraft");
 
-   
-
-    public static Item itemEnchantedGems;
-    public static Item itemDyedClay;
-    public static Item itemDyedClayBricks;
-    public static Item itemDyedMud;
-    public static Item itemDyedMudBricks;
-    public static Item itemDyedSticks;
-    public static Item itemGemShears;
-    public static Item itemGemHatchet;
-    public static Item itemGemHoe;
-    public static Item itemGemPickaxe;
-    public static Item itemGemShovel;
-    public static Item itemGemSword;
-
-    public static ToolMaterial GWYCRAFT_MATERIAL = EnumHelper.addToolMaterial("GWYCRAFT_MATERIAL", 2, 500, 8.0F, 2.0F, 22);
-
     @Instance("Gwycraft")
     public static Gwycraft instance;
 
@@ -70,40 +53,10 @@ public class Gwycraft {
         ConfigGwycraft.initConfig(event);
 
         GwycraftBlocks.init();
-
-// Items
-        itemEnchantedGems = new ItemEnchantedGems().setUnlocalizedName("Gwycraft:itemEnchantedGems").setCreativeTab(tabs);
-        itemDyedClay = new ItemDyedClay().setUnlocalizedName("Gwycraft:itemDyedClay").setCreativeTab(tabs);
-        itemDyedClayBricks = new ItemDyedClayBricks().setUnlocalizedName("Gwycraft:itemDyedClayBricks").setCreativeTab(tabs);
-        itemDyedMud = new ItemDyedMud().setUnlocalizedName("Gwycraft:itemMud").setCreativeTab(tabs);
-        itemDyedMudBricks = new ItemDyedMudBricks().setUnlocalizedName("Gwycraft:itemMudBricks").setCreativeTab(tabs);
-        itemDyedSticks = new ItemDyedSticks().setUnlocalizedName("Gwycraft:itemDyedSticks").setCreativeTab(tabs);
-        itemGemShears = new ItemGemShears().setUnlocalizedName("Gwycraft:gemshears").setCreativeTab(tabs);
-        itemGemHatchet = new ItemGemHatchet(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemhatchet").setCreativeTab(tabs);
-        itemGemHoe = new ItemGemHoe(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemhoe").setCreativeTab(tabs);
-        itemGemPickaxe = new ItemGemPickaxe(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gempickaxe").setCreativeTab(tabs);
-        itemGemShovel = new ItemGemShovel(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemshovel").setCreativeTab(tabs);
-        itemGemSword = new ItemGemSword(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemsword").setCreativeTab(tabs);
-
+        
+        GwycraftItems.init();
 
         CommonProxy.registerRenderers();
-
-        
-        // Items
-        GameRegistry.registerItem(itemEnchantedGems, "itemEnchantedGems", null);
-        GameRegistry.registerItem(itemDyedClay, "itemDyedClay", null);
-        GameRegistry.registerItem(itemDyedClayBricks, "itemDyedClayBricks", null);
-        GameRegistry.registerItem(itemDyedMud, "itemDyedMud", null);
-        GameRegistry.registerItem(itemDyedMudBricks, "itemDyedMudBricks", null);
-        GameRegistry.registerItem(itemDyedSticks, "itemDyedSticks", null);
-        GameRegistry.registerItem(itemGemShears, "itemGemShears", null);
-        GameRegistry.registerItem(itemGemHatchet, "itemGemHatchet", null);
-        GameRegistry.registerItem(itemGemHoe, "itemGemHoe", null);
-        GameRegistry.registerItem(itemGemPickaxe, "itemGemPickaxe", null);
-        GameRegistry.registerItem(itemGemShovel, "itemGemShovel", null);
-        GameRegistry.registerItem(itemGemSword, "itemGemSword", null);
-
-        
 
         // Any kind
         ItemStack anyCloth = new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE);
@@ -143,16 +96,16 @@ public class Gwycraft {
             ItemStack glowyblockDyedStonecobbleStack = new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i);
             ItemStack blockGemCompressedStack = new ItemStack(GwycraftBlocks.blockGemCompressed, 1, i);
             ItemStack blockGemOreStack = new ItemStack(GwycraftBlocks.blockGemOre, 1, i);
-            ItemStack itemEnchantedGemsStack = new ItemStack(itemEnchantedGems, 1, i);
-            ItemStack itemDyedClayStack = new ItemStack(itemDyedClay, 1, i);
-            ItemStack itemDyedClayBricksStack = new ItemStack(itemDyedClayBricks, 1, i);
-            ItemStack itemDyedMudStack = new ItemStack(itemDyedMud, 1, i);
-            ItemStack itemDyedMudBricksStack = new ItemStack(itemDyedMudBricks, 1, i);
+            ItemStack itemEnchantedGemsStack = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i);
+            ItemStack itemDyedClayStack = new ItemStack(GwycraftItems.itemDyedClay, 1, i);
+            ItemStack itemDyedClayBricksStack = new ItemStack(GwycraftItems.itemDyedClayBricks, 1, i);
+            ItemStack itemDyedMudStack = new ItemStack(GwycraftItems.itemDyedMud, 1, i);
+            ItemStack itemDyedMudBricksStack = new ItemStack(GwycraftItems.itemDyedMudBricks, 1, i);
             ItemStack blockDyedFencesStack = new ItemStack(GwycraftBlocks.blockDyedFences, 1, i);
             ItemStack glowyblockDyedFencesStack = new ItemStack(GwycraftBlocks.glowyblockDyedFences, 1, i);
             ItemStack blockDyedCobbleWallsStack = new ItemStack(GwycraftBlocks.blockDyedCobbleWalls, 1, i);
             ItemStack glowyblockDyedCobbleWallsStack = new ItemStack(GwycraftBlocks.glowyblockDyedCobbleWalls, 1, i);
-            ItemStack itemDyedSticksStack = new ItemStack(itemDyedSticks, 1, i);
+            ItemStack itemDyedSticksStack = new ItemStack(GwycraftItems.itemDyedSticks, 1, i);
             ItemStack blockDyedStonePaverStack = new ItemStack(GwycraftBlocks.blockDyedStonePaver, 1, i);
             ItemStack blockDyedBrickPaverStack = new ItemStack(GwycraftBlocks.blockDyedBrickPaver, 1, i);
             ItemStack blockDyedMudBrickPaverStack = new ItemStack(GwycraftBlocks.blockDyedMudBrickPaver, 1, i);
@@ -162,9 +115,9 @@ public class Gwycraft {
             //  Add Recipes
             GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedBookcase, 1, i), "###", "XXX", "###", '#', blockDyedPlankStack, 'X', Items.book);
             GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedBookcase, 1, i), "###", "XXX", "###", '#', glowyblockDyedPlankStack, 'X', Items.book);
-            GameRegistry.addRecipe(new ItemStack(itemDyedSticks, 4, i), "X", "X", 'X', blockDyedPlankStack);
+            GameRegistry.addRecipe(new ItemStack(GwycraftItems.itemDyedSticks, 4, i), "X", "X", 'X', blockDyedPlankStack);
             GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockGemCompressed, 1, i), "XX", "XX", 'X', itemEnchantedGemsStack);
-            GameRegistry.addRecipe(new ItemStack(itemEnchantedGems, 4, i), "X", 'X', blockGemCompressedStack);
+            GameRegistry.addRecipe(new ItemStack(GwycraftItems.itemEnchantedGems, 4, i), "X", 'X', blockGemCompressedStack);
             GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedStoneBrick, 4, i), "xx", "xx", 'x', blockDyedStoneStack);
             GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedStoneBrick, 4, i), "XX", "XX", 'X', glowyblockDyedStoneStack);
             GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedFences, 2, i), "XXX", "XXX", 'X', itemDyedSticksStack);
@@ -189,8 +142,8 @@ public class Gwycraft {
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedPlank, 8, i), dye, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 8, i), itemEnchantedGemsStack, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank);
             GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 4, 15 - i), itemEnchantedGemsStack, Items.gunpowder, Items.glass_bottle);
-            GameRegistry.addShapelessRecipe(new ItemStack(itemDyedMud, 16, i), Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Items.clay_ball, Items.potionitem, dye);
-            GameRegistry.addShapelessRecipe(new ItemStack(itemDyedClay, 8, i), Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, dye);
+            GameRegistry.addShapelessRecipe(new ItemStack(GwycraftItems.itemDyedMud, 16, i), Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Blocks.dirt, Items.clay_ball, Items.potionitem, dye);
+            GameRegistry.addShapelessRecipe(new ItemStack(GwycraftItems.itemDyedClay, 8, i), Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, dye);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedClayblock, 8, i), itemEnchantedGemsStack, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedBrick, 8, i), itemEnchantedGemsStack, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedFences, 8, i), itemEnchantedGemsStack, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence);
@@ -201,8 +154,8 @@ public class Gwycraft {
             GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i), new ItemStack(GwycraftBlocks.glowyblockDyedStone, 1, i), 0.1F);
             GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.blockDyedSand, 1, i), new ItemStack(GwycraftBlocks.blockDyedGlass, 1, i), 0.1F);
             GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedSand, 1, i), new ItemStack(GwycraftBlocks.glowyblockDyedGlass, 1, i), 0.1F);
-            GameRegistry.addSmelting(new ItemStack(itemDyedMud, 1, i), new ItemStack(itemDyedMudBricks, 1, i), 0.1F);
-            GameRegistry.addSmelting(new ItemStack(itemDyedClay, 1, i), new ItemStack(itemDyedClayBricks, 1, i), 0.1F);
+            GameRegistry.addSmelting(new ItemStack(GwycraftItems.itemDyedMud, 1, i), new ItemStack(GwycraftItems.itemDyedMudBricks, 1, i), 0.1F);
+            GameRegistry.addSmelting(new ItemStack(GwycraftItems.itemDyedClay, 1, i), new ItemStack(GwycraftItems.itemDyedClayBricks, 1, i), 0.1F);
 
             // Ore Dictionary
             GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 8, i), dye, "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone"));
@@ -266,10 +219,10 @@ public class Gwycraft {
             ItemStack glowyblockDyedLog2Stack = new ItemStack(GwycraftBlocks.glowyblockDyedLog2, 1, i);
             ItemStack glowyblockDyedLog3Stack = new ItemStack(GwycraftBlocks.glowyblockDyedLog3, 1, i);
             ItemStack glowyblockDyedLog4Stack = new ItemStack(GwycraftBlocks.glowyblockDyedLog4, 1, i);
-            ItemStack itemEnchantedGemsStack1 = new ItemStack(itemEnchantedGems, 1, i);
-            ItemStack itemEnchantedGemsStack2 = new ItemStack(itemEnchantedGems, 1, i + 4);
-            ItemStack itemEnchantedGemsStack3 = new ItemStack(itemEnchantedGems, 1, i + 8);
-            ItemStack itemEnchantedGemsStack4 = new ItemStack(itemEnchantedGems, 1, i + 12);
+            ItemStack itemEnchantedGemsStack1 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i);
+            ItemStack itemEnchantedGemsStack2 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i + 4);
+            ItemStack itemEnchantedGemsStack3 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i + 8);
+            ItemStack itemEnchantedGemsStack4 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i + 12);
 
             //  Add Recipes
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedPlank, 4, i), blockDyedLog1Stack);
@@ -297,20 +250,20 @@ public class Gwycraft {
         }
 
         // Ore Dictionary
-        OreDictionary.registerOre("gemGwycraft", new ItemStack(itemEnchantedGems, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("gemGwycraft", new ItemStack(GwycraftItems.itemEnchantedGems, 1, OreDictionary.WILDCARD_VALUE));
 
         // Recipes
         if (ConfigGwycraft.toolsEnabled) {
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Gwycraft.itemGemShears, 1), " X", "X ", 'X', "gemGwycraft"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHatchet, 1), "XX ", "XY ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHatchet, 1), " XX", " YX", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHoe, 1), "XX ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemHoe, 1), " XX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemPickaxe, 1), "XXX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemShovel, 1), " X ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), "X  ", "X  ", "Y  ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), " X ", " X ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemGemSword, 1), "  X", "  X", "  Y", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemShears, 1), " X", "X ", 'X', "gemGwycraft"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHatchet, 1), "XX ", "XY ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHatchet, 1), " XX", " YX", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHoe, 1), "XX ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHoe, 1), " XX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemPickaxe, 1), "XXX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemShovel, 1), " X ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), "X  ", "X  ", "Y  ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), " X ", " X ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), "  X", "  X", "  Y", 'X', "gemGwycraft", 'Y', "stickWood"));
         }
         LogHelper.info("Pre-Init Complete");
     }
