@@ -40,7 +40,7 @@ public class Gwycraft {
         GwycraftBlocks.init();
         GwycraftItems.init();
 
-        CommonProxy.registerRenderers();
+        proxy.registerRenderers();
 
         GwycraftRecipes.init();
        
