@@ -14,8 +14,10 @@ import gwydion0917.gwycraft.items.ItemGemShears;
 import gwydion0917.gwycraft.items.ItemGemShovel;
 import gwydion0917.gwycraft.items.ItemGemSword;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class GwycraftItems {
     
@@ -71,6 +73,8 @@ public class GwycraftItems {
         GameRegistry.registerItem(itemGemShovel, "itemGemShovel", null);
         GameRegistry.registerItem(itemGemSword, "itemGemSword", null);
         
+        // Ore Dictionary
+        OreDictionary.registerOre("gemGwycraft", new ItemStack(itemEnchantedGems, 1, OreDictionary.WILDCARD_VALUE));
     }
 
 }
