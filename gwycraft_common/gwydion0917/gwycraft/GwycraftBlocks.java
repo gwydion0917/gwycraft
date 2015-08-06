@@ -126,7 +126,7 @@ public class GwycraftBlocks {
 
         // Gravel
         blockDyedGravel = new BlockDyedGravel().setHardness(0.5F).setStepSound(Block.soundTypeGravel).setBlockName("gwycraft.blockDyedGravel").setCreativeTab(Gwycraft.tabs);
-        glowyblockDyedGravel = new BlockDyedGravel().setLightLevel(1F).setHardness(0.5F).setStepSound(Block.soundTypeGravel).setBlockName("gwycraft.glowyblockDyedGravelCreativeTab(Gwycraft.tabs);
+        glowyblockDyedGravel = new BlockDyedGravel().setLightLevel(1F).setHardness(0.5F).setStepSound(Block.soundTypeGravel).setBlockName("gwycraft.glowyblockDyedGravel").setCreativeTab(Gwycraft.tabs);
 
         // Sand
         blockDyedSand = new BlockDyedSand().setHardness(0.5F).setStepSound(Block.soundTypeSand).setBlockName("gwycraft.blockDyedSand").setCreativeTab(Gwycraft.tabs);
