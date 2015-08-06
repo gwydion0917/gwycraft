@@ -1,41 +1,7 @@
 package gwydion0917.gwycraft;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import gwydion0917.gwycraft.blocks.BlockDyeVat;
-import gwydion0917.gwycraft.blocks.BlockDyedBookcase;
-import gwydion0917.gwycraft.blocks.BlockDyedCobbleWalls;
-import gwydion0917.gwycraft.blocks.BlockDyedFences;
-import gwydion0917.gwycraft.blocks.BlockDyedGlass;
-import gwydion0917.gwycraft.blocks.BlockDyedLeaf;
-import gwydion0917.gwycraft.blocks.BlockDyedLog1;
-import gwydion0917.gwycraft.blocks.BlockDyedLog2;
-import gwydion0917.gwycraft.blocks.BlockDyedLog3;
-import gwydion0917.gwycraft.blocks.BlockDyedLog4;
-import gwydion0917.gwycraft.blocks.BlockDyedSand;
-import gwydion0917.gwycraft.blocks.BlockDyedSandstone;
-import gwydion0917.gwycraft.blocks.BlockDyedTorch;
-import gwydion0917.gwycraft.blocks.BlockGemCompressed;
-import gwydion0917.gwycraft.blocks.BlockGemOre;
-import gwydion0917.gwycraft.blocks.BlockGlowyWool;
-import gwydion0917.gwycraft.blocks.BlockGwyGenericBlock;
-import gwydion0917.gwycraft.blocks.BlockGwyGenericPaver;
-import gwydion0917.gwycraft.blocks.BlockKiln;
-import gwydion0917.gwycraft.blocks.BlockTableSaw;
-import gwydion0917.gwycraft.blocks.ItemDyedBookshelf;
-import gwydion0917.gwycraft.blocks.ItemDyedCobbleWalls;
-import gwydion0917.gwycraft.blocks.ItemDyedFences;
-import gwydion0917.gwycraft.blocks.ItemDyedGlass;
-import gwydion0917.gwycraft.blocks.ItemDyedLeaf;
-import gwydion0917.gwycraft.blocks.ItemDyedLog1;
-import gwydion0917.gwycraft.blocks.ItemDyedLog2;
-import gwydion0917.gwycraft.blocks.ItemDyedLog3;
-import gwydion0917.gwycraft.blocks.ItemDyedLog4;
-import gwydion0917.gwycraft.blocks.ItemDyedPlank;
-import gwydion0917.gwycraft.blocks.ItemGemCompressed;
-import gwydion0917.gwycraft.blocks.ItemGemOre;
-import gwydion0917.gwycraft.blocks.ItemGlowyDyedGlass;
-import gwydion0917.gwycraft.blocks.ItemGlowyWool;
-import gwydion0917.gwycraft.blocks.ItemGwyGeneric;
+import gwydion0917.gwycraft.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.material.Material;
@@ -68,10 +34,16 @@ public class GwycraftBlocks {
     public static Block blockDyedMudBrickPaver;
     public static Block blockDyedPlank;
     public static Block glowyblockDyedPlank;
+    public static Block blockDyedGravel;
+    public static Block glowyblockDyedGravel;
     public static Block blockDyedSand;
     public static Block glowyblockDyedSand;
     public static Block blockDyedSandstone;
+    public static Block blockDyedChiseledSandstone;
+    public static Block blockDyedSmoothSandstone;
     public static Block glowyblockDyedSandstone;
+    public static Block glowyblockDyedChiseledSandstone;
+    public static Block glowyblockDyedSmoothSandstone;
     public static Block blockDyedStoneBrick;
     public static Block glowyblockDyedStoneBrick;
     public static Block blockDyedStoneCobble;
@@ -151,13 +123,21 @@ public class GwycraftBlocks {
         glowyblockDyedPlank = new BlockGwyGenericBlock(Material.wood).setLightLevel(1F).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("gwycraft.glowyblockDyedPlank").setCreativeTab(Gwycraft.tabs).setBlockTextureName("gwycraft:plank");
         blockDyedFences = new BlockDyedFences("blockDyedFence", Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("gwycraft.blockDyedFence").setCreativeTab(Gwycraft.tabs);
         glowyblockDyedFences = new BlockDyedFences("glowyblockDyedFence", Material.wood).setLightLevel(1F).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("gwycraft.glowyblockDyedFence").setCreativeTab(Gwycraft.tabs);
-        
+
+        // Gravel
+        blockDyedGravel = new BlockDyedGravel().setHardness(0.5F).setStepSound(Block.soundTypeGravel).setBlockName("gwycraft.blockDyedGravel").setCreativeTab(Gwycraft.tabs);
+        glowyblockDyedGravel = new BlockDyedGravel().setLightLevel(1F).setHardness(0.5F).setStepSound(Block.soundTypeGravel).setBlockName("gwycraft.glowyblockDyedGravelCreativeTab(Gwycraft.tabs);
+
         // Sand
         blockDyedSand = new BlockDyedSand().setHardness(0.5F).setStepSound(Block.soundTypeSand).setBlockName("gwycraft.blockDyedSand").setCreativeTab(Gwycraft.tabs);
         glowyblockDyedSand = new BlockDyedSand().setLightLevel(1F).setHardness(0.5F).setStepSound(Block.soundTypeSand).setBlockName("gwycraft.glowyblockDyedSand").setCreativeTab(Gwycraft.tabs);
         blockDyedSandstone = new BlockDyedSandstone(Material.rock).setHardness(0.5F).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.blockDyedSandstone").setCreativeTab(Gwycraft.tabs);
         glowyblockDyedSandstone = new BlockDyedSandstone(Material.rock).setLightLevel(1F).setHardness(0.5F).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.glowyblockDyedSandstone").setCreativeTab(Gwycraft.tabs);
-        
+        blockDyedSmoothSandstone = new BlockDyedSmoothSandstone(Material.rock).setHardness(0.5F).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.blockDyedSmoothSandstone").setCreativeTab(Gwycraft.tabs);
+        glowyblockDyedSmoothSandstone = new BlockDyedSmoothSandstone(Material.rock).setLightLevel(1F).setHardness(0.5F).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.glowyblockDyedSmoothSandstone").setCreativeTab(Gwycraft.tabs);
+        blockDyedChiseledSandstone = new BlockDyedChiseledSandstone(Material.rock).setHardness(0.5F).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.blockDyedChiseledSandstone").setCreativeTab(Gwycraft.tabs);
+        glowyblockDyedChiseledSandstone = new BlockDyedChiseledSandstone(Material.rock).setLightLevel(1F).setHardness(0.5F).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.glowyblockDyedChiseledSandstone").setCreativeTab(Gwycraft.tabs);
+
         // Stone Brick
         blockDyedStoneBrick = new BlockGwyGenericBlock(Material.rock).setLightLevel(1F).setHardness(2f).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.blockDyedStoneBrick").setCreativeTab(Gwycraft.tabs).setBlockTextureName("gwycraft:stonebrick");
         glowyblockDyedStoneBrick = new BlockGwyGenericBlock(Material.rock).setLightLevel(1F).setHardness(2f).setStepSound(Block.soundTypeStone).setBlockName("gwycraft.glowyblockDyedStoneBrick").setCreativeTab(Gwycraft.tabs).setBlockTextureName("gwycraft:stonebrick");
@@ -254,7 +234,11 @@ public class GwycraftBlocks {
         GameRegistry.registerBlock(glowyblockDyedSand, ItemGwyGeneric.class, "glowyblockDyedSand");
         GameRegistry.registerBlock(blockDyedSandstone, ItemGwyGeneric.class, "blockDyedSandstone");
         GameRegistry.registerBlock(glowyblockDyedSandstone, ItemGwyGeneric.class, "glowyblockDyedSandstone");
-        
+        GameRegistry.registerBlock(blockDyedSmoothSandstone, ItemGwyGeneric.class, "blockDyedSmoothSandstone");
+        GameRegistry.registerBlock(glowyblockDyedSmoothSandstone, ItemGwyGeneric.class, "glowyblockDyedSmoothSandstone");
+        GameRegistry.registerBlock(blockDyedChiseledSandstone, ItemGwyGeneric.class, "blockDyedChiseledSandstone");
+        GameRegistry.registerBlock(glowyblockDyedChiseledSandstone, ItemGwyGeneric.class, "glowyblockDyedChiseledSandstone");
+
         // Stone Brick
         GameRegistry.registerBlock(blockDyedStoneBrick, ItemGwyGeneric.class, "blockDyedStoneBrick");
         GameRegistry.registerBlock(glowyblockDyedStoneBrick, ItemGwyGeneric.class, "glowyblockDyedStoneBrick");
