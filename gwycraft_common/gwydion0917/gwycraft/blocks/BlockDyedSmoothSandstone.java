@@ -58,11 +58,11 @@ public class BlockDyedSmoothSandstone extends Block {
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray2[i] = par1IconRegister
-					.registerIcon("gwycraft:sandstonebottom_" + i);
+					.registerIcon("gwycraft:smoothsandstonebottom_" + i);
 			this.iconArray1[i] = par1IconRegister
-					.registerIcon("gwycraft:sandstonetop_" + i);
+					.registerIcon("gwycraft:smoothsandstonetop_" + i);
 			this.iconArray[i] = par1IconRegister
-					.registerIcon("gwycraft:sandstoneside_" + i);
+					.registerIcon("gwycraft:smoothsandstoneside_" + i);
 		}
 	}
 

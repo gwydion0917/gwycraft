@@ -23,7 +23,7 @@ public class BlockDyedGravel extends BlockGravel {
 		setBlockName("dyedGravel");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(0.5F);
-		setStepSound(Block.soundTypeSand);
+		setStepSound(Block.soundTypeGravel);
 
 	}
 
@@ -51,7 +51,7 @@ public class BlockDyedGravel extends BlockGravel {
 		this.iconArray = new IIcon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:sand_"
+			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:gravel_"
 					+ i);
 		}
 	}

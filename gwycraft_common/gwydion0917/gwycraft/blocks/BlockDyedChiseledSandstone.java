@@ -58,11 +58,11 @@ public class BlockDyedChiseledSandstone extends Block {
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray2[i] = par1IconRegister
-					.registerIcon("gwycraft:sandstonebottom_" + i);
+					.registerIcon("gwycraft:chiseledsandstonebottom_" + i);
 			this.iconArray1[i] = par1IconRegister
-					.registerIcon("gwycraft:sandstonetop_" + i);
+					.registerIcon("gwycraft:chiseledsandstonetop_" + i);
 			this.iconArray[i] = par1IconRegister
-					.registerIcon("gwycraft:sandstoneside_" + i);
+					.registerIcon("gwycraft:chiseledsandstoneside_" + i);
 		}
 	}
 
