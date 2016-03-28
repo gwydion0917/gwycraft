@@ -102,6 +102,10 @@ public class GwycraftRecipes {
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedFences, 8, i), itemEnchantedGemsStack, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedMudBrick, 8, i), Blocks.glowstone, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack);
 
+            if (ConfigGwycraft.gemsCraftingEnabled) {
+                GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockGemOre, 1, i), new ItemStack(Items.dye, 0, 15 - i), new ItemStack(Items.dye, 0, 15 - i), new ItemStack(Items.dye, 0, 15 - i), new ItemStack(Items.dye, 0, 15 - i), Items.glowstone_dust, Items.glowstone_dust, Items.glowstone_dust, Items.glowstone_dust, Items.diamond);
+            }
+
             // Add Furnace Recipes
             GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 1, i), new ItemStack(GwycraftBlocks.blockDyedStone, 1, i), 0.1F);
             GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i), new ItemStack(GwycraftBlocks.glowyblockDyedStone, 1, i), 0.1F);
