@@ -10,7 +10,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.9a", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
+@Mod(modid = "gwycraft", name = "GwyCraft", version = "0.1.10", guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
 public class Gwycraft {
 
     public static final String[] gwyColorNames = {"White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};
