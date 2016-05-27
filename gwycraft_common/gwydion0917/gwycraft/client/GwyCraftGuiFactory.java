@@ -1,6 +1,6 @@
 package gwydion0917.gwycraft.client;
 
-import cpw.mods.fml.client.IModGuiFactory;
+import net.minecraftforge.fml.client.IModGuiFactory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
  

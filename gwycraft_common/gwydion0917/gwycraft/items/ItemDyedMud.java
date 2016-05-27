@@ -2,15 +2,16 @@ package gwydion0917.gwycraft.items;
 
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
+
 import net.minecraft.util.MathHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 
 public class ItemDyedMud extends ItemDye {
 
@@ -21,9 +22,10 @@ public class ItemDyedMud extends ItemDye {
 			"Gwycraft:mud_cyan", "Gwycraft:mud_purple", "Gwycraft:mud_blue",
 			"Gwycraft:mud_brown", "Gwycraft:mud_green", "Gwycraft:mud_red",
 			"Gwycraft:mud_black" };
-	public IIcon[] icons;
+
 
 	public int blockType;
+	private final String name = "itemDyedMud";
 
 	public ItemDyedMud() {
 		super();
@@ -31,15 +33,6 @@ public class ItemDyedMud extends ItemDye {
 		this.setHasSubtypes(true);
 	}
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		this.icons = new IIcon[textureNames.length];
-
-		for (int i = 0; i < this.icons.length; ++i) {
-			this.icons[i] = iconRegister.registerIcon(textureNames[i]);
-		}
-	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
@@ -49,11 +42,6 @@ public class ItemDyedMud extends ItemDye {
 			list.add(new ItemStack(this, 1, i));
 	}
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public IIcon getIconFromDamage(int meta) {
-		return icons[meta];
-	}
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
@@ -61,4 +49,7 @@ public class ItemDyedMud extends ItemDye {
 		return "item." + textureNames[arr];
 	}
 
+	public String getName() {
+		return name;
+	}
 }

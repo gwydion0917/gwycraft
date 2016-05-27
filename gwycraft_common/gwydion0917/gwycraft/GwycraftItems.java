@@ -1,6 +1,6 @@
 package gwydion0917.gwycraft;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import gwydion0917.gwycraft.items.ItemDyedClay;
 import gwydion0917.gwycraft.items.ItemDyedClayBricks;
 import gwydion0917.gwycraft.items.ItemDyedMud;

@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GwycraftRecipes {
     
@@ -99,7 +99,6 @@ public class GwycraftRecipes {
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftItems.itemDyedClay, 8, i), Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, Items.clay_ball, dye);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedClayblock, 8, i), itemEnchantedGemsStack, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay, Blocks.clay);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedBrick, 8, i), itemEnchantedGemsStack, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, Blocks.brick_block);
-            GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedFences, 8, i), itemEnchantedGemsStack, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence, Blocks.fence);
             GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedMudBrick, 8, i), Blocks.glowstone, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack);
 
             if (ConfigGwycraft.gemsCraftingEnabled) {
@@ -117,7 +116,7 @@ public class GwycraftRecipes {
             // Ore Dictionary
             GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 8, i), dye, "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone"));
             GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 8, i), itemEnchantedGemsStack, "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone"));
-
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedFences, 8, i), itemEnchantedGemsStack, "fence", "fence", "fence", "fence", "fence", "fence", "fence", "fence"));
             // Recipes for Dyed Leaves
             for (int j = 0; j < 4; j++) {
                 ItemStack leaf = new ItemStack(Blocks.leaves, 1, j);
