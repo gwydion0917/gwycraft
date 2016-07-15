@@ -3,37 +3,31 @@ package gwydion0917.gwycraft.blocks;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLeavesBase;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockDyedLeaf extends BlockLeavesBase {
 
-	@SideOnly(Side.CLIENT)
-	private IIcon[] iconArray;
-
+public class BlockDyedLeaf extends BlockLeaves {
 	public BlockDyedLeaf() {
-		super(Material.leaves, false);
-		setCreativeTab(CreativeTabs.tabBlock);
-		setHardness(0.2F);
-		setStepSound(Block.soundTypeGrass);
+		super();
+		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+		this.setHardness(0.2F);
+		this.setSoundType(SoundType.PLANT);
 	}
 
-	@Override
-	public IIcon getIcon(int par1, int par2) {
-		return this.iconArray[par2 % this.iconArray.length];
-	}
-
-	@Override
-	public int damageDropped(int metadata) {
-		return metadata;
-	}
+	//@Override
+	//public int damageDropped(int metadata) {
+	//	return metadata;
+	//}
 
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -43,15 +37,25 @@ public class BlockDyedLeaf extends BlockLeavesBase {
 		}
 	}
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerBlockIcons(IIconRegister par1IconRegister) {
-		this.iconArray = new IIcon[16];
+	//@SideOnly(Side.CLIENT)
+	//@Override
+	//public void registerBlockIcons(IIconRegister par1IconRegister) {
+	//	this.iconArray = new IIcon[16];
+	//
+	//	for (int i = 0; i < this.iconArray.length; ++i) {
+	//		this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:leaf_" + i);
+	//	}
+	//}
 
-		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("gwycraft:leaf_"
-					+ i);
-		}
+	@Override
+	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	@Override
+	public EnumType getWoodType(int meta) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

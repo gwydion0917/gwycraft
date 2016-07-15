@@ -1,16 +1,15 @@
 package gwydion0917.gwycraft.items;
 
-import gwydion0917.gwycraft.ConfigGwycraft;
-
 import java.util.List;
 import java.util.Random;
+
+import gwydion0917.gwycraft.ConfigGwycraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -18,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemGemHatchet extends ItemAxe {
 
 	public ItemGemHatchet(Item.ToolMaterial mat) {
-		super(mat);
+		super(mat, mat.getDamageVsEntity(), mat.getEfficiencyOnProperMaterial());
 
 		setUnlocalizedName("Gwycraft:hatchet");
 		setHasSubtypes(true);
@@ -31,19 +30,16 @@ public class ItemGemHatchet extends ItemAxe {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs,
-			List par3List) {
+	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
 		ItemStack stack = new ItemStack(par1, 1, 0);
 		par3List.add(stack);
 	}
-
 
 	/**
 	 * Return whether this item is repairable in an anvil.
 	 */
 	@Override
-	public boolean getIsRepairable(ItemStack par1ItemStack,
-			ItemStack par2ItemStack) {
+	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) {
 		// FIXME: This needs work
 		return false;
 	}
@@ -53,13 +49,13 @@ public class ItemGemHatchet extends ItemAxe {
 		// FIXME: This never gets called, and can't figure it out
 		return this.toolMaterial.getEnchantability();
 	}
-	
-    @Override
-    public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
-    	if (ConfigGwycraft.toolsHaveEnchants){
-    		int level = new Random().nextInt(30) + 1;
-    		par1ItemStack = EnchantmentHelper.addRandomEnchantment(new Random(), par1ItemStack, level);
-    	}
-    }
+
+	@Override
+	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+		if (ConfigGwycraft.toolsHaveEnchants) {
+			int level = new Random().nextInt(30) + 1;
+			par1ItemStack = EnchantmentHelper.addRandomEnchantment(new Random(), par1ItemStack, level, true);
+		}
+	}
 
 }
