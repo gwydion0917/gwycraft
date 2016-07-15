@@ -1,6 +1,7 @@
 /bin/
 /eclipse
 /build
+/.gradle
 
 *.launch
 .classpath
