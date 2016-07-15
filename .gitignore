@@ -1,9 +1,11 @@
 /bin/
-/eclipse
 /build
 /.gradle
+/eclipse
+/run
 
-*.launch
-.classpath
-*.project
 .settings/org.eclipse.jdt.core.prefs
+*.classpath
+gwycraft_Client.launch
+*.project
+*.launch
