@@ -17,16 +17,20 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMultiTexture;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import gwydion0917.gwycraft.interfaces.MultiBlock;
+import gwydion0917.gwycraft.interfaces.MultiItem;
 
-public class BlockGemCompressed extends Block implements MultiBlock {
+public class BlockGemCompressed extends Block implements MultiItem {
 	public static PropertyEnum<EnumGemType> GEMTYPE = PropertyEnum.<EnumGemType> create("type", EnumGemType.class);
 
 	public BlockGemCompressed(Material mat, String name) {
@@ -89,6 +93,17 @@ public class BlockGemCompressed extends Block implements MultiBlock {
 	public int damageDropped(IBlockState state) {
 		return ((EnumGemType) state.getValue(GEMTYPE)).getMetadata();
 	}
+	
+	/**
+     * Called when a user uses the creative pick block button on this block
+     *
+     * @param target The full target the player is looking at
+     * @return A ItemStack to add to the player's inventory, Null if nothing should be added.
+     */
+	@Override
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+        return new ItemStack(Item.getItemFromBlock(this), 1, state.getValue(GEMTYPE).getMetadata());
+    }
 
 	public void registerRenders() {
 		for (EnumGemType enumGemType : EnumGemType.values()) {

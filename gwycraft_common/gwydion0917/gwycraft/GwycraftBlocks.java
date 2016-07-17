@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gwydion0917.gwycraft.blocks.*;
-import gwydion0917.gwycraft.interfaces.MultiBlock;
+import gwydion0917.gwycraft.interfaces.MultiItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.SoundType;
@@ -89,7 +89,7 @@ public class GwycraftBlocks {
 	public static Block blockTableSaw;
 	public static Block blockKiln;
 	
-	public static List <MultiBlock>ItemRenderers = new ArrayList<MultiBlock>();
+	public static List <MultiItem>ItemRenderers = new ArrayList<MultiItem>();
 
 	public static void init() {
 		createBlocks();
@@ -174,8 +174,8 @@ public class GwycraftBlocks {
 		//glowyblockDyedLog4 = new BlockDyedLog4().setCreativeTab(Gwycraft.tabs).setUnlocalizedName("gwycraft.glowyblockDyedLog4").setLightLevel(1F).setCreativeTab(Gwycraft.tabs).setHardness(2.0F);
 
 		// Gems
-		ItemRenderers.add((MultiBlock) (blockGemOre = new BlockGemOre(Material.ROCK, "ore_gem")));
-		ItemRenderers.add((MultiBlock) (blockGemCompressed = new BlockGemCompressed(Material.ROCK, "compressed_gem")));
+		ItemRenderers.add((MultiItem) (blockGemOre = new BlockGemOre(Material.ROCK, "ore_gem")));
+		ItemRenderers.add((MultiItem) (blockGemCompressed = new BlockGemCompressed(Material.ROCK, "compressed_gem")));
 		// Torches
 		//blockWhiteDyedTorch = new BlockDyedTorch("torch_white").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.white").setCreativeTab(Gwycraft.tabs);
 		//blockOrangeDyedTorch = new BlockDyedTorch("torch_orange").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.orange").setCreativeTab(Gwycraft.tabs);
@@ -307,4 +307,9 @@ public class GwycraftBlocks {
 		//GameRegistry.registerBlock(blockTableSaw, "blockTableSaw");
 	}
 
+	public static void registerRenders() {
+		for(MultiItem block : ItemRenderers) {
+			block.registerRenders();
+		}
+	}
 }

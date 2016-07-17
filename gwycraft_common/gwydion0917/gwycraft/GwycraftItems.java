@@ -1,6 +1,13 @@
 package gwydion0917.gwycraft;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import gwydion0917.gwycraft.interfaces.MultiItem;
 import gwydion0917.gwycraft.items.ItemDyedClay;
 import gwydion0917.gwycraft.items.ItemDyedClayBricks;
 import gwydion0917.gwycraft.items.ItemDyedMud;
@@ -33,6 +40,8 @@ public class GwycraftItems {
 	public static Item itemGemPickaxe;
 	public static Item itemGemShovel;
 	public static Item itemGemSword;
+	
+	public static List <MultiItem>ItemRenderers = new ArrayList<MultiItem>();
 
 	public static ToolMaterial GWYCRAFT_MATERIAL = EnumHelper.addToolMaterial("GWYCRAFT_MATERIAL", 2, 500, 8.0F, 2.0F, 22);
 
@@ -42,8 +51,9 @@ public class GwycraftItems {
 	}
 
 	private static void createItems() {
-		/*		
-		itemEnchantedGems = new ItemEnchantedGems().setUnlocalizedName("Gwycraft:itemEnchantedGems").setCreativeTab(Gwycraft.tabs);
+				
+		ItemRenderers.add((MultiItem) (itemEnchantedGems = new ItemEnchantedGems("gem")));
+		/*
 		itemDyedClay = new ItemDyedClay().setUnlocalizedName("Gwycraft:itemDyedClay").setCreativeTab(Gwycraft.tabs);
 		itemDyedClayBricks = new ItemDyedClayBricks().setUnlocalizedName("Gwycraft:itemDyedClayBricks").setCreativeTab(Gwycraft.tabs);
 		itemDyedMud = new ItemDyedMud().setUnlocalizedName("Gwycraft:itemMud").setCreativeTab(Gwycraft.tabs);
@@ -76,6 +86,12 @@ public class GwycraftItems {
 		// Ore Dictionary
 		OreDictionary.registerOre("gemGwycraft", new ItemStack(itemEnchantedGems, 1, OreDictionary.WILDCARD_VALUE));
 		*/
+	}
+
+	public static void registerRenders() {
+		for(MultiItem item : ItemRenderers) {
+			item.registerRenders();
+		}
 	}
 
 }
