@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class GwycraftRecipes {
 
 	public static void init() {
-
+		/*
 		// Any kind
 		ItemStack anyCloth = new ItemStack(Blocks.WOOL, 1, OreDictionary.WILDCARD_VALUE);
 		ItemStack anyPlank = new ItemStack(Blocks.PLANKS, 1, OreDictionary.WILDCARD_VALUE);
@@ -218,6 +218,6 @@ public class GwycraftRecipes {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), " X ", " X ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), "  X", "  X", "  Y", 'X', "gemGwycraft", 'Y', "stickWood"));
 		}
+		*/
 	}
-
 }

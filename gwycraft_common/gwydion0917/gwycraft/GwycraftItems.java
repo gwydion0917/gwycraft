@@ -42,7 +42,7 @@ public class GwycraftItems {
 	}
 
 	private static void createItems() {
-
+		/*		
 		itemEnchantedGems = new ItemEnchantedGems().setUnlocalizedName("Gwycraft:itemEnchantedGems").setCreativeTab(Gwycraft.tabs);
 		itemDyedClay = new ItemDyedClay().setUnlocalizedName("Gwycraft:itemDyedClay").setCreativeTab(Gwycraft.tabs);
 		itemDyedClayBricks = new ItemDyedClayBricks().setUnlocalizedName("Gwycraft:itemDyedClayBricks").setCreativeTab(Gwycraft.tabs);
@@ -55,11 +55,11 @@ public class GwycraftItems {
 		itemGemPickaxe = new ItemGemPickaxe(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gempickaxe").setCreativeTab(Gwycraft.tabs);
 		itemGemShovel = new ItemGemShovel(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemshovel").setCreativeTab(Gwycraft.tabs);
 		itemGemSword = new ItemGemSword(GWYCRAFT_MATERIAL).setUnlocalizedName("Gwycraft:gemsword").setCreativeTab(Gwycraft.tabs);
-
+		*/
 	}
 
 	private static void registerItems() {
-
+		/*
 		GameRegistry.registerItem(itemEnchantedGems, "itemEnchantedGems");
 		GameRegistry.registerItem(itemDyedClay, "itemDyedClay");
 		GameRegistry.registerItem(itemDyedClayBricks, "itemDyedClayBricks");
@@ -75,6 +75,7 @@ public class GwycraftItems {
 
 		// Ore Dictionary
 		OreDictionary.registerOre("gemGwycraft", new ItemStack(itemEnchantedGems, 1, OreDictionary.WILDCARD_VALUE));
+		*/
 	}
 
 }
