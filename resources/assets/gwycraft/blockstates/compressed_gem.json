@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "type=quartz": { "model": "gwycraft:compressed_gem_quartz" },
+    "type=citrine": { "model": "gwycraft:compressed_gem_citrine" },
+    "type=tanzanite": { "model": "gwycraft:compressed_gem_tanzanite" },
+    "type=sapphire": { "model": "gwycraft:compressed_gem_sapphire" },
+    "type=topaz": { "model": "gwycraft:compressed_gem_topaz" },
+    "type=agate": { "model": "gwycraft:compressed_gem_agate" },
+    "type=garnet": { "model": "gwycraft:compressed_gem_garnet" },
+    "type=moonstone": { "model": "gwycraft:compressed_gem_moonstone" },
+    "type=hematite": { "model": "gwycraft:compressed_gem_hematite" },
+    "type=aquamarine": { "model": "gwycraft:compressed_gem_aquamarine" },
+    "type=amethyst": { "model": "gwycraft:compressed_gem_amethyst" },
+    "type=lapis_lazuli": { "model": "gwycraft:compressed_gem_lapis_lazuli" },
+    "type=tigerseye": { "model": "gwycraft:compressed_gem_tigerseye" },
+    "type=emerald": { "model": "gwycraft:compressed_gem_emerald" },
+    "type=ruby": { "model": "gwycraft:compressed_gem_ruby" },
+    "type=onyx": { "model": "gwycraft:compressed_gem_onyx" }
+  }
+}
