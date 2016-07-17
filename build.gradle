@@ -11,6 +11,25 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
+
+repositories {
+    maven { // The repo from which to get waila
+        name "Mobius Repo"
+        url "http://mobiusstrip.eu/maven"
+    }
+
+    maven { // TOP
+        name 'tterrag maven'
+        url "http://maven.tterrag.com/"
+    }
+
+	maven {
+		// location of the maven that hosts JEI files
+		name 'JEI Maven'
+		url "http://dvs1.progwml6.com/files/maven"
+	  }
+}
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 /*
@@ -24,10 +43,12 @@ version = "0.1.10"
 group= "gwydion0917.gwycraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "gwycraft-mc18"
 
+
 sourceSets.main{
   java{ srcDirs 'gwycraft_common' }
   resources{ srcDirs 'resources' }
-  }
+}
+
 
 minecraft {
     version = "1.9.4-12.17.0.1976"
@@ -42,6 +63,18 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+dependencies {
+    deobfCompile "mcp.mobius.waila:Waila:1.7.0-B3_1.9.4"
+    deobfCompile "mcjty.theoneprobe:TheOneProbe:1.9.4-1.0.2-8"
+	
+	// compile against the JEI API
+	//deobfCompile "mezz.jei:jei_1.9.4:3.6.8.225:api"
+	
+	// at runtime, use the full JEI jar
+	runtime "mezz.jei:jei_1.9.4:3.6.8.225"
+}
+
+/*
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
@@ -65,6 +98,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
 }
+*/
 
 processResources
 {
@@ -77,7 +111,7 @@ processResources
         include 'mcmod.info'
                 
         // replace version and mcversion
-        //expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
     // copy everything else, thats not the mcmod.info
@@ -86,5 +120,5 @@ processResources
     }
 }
 
-sourceSets { main { output.resourcesDir = output.classesDir } }
+//sourceSets { main { output.resourcesDir = output.classesDir } }
 
