@@ -11,16 +11,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemGemPickaxe extends ItemPickaxe {
 
-	public ItemGemPickaxe(ToolMaterial mat) {
+	public ItemGemPickaxe(ToolMaterial mat, String name) {
 		super(mat);
-
-		setUnlocalizedName("Gwycraft:pickaxe");
-		setHasSubtypes(true);
+		this.setUnlocalizedName(name);
+		this.setRegistryName(name);
+		
+		// Add the tool to the registry
+		GameRegistry.register(this);
 	}
 
 	/**
@@ -30,9 +33,13 @@ public class ItemGemPickaxe extends ItemPickaxe {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
-		ItemStack stack = new ItemStack(par1, 1, 0);
-		par3List.add(stack);
+	public void getSubItems(Item item, CreativeTabs tab, List subItems) {
+		ItemStack stack = new ItemStack(item, 1, 0);
+		
+		//Add the random enchant to the stack
+		EnchantmentHelper.addRandomEnchantment(new Random(), stack, new Random().nextInt(30) + 1, true);
+		
+		subItems.add(stack);
 	}
 
 	/**
@@ -50,10 +57,10 @@ public class ItemGemPickaxe extends ItemPickaxe {
 	}
 
 	@Override
-	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+	public void onCreated(ItemStack itemStack, World world, EntityPlayer plater) {
 		if (ConfigGwycraft.toolsHaveEnchants) {
 			int level = new Random().nextInt(30) + 1;
-			par1ItemStack = EnchantmentHelper.addRandomEnchantment(new Random(), par1ItemStack, level, true);
+			itemStack = EnchantmentHelper.addRandomEnchantment(new Random(), itemStack, level, true);
 		}
 	}
 }

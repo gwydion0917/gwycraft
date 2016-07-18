@@ -17,8 +17,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemEnchantedGems extends Item implements MultiItem {
-	public static PropertyEnum<EnumGemType> GEMTYPE = PropertyEnum.<EnumGemType> create("type", EnumGemType.class);
-
 	private final String name = "gem";
 
 	public ItemEnchantedGems(String name) {

@@ -11,16 +11,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemGemHatchet extends ItemAxe {
 
-	public ItemGemHatchet(Item.ToolMaterial mat) {
+	public ItemGemHatchet(Item.ToolMaterial mat, String name) {
 		super(mat, mat.getDamageVsEntity(), mat.getEfficiencyOnProperMaterial());
-
-		setUnlocalizedName("Gwycraft:hatchet");
-		setHasSubtypes(true);
+		this.setUnlocalizedName(name);
+		this.setRegistryName(name);
+		
+		// Register the item
+		GameRegistry.register(this);
 	}
 
 	/**
@@ -30,9 +33,13 @@ public class ItemGemHatchet extends ItemAxe {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
-		ItemStack stack = new ItemStack(par1, 1, 0);
-		par3List.add(stack);
+	public void getSubItems(Item item, CreativeTabs tab, List itemList) {
+		ItemStack stack = new ItemStack(item, 1, 0);
+		
+		//Add the random enchant to the stack
+		EnchantmentHelper.addRandomEnchantment(new Random(), stack, new Random().nextInt(30) + 1, true);
+		
+		itemList.add(stack);
 	}
 
 	/**

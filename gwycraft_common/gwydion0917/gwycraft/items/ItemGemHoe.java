@@ -7,20 +7,24 @@ import gwydion0917.gwycraft.ConfigGwycraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemGemHoe extends ItemHoe {
 
-	public ItemGemHoe(ToolMaterial mat) {
+	public ItemGemHoe(ToolMaterial mat, String name) {
 		super(mat);
-
-		setUnlocalizedName("Gwycraft:hoe");
-		setHasSubtypes(true);
+		this.setUnlocalizedName(name);
+		this.setRegistryName(name);
+		
+		// Register the item
+		GameRegistry.register(this);
 	}
 
 	/**
@@ -30,9 +34,13 @@ public class ItemGemHoe extends ItemHoe {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
-		ItemStack stack = new ItemStack(par1, 1, 0);
-		par3List.add(stack);
+	public void getSubItems(Item item, CreativeTabs tab, List itemList) {
+		ItemStack stack = new ItemStack(item, 1, 0);
+		
+		// TODO: Add a specific enchantment as you can't randomly enchant a hoe
+		//EnchantmentHelper.addRandomEnchantment(new Random(), stack, new Random().nextInt(30) + 1, true);
+		stack.addEnchantment(Enchantments.FORTUNE, 3);
+		itemList.add(stack);
 	}
 
 	/**
@@ -45,10 +53,11 @@ public class ItemGemHoe extends ItemHoe {
 	}
 
 	@Override
-	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+	public void onCreated(ItemStack stack, World par2World, EntityPlayer par3EntityPlayer) {
 		if (ConfigGwycraft.toolsHaveEnchants) {
-			int level = new Random().nextInt(30) + 1;
-			par1ItemStack = EnchantmentHelper.addRandomEnchantment(new Random(), par1ItemStack, level, true);
+			// TODO: Specify a specific enchant as you can't randomly enchant hoes
+			//int level = new Random().nextInt(30) + 1;
+			//stack = EnchantmentHelper.addRandomEnchantment(new Random(), stack, level, true);
 		}
 	}
 

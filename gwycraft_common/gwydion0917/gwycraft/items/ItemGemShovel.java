@@ -11,16 +11,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemGemShovel extends ItemSpade {
 
-	public ItemGemShovel(ToolMaterial mat) {
+	public ItemGemShovel(ToolMaterial mat, String name) {
 		super(mat);
-
-		setUnlocalizedName("Gwycraft:shovel");
-		setHasSubtypes(true);
+		this.setUnlocalizedName(name);
+		this.setRegistryName(name);
+		
+		// Register the tool with the game
+		GameRegistry.register(this);
 	}
 
 	/**
@@ -32,6 +35,10 @@ public class ItemGemShovel extends ItemSpade {
 	@Override
 	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
 		ItemStack stack = new ItemStack(par1, 1, 0);
+		
+		//Add the random enchant to the stack
+		EnchantmentHelper.addRandomEnchantment(new Random(), stack, new Random().nextInt(30) + 1, true);
+		
 		par3List.add(stack);
 	}
 
