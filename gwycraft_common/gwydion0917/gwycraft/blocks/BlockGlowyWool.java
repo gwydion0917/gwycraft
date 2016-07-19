@@ -34,8 +34,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockGlowyWool extends Block implements MultiItem {
     public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.<EnumDyeColor>create("color", EnumDyeColor.class);
 
-	public static final String[] dyeColorNames = new String[] { "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "light_blue", "magenta", "orange", "white" };
-
 	public BlockGlowyWool(Material mat, String name) {
 		super(mat);
 		this.setSoundType(SoundType.CLOTH);
