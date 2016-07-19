@@ -98,7 +98,7 @@ public class GwycraftBlocks {
 
 	private static void createBlocks() {
 		// Wool
-		//glowyWool = new BlockGlowyWool(Material.CLOTH).setHardness(0.8F).setUnlocalizedName("gwycraft.glowyWool").setLightLevel(1f).setCreativeTab(Gwycraft.tabs);
+		ItemRenderers.add((MultiItem) (glowyWool = new BlockGlowyWool(Material.CLOTH, "glowy_wool")));//;.setHardness(0.8F).setUnlocalizedName("gwycraft.glowyWool").setLightLevel(1f).setCreativeTab(Gwycraft.tabs);
 
 		// Stone
 		//blockDyedStone = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("gwycraft.blockDyedStone").setCreativeTab(Gwycraft.tabs);
