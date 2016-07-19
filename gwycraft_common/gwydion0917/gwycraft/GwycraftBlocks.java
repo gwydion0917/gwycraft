@@ -176,23 +176,24 @@ public class GwycraftBlocks {
 		// Gems
 		ItemRenderers.add((MultiItem) (blockGemOre = new BlockGemOre(Material.ROCK, "ore_gem")));
 		ItemRenderers.add((MultiItem) (blockGemCompressed = new BlockGemCompressed(Material.ROCK, "compressed_gem")));
+		
 		// Torches
-		//blockWhiteDyedTorch = new BlockDyedTorch("torch_white").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.white").setCreativeTab(Gwycraft.tabs);
-		//blockOrangeDyedTorch = new BlockDyedTorch("torch_orange").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.orange").setCreativeTab(Gwycraft.tabs);
-		//blockMagentaDyedTorch = new BlockDyedTorch("torch_magenta").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.magenta").setCreativeTab(Gwycraft.tabs);
-		//blockLBlueDyedTorch = new BlockDyedTorch("torch_lblue").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.lblue").setCreativeTab(Gwycraft.tabs);
-		//blockYellowDyedTorch = new BlockDyedTorch("torch_yellow").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.yellow").setCreativeTab(Gwycraft.tabs);
-		//blockLGreenDyedTorch = new BlockDyedTorch("torch_lgreen").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.lgreen").setCreativeTab(Gwycraft.tabs);
-		//blockPinkDyedTorch = new BlockDyedTorch("torch_pink").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.pink").setCreativeTab(Gwycraft.tabs);
-		//blockDGrayDyedTorch = new BlockDyedTorch("torch_dgray").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.dgray").setCreativeTab(Gwycraft.tabs);
-		//blockLGrayDyedTorch = new BlockDyedTorch("torch_lgray").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.lgray").setCreativeTab(Gwycraft.tabs);
-		//blockCyanDyedTorch = new BlockDyedTorch("torch_cyan").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.cyan").setCreativeTab(Gwycraft.tabs);
-		//blockPurpleDyedTorch = new BlockDyedTorch("torch_purple").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.purple").setCreativeTab(Gwycraft.tabs);
-		//blockBlueDyedTorch = new BlockDyedTorch("torch_blue").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.blue").setCreativeTab(Gwycraft.tabs);
-		//blockBrownDyedTorch = new BlockDyedTorch("torch_brown").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.brown").setCreativeTab(Gwycraft.tabs);
-		//blockGreenDyedTorch = new BlockDyedTorch("torch_green").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.green").setCreativeTab(Gwycraft.tabs);
-		//blockRedDyedTorch = new BlockDyedTorch("torch_red").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.red").setCreativeTab(Gwycraft.tabs);
-		//blockBlackDyedTorch = new BlockDyedTorch("torch_black").setHardness(0.0F).setLightLevel(0.9375F).setUnlocalizedName("gwycraft.torch.black").setCreativeTab(Gwycraft.tabs);
+		ItemRenderers.add((MultiItem) (blockWhiteDyedTorch = new BlockDyedTorch("white")));
+		ItemRenderers.add((MultiItem) (blockOrangeDyedTorch = new BlockDyedTorch("orange")));
+		ItemRenderers.add((MultiItem) (blockMagentaDyedTorch = new BlockDyedTorch("magenta")));
+		ItemRenderers.add((MultiItem) (blockLBlueDyedTorch = new BlockDyedTorch("light_blue")));
+		ItemRenderers.add((MultiItem) (blockYellowDyedTorch = new BlockDyedTorch("yellow")));
+		ItemRenderers.add((MultiItem) (blockLGreenDyedTorch = new BlockDyedTorch("lime")));
+		ItemRenderers.add((MultiItem) (blockPinkDyedTorch = new BlockDyedTorch("pink")));
+		ItemRenderers.add((MultiItem) (blockDGrayDyedTorch = new BlockDyedTorch("gray")));
+		ItemRenderers.add((MultiItem) (blockLGrayDyedTorch = new BlockDyedTorch("light_gray")));
+		ItemRenderers.add((MultiItem) (blockCyanDyedTorch = new BlockDyedTorch("cyan")));
+		ItemRenderers.add((MultiItem) (blockPurpleDyedTorch = new BlockDyedTorch("purple")));
+		ItemRenderers.add((MultiItem) (blockBlueDyedTorch = new BlockDyedTorch("blue")));
+		ItemRenderers.add((MultiItem) (blockBrownDyedTorch = new BlockDyedTorch("brown")));
+		ItemRenderers.add((MultiItem) (blockGreenDyedTorch = new BlockDyedTorch("green")));
+		ItemRenderers.add((MultiItem) (blockRedDyedTorch = new BlockDyedTorch("red")));
+		ItemRenderers.add((MultiItem) (blockBlackDyedTorch = new BlockDyedTorch("black")));
 
 		// Machines
 		//blockDyeVat = new BlockDyeVat();
