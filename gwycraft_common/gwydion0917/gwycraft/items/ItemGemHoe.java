@@ -11,6 +11,10 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.NBTTagString;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -37,9 +41,8 @@ public class ItemGemHoe extends ItemHoe {
 	public void getSubItems(Item item, CreativeTabs tab, List itemList) {
 		ItemStack stack = new ItemStack(item, 1, 0);
 		
-		// TODO: Add a specific enchantment as you can't randomly enchant a hoe
-		//EnchantmentHelper.addRandomEnchantment(new Random(), stack, new Random().nextInt(30) + 1, true);
-		stack.addEnchantment(Enchantments.FORTUNE, 3);
+		stack.addEnchantment(Enchantments.EFFICIENCY, 3);
+		
 		itemList.add(stack);
 	}
 
@@ -55,10 +58,7 @@ public class ItemGemHoe extends ItemHoe {
 	@Override
 	public void onCreated(ItemStack stack, World par2World, EntityPlayer par3EntityPlayer) {
 		if (ConfigGwycraft.toolsHaveEnchants) {
-			// TODO: Specify a specific enchant as you can't randomly enchant hoes
-			//int level = new Random().nextInt(30) + 1;
-			//stack = EnchantmentHelper.addRandomEnchantment(new Random(), stack, level, true);
+			stack.addEnchantment(Enchantments.EFFICIENCY, 3);
 		}
 	}
-
 }
