@@ -47,7 +47,6 @@ public class BlockGemOre extends Block implements MultiItem {
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setCreativeTab(Gwycraft.tabs);
-		this.canSilkHarvest();
 
 		// Register the block and item
 		GameRegistry.register(this);
