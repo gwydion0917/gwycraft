@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "color=black": { "model": "gwycraft:dyed_stone_brick_black" },
+    "color=blue": { "model": "gwycraft:dyed_stone_brick_blue" },
+    "color=brown": { "model": "gwycraft:dyed_stone_brick_brown" },
+    "color=cyan": { "model": "gwycraft:dyed_stone_brick_cyan" },
+    "color=gray": { "model": "gwycraft:dyed_stone_brick_gray" },
+    "color=green": { "model": "gwycraft:dyed_stone_brick_green" },
+    "color=light_blue": { "model": "gwycraft:dyed_stone_brick_light_blue" },
+    "color=lime": { "model": "gwycraft:dyed_stone_brick_lime" },
+    "color=magenta": { "model": "gwycraft:dyed_stone_brick_magenta" },
+    "color=orange": { "model": "gwycraft:dyed_stone_brick_orange" },
+    "color=pink": { "model": "gwycraft:dyed_stone_brick_pink" },
+    "color=purple": { "model": "gwycraft:dyed_stone_brick_purple" },
+    "color=red": { "model": "gwycraft:dyed_stone_brick_red" },
+    "color=silver": { "model": "gwycraft:dyed_stone_brick_silver" },
+    "color=white": { "model": "gwycraft:dyed_stone_brick_white" },
+    "color=yellow": { "model": "gwycraft:dyed_stone_brick_yellow" }
+  }
+}
