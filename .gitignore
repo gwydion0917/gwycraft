@@ -3,6 +3,7 @@
 /.gradle
 /eclipse
 /run
+/working
 
 .settings/org.eclipse.jdt.core.prefs
 *.classpath
