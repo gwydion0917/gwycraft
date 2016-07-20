@@ -132,8 +132,8 @@ public class GwycraftBlocks {
 		//blockDyedMudBrickPaver = new BlockGwyGenericPaver().setUnlocalizedName("gwycraft.blockDyedMudBrickPaver").setHardness(2.0F).setCreativeTab(Gwycraft.tabs);
 
 		// Planks
-		//ItemRenderers.add((MultiItem) (blockDyedPlank = new BlockGwyGenericBlock(Material.WOOD, SoundType.WOOD, "dyed_plank").setHardness(2.0F).setResistance(5.0F)));
-		//ItemRenderers.add((MultiItem) (glowyblockDyedPlank = new BlockGwyGenericBlock(Material.WOOD, SoundType.WOOD, "glowy_dyed_plank").setLightLevel(1F).setHardness(2.0F).setResistance(5.0F)));
+		ItemRenderers.add((MultiItem) (blockDyedPlank = new BlockGwyGenericBlock(Material.WOOD, SoundType.WOOD, "dyed_plank").setHardness(2.0F).setResistance(5.0F)));
+		ItemRenderers.add((MultiItem) (glowyblockDyedPlank = new BlockGwyGenericBlock(Material.WOOD, SoundType.WOOD, "glowy_dyed_plank").setLightLevel(1F).setHardness(2.0F).setResistance(5.0F)));
 		//blockDyedFences = new BlockDyedFences("blockDyedFence", Material.WOOD).setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("gwycraft.blockDyedFence").setCreativeTab(Gwycraft.tabs);
 		//glowyblockDyedFences = new BlockDyedFences("glowyblockDyedFence", Material.WOOD).setLightLevel(1F).setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("gwycraft.glowyblockDyedFence").setCreativeTab(Gwycraft.tabs);
 
