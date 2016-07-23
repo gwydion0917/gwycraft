@@ -103,7 +103,7 @@ public class GwycraftBlocks {
 		// Stone
 		ItemRenderers.add((MultiItem) (blockDyedStone = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_stone").setHardness(1.5F).setResistance(10.0F)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedStone = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_stone").setLightLevel(1F).setHardness(1.5F).setResistance(10.0F)));
-		//blockDyedStonePaver = new BlockGwyGenericPaver().setUnlocalizedName("gwycraft.blockDyedStonePaver").setHardness(2.0F).setCreativeTab(Gwycraft.tabs);
+		ItemRenderers.add((MultiItem) (blockDyedStonePaver = new BlockGwyGenericPaver(Material.ROCK, SoundType.STONE, "dyed_stone_paver").setHardness(2.0F)));
 
 		// Bookshelves
 		//blockDyedBookcase = (BlockBookshelf) new BlockDyedBookcase(Material.WOOD).setHardness(1.5F).setUnlocalizedName("gwycraft.blockDyedBookcase").setCreativeTab(Gwycraft.tabs);
@@ -112,8 +112,8 @@ public class GwycraftBlocks {
 		// Brick
 		ItemRenderers.add((MultiItem) (blockDyedBrick = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_brick").setHardness(2F).setResistance(10F)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedBrick = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_brick").setLightLevel(1F).setHardness(2F).setResistance(10F)));
-		//blockDyedBrickPaver = new BlockGwyGenericPaver().setUnlocalizedName("gwycraft.blockDyedBrickPaver").setHardness(2.0F).setCreativeTab(Gwycraft.tabs);
-
+		ItemRenderers.add((MultiItem) (blockDyedBrickPaver = new BlockGwyGenericPaver(Material.ROCK, SoundType.STONE, "dyed_brick_paver").setHardness(2.0F)));
+		
 		// Clay
 		ItemRenderers.add((MultiItem) (blockDyedClayblock = new BlockGwyGenericBlock(Material.CLAY, SoundType.STONE, "dyed_clay").setHardness(0.6F)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedClayblock = new BlockGwyGenericBlock(Material.CLAY, SoundType.STONE, "glowy_dyed_clay").setLightLevel(1F).setHardness(0.6F)));
@@ -129,8 +129,8 @@ public class GwycraftBlocks {
 		// Mud Brick
 		ItemRenderers.add((MultiItem) (blockDyedMudBrick = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_mud_brick").setHardness(1.5f)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedMudBrick = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_mud_brick").setLightLevel(1F).setHardness(1.5f)));
-		//blockDyedMudBrickPaver = new BlockGwyGenericPaver().setUnlocalizedName("gwycraft.blockDyedMudBrickPaver").setHardness(2.0F).setCreativeTab(Gwycraft.tabs);
-
+		ItemRenderers.add((MultiItem) (blockDyedMudBrickPaver = new BlockGwyGenericPaver(Material.ROCK, SoundType.STONE, "dyed_mud_brick_paver").setHardness(2.0F)));
+		
 		// Planks
 		ItemRenderers.add((MultiItem) (blockDyedPlank = new BlockGwyGenericBlock(Material.WOOD, SoundType.WOOD, "dyed_plank").setHardness(2.0F).setResistance(5.0F)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedPlank = new BlockGwyGenericBlock(Material.WOOD, SoundType.WOOD, "glowy_dyed_plank").setLightLevel(1F).setHardness(2.0F).setResistance(5.0F)));
@@ -142,8 +142,8 @@ public class GwycraftBlocks {
 		//glowyblockDyedGravel = new BlockDyedGravel().setLightLevel(1F).setHardness(0.5F).setUnlocalizedName("gwycraft.glowyblockDyedGravel").setCreativeTab(Gwycraft.tabs);
 
 		// Sand
-		//blockDyedSand = new BlockDyedSand().setHardness(0.5F).setUnlocalizedName("gwycraft.blockDyedSand").setCreativeTab(Gwycraft.tabs);
-		//glowyblockDyedSand = new BlockDyedSand().setLightLevel(1F).setHardness(0.5F).setUnlocalizedName("gwycraft.glowyblockDyedSand").setCreativeTab(Gwycraft.tabs);
+		ItemRenderers.add((MultiItem) (blockDyedSand = new BlockGwyColoredFalling(Material.SAND, SoundType.SAND, "dyed_sand").setHardness(0.5F)));
+		ItemRenderers.add((MultiItem) (blockDyedSand = new BlockGwyColoredFalling(Material.SAND, SoundType.SAND, "glowy_dyed_sand").setHardness(0.5F).setLightLevel(1F)));
 		//blockDyedSandstone = new BlockDyedSandstone(Material.ROCK).setHardness(0.5F).setUnlocalizedName("gwycraft.blockDyedSandstone").setCreativeTab(Gwycraft.tabs);
 		//glowyblockDyedSandstone = new BlockDyedSandstone(Material.ROCK).setLightLevel(1F).setHardness(0.5F).setUnlocalizedName("gwycraft.glowyblockDyedSandstone").setCreativeTab(Gwycraft.tabs);
 		//blockDyedSmoothSandstone = new BlockDyedSmoothSandstone(Material.ROCK).setHardness(0.5F).setUnlocalizedName("gwycraft.blockDyedSmoothSandstone").setCreativeTab(Gwycraft.tabs);
@@ -152,17 +152,17 @@ public class GwycraftBlocks {
 		//glowyblockDyedChiseledSandstone = new BlockDyedChiseledSandstone(Material.ROCK).setLightLevel(1F).setHardness(0.5F).setUnlocalizedName("gwycraft.glowyblockDyedChiseledSandstone").setCreativeTab(Gwycraft.tabs);
 
 		// Stone Brick
-		ItemRenderers.add((MultiItem) (blockDyedStoneBrick = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_stone_brick").setLightLevel(1F).setHardness(2f)));
+		ItemRenderers.add((MultiItem) (blockDyedStoneBrick = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_stone_brick").setHardness(2f)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedStoneBrick = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_stone_brick").setLightLevel(1F).setHardness(2f)));
-		//blockDyedStoneBrickPaver = new BlockGwyGenericPaver().setUnlocalizedName("gwycraft.blockDyedStoneBrickPaver").setHardness(2.0F).setCreativeTab(Gwycraft.tabs);
-
+		ItemRenderers.add((MultiItem) (blockDyedStoneBrickPaver = new BlockGwyGenericPaver(Material.ROCK, SoundType.STONE, "dyed_stone_brick_paver").setHardness(2.0F)));
+		
 		// Stone Cobble
 		ItemRenderers.add((MultiItem) (blockDyedStoneCobble = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_cobblestone").setHardness(2.0F).setResistance(10.0F)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedStoneCobble = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_cobblestone").setLightLevel(1F).setHardness(2.0F)));
 		//blockDyedCobbleWalls = new BlockDyedCobbleWalls(blockDyedStoneCobble).setHardness(2.0F).setResistance(10.0F).setUnlocalizedName("gwycraft.blockDyedCobbleWalls").setCreativeTab(Gwycraft.tabs);
 		//glowyblockDyedCobbleWalls = new BlockDyedCobbleWalls(blockDyedStoneCobble).setLightLevel(1F).setHardness(2.0F).setResistance(10.0F).setUnlocalizedName("gwycraft.glowyblockDyedCobbleWalls").setCreativeTab(Gwycraft.tabs);
-		//blockDyedStoneCobblePaver = new BlockGwyGenericPaver().setUnlocalizedName("gwycraft.blockDyedStonePaver").setHardness(2.0F).setCreativeTab(Gwycraft.tabs);
-
+		ItemRenderers.add((MultiItem) (blockDyedStoneCobblePaver = new BlockGwyGenericPaver(Material.ROCK, SoundType.STONE, "dyed_cobblestone_paver").setHardness(2.0F)));
+		
 		// Logs
 		//blockDyedLog1 = new BlockDyedLog1().setCreativeTab(Gwycraft.tabs).setUnlocalizedName("gwycraft.blockDyedLog1").setCreativeTab(Gwycraft.tabs).setHardness(2.0F);
 		//blockDyedLog2 = new BlockDyedLog2().setCreativeTab(Gwycraft.tabs).setUnlocalizedName("gwycraft.blockDyedLog2").setCreativeTab(Gwycraft.tabs).setHardness(2.0F);
@@ -202,106 +202,6 @@ public class GwycraftBlocks {
 	}
 
 	private static void registerBlocks() {
-		// Wool
-		//GameRegistry.registerBlock(glowyWool, ItemGlowyWool.class, "glowyWool");
-
-		// Stone
-		//GameRegistry.registerBlock(blockDyedStone, ItemGwyGeneric.class, "blockDyedStone");
-		//GameRegistry.registerBlock(glowyblockDyedStone, ItemGwyGeneric.class, "glowyblockDyedStone");
-		//GameRegistry.registerBlock(blockDyedStonePaver, ItemGwyGeneric.class, "blockDyedStonePaver");
-
-		// Bookshelves
-		//GameRegistry.registerBlock(blockDyedBookcase, ItemDyedBookshelf.class, "blockDyedBookcase");
-		//GameRegistry.registerBlock(glowyblockDyedBookcase, ItemDyedBookshelf.class, "glowyblockDyedBookcase");
-
-		// Brick
-		//GameRegistry.registerBlock(blockDyedBrick, ItemGwyGeneric.class, "blockDyedBrick");
-		//GameRegistry.registerBlock(glowyblockDyedBrick, ItemGwyGeneric.class, "glowyblockDyedBrick");
-		//GameRegistry.registerBlock(blockDyedBrickPaver, ItemGwyGeneric.class, "blockDyedBrickPaver");
-
-		// Clay
-		//GameRegistry.registerBlock(blockDyedClayblock, ItemGwyGeneric.class, "blockDyedClayblock");
-		//GameRegistry.registerBlock(glowyblockDyedClayblock, ItemGwyGeneric.class, "glowyblockDyedClayblock");
-
-		// Glass
-		//GameRegistry.registerBlock(blockDyedGlass, ItemDyedGlass.class, "blockDyedGlass");
-		//GameRegistry.registerBlock(glowyblockDyedGlass, ItemGlowyDyedGlass.class, "glowyblockDyedGlass");
-
-		// Leaf
-		//GameRegistry.registerBlock(blockDyedLeaf, ItemDyedLeaf.class, "blockDyedLeaf");
-		//GameRegistry.registerBlock(glowyblockDyedLeaf, ItemDyedLeaf.class, "glowyblockDyedLeaf");
-
-		// Mud Brick
-		//GameRegistry.registerBlock(blockDyedMudBrick, ItemGwyGeneric.class, "blockDyedMudBrick");
-		//GameRegistry.registerBlock(glowyblockDyedMudBrick, ItemGwyGeneric.class, "glowyblockDyedMudBrick");
-		//GameRegistry.registerBlock(blockDyedMudBrickPaver, ItemGwyGeneric.class, "blockDyedMudBrickPaver");
-
-		// Planks
-		//GameRegistry.registerBlock(blockDyedPlank, ItemDyedPlank.class, "blockDyedPlank");
-		//GameRegistry.registerBlock(glowyblockDyedPlank, ItemGwyGeneric.class, "glowyblockDyedPlank");
-		//GameRegistry.registerBlock(blockDyedFences, ItemDyedFences.class, "blockDyedFences");
-		//GameRegistry.registerBlock(glowyblockDyedFences, ItemDyedFences.class, "glowyblockDyedFences");
-
-		// Sand
-		//GameRegistry.registerBlock(blockDyedSand, ItemGwyGeneric.class, "blockDyedSand");
-		//GameRegistry.registerBlock(glowyblockDyedSand, ItemGwyGeneric.class, "glowyblockDyedSand");
-		//GameRegistry.registerBlock(blockDyedSandstone, ItemGwyGeneric.class, "blockDyedSandstone");
-		//GameRegistry.registerBlock(glowyblockDyedSandstone, ItemGwyGeneric.class, "glowyblockDyedSandstone");
-		//GameRegistry.registerBlock(blockDyedSmoothSandstone, ItemGwyGeneric.class, "blockDyedSmoothSandstone");
-		//GameRegistry.registerBlock(glowyblockDyedSmoothSandstone, ItemGwyGeneric.class, "glowyblockDyedSmoothSandstone");
-		//GameRegistry.registerBlock(blockDyedChiseledSandstone, ItemGwyGeneric.class, "blockDyedChiseledSandstone");
-		//GameRegistry.registerBlock(glowyblockDyedChiseledSandstone, ItemGwyGeneric.class, "glowyblockDyedChiseledSandstone");
-
-		// Stone Brick
-		//GameRegistry.registerBlock(blockDyedStoneBrick, ItemGwyGeneric.class, "blockDyedStoneBrick");
-		//GameRegistry.registerBlock(glowyblockDyedStoneBrick, ItemGwyGeneric.class, "glowyblockDyedStoneBrick");
-		//GameRegistry.registerBlock(blockDyedStoneBrickPaver, ItemGwyGeneric.class, "blockDyedStoneBrickPaver");
-
-		// Stone Cobble
-		//GameRegistry.registerBlock(blockDyedStoneCobble, ItemGwyGeneric.class, "blockDyedStoneCobble");
-		//GameRegistry.registerBlock(glowyblockDyedStoneCobble, ItemGwyGeneric.class, "glowyblockDyedStoneCobble");
-		//GameRegistry.registerBlock(blockDyedCobbleWalls, ItemDyedCobbleWalls.class, "blockDyedCobbleWalls");
-		//GameRegistry.registerBlock(glowyblockDyedCobbleWalls, ItemDyedCobbleWalls.class, "glowyblockDyedCobbleWalls");
-		//GameRegistry.registerBlock(blockDyedStoneCobblePaver, ItemGwyGeneric.class, "blockDyedStoneCobblePaver");
-
-		// Logs
-		//GameRegistry.registerBlock(blockDyedLog1, ItemDyedLog1.class, "blockDyedLog1");
-		//GameRegistry.registerBlock(blockDyedLog2, ItemDyedLog2.class, "blockDyedLog2");
-		//GameRegistry.registerBlock(blockDyedLog3, ItemDyedLog3.class, "blockDyedLog3");
-		//GameRegistry.registerBlock(blockDyedLog4, ItemDyedLog4.class, "blockDyedLog4");
-		//GameRegistry.registerBlock(glowyblockDyedLog1, ItemDyedLog1.class, "glowyblockDyedLog1");
-		//GameRegistry.registerBlock(glowyblockDyedLog2, ItemDyedLog2.class, "glowyblockDyedLog2");
-		//GameRegistry.registerBlock(glowyblockDyedLog3, ItemDyedLog3.class, "glowyblockDyedLog3");
-		//GameRegistry.registerBlock(glowyblockDyedLog4, ItemDyedLog4.class, "glowyblockDyedLog4");
-
-		// Gems
-		//GameRegistry.registerBlock(blockGemCompressed, ItemGemCompressed.class, "blockGemCompressed");
-		//GameRegistry.register(blockGemCompressed);
-		//GameRegistry.register(new ItemGemCompressed(blockGemCompressed));
-		//ModelBakery.registerItemVariants(Item.getItemFromBlock(blockGemCompressed), new ResourceLocation("gwycraft:gem_compressed"));
-		
-		
-		//GameRegistry.reg
-		//GameRegistry.registerBlock(blockGemOre, ItemGemOre.class, "blockGemOre");
-
-		// Torches
-		//GameRegistry.registerBlock(blockWhiteDyedTorch, "blockWhiteDyedTorch");
-		//GameRegistry.registerBlock(blockOrangeDyedTorch, "blockOrangeDyedTorch");
-		//GameRegistry.registerBlock(blockMagentaDyedTorch, "blockMagentaDyedTorch");
-		//GameRegistry.registerBlock(blockLBlueDyedTorch, "blockLBlueDyedTorch");
-		//GameRegistry.registerBlock(blockYellowDyedTorch, "blockYellowDyedTorch");
-		//GameRegistry.registerBlock(blockLGreenDyedTorch, "blockLGreenDyedTorch");
-		//GameRegistry.registerBlock(blockPinkDyedTorch, "blockPinkDyedTorch");
-		//GameRegistry.registerBlock(blockDGrayDyedTorch, "blockDGrayDyedTorch");
-		//GameRegistry.registerBlock(blockLGrayDyedTorch, "blockLGrayDyedTorch");
-		//GameRegistry.registerBlock(blockCyanDyedTorch, "blockCyanDyedTorch");
-		//GameRegistry.registerBlock(blockPurpleDyedTorch, "blockPurpleDyedTorch");
-		//GameRegistry.registerBlock(blockBlueDyedTorch, "blockBlueDyedTorch");
-		//GameRegistry.registerBlock(blockBrownDyedTorch, "blockBrownDyedTorch");
-		//GameRegistry.registerBlock(blockGreenDyedTorch, "blockGreenDyedTorch");
-		//GameRegistry.registerBlock(blockRedDyedTorch, "blockRedDyedTorch");
-		//GameRegistry.registerBlock(blockBlackDyedTorch, "blockBlackDyedTorch");
-
 		// Machines
 		//GameRegistry.registerBlock(blockDyeVat, "blockDyeVat");
 		//GameRegistry.registerBlock(blockKiln, "blockKiln");

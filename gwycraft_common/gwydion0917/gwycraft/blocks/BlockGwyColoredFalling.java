@@ -8,8 +8,7 @@ import com.google.common.base.Function;
 
 import gwydion0917.gwycraft.Gwycraft;
 import gwydion0917.gwycraft.interfaces.MultiItem;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockCarpet;
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -24,25 +23,20 @@ import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMultiTexture;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockGwyGenericPaver extends Block implements MultiItem {
+public class BlockGwyColoredFalling extends BlockFalling implements MultiItem {
 	public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.<EnumDyeColor>create("color", EnumDyeColor.class);
-    protected static final AxisAlignedBB PAVER_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0625D, 1.0D);
-	
-	public BlockGwyGenericPaver(Material mat, SoundType sound, String name) {
+
+	public BlockGwyColoredFalling(Material mat, SoundType sound, String name) {
 		super(mat);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(COLOR, EnumDyeColor.WHITE));
-        this.setSoundType(sound);
+		this.setSoundType(sound);
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(Gwycraft.tabs);
@@ -59,68 +53,7 @@ public class BlockGwyGenericPaver extends Block implements MultiItem {
 		}).setUnlocalizedName(name).setRegistryName(name));
 	}
 
-    @Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return PAVER_AABB;
-    }
-
-    /**
-     * Get the MapColor for this Block and the given BlockState
-     */
-    @Override
-    public MapColor getMapColor(IBlockState state) {
-        return ((EnumDyeColor)state.getValue(COLOR)).getMapColor();
-    }
-
-    /**
-     * Used to determine ambient occlusion and culling when rebuilding chunks for render
-     */
-    @Override
-    public boolean isOpaqueCube(IBlockState state) {
-        return false;
-    }
-
-    @Override
-    public boolean isFullCube(IBlockState state) {
-        return false;
-    }
-
-    @Override
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-        return super.canPlaceBlockAt(worldIn, pos) && this.canBlockStay(worldIn, pos);
-    }
-
-    /**
-     * Called when a neighboring block was changed and marks that this state should perform any checks during a neighbor
-     * change. Cases may include when redstone power is updated, cactus blocks popping off due to a neighboring solid
-     * block, etc.
-     */
-    @Override
-    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {
-        this.checkForDrop(worldIn, pos, state);
-    }
-
-    private boolean checkForDrop(World worldIn, BlockPos pos, IBlockState state) {
-        if (!this.canBlockStay(worldIn, pos)) {
-            this.dropBlockAsItem(worldIn, pos, state, 0);
-            worldIn.setBlockToAir(pos);
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    private boolean canBlockStay(World worldIn, BlockPos pos) {
-        return !worldIn.isAirBlock(pos.down());
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-        return side == EnumFacing.UP ? true : (blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? true : super.shouldSideBeRendered(blockState, blockAccess, pos, side));
-    }
-
-    /**
+	/**
      * Gets the metadata of the item this Block can drop. This method is called when the block gets destroyed. It
      * returns the metadata of the dropped item based on the old metadata of the block.
      */
@@ -136,6 +69,13 @@ public class BlockGwyGenericPaver extends Block implements MultiItem {
         for (EnumDyeColor enumdyecolor : EnumDyeColor.values()) {
             list.add(new ItemStack(itemIn, 1, enumdyecolor.getMetadata()));
         }
+    }
+
+    /**
+     * Get the MapColor for this Block and the given BlockState
+     */
+    public MapColor getMapColor(IBlockState state) {
+        return ((EnumDyeColor)state.getValue(COLOR)).getMapColor();
     }
 
     /**
