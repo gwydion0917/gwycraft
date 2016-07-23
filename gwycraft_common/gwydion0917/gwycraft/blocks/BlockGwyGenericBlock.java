@@ -8,6 +8,7 @@ import com.google.common.base.Function;
 
 import gwydion0917.gwycraft.Gwycraft;
 import gwydion0917.gwycraft.interfaces.MultiItem;
+import gwydion0917.gwycraft.statemappers.StateMapperGwyColored;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -17,6 +18,7 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumDyeColor;
@@ -109,8 +111,10 @@ public class BlockGwyGenericBlock extends Block implements MultiItem {
 
 	@Override
 	public void registerRenders() {
+		ModelLoader.setCustomStateMapper(this, new StateMapperGwyColored());
+		
 		for(EnumDyeColor color: EnumDyeColor.values()) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), color.getMetadata(), new ModelResourceLocation(this.getRegistryName() + "_" + color.getName()));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), color.getMetadata(), new ModelResourceLocation(this.getRegistryName().toString().replace("glowy_", "") + "_" + color.getName()));
 		}
 	}
 }

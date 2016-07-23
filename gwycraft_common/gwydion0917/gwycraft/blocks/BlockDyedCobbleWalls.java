@@ -203,8 +203,9 @@ public class BlockDyedCobbleWalls extends Block implements MultiItem {
 
 	@Override
 	public void registerRenders() {
+		ModelLoader.setCustomStateMapper(this, new StateMap.Builder().withName(COLOR).withSuffix("_dyed_cobblestone_wall").build());
+		
 		for(EnumDyeColor color: EnumDyeColor.values()) {
-			ModelLoader.setCustomStateMapper(this, new StateMap.Builder().withName(COLOR).withSuffix("_dyed_cobblestone_wall").build());
 			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), color.getMetadata(), new ModelResourceLocation(this.getRegistryName().toString().replace("glowy_", "") + "_" + color.getName()));
 		}
 	}

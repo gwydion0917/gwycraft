@@ -8,6 +8,7 @@ import com.google.common.base.Function;
 
 import gwydion0917.gwycraft.Gwycraft;
 import gwydion0917.gwycraft.interfaces.MultiItem;
+import gwydion0917.gwycraft.statemappers.StateMapperGwyColored;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -109,8 +110,10 @@ public class BlockGwyColoredFalling extends BlockFalling implements MultiItem {
 
 	@Override
 	public void registerRenders() {
+		ModelLoader.setCustomStateMapper(this, new StateMapperGwyColored());
+		
 		for(EnumDyeColor color: EnumDyeColor.values()) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), color.getMetadata(), new ModelResourceLocation(this.getRegistryName() + "_" + color.getName()));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), color.getMetadata(), new ModelResourceLocation(this.getRegistryName().toString().replace("glowy_", "") + "_" + color.getName()));
 		}
 	}
 }
