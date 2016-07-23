@@ -159,8 +159,8 @@ public class GwycraftBlocks {
 		// Stone Cobble
 		ItemRenderers.add((MultiItem) (blockDyedStoneCobble = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_cobblestone").setHardness(2.0F).setResistance(10.0F)));
 		ItemRenderers.add((MultiItem) (glowyblockDyedStoneCobble = new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_cobblestone").setLightLevel(1F).setHardness(2.0F)));
-		//blockDyedCobbleWalls = new BlockDyedCobbleWalls(blockDyedStoneCobble).setHardness(2.0F).setResistance(10.0F).setUnlocalizedName("gwycraft.blockDyedCobbleWalls").setCreativeTab(Gwycraft.tabs);
-		//glowyblockDyedCobbleWalls = new BlockDyedCobbleWalls(blockDyedStoneCobble).setLightLevel(1F).setHardness(2.0F).setResistance(10.0F).setUnlocalizedName("gwycraft.glowyblockDyedCobbleWalls").setCreativeTab(Gwycraft.tabs);
+		ItemRenderers.add((MultiItem) (blockDyedCobbleWalls = new BlockDyedCobbleWalls(Material.ROCK, SoundType.STONE, "dyed_cobblestone_wall").setHardness(2.0F).setResistance(10.0F)));
+		ItemRenderers.add((MultiItem) (glowyblockDyedCobbleWalls = new BlockDyedCobbleWalls(Material.ROCK, SoundType.STONE, "glowy_dyed_cobblestone_wall").setLightLevel(1F).setHardness(2.0F).setResistance(10.0F)));
 		ItemRenderers.add((MultiItem) (blockDyedStoneCobblePaver = new BlockGwyGenericPaver(Material.ROCK, SoundType.STONE, "dyed_cobblestone_paver").setHardness(2.0F)));
 		
 		// Logs

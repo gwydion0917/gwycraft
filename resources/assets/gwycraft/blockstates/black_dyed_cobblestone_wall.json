@@ -1,0 +1,19 @@
+{
+    "multipart": [
+        {   "when": { "up": "true" },
+            "apply": { "model": "gwycraft:dyed_cobblestone_wall_post_black" }
+        },
+        {   "when": { "north": "true" },
+            "apply": { "model": "gwycraft:dyed_cobblestone_wall_side_black", "uvlock": true }
+        },
+        {   "when": { "east": "true" },
+            "apply": { "model": "gwycraft:dyed_cobblestone_wall_side_black", "y": 90, "uvlock": true }
+        },
+        {   "when": { "south": "true" },
+            "apply": { "model": "gwycraft:dyed_cobblestone_wall_side_black", "y": 180, "uvlock": true }
+        },
+        {   "when": { "west": "true" },
+            "apply": { "model": "gwycraft:dyed_cobblestone_wall_side_black", "y": 270, "uvlock": true }
+        }
+    ]
+}
