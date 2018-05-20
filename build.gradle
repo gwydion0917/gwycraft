@@ -1,4 +1,5 @@
-// For those who want the bleeding edge
+import org.apache.tools.ant.filters.ReplaceTokens
+
 buildscript {
     repositories {
         jcenter()
@@ -8,97 +9,83 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
-}
-
-repositories {
-    maven { // The repo from which to get waila
-        name "Mobius Repo"
-        url "http://mobiusstrip.eu/maven"
-    }
-
-    maven { // TOP
-        name 'tterrag maven'
-        url "http://maven.tterrag.com/"
-    }
-
-	maven {
-		// location of the maven that hosts JEI files
-		name 'JEI Maven'
-		url "http://dvs1.progwml6.com/files/maven"
-	  }
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-/*
-// for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
-plugins {
-    id "net.minecraftforge.gradle.forge" version "2.0.2"
+repositories {
+    maven { // The repo from which to get waila
+        name "Mobius Repo"
+        url "https://tehnut.info/maven"
+        //url "http://mobiusstrip.eu/maven"
+    }
+    maven { // JEI
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        name 'OC Repo'
+        url "http://maven.cil.li/"
+    }
+    maven { // TOP
+        name 'tterrag maven'
+        url "https://maven.tterrag.com/"
+    }
+    maven { // McJtyLib
+        url "http://maven.k-4u.nl"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+    maven {
+        name = "CoFH Maven"
+        url = "http://maven.covers1624.net"
+    }
+    maven { // Charset
+        name = "Elytra Maven"
+        url = "https://repo.elytradev.com"
+    }
 }
-*/
 
-version = "0.1.10"
+version = "0.1.11b"
 group= "gwydion0917.gwycraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "gwycraft-mc18"
 
-
-sourceSets.main{
-  java{ srcDirs 'gwycraft_common' }
-  resources{ srcDirs 'resources' }
+sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
 }
-
 
 minecraft {
-    version = "1.9.4-12.17.0.1976"
+	version = "1.12.2-14.23.3.2655"
     runDir = "run"
+    mappings = "snapshot_20171003"
 
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not allways work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20160518"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    replaceIn 'Gwycraft.java'
+    replace '@MOD_VERSION@', version
+
+
+    replaceIn 'mcmod.info'
+    replace '${version}', version
 }
 
 dependencies {
-    deobfCompile "mcp.mobius.waila:Waila:1.7.0-B3_1.9.4"
-    deobfCompile "mcjty.theoneprobe:TheOneProbe:1.9.4-1.0.2-8"
-	
-	// compile against the JEI API
-	//deobfCompile "mezz.jei:jei_1.9.4:3.6.8.225:api"
-	
-	// at runtime, use the full JEI jar
-	runtime "mezz.jei:jei_1.9.4:3.6.8.225"
+    deobfCompile "mezz.jei:jei_${jei_version}"
+    deobfCompile "mcp.mobius.waila:Hwyla:${waila_version}"
+    deobfCompile "mcjty.theoneprobe:TheOneProbe-${top_version}"
+    //deobfCompile "pl.asie.charset:charset:0.5.0.164"
+
+    deobfCompile "com.github.mcjty:intwheel:${intwheel_version}"
+    if (!project.hasProperty("singleproject")) {
+        deobfCompile "com.github.mcjty:mcjtylib:${mcjtylib_version}"
+        deobfCompile "com.github.mcjty:xnet:1.12-1.6.7"
+    } else {
+        compile project(':McJtyLib')
+        compile project(':XNet')
+    }
 }
-
-/*
-dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-}
-*/
 
 processResources
 {
@@ -119,6 +106,3 @@ processResources
         exclude 'mcmod.info'
     }
 }
-
-//sourceSets { main { output.resourcesDir = output.classesDir } }
-

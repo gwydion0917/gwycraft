@@ -1,9 +1,11 @@
 /bin/
-/build
-/.gradle
-/eclipse
-/run
-/working
+/build/
+/.gradle/
+/eclipse/
+/run/
+/working/
+/.idea/
+/out/
 
 .settings/org.eclipse.jdt.core.prefs
 *.classpath

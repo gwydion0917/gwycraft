@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "facing=up": { "model": "gwycraft:torch_gray" },
-        "facing=east": { "model": "gwycraft:torch_wall_gray" },
-        "facing=south": { "model": "gwycraft:torch_wall_gray", "y": 90 },
-        "facing=west": { "model": "gwycraft:torch_wall_gray", "y": 180 },
-        "facing=north": { "model": "gwycraft:torch_wall_gray", "y": 270 }
-    }
-}
