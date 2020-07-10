@@ -1,0 +1,16 @@
+[
+    {
+        "modid": "gwycraft",
+        "name": "GwyCraft",
+        "description": "Gwycraft is a mod for Minecraft that adds colored blocks and glowing blocks to your world.",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "logoFile": "/mods/gwycraft/logo.png",
+        "url": "minecraft.curseforge.com/mc-mods/77037-gwycraft",
+        "updateUrl": "minecraft.curseforge.com/mc-mods/77037-gwycraft/files",
+        "authorList": [
+            "gwydion0917",
+            "zepanv"
+        ]
+    }
+]

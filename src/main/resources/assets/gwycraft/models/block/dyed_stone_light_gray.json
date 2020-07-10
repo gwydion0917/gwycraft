@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "dyed_stone": "gwycraft:blocks/dyed_stone_gray"
+    }
+}

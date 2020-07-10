@@ -1,0 +1,21 @@
+{
+  "parent":"gwycraft:block/gemblock_agate",
+  "variants": {
+    "quartz": { "model": "gwycraft:block/gemblock_quartz" },
+    "citrine": { "model": "gwycraft:block/gemblock_citrine" },
+    "tanzanite": { "model": "gwycraft:block/gemblock_tanzanite" },
+    "sapphire": { "model": "gwycraft:block/gemblock_sapphire" },
+    "topaz": { "model": "gwycraft:block/gemblock_topaz" },
+    "agate": { "model": "gwycraft:block/gemblock_agate" },
+    "garnet": { "model": "gwycraft:block/gemblock_garnet" },
+    "moonstone": { "model": "gwycraft:block/gemblock_moonstone" },
+    "hematite": { "model": "gwycraft:block/gemblock_hematite" },
+    "aquamarine": { "model": "gwycraft:block/gemblock_aquamarine" },
+    "amethyst": { "model": "gwycraft:block/gemblock_amethyst" },
+    "lapis_lazuli": { "model": "gwycraft:block/gemblock_lapis_lazuli" },
+    "tigerseye": { "model": "gwycraft:block/gemblock_tigerseye" },
+    "emerald": { "model": "gwycraft:block/gemblock_emerald" },
+    "ruby": { "model": "gwycraft:block/gemblock_ruby" },
+    "onyx": { "model": "gwycraft:block/gemblock_onyx" }
+  }
+}

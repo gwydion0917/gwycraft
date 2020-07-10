@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "type=quartz": { "model": "gwycraft:ore_quartz" },
+    "type=citrine": { "model": "gwycraft:ore_citrine" },
+    "type=tanzanite": { "model": "gwycraft:ore_tanzanite" },
+    "type=sapphire": { "model": "gwycraft:ore_sapphire" },
+    "type=topaz": { "model": "gwycraft:ore_topaz" },
+    "type=agate": { "model": "gwycraft:ore_agate" },
+    "type=garnet": { "model": "gwycraft:ore_garnet" },
+    "type=moonstone": { "model": "gwycraft:ore_moonstone" },
+    "type=hematite": { "model": "gwycraft:ore_hematite" },
+    "type=aquamarine": { "model": "gwycraft:ore_aquamarine" },
+    "type=amethyst": { "model": "gwycraft:ore_amethyst" },
+    "type=lapis_lazuli": { "model": "gwycraft:ore_lapis_lazuli" },
+    "type=tigerseye": { "model": "gwycraft:ore_tigerseye" },
+    "type=emerald": { "model": "gwycraft:ore_emerald" },
+    "type=ruby": { "model": "gwycraft:ore_ruby" },
+    "type=onyx": { "model": "gwycraft:ore_onyx" }
+  }
+}

@@ -1,12 +1,14 @@
-/build.cmd
-/.gradle
-/build
-/.idea
-gwycraft.iml
-/run
-
-# Eclipse
 /bin/
-.classpath
-.project
-.settings/
+/build/
+/.gradle/
+/eclipse/
+/run/
+/working/
+/.idea/
+/out/
+
+.settings/org.eclipse.jdt.core.prefs
+*.classpath
+gwycraft_Client.launch
+*.project
+*.launch
