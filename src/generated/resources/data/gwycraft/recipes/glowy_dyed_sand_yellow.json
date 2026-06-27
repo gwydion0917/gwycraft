@@ -2,31 +2,31 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "gwycraft:gems"
+      "item": "minecraft:glowstone"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     },
     {
-      "item": "minecraft:sand"
+      "item": "gwycraft:yellow_dyed_sand"
     }
   ],
   "result": {

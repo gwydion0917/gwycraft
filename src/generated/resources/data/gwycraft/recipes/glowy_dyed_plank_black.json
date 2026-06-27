@@ -2,31 +2,31 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "gwycraft:gems"
+      "item": "minecraft:glowstone"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     },
     {
-      "tag": "minecraft:planks"
+      "item": "gwycraft:black_dyed_plank"
     }
   ],
   "result": {

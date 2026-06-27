@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_gem": {
+    "has_sand": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "gwycraft:gems"
+            "item": "gwycraft:lime_dyed_sand"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_gem",
+      "has_sand",
       "has_the_recipe"
     ]
   ]

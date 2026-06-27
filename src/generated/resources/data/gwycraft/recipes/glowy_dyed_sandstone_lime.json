@@ -2,31 +2,31 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "gwycraft:gems"
+      "item": "minecraft:glowstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     },
     {
-      "item": "minecraft:sandstone"
+      "item": "gwycraft:lime_dyed_sandstone"
     }
   ],
   "result": {

@@ -78,7 +78,6 @@ public class ModRecipeProvider extends RecipeProvider {
             Item  mudBrickItem = ModItems.MUD_BRICK.get(c).get();
             Item  dStick       = ModItems.DYED_STICK.get(c).get();
 
-            Ingredient gemAny  = Ingredient.of(ModTags.Items.GEMS);
             EnumGemType gem    = EnumGemType.values()[c.ordinal() % EnumGemType.values().length];
             Item        gemItem= ModItems.GEM.get(gem).get();
             Block       compGem= ModBlocks.COMPRESSED_GEM.get(gem).get();
@@ -101,8 +100,8 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_cobble", has(Tags.Items.COBBLESTONE))
                     .save(out, grl("dyed_cobble_" + s));
             ShapelessRecipeBuilder.shapeless(gCobble, 8)
-                    .requires(gemAny).requires(Ingredient.of(Tags.Items.COBBLESTONE), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(cobble, 8)
+                    .unlockedBy("has_cobble", has(cobble))
                     .save(out, grl("glowy_dyed_cobble_" + s));
 
             // ── Cobblestone wall (2 rows of 3 dyed cobble → 6 walls) ───────
@@ -133,8 +132,8 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_planks", has(ItemTags.PLANKS))
                     .save(out, grl("dyed_plank_" + s));
             ShapelessRecipeBuilder.shapeless(gPlank, 8)
-                    .requires(gemAny).requires(Ingredient.of(ItemTags.PLANKS), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(plank, 8)
+                    .unlockedBy("has_plank", has(plank))
                     .save(out, grl("glowy_dyed_plank_" + s));
 
             // ── Dyed sticks (2 dyed planks → 4 sticks) ────────────────────
@@ -168,14 +167,14 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_mud_brick_item", has(mudBrickItem))
                     .save(out, grl("dyed_mud_brick_block_" + s));
 
-            // ── Glowy clay, brick, mud brick (8 blocks + gem) ─────────────
+            // ── Glowy clay, brick, mud brick (8 blocks + glowstone) ─────────────
             ShapelessRecipeBuilder.shapeless(gClay, 8)
-                    .requires(gemAny).requires(Ingredient.of(Blocks.CLAY), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(clay, 8)
+                    .unlockedBy("has_clay", has(clay))
                     .save(out, grl("glowy_dyed_clay_" + s));
             ShapelessRecipeBuilder.shapeless(gBrick, 8)
-                    .requires(gemAny).requires(Ingredient.of(Blocks.BRICKS), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(brick, 8)
+                    .unlockedBy("has_brick", has(brick))
                     .save(out, grl("glowy_dyed_brick_" + s));
             ShapelessRecipeBuilder.shapeless(gMudBr, 8)
                     .requires(Ingredient.of(Blocks.GLOWSTONE))
@@ -198,9 +197,9 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_wool", has(ItemTags.WOOL))
                     .save(out, grl("glowy_wool_glowstone_" + s));
             ShapelessRecipeBuilder.shapeless(gWool, 8)
-                    .requires(gemAny).requires(Ingredient.of(ItemTags.WOOL), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
-                    .save(out, grl("glowy_wool_gem_" + s));
+                    .requires(Blocks.GLOWSTONE).requires(coloredWoolItem(c), 8)
+                    .unlockedBy("has_wool", has(coloredWoolItem(c)))
+                    .save(out, grl("glowy_wool_glowstone_bulk_" + s));
 
             // ── Dyed sand & sandstone ──────────────────────────────────────
             ShapelessRecipeBuilder.shapeless(sand, 8)
@@ -208,24 +207,24 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_sand", has(Blocks.SAND))
                     .save(out, grl("dyed_sand_" + s));
             ShapelessRecipeBuilder.shapeless(gSand, 8)
-                    .requires(gemAny).requires(Ingredient.of(Blocks.SAND), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(sand, 8)
+                    .unlockedBy("has_sand", has(sand))
                     .save(out, grl("glowy_dyed_sand_" + s));
             ShapelessRecipeBuilder.shapeless(sandSt, 8)
                     .requires(dye).requires(Ingredient.of(Blocks.SANDSTONE), 8)
                     .unlockedBy("has_sandstone", has(Blocks.SANDSTONE))
                     .save(out, grl("dyed_sandstone_" + s));
             ShapelessRecipeBuilder.shapeless(gSandSt, 8)
-                    .requires(gemAny).requires(Ingredient.of(Blocks.SANDSTONE), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(sandSt, 8)
+                    .unlockedBy("has_sandstone", has(sandSt))
                     .save(out, grl("glowy_dyed_sandstone_" + s));
             ShapelessRecipeBuilder.shapeless(chisSandSt, 8)
                     .requires(dye).requires(Ingredient.of(Blocks.CHISELED_SANDSTONE), 8)
                     .unlockedBy("has_chiseled_sandstone", has(Blocks.CHISELED_SANDSTONE))
                     .save(out, grl("dyed_chiseled_sandstone_" + s));
             ShapelessRecipeBuilder.shapeless(gChisSandSt, 8)
-                    .requires(gemAny).requires(Ingredient.of(Blocks.CHISELED_SANDSTONE), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(chisSandSt, 8)
+                    .unlockedBy("has_chiseled_sandstone", has(chisSandSt))
                     .save(out, grl("glowy_dyed_chiseled_sandstone_" + s));
 
             // ── Dyed bookcase ──────────────────────────────────────────────
@@ -246,8 +245,8 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_leaves", has(ItemTags.LEAVES))
                     .save(out, grl("dyed_leaf_" + s));
             ShapelessRecipeBuilder.shapeless(gLeaf, 8)
-                    .requires(gemAny).requires(Ingredient.of(ItemTags.LEAVES), 8)
-                    .unlockedBy("has_gem", has(ModTags.Items.GEMS))
+                    .requires(Blocks.GLOWSTONE).requires(leaf, 8)
+                    .unlockedBy("has_leaf", has(leaf))
                     .save(out, grl("glowy_dyed_leaf_" + s));
 
             // ── Smelting ───────────────────────────────────────────────────
@@ -285,7 +284,6 @@ public class ModRecipeProvider extends RecipeProvider {
             Block oreBlock = ModBlocks.GEM_ORE.get(gem).get();
             DyeColor matchColor = DyeColor.values()[gem.getIndex() % DyeColor.values().length];
             Item matchDye = dyeFor(matchColor);
-
             ShapelessRecipeBuilder.shapeless(matchDye, 4)
                     .requires(gemItem).requires(Items.GUNPOWDER).requires(Items.GLASS_BOTTLE)
                     .unlockedBy("has_gem", has(gemItem))

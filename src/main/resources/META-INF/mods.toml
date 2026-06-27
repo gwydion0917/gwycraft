@@ -4,7 +4,7 @@ license = "MIT"
 
 [[mods]]
     modId = "gwycraft"
-    version = "1.16.5-1"
+    version = "1.16.5-2"
     displayName = "GwyCraft"
     description = "GwyCraft adds colored and glowing building blocks, enchanted gem tools, and more."
     authors = "gwydion0917, zepanv"
