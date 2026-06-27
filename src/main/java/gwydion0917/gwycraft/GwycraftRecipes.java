@@ -97,9 +97,10 @@ public class GwycraftRecipes {
                     new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 8, i),
                     gem, plank, plank, plank, plank, plank, plank, plank, plank);
 
-            // Dyed plank -> dyed sticks (4 per plank)
-            GameRegistry.addShapelessRecipe(rl("dyed_sticks_" + s), null,
-                    new ItemStack(GwycraftItems.itemDyedSticks, 4, i), dyedPlank);
+            // Dyed plank -> dyed sticks (2 planks -> 4 sticks)
+            GameRegistry.addShapedRecipe(rl("dyed_sticks_" + s), null,
+                    new ItemStack(GwycraftItems.itemDyedSticks, 4, i),
+                    "X", "X", 'X', dyedPlank);
 
             // --- Stone brick from dyed stone ---
             GameRegistry.addShapedRecipe(rl("dyed_stone_brick_" + s), null,
@@ -150,7 +151,7 @@ public class GwycraftRecipes {
                     "XX", "XX", 'X', dyedClayBricks);
             // 4 colored mud bricks -> 1 mud brick block
             GameRegistry.addShapedRecipe(rl("dyed_mud_brick_block_" + s), null,
-                    new ItemStack(GwycraftBlocks.blockDyedMudBrick, 4, i),
+                    new ItemStack(GwycraftBlocks.blockDyedMudBrick, 1, i),
                     "XX", "XX", 'X', dyedMudBrickItem);
 
             // --- Glowy variants via enchanted gems ---
@@ -252,8 +253,8 @@ public class GwycraftRecipes {
             // --- Dyed fences ---
             if (GwycraftBlocks.blockDyedFences != null)
                 GameRegistry.addShapedRecipe(rl("dyed_fence_" + s), null,
-                        new ItemStack(GwycraftBlocks.blockDyedFences, 2, i),
-                        "XXX", "XXX", 'X', dyedSticks);
+                        new ItemStack(GwycraftBlocks.blockDyedFences, 3, i),
+                        "X#X", "X#X", 'X', dyedPlank, '#', dyedSticks);
             if (GwycraftBlocks.glowyblockDyedFences != null)
                 GameRegistry.addShapelessRecipe(rl("glowy_dyed_fence_" + s), null,
                         new ItemStack(GwycraftBlocks.glowyblockDyedFences, 8, i),
