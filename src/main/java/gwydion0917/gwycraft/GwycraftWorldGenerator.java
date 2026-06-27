@@ -2,7 +2,14 @@ package gwydion0917.gwycraft;
 
 import java.util.Random;
 
+import com.google.common.base.Predicate;
+
+import gwydion0917.gwycraft.blocks.BlockGemOre;
+import gwydion0917.gwycraft.blocks.GwycraftBlocks;
+import gwydion0917.gwycraft.enums.EnumGemType;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -13,33 +20,32 @@ public class GwycraftWorldGenerator implements IWorldGenerator {
 	private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 
 	private void generateSurface(World world, Random rand, int chunkX, int chunkZ) {
-		// Check to see if gemGen is enabled
 		if (ConfigGwycraft.genGemsEnabled) {
 			for (int k = 0; k < ConfigGwycraft.genGemsVeins; k++) {
-				int firstBlockXCoord = chunkX + rand.nextInt(16);
-				int firstBlockYCoord = rand.nextInt(64);
-				int firstBlockZCoord = chunkZ + rand.nextInt(16);
-				Random r = new Random();
-				int i = r.nextInt(16);
-				
-				// TODO: Readd world generation
-				//(new WorldGenMinable(GwycraftBlocks.blockGemOre, i, ConfigGwycraft.genGemsNumber, Blocks.stone)).generate(world, rand, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+				int x = chunkX + rand.nextInt(16);
+				int y = rand.nextInt(64);
+				int z = chunkZ + rand.nextInt(16);
+				IBlockState oreState = GwycraftBlocks.blockGemOre.getDefaultState()
+						.withProperty(BlockGemOre.GEMTYPE, EnumGemType.byMetadata(rand.nextInt(16)));
+				new WorldGenMinable(oreState, ConfigGwycraft.genGemsNumber).generate(world, rand, new BlockPos(x, y, z));
 			}
 		}
 	}
 
 	private void generateNether(World world, Random rand, int chunkX, int chunkZ) {
-		// Check to see if genGemsNether is enabled
 		if (ConfigGwycraft.genGemsNether) {
 			for (int k = 0; k < ConfigGwycraft.genGemsVeins; k++) {
-				int firstBlockXCoord = chunkX + rand.nextInt(16);
-				int firstBlockYCoord = rand.nextInt(64);
-				int firstBlockZCoord = chunkZ + rand.nextInt(16);
-				Random r = new Random();
-				int i = r.nextInt(16);
-				
-				// TODO: Readd world generation
-				//(new WorldGenMinable(GwycraftBlocks.blockGemOre, i, Blocks.NETHERRACK)).generate(world, rand, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+				int x = chunkX + rand.nextInt(16);
+				int y = rand.nextInt(64);
+				int z = chunkZ + rand.nextInt(16);
+				IBlockState oreState = GwycraftBlocks.blockGemOre.getDefaultState()
+						.withProperty(BlockGemOre.GEMTYPE, EnumGemType.byMetadata(rand.nextInt(16)));
+				new WorldGenMinable(oreState, ConfigGwycraft.genGemsNumber,
+						new Predicate<IBlockState>() {
+							public boolean apply(IBlockState state) {
+								return state.getBlock() == Blocks.NETHERRACK;
+							}
+						}).generate(world, rand, new BlockPos(x, y, z));
 			}
 		}
 	}

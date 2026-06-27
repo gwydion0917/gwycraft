@@ -105,8 +105,8 @@ public class GwycraftBlocks {
         blocks.add((MultiItem) (blockDyedStonePaver = register(reg, new BlockGwyGenericPaver(Material.ROCK, SoundType.STONE, "dyed_stone_paver").setHardness(2.0F))));
 
         // Bookshelves
-        //blockDyedBookcase = (BlockBookshelf) new BlockDyedBookcase(Material.WOOD).setHardness(1.5F).setUnlocalizedName("gwycraft.blockDyedBookcase").setCreativeTab(Gwycraft.tabs);
-        //glowyblockDyedBookcase = (BlockBookshelf) new BlockDyedBookcase(Material.WOOD).setLightLevel(1F).setHardness(1.5F).setUnlocalizedName("gwycraft.glowyblockDyedBookcase").setCreativeTab(Gwycraft.tabs);
+        blocks.add((MultiItem) (blockDyedBookcase = (BlockBookshelf) register(reg, new BlockDyedBookcase("dyed_bookcase"))));
+        blocks.add((MultiItem) (glowyblockDyedBookcase = (BlockBookshelf) register(reg, new BlockDyedBookcase("glowy_dyed_bookcase", 1f))));
 
         // Brick
         blocks.add((MultiItem) (blockDyedBrick = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_brick").setHardness(2F).setResistance(10F))));
@@ -118,12 +118,12 @@ public class GwycraftBlocks {
         blocks.add((MultiItem) (glowyblockDyedClayblock = register(reg, new BlockGwyGenericBlock(Material.CLAY, SoundType.STONE, "glowy_dyed_clay").setLightLevel(1F).setHardness(0.6F))));
 
         // Glass
-        //blockDyedGlass = new BlockDyedGlass().setHardness(0.6F).setUnlocalizedName("gwycraft.blockDyedGlass").setCreativeTab(Gwycraft.tabs);
-        //glowyblockDyedGlass = new BlockDyedGlass().setLightLevel(1F).setHardness(0.6F).setUnlocalizedName("gwycraft.glowyblockDyedGlass").setCreativeTab(Gwycraft.tabs);
+        blocks.add((MultiItem) (blockDyedGlass = register(reg, new BlockDyedGlass("dyed_glass"))));
+        blocks.add((MultiItem) (glowyblockDyedGlass = register(reg, new BlockDyedGlass("glowy_dyed_glass", 1f))));
 
         // Leaf
-        //blockDyedLeaf = new BlockDyedLeaf().setCreativeTab(Gwycraft.tabs).setUnlocalizedName("gwycraft.blockDyedLeaf");
-        //glowyblockDyedLeaf = new BlockDyedLeaf().setCreativeTab(Gwycraft.tabs).setLightLevel(1F).setUnlocalizedName("gwycraft.glowyblockDyedLeaf");
+        blocks.add((MultiItem) (blockDyedLeaf = register(reg, new BlockDyedLeaf("dyed_leaf"))));
+        blocks.add((MultiItem) (glowyblockDyedLeaf = register(reg, new BlockDyedLeaf("glowy_dyed_leaf", 1f))));
 
         // Mud Brick
         blocks.add((MultiItem) (blockDyedMudBrick = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_mud_brick").setHardness(1.5f))));
@@ -142,13 +142,13 @@ public class GwycraftBlocks {
 
         // Sand
         blocks.add((MultiItem) (blockDyedSand = register(reg, new BlockGwyColoredFalling(Material.SAND, SoundType.SAND, "dyed_sand").setHardness(0.5F))));
-        blocks.add((MultiItem) (blockDyedSand = register(reg, new BlockGwyColoredFalling(Material.SAND, SoundType.SAND, "glowy_dyed_sand").setHardness(0.5F).setLightLevel(1F))));
-        //blockDyedSandstone = new BlockDyedSandstone(Material.ROCK).setHardness(0.5F).setUnlocalizedName("gwycraft.blockDyedSandstone").setCreativeTab(Gwycraft.tabs);
-        //glowyblockDyedSandstone = new BlockDyedSandstone(Material.ROCK).setLightLevel(1F).setHardness(0.5F).setUnlocalizedName("gwycraft.glowyblockDyedSandstone").setCreativeTab(Gwycraft.tabs);
-        //blockDyedSmoothSandstone = new BlockDyedSmoothSandstone(Material.ROCK).setHardness(0.5F).setUnlocalizedName("gwycraft.blockDyedSmoothSandstone").setCreativeTab(Gwycraft.tabs);
-        //glowyblockDyedSmoothSandstone = new BlockDyedSmoothSandstone(Material.ROCK).setLightLevel(1F).setHardness(0.5F).setUnlocalizedName("gwycraft.glowyblockDyedSmoothSandstone").setCreativeTab(Gwycraft.tabs);
-        //blockDyedChiseledSandstone = new BlockDyedChiseledSandstone(Material.ROCK).setHardness(0.5F).setUnlocalizedName("gwycraft.blockDyedChiseledSandstone").setCreativeTab(Gwycraft.tabs);
-        //glowyblockDyedChiseledSandstone = new BlockDyedChiseledSandstone(Material.ROCK).setLightLevel(1F).setHardness(0.5F).setUnlocalizedName("gwycraft.glowyblockDyedChiseledSandstone").setCreativeTab(Gwycraft.tabs);
+        blocks.add((MultiItem) (glowyblockDyedSand = register(reg, new BlockGwyColoredFalling(Material.SAND, SoundType.SAND, "glowy_dyed_sand").setHardness(0.5F).setLightLevel(1F))));
+        blocks.add((MultiItem) (blockDyedSandstone = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_sandstone").setHardness(0.8F).setResistance(4.0F))));
+        blocks.add((MultiItem) (glowyblockDyedSandstone = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_sandstone").setLightLevel(1F).setHardness(0.8F).setResistance(4.0F))));
+        blocks.add((MultiItem) (blockDyedSmoothSandstone = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_smooth_sandstone").setHardness(0.8F).setResistance(4.0F))));
+        blocks.add((MultiItem) (glowyblockDyedSmoothSandstone = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_smooth_sandstone").setLightLevel(1F).setHardness(0.8F).setResistance(4.0F))));
+        blocks.add((MultiItem) (blockDyedChiseledSandstone = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_chiseled_sandstone").setHardness(0.8F).setResistance(4.0F))));
+        blocks.add((MultiItem) (glowyblockDyedChiseledSandstone = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "glowy_dyed_chiseled_sandstone").setLightLevel(1F).setHardness(0.8F).setResistance(4.0F))));
 
         // Stone Brick
         blocks.add((MultiItem) (blockDyedStoneBrick = register(reg, new BlockGwyGenericBlock(Material.ROCK, SoundType.STONE, "dyed_stone_brick").setHardness(2f))));

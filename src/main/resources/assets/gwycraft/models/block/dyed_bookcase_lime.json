@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "gwycraft:blocks/dyed_plank_lime",
+        "north": "gwycraft:blocks/bookcase_lime",
+        "south": "gwycraft:blocks/bookcase_lime",
+        "east": "gwycraft:blocks/bookcase_lime",
+        "west": "gwycraft:blocks/bookcase_lime",
+        "up": "gwycraft:blocks/dyed_plank_lime",
+        "down": "gwycraft:blocks/dyed_plank_lime"
+    }
+}

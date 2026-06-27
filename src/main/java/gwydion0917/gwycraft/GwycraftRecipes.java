@@ -1,232 +1,358 @@
 package gwydion0917.gwycraft;
 
+import gwydion0917.gwycraft.blocks.GwycraftBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreIngredient;
 
 public class GwycraftRecipes {
 
-	public static void init() {
-		/*
-		// Any kind
-		ItemStack anyCloth = new ItemStack(Blocks.WOOL, 1, OreDictionary.WILDCARD_VALUE);
-		ItemStack anyPlank = new ItemStack(Blocks.PLANKS, 1, OreDictionary.WILDCARD_VALUE);
-		*/
+    public static void init() {
+        for (int i = 0; i < 16; i++) {
+            // Dye item: inverted from wool (i=0 white → dye damage 15 = bone meal)
+            Ingredient dye       = Ingredient.fromStacks(new ItemStack(Items.DYE, 1, 15 - i));
+            Ingredient gem       = Ingredient.fromStacks(new ItemStack(GwycraftItems.itemEnchantedGems, 1, i));
+            Ingredient gemBlock  = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.blockGemCompressed, 1, i));
+            Ingredient dyedCobble       = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 1, i));
+            Ingredient glowyDyedCobble  = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i));
+            Ingredient dyedStone        = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.blockDyedStone, 1, i));
+            Ingredient glowyDyedStone   = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.glowyblockDyedStone, 1, i));
+            Ingredient dyedStoneBrick   = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.blockDyedStoneBrick, 1, i));
+            Ingredient dyedMudBrick     = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.blockDyedMudBrick, 1, i));
+            Ingredient dyedBrick        = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.blockDyedBrick, 1, i));
+            Ingredient dyedPlank        = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.blockDyedPlank, 1, i));
+            Ingredient glowyDyedPlank   = Ingredient.fromStacks(new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 1, i));
+            Ingredient dyedSticks       = Ingredient.fromStacks(new ItemStack(GwycraftItems.itemDyedSticks, 1, i));
+            Ingredient dyedClayItem     = Ingredient.fromStacks(new ItemStack(GwycraftItems.itemDyedClay, 1, i));
+            Ingredient dyedClayBricks   = Ingredient.fromStacks(new ItemStack(GwycraftItems.itemDyedClayBricks, 1, i));
+            Ingredient dyedMudItem      = Ingredient.fromStacks(new ItemStack(GwycraftItems.itemDyedMud, 1, i));
+            Ingredient dyedMudBrickItem = Ingredient.fromStacks(new ItemStack(GwycraftItems.itemDyedMudBricks, 1, i));
+            Ingredient glowstone        = Ingredient.fromStacks(new ItemStack(Blocks.GLOWSTONE));
+            Ingredient glowDust         = Ingredient.fromStacks(new ItemStack(Items.GLOWSTONE_DUST));
+            Ingredient diamond          = Ingredient.fromStacks(new ItemStack(Items.DIAMOND));
+            Ingredient gunpowder        = Ingredient.fromStacks(new ItemStack(Items.GUNPOWDER));
+            Ingredient bottle           = Ingredient.fromStacks(new ItemStack(Items.GLASS_BOTTLE));
+            Ingredient potion           = Ingredient.fromStacks(new ItemStack(Items.POTIONITEM));
+            Ingredient coal             = Ingredient.fromStacks(new ItemStack(Items.COAL));
+            Ingredient cobble           = new OreIngredient("cobblestone");
+            Ingredient plank            = new OreIngredient("plankWood");
+            Ingredient wool             = Ingredient.fromStacks(new ItemStack(Blocks.WOOL, 1, i));
+            Ingredient anyWool          = new OreIngredient("wool");
+            Ingredient sand             = Ingredient.fromStacks(new ItemStack(Blocks.SAND));
+            Ingredient clayBall         = Ingredient.fromStacks(new ItemStack(Items.CLAY_BALL));
+            Ingredient dirt             = Ingredient.fromStacks(new ItemStack(Blocks.DIRT));
+            Ingredient clayBlock        = Ingredient.fromStacks(new ItemStack(Blocks.CLAY));
+            Ingredient brickBlock         = Ingredient.fromStacks(new ItemStack(Blocks.BRICK_BLOCK));
+            Ingredient sandstone          = Ingredient.fromStacks(new ItemStack(Blocks.SANDSTONE));
+            Ingredient chiseledSandstone  = Ingredient.fromStacks(new ItemStack(Blocks.SANDSTONE, 1, 1));
+            Ingredient book               = Ingredient.fromStacks(new ItemStack(Items.BOOK));
+            Ingredient fence              = Ingredient.fromStacks(new ItemStack(Blocks.OAK_FENCE));
+            Ingredient leaf               = new OreIngredient("treeLeaves");
 
-		// 16 Meta
-		for (int i = 0; i < 16; i++) {
-			/*
-			// Dye is inverted compared to wool
-			ItemStack dye = new ItemStack(Items.DYE, 1, 15 - i);
-			ItemStack cloth = new ItemStack(Blocks.WOOL, 1, i);
-			ItemStack glowyWoolStack = new ItemStack(GwycraftBlocks.glowyWool, 4, i);
-			ItemStack blockglowyWool = new ItemStack(GwycraftBlocks.glowyWool, 1, i);
-			ItemStack blockDyedStoneStack = new ItemStack(GwycraftBlocks.blockDyedStone, 1, i);
-			ItemStack glowyblockDyedStoneStack = new ItemStack(GwycraftBlocks.glowyblockDyedStone, 1, i);
-			ItemStack blockDyedBookcaseStack = new ItemStack(GwycraftBlocks.blockDyedBookcase, 1, i);
-			ItemStack glowyblockDyedBookcaseStack = new ItemStack(GwycraftBlocks.glowyblockDyedBookcase, 1, i);
-			ItemStack blockDyedPlankStack = new ItemStack(GwycraftBlocks.blockDyedPlank, 1, i);
-			ItemStack glowyblockDyedPlankStack = new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 1, i);
-			ItemStack blockDyedBrickStack = new ItemStack(GwycraftBlocks.blockDyedBrick, 1, i);
-			ItemStack glowyblockDyedBrickStack = new ItemStack(GwycraftBlocks.glowyblockDyedBrick, 1, i);
-			ItemStack blockDyedClayblockStack = new ItemStack(GwycraftBlocks.blockDyedClayblock, 1, i);
-			ItemStack glowyblockDyedClayblockStack = new ItemStack(GwycraftBlocks.glowyblockDyedClayblock, 1, i);
-			ItemStack blockDyedGlassStack = new ItemStack(GwycraftBlocks.blockDyedGlass, 1, i);
-			ItemStack glowyblockDyedGlassStack = new ItemStack(GwycraftBlocks.glowyblockDyedGlass, 1, i);
-			ItemStack blockDyedLeafStack = new ItemStack(GwycraftBlocks.blockDyedLeaf, 1, i);
-			ItemStack glowyblockDyedLeafStack = new ItemStack(GwycraftBlocks.glowyblockDyedLeaf, 1, i);
-			ItemStack blockDyedMudBrickStack = new ItemStack(GwycraftBlocks.blockDyedMudBrick, 1, i);
-			ItemStack glowyblockDyedMudBrickStack = new ItemStack(GwycraftBlocks.glowyblockDyedMudBrick, 1, i);
-			ItemStack blockDyedSandStack = new ItemStack(GwycraftBlocks.blockDyedSand, 1, i);
-			ItemStack glowyblockDyedSandStack = new ItemStack(GwycraftBlocks.glowyblockDyedSand, 1, i);
-			ItemStack blockDyedSandstoneStack = new ItemStack(GwycraftBlocks.blockDyedSandstone, 1, i);
-			ItemStack glowyblockDyedSandstoneStack = new ItemStack(GwycraftBlocks.glowyblockDyedSandstone, 1, i);
-			ItemStack blockDyedStoneBrickStack = new ItemStack(GwycraftBlocks.blockDyedStoneBrick, 1, i);
-			ItemStack glowyblockDyedStoneBrickStack = new ItemStack(GwycraftBlocks.glowyblockDyedStoneBrick, 1, i);
-			ItemStack blockDyedStonecobbleStack = new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 1, i);
-			ItemStack glowyblockDyedStonecobbleStack = new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i);
-			ItemStack blockGemOreStack = new ItemStack(GwycraftBlocks.blockGemOre, 1, i);
-			*/
-			//ItemStack blockGemCompressedStack = new ItemStack(GwycraftBlocks.blockGemCompressed, 1, i);
-			//ItemStack itemEnchantedGemsStack = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i);
-			/*
-			ItemStack itemDyedClayStack = new ItemStack(GwycraftItems.itemDyedClay, 1, i);
-			ItemStack itemDyedClayBricksStack = new ItemStack(GwycraftItems.itemDyedClayBricks, 1, i);
-			ItemStack itemDyedMudStack = new ItemStack(GwycraftItems.itemDyedMud, 1, i);
-			ItemStack itemDyedMudBricksStack = new ItemStack(GwycraftItems.itemDyedMudBricks, 1, i);
-			ItemStack blockDyedFencesStack = new ItemStack(GwycraftBlocks.blockDyedFences, 1, i);
-			ItemStack glowyblockDyedFencesStack = new ItemStack(GwycraftBlocks.glowyblockDyedFences, 1, i);
-			ItemStack blockDyedCobbleWallsStack = new ItemStack(GwycraftBlocks.blockDyedCobbleWalls, 1, i);
-			ItemStack glowyblockDyedCobbleWallsStack = new ItemStack(GwycraftBlocks.glowyblockDyedCobbleWalls, 1, i);
-			ItemStack itemDyedSticksStack = new ItemStack(GwycraftItems.itemDyedSticks, 1, i);
-			ItemStack blockDyedStonePaverStack = new ItemStack(GwycraftBlocks.blockDyedStonePaver, 1, i);
-			ItemStack blockDyedBrickPaverStack = new ItemStack(GwycraftBlocks.blockDyedBrickPaver, 1, i);
-			ItemStack blockDyedMudBrickPaverStack = new ItemStack(GwycraftBlocks.blockDyedMudBrickPaver, 1, i);
-			ItemStack blockDyedStoneBrickPaverStack = new ItemStack(GwycraftBlocks.blockDyedStoneBrickPaver, 1, i);
-			ItemStack blockDyedStoneCobblePaverStack = new ItemStack(GwycraftBlocks.blockDyedStoneCobblePaver, 1, i);
+            Block dyedLogBlock     = i < 4  ? GwycraftBlocks.blockDyedLog1 :
+                                     i < 8  ? GwycraftBlocks.blockDyedLog2 :
+                                     i < 12 ? GwycraftBlocks.blockDyedLog3 :
+                                              GwycraftBlocks.blockDyedLog4;
+            Block glowyDyedLogBlock = i < 4  ? GwycraftBlocks.glowyblockDyedLog1 :
+                                      i < 8  ? GwycraftBlocks.glowyblockDyedLog2 :
+                                      i < 12 ? GwycraftBlocks.glowyblockDyedLog3 :
+                                               GwycraftBlocks.glowyblockDyedLog4;
+            int logMeta = i % 4;
 
-			// Add Recipes
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedBookcase, 1, i), "###", "XXX", "###", '#', blockDyedPlankStack, 'X', Items.BOOK);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedBookcase, 1, i), "###", "XXX", "###", '#', glowyblockDyedPlankStack, 'X', Items.BOOK);
-			GameRegistry.addRecipe(new ItemStack(GwycraftItems.itemDyedSticks, 4, i), "X", "X", 'X', blockDyedPlankStack);
-			*/
-			//GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockGemCompressed, 1, i), "XX", "XX", 'X', itemEnchantedGemsStack);
-			//GameRegistry.addRecipe(new ItemStack(GwycraftItems.itemEnchantedGems, 4, i), "X", 'X', blockGemCompressedStack);
-			/*
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedStoneBrick, 4, i), "xx", "xx", 'x', blockDyedStoneStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedStoneBrick, 4, i), "XX", "XX", 'X', glowyblockDyedStoneStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedFences, 2, i), "XXX", "XXX", 'X', itemDyedSticksStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedMudBrick, 4, i), "XX", "XX", 'X', itemDyedMudBricksStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedClayblock, 1, i), "XX", "XX", 'X', itemDyedClayStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedBrick, 1, i), "XX", "XX", 'X', itemDyedClayBricksStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedCobbleWalls, 6, i), "XXX", "XXX", 'X', blockDyedStonecobbleStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedCobbleWalls, 6, i), "XXX", "XXX", 'X', glowyblockDyedStonecobbleStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedStonePaver, 3, i), "XX", 'X', blockDyedStoneStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedBrickPaver, 3, i), "XX", 'X', blockDyedBrickStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedStoneBrickPaver, 3, i), "XX", 'X', blockDyedStoneBrickStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedMudBrickPaver, 3, i), "XX", 'X', blockDyedMudBrickStack);
-			GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDyedStoneCobblePaver, 3, i), "XX", 'X', blockDyedStonecobbleStack);
+            String s = String.valueOf(i);
 
-			// Add Shapeless Recipes
-			GameRegistry.addShapelessRecipe(glowyWoolStack, new ItemStack(Blocks.GLOWSTONE), cloth, cloth, cloth, cloth);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyWool, 8, i), itemEnchantedGemsStack, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth, anyCloth);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedSand, 8, i), dye, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedSand, 8, i), itemEnchantedGemsStack, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND, Blocks.SAND);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedSandstone, 8, i), dye, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedSandstone, 8, i), itemEnchantedGemsStack, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedPlank, 8, i), dye, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 8, i), itemEnchantedGemsStack, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank, anyPlank);
-			GameRegistry.addShapelessRecipe(new ItemStack(Items.DYE, 4, 15 - i), itemEnchantedGemsStack, Items.GUNPOWDER, Items.GLASS_BOTTLE);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftItems.itemDyedMud, 16, i), Blocks.DIRT, Blocks.DIRT, Blocks.DIRT, Blocks.DIRT, Blocks.DIRT, Blocks.DIRT, Items.CLAY_BALL, Items.POTIONITEM, dye);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftItems.itemDyedClay, 8, i), Items.CLAY_BALL, Items.CLAY_BALL, Items.CLAY_BALL, Items.CLAY_BALL, Items.CLAY_BALL, Items.CLAY_BALL, Items.CLAY_BALL, Items.CLAY_BALL, dye);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedClayblock, 8, i), itemEnchantedGemsStack, Blocks.CLAY, Blocks.CLAY, Blocks.CLAY, Blocks.CLAY, Blocks.CLAY, Blocks.CLAY, Blocks.CLAY, Blocks.CLAY);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedBrick, 8, i), itemEnchantedGemsStack, Blocks.BRICK_BLOCK, Blocks.BRICK_BLOCK, Blocks.BRICK_BLOCK, Blocks.BRICK_BLOCK, Blocks.BRICK_BLOCK, Blocks.BRICK_BLOCK, Blocks.BRICK_BLOCK, Blocks.BRICK_BLOCK);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedMudBrick, 8, i), Blocks.GLOWSTONE, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack, blockDyedMudBrickStack);
+            // --- Gem block <-> enchanted gems ---
+            GameRegistry.addShapedRecipe(rl("gem_block_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockGemCompressed, 1, i),
+                    "XX", "XX", 'X', gem);
+            GameRegistry.addShapelessRecipe(rl("gem_unpack_" + s), null,
+                    new ItemStack(GwycraftItems.itemEnchantedGems, 4, i), gemBlock);
 
-			if (ConfigGwycraft.gemsCraftingEnabled) {
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockGemOre, 1, i), new ItemStack(Items.DYE, 0, 15 - i), new ItemStack(Items.DYE, 0, 15 - i), new ItemStack(Items.DYE, 0, 15 - i), new ItemStack(Items.DYE, 0, 15 - i), Items.GLOWSTONE_DUST, Items.GLOWSTONE_DUST, Items.GLOWSTONE_DUST, Items.GLOWSTONE_DUST, Items.DIAMOND);
-			}
+            // Gem -> dye (+ gunpowder + bottle)
+            GameRegistry.addShapelessRecipe(rl("gem_to_dye_" + s), null,
+                    new ItemStack(Items.DYE, 4, 15 - i), gem, gunpowder, bottle);
 
-			// Add Furnace Recipes
-			GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 1, i), new ItemStack(GwycraftBlocks.blockDyedStone, 1, i), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i), new ItemStack(GwycraftBlocks.glowyblockDyedStone, 1, i), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.blockDyedSand, 1, i), new ItemStack(GwycraftBlocks.blockDyedGlass, 1, i), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedSand, 1, i), new ItemStack(GwycraftBlocks.glowyblockDyedGlass, 1, i), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(GwycraftItems.itemDyedMud, 1, i), new ItemStack(GwycraftItems.itemDyedMudBricks, 1, i), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(GwycraftItems.itemDyedClay, 1, i), new ItemStack(GwycraftItems.itemDyedClayBricks, 1, i), 0.1F);
+            // Gem ore (with config)
+            if (ConfigGwycraft.gemsCraftingEnabled) {
+                GameRegistry.addShapelessRecipe(rl("gem_ore_craft_" + s), null,
+                        new ItemStack(GwycraftBlocks.blockGemOre, 1, i),
+                        dye, dye, dye, dye, glowDust, glowDust, glowDust, glowDust, diamond);
+            }
 
-			// Ore Dictionary
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 8, i), dye, "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone"));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 8, i), itemEnchantedGemsStack, "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone"));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedFences, 8, i), itemEnchantedGemsStack, "fence", "fence", "fence", "fence", "fence", "fence", "fence", "fence"));
-			// Recipes for Dyed Leaves
-			for (int j = 0; j < 4; j++) {
-				ItemStack leaf = new ItemStack(Blocks.LEAVES, 1, j);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedLeaf, 8, i), dye, leaf, leaf, leaf, leaf, leaf, leaf, leaf, leaf);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedLeaf, 8, i), itemEnchantedGemsStack, leaf, leaf, leaf, leaf, leaf, leaf, leaf, leaf);
-			}
+            // --- Dyed cobblestone from vanilla cobble + dye ---
+            GameRegistry.addShapelessRecipe(rl("dyed_cobble_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 8, i),
+                    dye, cobble, cobble, cobble, cobble, cobble, cobble, cobble, cobble);
 
-			// Recipes for Dyed Torches
-			if (i == 0)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockWhiteDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 1)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockOrangeDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 2)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockMagentaDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 3)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockLBlueDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 4)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockYellowDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 5)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockLGreenDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 6)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockPinkDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 7)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockDGrayDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 8)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockLGrayDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 9)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockCyanDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 10)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockPurpleDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 11)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockBlueDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 12)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockBrownDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 13)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockGreenDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 14)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockRedDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			else if (i == 15)
-				GameRegistry.addRecipe(new ItemStack(GwycraftBlocks.blockBlackDyedTorch, 4), "X", "#", 'X', Items.COAL, '#', itemDyedSticksStack);
-			*/
-		}
+            // --- Dyed plank from vanilla planks + dye ---
+            GameRegistry.addShapelessRecipe(rl("dyed_plank_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedPlank, 8, i),
+                    dye, plank, plank, plank, plank, plank, plank, plank, plank);
+            GameRegistry.addShapelessRecipe(rl("glowy_dyed_plank_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 8, i),
+                    gem, plank, plank, plank, plank, plank, plank, plank, plank);
 
-		// 4 Meta
-		for (int i = 0; i < 4; i++) {
-			/*
-			// Item Stacks
-			ItemStack blockDyedLog1Stack = new ItemStack(GwycraftBlocks.blockDyedLog1, 1, i);
-			ItemStack blockDyedLog2Stack = new ItemStack(GwycraftBlocks.blockDyedLog2, 1, i);
-			ItemStack blockDyedLog3Stack = new ItemStack(GwycraftBlocks.blockDyedLog3, 1, i);
-			ItemStack blockDyedLog4Stack = new ItemStack(GwycraftBlocks.blockDyedLog4, 1, i);
-			ItemStack dye1 = new ItemStack(Items.DYE, 1, 15 - i);
-			ItemStack dye2 = new ItemStack(Items.DYE, 1, 11 - i);
-			ItemStack dye3 = new ItemStack(Items.DYE, 1, 7 - i);
-			ItemStack dye4 = new ItemStack(Items.DYE, 1, 3 - i);
-			ItemStack glowyblockDyedLog1Stack = new ItemStack(GwycraftBlocks.glowyblockDyedLog1, 1, i);
-			ItemStack glowyblockDyedLog2Stack = new ItemStack(GwycraftBlocks.glowyblockDyedLog2, 1, i);
-			ItemStack glowyblockDyedLog3Stack = new ItemStack(GwycraftBlocks.glowyblockDyedLog3, 1, i);
-			ItemStack glowyblockDyedLog4Stack = new ItemStack(GwycraftBlocks.glowyblockDyedLog4, 1, i);
-			ItemStack itemEnchantedGemsStack1 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i);
-			ItemStack itemEnchantedGemsStack2 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i + 4);
-			ItemStack itemEnchantedGemsStack3 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i + 8);
-			ItemStack itemEnchantedGemsStack4 = new ItemStack(GwycraftItems.itemEnchantedGems, 1, i + 12);
+            // Dyed plank -> dyed sticks (4 per plank)
+            GameRegistry.addShapelessRecipe(rl("dyed_sticks_" + s), null,
+                    new ItemStack(GwycraftItems.itemDyedSticks, 4, i), dyedPlank);
 
-			// Add Recipes
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedPlank, 4, i), blockDyedLog1Stack);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedPlank, 4, i + 4), blockDyedLog2Stack);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedPlank, 4, i + 8), blockDyedLog3Stack);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedPlank, 4, i + 12), blockDyedLog4Stack);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 4, i), glowyblockDyedLog1Stack);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 4, i + 4), glowyblockDyedLog2Stack);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 4, i + 8), glowyblockDyedLog3Stack);
-			GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 4, i + 12), glowyblockDyedLog4Stack);
+            // --- Stone brick from dyed stone ---
+            GameRegistry.addShapedRecipe(rl("dyed_stone_brick_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedStoneBrick, 4, i),
+                    "XX", "XX", 'X', dyedStone);
+            GameRegistry.addShapedRecipe(rl("glowy_dyed_stone_brick_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedStoneBrick, 4, i),
+                    "XX", "XX", 'X', glowyDyedStone);
 
-			// Recipes for Dyed Leaves
-			for (int j = 0; j < 4; j++) {
-				ItemStack log = new ItemStack(Blocks.LOG, 1, j);
+            // --- Cobble walls ---
+            GameRegistry.addShapedRecipe(rl("dyed_cobble_wall_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedCobbleWalls, 6, i),
+                    "XXX", "XXX", 'X', dyedCobble);
+            GameRegistry.addShapedRecipe(rl("glowy_dyed_cobble_wall_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedCobbleWalls, 6, i),
+                    "XXX", "XXX", 'X', glowyDyedCobble);
 
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedLog1, 8, i), dye1, log, log, log, log, log, log, log, log);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedLog2, 8, i), dye2, log, log, log, log, log, log, log, log);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedLog3, 8, i), dye3, log, log, log, log, log, log, log, log);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.blockDyedLog4, 8, i), dye4, log, log, log, log, log, log, log, log);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedLog1, 8, i), itemEnchantedGemsStack1, log, log, log, log, log, log, log, log);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedLog2, 8, i), itemEnchantedGemsStack2, log, log, log, log, log, log, log, log);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedLog3, 8, i), itemEnchantedGemsStack3, log, log, log, log, log, log, log, log);
-				GameRegistry.addShapelessRecipe(new ItemStack(GwycraftBlocks.glowyblockDyedLog4, 8, i), itemEnchantedGemsStack4, log, log, log, log, log, log, log, log);
-			}
-			*/
-		}
+            // --- Pavers (2 blocks in a row -> 3 pavers) ---
+            GameRegistry.addShapedRecipe(rl("dyed_stone_paver_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedStonePaver, 3, i), "XX", 'X', dyedStone);
+            GameRegistry.addShapedRecipe(rl("dyed_brick_paver_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedBrickPaver, 3, i), "XX", 'X', dyedBrick);
+            GameRegistry.addShapedRecipe(rl("dyed_stone_brick_paver_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedStoneBrickPaver, 3, i), "XX", 'X', dyedStoneBrick);
+            GameRegistry.addShapedRecipe(rl("dyed_mud_brick_paver_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedMudBrickPaver, 3, i), "XX", 'X', dyedMudBrick);
+            GameRegistry.addShapedRecipe(rl("dyed_cobble_paver_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedStoneCobblePaver, 3, i), "XX", 'X', dyedCobble);
 
-		/*
-		// Recipes for tools
-		if (ConfigGwycraft.toolsEnabled) {
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemShears, 1), " X", "X ", 'X', "gemGwycraft"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHatchet, 1), "XX ", "XY ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHatchet, 1), " XX", " YX", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHoe, 1), "XX ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemHoe, 1), " XX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemPickaxe, 1), "XXX", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemShovel, 1), " X ", " Y ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), "X  ", "X  ", "Y  ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), " X ", " X ", " Y ", 'X', "gemGwycraft", 'Y', "stickWood"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GwycraftItems.itemGemSword, 1), "  X", "  X", "  Y", 'X', "gemGwycraft", 'Y', "stickWood"));
-		}
-		*/
-	}
+            // --- Clay/mud crafting items ---
+            // 8 clay balls + dye -> 8 colored clay items
+            GameRegistry.addShapelessRecipe(rl("dyed_clay_item_" + s), null,
+                    new ItemStack(GwycraftItems.itemDyedClay, 8, i),
+                    dye, clayBall, clayBall, clayBall, clayBall,
+                    clayBall, clayBall, clayBall, clayBall);
+            // 8 dirt + clay ball + water bottle + dye -> 16 colored mud items
+            GameRegistry.addShapelessRecipe(rl("dyed_mud_item_" + s), null,
+                    new ItemStack(GwycraftItems.itemDyedMud, 16, i),
+                    dye, potion, clayBall,
+                    dirt, dirt, dirt, dirt, dirt, dirt, dirt, dirt);
+            // 4 colored clay items -> 1 clay block
+            GameRegistry.addShapedRecipe(rl("dyed_clay_block_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedClayblock, 1, i),
+                    "XX", "XX", 'X', dyedClayItem);
+            // 4 colored clay bricks -> 1 colored brick block
+            GameRegistry.addShapedRecipe(rl("dyed_brick_block_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedBrick, 1, i),
+                    "XX", "XX", 'X', dyedClayBricks);
+            // 4 colored mud bricks -> 1 mud brick block
+            GameRegistry.addShapedRecipe(rl("dyed_mud_brick_block_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedMudBrick, 4, i),
+                    "XX", "XX", 'X', dyedMudBrickItem);
+
+            // --- Glowy variants via enchanted gems ---
+            GameRegistry.addShapelessRecipe(rl("glowy_dyed_clay_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedClayblock, 8, i),
+                    gem, clayBlock, clayBlock, clayBlock, clayBlock,
+                    clayBlock, clayBlock, clayBlock, clayBlock);
+            GameRegistry.addShapelessRecipe(rl("glowy_dyed_brick_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedBrick, 8, i),
+                    gem, brickBlock, brickBlock, brickBlock, brickBlock,
+                    brickBlock, brickBlock, brickBlock, brickBlock);
+            GameRegistry.addShapelessRecipe(rl("glowy_dyed_mud_brick_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedMudBrick, 8, i),
+                    glowstone, dyedMudBrick, dyedMudBrick, dyedMudBrick, dyedMudBrick,
+                    dyedMudBrick, dyedMudBrick, dyedMudBrick, dyedMudBrick);
+
+            // --- Furnace recipes ---
+            GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 1, i),
+                    new ItemStack(GwycraftBlocks.blockDyedStone, 1, i), 0.1F);
+            GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i),
+                    new ItemStack(GwycraftBlocks.glowyblockDyedStone, 1, i), 0.1F);
+            GameRegistry.addSmelting(new ItemStack(GwycraftItems.itemDyedClay, 1, i),
+                    new ItemStack(GwycraftItems.itemDyedClayBricks, 1, i), 0.1F);
+            GameRegistry.addSmelting(new ItemStack(GwycraftItems.itemDyedMud, 1, i),
+                    new ItemStack(GwycraftItems.itemDyedMudBricks, 1, i), 0.1F);
+
+            // --- Dyed torches: coal + dyed stick -> 4 torches ---
+            Block torch = torchForColor(i);
+            if (torch != null) {
+                GameRegistry.addShapedRecipe(rl("dyed_torch_" + s), null,
+                        new ItemStack(torch, 4), "X", "#", 'X', coal, '#', dyedSticks);
+            }
+
+            // --- Glowy wool ---
+            GameRegistry.addShapelessRecipe(rl("glowy_wool_glowstone_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyWool, 4, i),
+                    glowstone, wool, wool, wool, wool);
+            GameRegistry.addShapelessRecipe(rl("glowy_wool_gem_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyWool, 8, i),
+                    gem, anyWool, anyWool, anyWool, anyWool, anyWool, anyWool, anyWool, anyWool);
+
+            // --- Dyed sand ---
+            GameRegistry.addShapelessRecipe(rl("dyed_sand_" + s), null,
+                    new ItemStack(GwycraftBlocks.blockDyedSand, 8, i),
+                    dye, sand, sand, sand, sand, sand, sand, sand, sand);
+            GameRegistry.addShapelessRecipe(rl("glowy_dyed_sand_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedSand, 8, i),
+                    gem, sand, sand, sand, sand, sand, sand, sand, sand);
+
+            // --- Glowy cobblestone ---
+            GameRegistry.addShapelessRecipe(rl("glowy_dyed_cobble_" + s), null,
+                    new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 8, i),
+                    gem, cobble, cobble, cobble, cobble, cobble, cobble, cobble, cobble);
+
+            // --- Dyed glass (smelting dyed/glowy sand) ---
+            if (GwycraftBlocks.blockDyedGlass != null)
+                GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.blockDyedSand, 1, i),
+                        new ItemStack(GwycraftBlocks.blockDyedGlass, 1, i), 0.1F);
+            if (GwycraftBlocks.glowyblockDyedGlass != null)
+                GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedSand, 1, i),
+                        new ItemStack(GwycraftBlocks.glowyblockDyedGlass, 1, i), 0.1F);
+
+            // --- Dyed sandstone (dye/gem + 8 vanilla sandstone → 8 dyed) ---
+            if (GwycraftBlocks.blockDyedSandstone != null)
+                GameRegistry.addShapelessRecipe(rl("dyed_sandstone_" + s), null,
+                        new ItemStack(GwycraftBlocks.blockDyedSandstone, 8, i),
+                        dye, sandstone, sandstone, sandstone, sandstone, sandstone, sandstone, sandstone, sandstone);
+            if (GwycraftBlocks.glowyblockDyedSandstone != null)
+                GameRegistry.addShapelessRecipe(rl("glowy_dyed_sandstone_" + s), null,
+                        new ItemStack(GwycraftBlocks.glowyblockDyedSandstone, 8, i),
+                        gem, sandstone, sandstone, sandstone, sandstone, sandstone, sandstone, sandstone, sandstone);
+            if (GwycraftBlocks.blockDyedChiseledSandstone != null)
+                GameRegistry.addShapelessRecipe(rl("dyed_chiseled_sandstone_" + s), null,
+                        new ItemStack(GwycraftBlocks.blockDyedChiseledSandstone, 8, i),
+                        dye, chiseledSandstone, chiseledSandstone, chiseledSandstone, chiseledSandstone,
+                        chiseledSandstone, chiseledSandstone, chiseledSandstone, chiseledSandstone);
+            if (GwycraftBlocks.glowyblockDyedChiseledSandstone != null)
+                GameRegistry.addShapelessRecipe(rl("glowy_dyed_chiseled_sandstone_" + s), null,
+                        new ItemStack(GwycraftBlocks.glowyblockDyedChiseledSandstone, 8, i),
+                        gem, chiseledSandstone, chiseledSandstone, chiseledSandstone, chiseledSandstone,
+                        chiseledSandstone, chiseledSandstone, chiseledSandstone, chiseledSandstone);
+            if (GwycraftBlocks.blockDyedSandstone != null && GwycraftBlocks.blockDyedSmoothSandstone != null)
+                GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.blockDyedSandstone, 1, i),
+                        new ItemStack(GwycraftBlocks.blockDyedSmoothSandstone, 1, i), 0.1F);
+            if (GwycraftBlocks.glowyblockDyedSandstone != null && GwycraftBlocks.glowyblockDyedSmoothSandstone != null)
+                GameRegistry.addSmelting(new ItemStack(GwycraftBlocks.glowyblockDyedSandstone, 1, i),
+                        new ItemStack(GwycraftBlocks.glowyblockDyedSmoothSandstone, 1, i), 0.1F);
+
+            // --- Dyed bookcase (dyed planks + books) ---
+            if (GwycraftBlocks.blockDyedBookcase != null)
+                GameRegistry.addShapedRecipe(rl("dyed_bookcase_" + s), null,
+                        new ItemStack(GwycraftBlocks.blockDyedBookcase, 1, i),
+                        "###", "XXX", "###", '#', dyedPlank, 'X', book);
+            if (GwycraftBlocks.glowyblockDyedBookcase != null)
+                GameRegistry.addShapedRecipe(rl("glowy_dyed_bookcase_" + s), null,
+                        new ItemStack(GwycraftBlocks.glowyblockDyedBookcase, 1, i),
+                        "###", "XXX", "###", '#', glowyDyedPlank, 'X', book);
+
+            // --- Dyed fences ---
+            if (GwycraftBlocks.blockDyedFences != null)
+                GameRegistry.addShapedRecipe(rl("dyed_fence_" + s), null,
+                        new ItemStack(GwycraftBlocks.blockDyedFences, 2, i),
+                        "XXX", "XXX", 'X', dyedSticks);
+            if (GwycraftBlocks.glowyblockDyedFences != null)
+                GameRegistry.addShapelessRecipe(rl("glowy_dyed_fence_" + s), null,
+                        new ItemStack(GwycraftBlocks.glowyblockDyedFences, 8, i),
+                        gem, fence, fence, fence, fence, fence, fence, fence, fence);
+
+            // --- Dyed leaves (any vanilla leaf type + dye/gem) ---
+            if (GwycraftBlocks.blockDyedLeaf != null)
+                GameRegistry.addShapelessRecipe(rl("dyed_leaf_" + s), null,
+                        new ItemStack(GwycraftBlocks.blockDyedLeaf, 8, i),
+                        dye, leaf, leaf, leaf, leaf, leaf, leaf, leaf, leaf);
+            if (GwycraftBlocks.glowyblockDyedLeaf != null)
+                GameRegistry.addShapelessRecipe(rl("glowy_dyed_leaf_" + s), null,
+                        new ItemStack(GwycraftBlocks.glowyblockDyedLeaf, 8, i),
+                        gem, leaf, leaf, leaf, leaf, leaf, leaf, leaf, leaf);
+
+            // --- Dyed logs (each of 4 vanilla log types → dyed log, log → dyed planks) ---
+            if (dyedLogBlock != null || glowyDyedLogBlock != null) {
+                for (int j = 0; j < 4; j++) {
+                    Ingredient log = Ingredient.fromStacks(new ItemStack(Blocks.LOG, 1, j));
+                    if (dyedLogBlock != null)
+                        GameRegistry.addShapelessRecipe(rl("dyed_log_" + s + "_" + j), null,
+                                new ItemStack(dyedLogBlock, 8, logMeta),
+                                dye, log, log, log, log, log, log, log, log);
+                    if (glowyDyedLogBlock != null)
+                        GameRegistry.addShapelessRecipe(rl("glowy_dyed_log_" + s + "_" + j), null,
+                                new ItemStack(glowyDyedLogBlock, 8, logMeta),
+                                gem, log, log, log, log, log, log, log, log);
+                }
+                if (dyedLogBlock != null)
+                    GameRegistry.addShapelessRecipe(rl("dyed_plank_from_log_" + s), null,
+                            new ItemStack(GwycraftBlocks.blockDyedPlank, 4, i),
+                            Ingredient.fromStacks(new ItemStack(dyedLogBlock, 1, logMeta)));
+                if (glowyDyedLogBlock != null)
+                    GameRegistry.addShapelessRecipe(rl("glowy_dyed_plank_from_log_" + s), null,
+                            new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 4, i),
+                            Ingredient.fromStacks(new ItemStack(glowyDyedLogBlock, 1, logMeta)));
+            }
+        }
+
+        // --- Gem tools ---
+        if (ConfigGwycraft.toolsEnabled) {
+            Ingredient gemAny = new OreIngredient("gemGwycraft");
+            Ingredient stick  = new OreIngredient("stickWood");
+            GameRegistry.addShapedRecipe(rl("gem_shears"), null,
+                    new ItemStack(GwycraftItems.itemGemShears),
+                    " X", "X ", 'X', gemAny);
+            GameRegistry.addShapedRecipe(rl("gem_hatchet_left"), null,
+                    new ItemStack(GwycraftItems.itemGemHatchet),
+                    "XX ", "XY ", " Y ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_hatchet_right"), null,
+                    new ItemStack(GwycraftItems.itemGemHatchet),
+                    " XX", " YX", " Y ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_hoe_left"), null,
+                    new ItemStack(GwycraftItems.itemGemHoe),
+                    "XX ", " Y ", " Y ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_hoe_right"), null,
+                    new ItemStack(GwycraftItems.itemGemHoe),
+                    " XX", " Y ", " Y ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_pickaxe"), null,
+                    new ItemStack(GwycraftItems.itemGemPickaxe),
+                    "XXX", " Y ", " Y ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_shovel"), null,
+                    new ItemStack(GwycraftItems.itemGemShovel),
+                    " X ", " Y ", " Y ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_sword_left"), null,
+                    new ItemStack(GwycraftItems.itemGemSword),
+                    "X  ", "X  ", "Y  ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_sword_center"), null,
+                    new ItemStack(GwycraftItems.itemGemSword),
+                    " X ", " X ", " Y ", 'X', gemAny, 'Y', stick);
+            GameRegistry.addShapedRecipe(rl("gem_sword_right"), null,
+                    new ItemStack(GwycraftItems.itemGemSword),
+                    "  X", "  X", "  Y", 'X', gemAny, 'Y', stick);
+        }
+    }
+
+    private static ResourceLocation rl(String name) {
+        return new ResourceLocation("gwycraft", name);
+    }
+
+    private static Block torchForColor(int i) {
+        switch (i) {
+            case  0: return GwycraftBlocks.blockWhiteDyedTorch;
+            case  1: return GwycraftBlocks.blockOrangeDyedTorch;
+            case  2: return GwycraftBlocks.blockMagentaDyedTorch;
+            case  3: return GwycraftBlocks.blockLBlueDyedTorch;
+            case  4: return GwycraftBlocks.blockYellowDyedTorch;
+            case  5: return GwycraftBlocks.blockLGreenDyedTorch;
+            case  6: return GwycraftBlocks.blockPinkDyedTorch;
+            case  7: return GwycraftBlocks.blockDGrayDyedTorch;
+            case  8: return GwycraftBlocks.blockLGrayDyedTorch;
+            case  9: return GwycraftBlocks.blockCyanDyedTorch;
+            case 10: return GwycraftBlocks.blockPurpleDyedTorch;
+            case 11: return GwycraftBlocks.blockBlueDyedTorch;
+            case 12: return GwycraftBlocks.blockBrownDyedTorch;
+            case 13: return GwycraftBlocks.blockGreenDyedTorch;
+            case 14: return GwycraftBlocks.blockRedDyedTorch;
+            case 15: return GwycraftBlocks.blockBlackDyedTorch;
+            default: return null;
+        }
+    }
 }

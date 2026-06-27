@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "gwycraft:blocks/sandstonebottom_magenta",
+        "top": "gwycraft:blocks/sandstonetop_magenta",
+        "side": "gwycraft:blocks/sandstoneside_magenta"
+    }
+}

@@ -62,5 +62,6 @@ public class ItemEnchantedGems extends Item implements MultiItem {
 
 	@Override
 	public void registerItems(IForgeRegistry<Item> reg) {
+		reg.register(this);
 	}
 }

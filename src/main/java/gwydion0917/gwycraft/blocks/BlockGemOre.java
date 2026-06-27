@@ -23,7 +23,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMultiTexture;
 import net.minecraft.item.ItemStack;
@@ -150,7 +149,7 @@ public class BlockGemOre extends Block implements MultiItem {
 	public void registerItems(IForgeRegistry<Item> reg) {
 		reg.register((new ItemMultiTexture(this, this, new ItemMultiTexture.Mapper() {
 			public String apply(ItemStack stack) {
-				return EnumDyeColor.byMetadata(stack.getItemDamage()).getUnlocalizedName();
+				return EnumGemType.byMetadata(stack.getItemDamage()).getUnlocalizedName();
 			}
 		})).setUnlocalizedName(this.getUnlocalizedName()).setRegistryName(this.getRegistryName()));
 	}

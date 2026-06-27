@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "color=white": { "model": "gwycraft:dyed_chiseled_sandstone_white" },
+    "color=orange": { "model": "gwycraft:dyed_chiseled_sandstone_orange" },
+    "color=magenta": { "model": "gwycraft:dyed_chiseled_sandstone_magenta" },
+    "color=light_blue": { "model": "gwycraft:dyed_chiseled_sandstone_light_blue" },
+    "color=yellow": { "model": "gwycraft:dyed_chiseled_sandstone_yellow" },
+    "color=lime": { "model": "gwycraft:dyed_chiseled_sandstone_lime" },
+    "color=pink": { "model": "gwycraft:dyed_chiseled_sandstone_pink" },
+    "color=gray": { "model": "gwycraft:dyed_chiseled_sandstone_gray" },
+    "color=silver": { "model": "gwycraft:dyed_chiseled_sandstone_silver" },
+    "color=cyan": { "model": "gwycraft:dyed_chiseled_sandstone_cyan" },
+    "color=purple": { "model": "gwycraft:dyed_chiseled_sandstone_purple" },
+    "color=blue": { "model": "gwycraft:dyed_chiseled_sandstone_blue" },
+    "color=brown": { "model": "gwycraft:dyed_chiseled_sandstone_brown" },
+    "color=green": { "model": "gwycraft:dyed_chiseled_sandstone_green" },
+    "color=red": { "model": "gwycraft:dyed_chiseled_sandstone_red" },
+    "color=black": { "model": "gwycraft:dyed_chiseled_sandstone_black" }
+  }
+}

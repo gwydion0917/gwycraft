@@ -27,18 +27,19 @@ public class ItemDyedItem extends ItemDye implements MultiItem {
      */
 	@Override
     public String getUnlocalizedName(ItemStack stack) {
-        return super.getUnlocalizedName() + "." + EnumDyeColor.byDyeDamage(MathHelper.clamp(stack.getItemDamage(), 0, 16)).getUnlocalizedName();
+        return super.getUnlocalizedName() + "." + EnumDyeColor.byMetadata(MathHelper.clamp(stack.getItemDamage(), 0, 15)).getUnlocalizedName();
     }
 
 	@Override
 	public void registerBlockRenders() {
-		for(EnumDyeColor color: EnumDyeColor.values()) {
-			ModelLoader.setCustomModelResourceLocation(this, color.getDyeDamage(), new ModelResourceLocation(this.getRegistryName() + "_" + color.getName()));
+		for (int i = 0; i < 16; i++) {
+			EnumDyeColor color = EnumDyeColor.byMetadata(i);
+			ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(this.getRegistryName() + "_" + color.getName()));
 		}
 	}
 
 	@Override
 	public void registerItems(IForgeRegistry<Item> reg) {
-
+		reg.register(this);
 	}
 }

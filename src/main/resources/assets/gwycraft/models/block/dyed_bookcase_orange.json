@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "gwycraft:blocks/dyed_plank_orange",
+        "north": "gwycraft:blocks/bookcase_orange",
+        "south": "gwycraft:blocks/bookcase_orange",
+        "east": "gwycraft:blocks/bookcase_orange",
+        "west": "gwycraft:blocks/bookcase_orange",
+        "up": "gwycraft:blocks/dyed_plank_orange",
+        "down": "gwycraft:blocks/dyed_plank_orange"
+    }
+}

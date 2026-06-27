@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "color=white": { "model": "gwycraft:dyed_glass_white" },
+    "color=orange": { "model": "gwycraft:dyed_glass_orange" },
+    "color=magenta": { "model": "gwycraft:dyed_glass_magenta" },
+    "color=light_blue": { "model": "gwycraft:dyed_glass_light_blue" },
+    "color=yellow": { "model": "gwycraft:dyed_glass_yellow" },
+    "color=lime": { "model": "gwycraft:dyed_glass_lime" },
+    "color=pink": { "model": "gwycraft:dyed_glass_pink" },
+    "color=gray": { "model": "gwycraft:dyed_glass_gray" },
+    "color=silver": { "model": "gwycraft:dyed_glass_silver" },
+    "color=cyan": { "model": "gwycraft:dyed_glass_cyan" },
+    "color=purple": { "model": "gwycraft:dyed_glass_purple" },
+    "color=blue": { "model": "gwycraft:dyed_glass_blue" },
+    "color=brown": { "model": "gwycraft:dyed_glass_brown" },
+    "color=green": { "model": "gwycraft:dyed_glass_green" },
+    "color=red": { "model": "gwycraft:dyed_glass_red" },
+    "color=black": { "model": "gwycraft:dyed_glass_black" }
+  }
+}

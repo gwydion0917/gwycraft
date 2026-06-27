@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "color=white": { "model": "gwycraft:dyed_leaf_white" },
+    "color=orange": { "model": "gwycraft:dyed_leaf_orange" },
+    "color=magenta": { "model": "gwycraft:dyed_leaf_magenta" },
+    "color=light_blue": { "model": "gwycraft:dyed_leaf_light_blue" },
+    "color=yellow": { "model": "gwycraft:dyed_leaf_yellow" },
+    "color=lime": { "model": "gwycraft:dyed_leaf_lime" },
+    "color=pink": { "model": "gwycraft:dyed_leaf_pink" },
+    "color=gray": { "model": "gwycraft:dyed_leaf_gray" },
+    "color=silver": { "model": "gwycraft:dyed_leaf_silver" },
+    "color=cyan": { "model": "gwycraft:dyed_leaf_cyan" },
+    "color=purple": { "model": "gwycraft:dyed_leaf_purple" },
+    "color=blue": { "model": "gwycraft:dyed_leaf_blue" },
+    "color=brown": { "model": "gwycraft:dyed_leaf_brown" },
+    "color=green": { "model": "gwycraft:dyed_leaf_green" },
+    "color=red": { "model": "gwycraft:dyed_leaf_red" },
+    "color=black": { "model": "gwycraft:dyed_leaf_black" }
+  }
+}

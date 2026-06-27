@@ -16,7 +16,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMultiTexture;
 import net.minecraft.item.ItemStack;
@@ -118,7 +117,7 @@ public class BlockGemCompressed extends Block implements MultiItem {
 	public void registerItems(IForgeRegistry<Item> reg) {
 		reg.register((new ItemMultiTexture(this, this, new ItemMultiTexture.Mapper() {
 			public String apply(ItemStack stack) {
-				return EnumDyeColor.byMetadata(stack.getItemDamage()).getUnlocalizedName();
+				return EnumGemType.byMetadata(stack.getItemDamage()).getUnlocalizedName();
 			}
 		})).setUnlocalizedName(this.getUnlocalizedName()).setRegistryName(this.getRegistryName()));
 	}

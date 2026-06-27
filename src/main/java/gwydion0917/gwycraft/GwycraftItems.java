@@ -61,9 +61,23 @@ public class GwycraftItems {
 		itemGemSword = new ItemGemSword(GWYCRAFT_MATERIAL, "gem_sword");
 	}
 
-	private static void registerItems() {
+	public static void registerItems(net.minecraftforge.registries.IForgeRegistry<Item> reg) {
+		for (MultiItem item : ItemRenderers) {
+			item.registerItems(reg);
+		}
+		reg.register(itemGemShears);
+		reg.register(itemGemHatchet);
+		reg.register(itemGemHoe);
+		reg.register(itemGemPickaxe);
+		reg.register(itemGemShovel);
+		reg.register(itemGemSword);
+
 		// Ore Dictionary
 		OreDictionary.registerOre("gemGwycraft", new ItemStack(itemEnchantedGems, 1, OreDictionary.WILDCARD_VALUE));
+	}
+
+	private static void registerItems() {
+		// legacy no-op kept for init() call
 	}
 
 	public static void registerRenders() {

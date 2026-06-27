@@ -12,11 +12,12 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = Gwycraft.MOD_ID, name = Gwycraft.MOD_NAME, version = Gwycraft.MOD_VERSION)
+@Mod(modid = Gwycraft.MOD_ID, name = Gwycraft.MOD_NAME, version = Gwycraft.MOD_VERSION,
+        guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
 public class Gwycraft {
 	public static final String MOD_ID = "gwycraft";
 	public static final String MOD_NAME = "GwyCraft";
-	public static final String MOD_VERSION = "@MOD_VERSION@";
+	public static final String MOD_VERSION = "0.1.11b";
 
 
 	public static final String[] gwyColorNames = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
@@ -51,15 +52,15 @@ public class Gwycraft {
 
 		proxy.registerRenderers();
 
-		GwycraftRecipes.init();
-
 		LogHelper.trace("Pre-Init Complete");
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		LogHelper.trace("Starting Init");
+		GwycraftRecipes.init();
 		GameRegistry.registerWorldGenerator(worldGen, 0);
+		FMLCommonHandler.instance().bus().register(new GwycraftPlayerEvents());
 		LogHelper.trace("Doing IMC");
 		InterModCommunication.initIMC();
 		LogHelper.trace("Init Complete");

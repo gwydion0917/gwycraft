@@ -2,6 +2,7 @@ package gwydion0917.gwycraft.proxy;
 
 import java.io.File;
 
+import gwydion0917.gwycraft.GwycraftItems;
 import gwydion0917.gwycraft.blocks.GwycraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -45,5 +46,6 @@ public class CommonProxy implements IGuiHandler {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         GwycraftBlocks.registerItems(event);
+        GwycraftItems.registerItems(event.getRegistry());
     }
 }
