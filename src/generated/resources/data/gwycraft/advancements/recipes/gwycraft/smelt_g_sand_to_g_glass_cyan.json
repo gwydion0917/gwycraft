@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gwycraft:smelt_g_sand_to_g_glass_cyan"
+    ]
+  },
+  "criteria": {
+    "has_g_sand": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "gwycraft:cyan_glowy_dyed_sand"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gwycraft:smelt_g_sand_to_g_glass_cyan"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_g_sand",
+      "has_the_recipe"
+    ]
+  ]
+}

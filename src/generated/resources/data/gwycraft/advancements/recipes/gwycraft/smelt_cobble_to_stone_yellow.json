@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gwycraft:smelt_cobble_to_stone_yellow"
+    ]
+  },
+  "criteria": {
+    "has_cobble": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "gwycraft:yellow_dyed_cobblestone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gwycraft:smelt_cobble_to_stone_yellow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cobble",
+      "has_the_recipe"
+    ]
+  ]
+}

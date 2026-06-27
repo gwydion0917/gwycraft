@@ -1,125 +1,135 @@
 package gwydion0917.gwycraft;
 
-import gwydion0917.gwycraft.blocks.GwycraftBlocks;
+import gwydion0917.gwycraft.enums.EnumGemType;
+import gwydion0917.gwycraft.registration.ModBlocks;
+import gwydion0917.gwycraft.registration.ModItems;
+import net.minecraft.item.DyeColor;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.event.FMLInterModComms;
+import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.RegistryObject;
 
+/**
+ * Inter-Mod Communication for GwyCraft 1.16.5.
+ * Replaces the 1.12 FMLInterModComms.sendMessage pattern.
+ *
+ * Note: Forestry and ForgeMicroblock do not have 1.16.5 releases.
+ * The code is preserved for when/if compatible versions are released.
+ * All sendTo calls safely no-op when the target mod is absent.
+ */
 public class InterModCommunication {
 
-	public static void initIMC() {
-		Loader.instance();
-		if (Loader.isModLoaded("Forestry"))
-			imcForestry();
+    public static void sendMessages() {
+        if (ModList.get().isLoaded("forestry")) {
+            sendForestryMessages();
+        }
+        if (ModList.get().isLoaded("forgemicroblock")) {
+            sendFMPMessages();
+        }
+    }
 
-		if (Loader.isModLoaded("ForgeMicroblock"))
-			imcFMP();
+    private static void sendForestryMessages() {
+        // Digger backpack
+        sendBackpackMsg("digger", ModBlocks.DYED_COBBLESTONE);
+        sendBackpackMsg("digger", ModBlocks.GLOWY_DYED_COBBLESTONE);
+        sendBackpackMsg("digger", ModBlocks.DYED_SAND);
+        sendBackpackMsg("digper", ModBlocks.GLOWY_DYED_SAND);
+        for (DyeColor c : DyeColor.values()) {
+            sendItemBackpackMsg("digger", ModItems.CLAY_BALL.get(c));
+            sendItemBackpackMsg("digger", ModItems.CLAY_BRICK.get(c));
+            sendItemBackpackMsg("digger", ModItems.MUD_BALL.get(c));
+            sendItemBackpackMsg("digger", ModItems.MUD_BRICK.get(c));
+        }
+        // Builder backpack
+        sendBackpackMsg("builder", ModBlocks.GLOWY_WOOL);
+        sendBackpackMsg("builder", ModBlocks.DYED_STONE);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_STONE);
+        sendBackpackMsg("builder", ModBlocks.DYED_BRICK);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_BRICK);
+        sendBackpackMsg("builder", ModBlocks.DYED_CLAY);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_CLAY);
+        sendBackpackMsg("builder", ModBlocks.DYED_GLASS);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_GLASS);
+        sendBackpackMsg("builder", ModBlocks.DYED_MUD_BRICK);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_MUD_BRICK);
+        sendBackpackMsg("builder", ModBlocks.DYED_STONE_BRICK);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_STONE_BRICK);
+        sendBackpackMsg("builder", ModBlocks.DYED_SANDSTONE);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_SANDSTONE);
+        sendBackpackMsg("builder", ModBlocks.DYED_COBBLESTONE_WALL);
+        sendBackpackMsg("builder", ModBlocks.GLOWY_DYED_COBBLESTONE_WALL);
+        for (DyeColor c : DyeColor.values()) {
+            sendItemBackpackMsg("builder", ModItems.DYED_STICK.get(c));
+        }
+        // Forester backpack
+        sendBackpackMsg("forester", ModBlocks.DYED_LEAF);
+        sendBackpackMsg("forester", ModBlocks.GLOWY_DYED_LEAF);
+        // Miner backpack
+        for (EnumGemType gem : EnumGemType.values()) {
+            RegistryObject<net.minecraft.item.Item> gemItem = ModItems.GEM.get(gem);
+            sendItemBackpackMsg("miner", gemItem);
+        }
+    }
 
-	}
+    private static void sendFMPMessages() {
+        // ForgeMicroblock micro-material support
+        for (DyeColor c : DyeColor.values()) {
+            sendMicroMaterial(ModBlocks.GLOWY_WOOL.get(c));
+            sendMicroMaterial(ModBlocks.DYED_STONE.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_STONE.get(c));
+            sendMicroMaterial(ModBlocks.DYED_BOOKCASE.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_BOOKCASE.get(c));
+            sendMicroMaterial(ModBlocks.DYED_PLANK.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_PLANK.get(c));
+            sendMicroMaterial(ModBlocks.DYED_BRICK.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_BRICK.get(c));
+            sendMicroMaterial(ModBlocks.DYED_CLAY.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_CLAY.get(c));
+            sendMicroMaterial(ModBlocks.DYED_GLASS.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_GLASS.get(c));
+            sendMicroMaterial(ModBlocks.DYED_LEAF.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_LEAF.get(c));
+            sendMicroMaterial(ModBlocks.DYED_MUD_BRICK.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_MUD_BRICK.get(c));
+            sendMicroMaterial(ModBlocks.DYED_SAND.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_SAND.get(c));
+            sendMicroMaterial(ModBlocks.DYED_SANDSTONE.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_SANDSTONE.get(c));
+            sendMicroMaterial(ModBlocks.DYED_STONE_BRICK.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_STONE_BRICK.get(c));
+            sendMicroMaterial(ModBlocks.DYED_COBBLESTONE.get(c));
+            sendMicroMaterial(ModBlocks.GLOWY_DYED_COBBLESTONE.get(c));
+        }
+        for (EnumGemType gem : EnumGemType.values()) {
+            sendMicroMaterial(ModBlocks.GEM_ORE.get(gem));
+            sendMicroMaterial(ModBlocks.COMPRESSED_GEM.get(gem));
+        }
+    }
 
-	public static void imcForestry() {
-		// Forestry Backpack support
-		// Digger
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftBlocks.blockDyedStoneCobble + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftBlocks.glowyblockDyedStoneCobble + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftBlocks.blockDyedSand + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftBlocks.glowyblockDyedSand + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedClay + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedClayBricks + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedMud + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "digger@" + GwycraftItems.itemDyedMudBricks + ":*");
+    // ── Helpers ──────────────────────────────────────────────────────────────
 
-		// Builder
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyWool + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedStone + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedStone + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedBrick + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedBrick + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedClayblock + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedClayblock + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedGlass + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedGlass + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedMudBrick + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedMudBrick + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedStoneBrick + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedStoneBrick + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedFences + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedFences + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedCobbleWalls + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedCobbleWalls + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftItems.itemDyedSticks + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.blockDyedSandstone + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "builder@" + GwycraftBlocks.glowyblockDyedSandstone + ":*");
+    private static void sendBackpackMsg(String category,
+            java.util.Map<DyeColor, RegistryObject<net.minecraft.block.Block>> family) {
+        for (DyeColor c : DyeColor.values()) {
+            RegistryObject<net.minecraft.block.Block> ro = family.get(c);
+            if (ro != null) {
+                ItemStack stack = new ItemStack(ro.get());
+                InterModComms.sendTo("forestry", "add-backpack-items",
+                        () -> category + "@" + stack.getItem().getRegistryName() + ":*");
+            }
+        }
+    }
 
-		// Forester
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.blockDyedLeaf + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.glowyblockDyedLeaf + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.blockDyedLog1 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.blockDyedLog2 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.blockDyedLog3 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.blockDyedLog4 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.glowyblockDyedLog1 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.glowyblockDyedLog2 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.glowyblockDyedLog3 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.glowyblockDyedLog4 + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.blockDyedPlank + ":*");
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "forester@" + GwycraftBlocks.glowyblockDyedPlank + ":*");
+    private static void sendItemBackpackMsg(String category, RegistryObject<Item> itemRO) {
+        if (itemRO == null) return;
+        InterModComms.sendTo("forestry", "add-backpack-items",
+                () -> category + "@" + itemRO.get().getRegistryName() + ":*");
+    }
 
-		// Miner
-		FMLInterModComms.sendMessage("Forestry", "add-backpack-items", "miner@" + GwycraftItems.itemEnchantedGems + ":*");
-
-	}
-
-	public static void imcFMP() {
-		// Forge MicroBlock support
-		// 16 Meta
-		for (int i = 0; i < 16; i++) {
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyWool, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedStone, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedStone, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedBookcase, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedBookcase, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedPlank, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedPlank, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedBrick, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedBrick, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedClayblock, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedClayblock, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedGlass, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedGlass, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedLeaf, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedLeaf, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedMudBrick, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedMudBrick, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedSand, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedSand, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedSandstone, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedSandstone, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedStoneBrick, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedStoneBrick, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedStoneCobble, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedStoneCobble, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockGemCompressed, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockGemOre, 1, i));
-		}
-		// 8 Meta
-		for (int i = 0; i < 8; i++) {
-
-		}
-
-		// 4 Meta
-		for (int i = 0; i < 4; i++) {
-
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedLog1, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedLog2, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedLog3, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.glowyblockDyedLog4, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedLog1, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedLog2, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedLog3, 1, i));
-			FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", new ItemStack(GwycraftBlocks.blockDyedLog4, 1, i));
-		}
-
-	}
-
+    private static void sendMicroMaterial(RegistryObject<net.minecraft.block.Block> ro) {
+        if (ro == null) return;
+        InterModComms.sendTo("forgemicroblock", "microMaterial",
+                () -> new ItemStack(ro.get()));
+    }
 }

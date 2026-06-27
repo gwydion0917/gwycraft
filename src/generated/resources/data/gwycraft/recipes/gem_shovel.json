@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    " Y ",
+    " Y "
+  ],
+  "key": {
+    "X": {
+      "tag": "gwycraft:gems"
+    },
+    "Y": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "gwycraft:gem_shovel"
+  }
+}

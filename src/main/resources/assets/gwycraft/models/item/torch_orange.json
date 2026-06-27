@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "gwycraft:blocks/torch_orange"
+        "layer0": "gwycraft:block/torch_orange"
     }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "gwycraft:lime_clay_brick"
+    }
+  },
+  "result": {
+    "item": "gwycraft:lime_dyed_brick"
+  }
+}

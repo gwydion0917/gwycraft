@@ -1,0 +1,31 @@
+{
+    "multipart": [
+        {   "when": { "up": "true" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_post_light_gray" }
+        },
+        {   "when": { "north": "low" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_light_gray", "uvlock": true }
+        },
+        {   "when": { "north": "tall" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_tall_light_gray", "uvlock": true }
+        },
+        {   "when": { "east": "low" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_light_gray", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "tall" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_tall_light_gray", "y": 90, "uvlock": true }
+        },
+        {   "when": { "south": "low" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_light_gray", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "tall" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_tall_light_gray", "y": 180, "uvlock": true }
+        },
+        {   "when": { "west": "low" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_light_gray", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "tall" },
+            "apply": { "model": "gwycraft:block/dyed_cobblestone_wall_side_tall_light_gray", "y": 270, "uvlock": true }
+        }
+    ]
+}

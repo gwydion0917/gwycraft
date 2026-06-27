@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gwycraft:compressed_gem_sapphire"
+    }
+  ],
+  "result": {
+    "item": "gwycraft:gem_sapphire",
+    "count": 4
+  }
+}

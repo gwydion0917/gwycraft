@@ -1,7 +1,7 @@
 {
     "parent": "block/carpet",
     "textures": {
-        "particle": "gwycraft:blocks/dyed_brick_brown",
-        "wool": "gwycraft:blocks/dyed_brick_brown"
+        "particle": "gwycraft:block/dyed_brick_brown",
+        "wool": "gwycraft:block/dyed_brick_brown"
     }
 }

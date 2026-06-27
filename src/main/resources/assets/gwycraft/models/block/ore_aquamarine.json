@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/ore_aquamarine"
+        "all": "gwycraft:block/ore_aquamarine"
     }
 }

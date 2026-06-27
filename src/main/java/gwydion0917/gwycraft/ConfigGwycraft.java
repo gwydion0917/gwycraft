@@ -1,50 +1,42 @@
 package gwydion0917.gwycraft;
 
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.config.ModConfig;
 
+/**
+ * Mod configuration using ForgeConfigSpec (replaces the 1.12 net.minecraftforge.common.config.Configuration).
+ * Values are read at runtime via .get() — never cache them at class-load time.
+ */
 public class ConfigGwycraft {
 
-	public static Configuration config;
+    public static final ForgeConfigSpec SPEC;
 
-	// General Settings
-	public static boolean genGemsEnabled = true;
-	public static boolean genGemsNether = true;
-	public static boolean toolsEnabled = true;
-	public static boolean toolsHaveEnchants = true;
-	public static boolean gemsCraftingEnabled = true;
-	public static int genGemsVeins = 15; // was 9
-	public static int genGemsNumber = 7; // was 5
+    public static final ForgeConfigSpec.BooleanValue GEN_GEMS_ENABLED;
+    public static final ForgeConfigSpec.BooleanValue GEN_GEMS_NETHER;
+    public static final ForgeConfigSpec.IntValue    GEN_GEMS_VEINS;
+    public static final ForgeConfigSpec.IntValue    GEN_GEMS_NUMBER;
+    public static final ForgeConfigSpec.BooleanValue TOOLS_ENABLED;
+    public static final ForgeConfigSpec.BooleanValue TOOLS_HAVE_ENCHANTS;
+    public static final ForgeConfigSpec.BooleanValue GEMS_CRAFTING_ENABLED;
 
-	public static void initConfig(FMLPreInitializationEvent event) {
+    static {
+        ForgeConfigSpec.Builder b = new ForgeConfigSpec.Builder();
 
-		config = new Configuration(event.getSuggestedConfigurationFile());
-		config.load();
-		syncConfig();
+        b.comment("GwyCraft general settings").push("general");
+        GEN_GEMS_ENABLED     = b.comment("Should enchanted gem ores generate in the overworld").define("genGemsEnabled", true);
+        GEN_GEMS_NETHER      = b.comment("Should enchanted gem ores generate in the nether").define("genGemsNether", true);
+        GEN_GEMS_VEINS       = b.comment("Ore vein attempts per chunk").defineInRange("genGemsVeins", 15, 0, 256);
+        GEN_GEMS_NUMBER      = b.comment("Blocks per vein attempt").defineInRange("genGemsNumber", 7, 0, 256);
+        TOOLS_ENABLED        = b.comment("Should gem tools have crafting recipes").define("toolsEnabled", true);
+        TOOLS_HAVE_ENCHANTS  = b.comment("Should gem tools be enchanted when crafted").define("toolsHaveEnchants", true);
+        GEMS_CRAFTING_ENABLED = b.comment("Should gems themselves be craftable (dye + glowstone + diamond)").define("gemsCraftingEnabled", true);
+        b.pop();
 
-	}
+        SPEC = b.build();
+    }
 
-	public static void syncConfig() {
-		genGemsEnabled = config.getBoolean("genGemsEnabled", Configuration.CATEGORY_GENERAL, true, "Should gems generate in the world");
-		genGemsNether = config.getBoolean("genGemsNether", Configuration.CATEGORY_GENERAL, true, "Should gems generate in the nether");
-		genGemsVeins = config.getInt("genGemsVeins", Configuration.CATEGORY_GENERAL, 15, 0, 256, "Attempt to generate X veins per chunk");
-		genGemsNumber = config.getInt("genGemsNumber", Configuration.CATEGORY_GENERAL, 7, 0, 256, "Attemp to generate X ores per vein");
-		toolsEnabled = config.getBoolean("toolsEnabled", Configuration.CATEGORY_GENERAL, true, "Should gem tools be craftable");
-		toolsHaveEnchants = config.getBoolean("toolsHaveEnchants", Configuration.CATEGORY_GENERAL, true, "Should gem tools have enchants");
-		gemsCraftingEnabled = config.getBoolean("gemsCraftingEnabled", Configuration.CATEGORY_GENERAL, true, "Should gems be craftable");
-
-		if (config.hasChanged()) {
-			config.save();
-		}
-	}
-
-	@SubscribeEvent
-	public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-		if (eventArgs.getModID().equalsIgnoreCase("gwycraft")) {
-			syncConfig();
-		}
-	}
-
+    public static void register() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SPEC);
+    }
 }

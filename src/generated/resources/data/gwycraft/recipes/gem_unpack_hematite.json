@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gwycraft:compressed_gem_hematite"
+    }
+  ],
+  "result": {
+    "item": "gwycraft:gem_hematite",
+    "count": 4
+  }
+}

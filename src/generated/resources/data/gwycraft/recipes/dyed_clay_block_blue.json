@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "gwycraft:blue_clay_ball"
+    }
+  },
+  "result": {
+    "item": "gwycraft:blue_dyed_clay"
+  }
+}

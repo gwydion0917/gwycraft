@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/dyed_sand_orange"
+        "all": "gwycraft:block/dyed_sand_orange"
     }
 }

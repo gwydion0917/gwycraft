@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "gwycraft:red_glowy_dyed_cobblestone"
+    }
+  },
+  "result": {
+    "item": "gwycraft:red_glowy_dyed_cobblestone_wall",
+    "count": 6
+  }
+}

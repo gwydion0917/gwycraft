@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gwycraft:smelt_g_cobble_to_g_stone_orange"
+    ]
+  },
+  "criteria": {
+    "has_g_cobble": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "gwycraft:orange_glowy_dyed_cobblestone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gwycraft:smelt_g_cobble_to_g_stone_orange"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_g_cobble",
+      "has_the_recipe"
+    ]
+  ]
+}

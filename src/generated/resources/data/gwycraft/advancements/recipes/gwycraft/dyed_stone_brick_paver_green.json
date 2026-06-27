@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gwycraft:dyed_stone_brick_paver_green"
+    ]
+  },
+  "criteria": {
+    "has_stone_brick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "gwycraft:green_dyed_stone_brick"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gwycraft:dyed_stone_brick_paver_green"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_stone_brick",
+      "has_the_recipe"
+    ]
+  ]
+}

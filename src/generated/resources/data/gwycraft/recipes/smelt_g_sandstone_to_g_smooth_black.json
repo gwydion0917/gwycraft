@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "gwycraft:black_glowy_dyed_sandstone"
+  },
+  "result": "gwycraft:black_glowy_dyed_smooth_sandstone",
+  "experience": 0.1,
+  "cookingtime": 200
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gwycraft:compressed_gem_garnet"
+    }
+  ],
+  "result": {
+    "item": "gwycraft:gem_garnet",
+    "count": 4
+  }
+}

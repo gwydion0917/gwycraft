@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:coal"
+    },
+    "#": {
+      "item": "gwycraft:green_dyed_stick"
+    }
+  },
+  "result": {
+    "item": "gwycraft:torch_green",
+    "count": 4
+  }
+}

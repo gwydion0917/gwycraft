@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/ore_moonstone"
+        "all": "gwycraft:block/ore_moonstone"
     }
 }

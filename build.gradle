@@ -17,7 +17,7 @@ compileJava {
     targetCompatibility = "8"
 }
 
-version = "1.12.2-2"
+version = "1.16.5-1"
 group = "gwydion0917.gwycraft"
 archivesBaseName = "gwycraft"
 
@@ -25,7 +25,7 @@ repositories {
 }
 
 minecraft {
-    mappings channel: "snapshot", version: "20171003-1.12"
+    mappings channel: "official", version: "1.16.5"
 
     runs {
         "client" {
@@ -36,27 +36,30 @@ minecraft {
             workingDirectory file("./run/server")
             mods { gwycraft { source sourceSets.main } }
         }
+        "data" {
+            workingDirectory file("./run")
+            args "--mod", "gwycraft", "--all",
+                 "--output", file("src/generated/resources/"),
+                 "--existing", file("src/main/resources/")
+            mods { gwycraft { source sourceSets.main } }
+        }
     }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/resources", "src/generated/resources"
+        }
+    }
+}
+
+// When src/main/resources and src/generated/resources have the same relative path
+// (hand-authored blockstates take priority over generated ones), keep the first copy.
+tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.12.2-14.23.5.2864"
+    minecraft "net.minecraftforge:forge:1.16.5-36.2.42"
 }
-
-processResources {
-    inputs.property "version", project.version
-    inputs.property "mcversion", "1.12.2"
-
-    filesMatching("mcmod.info") {
-        expand "version": project.version, "mcversion": "1.12.2"
-    }
-}
-
-jar {
-    // Exclude the Side.java shim — it's only needed at dev runtime to shadow Forge's
-    // Side enum that snapshot_20171003 mappings expose with a phantom BUKKIT constant.
-    exclude 'net/minecraftforge/**'
-}
-
-// Forge 1.12 expects resources and classes in the same directory
-sourceSets.all { it.output.resourcesDir = it.output.classesDirs.getFiles().iterator().next() }

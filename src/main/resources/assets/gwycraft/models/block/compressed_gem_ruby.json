@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/gemblock_ruby"
+        "all": "gwycraft:block/gemblock_ruby"
     }
 }

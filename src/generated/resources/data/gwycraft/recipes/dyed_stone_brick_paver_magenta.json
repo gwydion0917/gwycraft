@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "gwycraft:magenta_dyed_stone_brick"
+    }
+  },
+  "result": {
+    "item": "gwycraft:magenta_dyed_stone_brick_paver",
+    "count": 3
+  }
+}

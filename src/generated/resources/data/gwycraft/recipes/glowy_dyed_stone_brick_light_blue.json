@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "gwycraft:light_blue_glowy_dyed_stone"
+    }
+  },
+  "result": {
+    "item": "gwycraft:light_blue_glowy_dyed_stone_brick",
+    "count": 4
+  }
+}

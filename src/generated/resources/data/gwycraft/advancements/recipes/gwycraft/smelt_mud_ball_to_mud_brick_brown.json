@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gwycraft:smelt_mud_ball_to_mud_brick_brown"
+    ]
+  },
+  "criteria": {
+    "has_mud_ball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "gwycraft:brown_mud_ball"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gwycraft:smelt_mud_ball_to_mud_brick_brown"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mud_ball",
+      "has_the_recipe"
+    ]
+  ]
+}

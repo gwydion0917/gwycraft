@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_inventory",
+    "textures": {
+        "wall": "gwycraft:block/dyed_cobblestone_light_gray"
+    }
+}

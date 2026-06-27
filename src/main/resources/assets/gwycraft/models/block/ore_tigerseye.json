@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/ore_tigerseye"
+        "all": "gwycraft:block/ore_tigerseye"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/gemblock_citrine"
+        "all": "gwycraft:block/gemblock_citrine"
     }
 }

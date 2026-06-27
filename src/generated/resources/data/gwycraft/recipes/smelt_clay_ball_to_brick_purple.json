@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "gwycraft:purple_clay_ball"
+  },
+  "result": "gwycraft:purple_clay_brick",
+  "experience": 0.1,
+  "cookingtime": 200
+}

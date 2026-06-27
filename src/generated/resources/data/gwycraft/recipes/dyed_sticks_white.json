@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "gwycraft:white_dyed_plank"
+    }
+  },
+  "result": {
+    "item": "gwycraft:white_dyed_stick",
+    "count": 4
+  }
+}

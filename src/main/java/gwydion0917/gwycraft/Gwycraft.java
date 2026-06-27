@@ -1,76 +1,60 @@
 package gwydion0917.gwycraft;
 
-import gwydion0917.gwycraft.blocks.GwycraftBlocks;
-import gwydion0917.gwycraft.proxy.CommonProxy;
-import net.minecraftforge.fml.common.FMLCommonHandler;
+import gwydion0917.gwycraft.client.ClientSetup;
+import gwydion0917.gwycraft.data.GwycraftDataGen;
+import gwydion0917.gwycraft.registration.ModBlocks;
+import gwydion0917.gwycraft.registration.ModItems;
+import gwydion0917.gwycraft.setup.CommonSetup;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(modid = Gwycraft.MOD_ID, name = Gwycraft.MOD_NAME, version = Gwycraft.MOD_VERSION,
-        guiFactory = "gwydion0917.gwycraft.client.GwyCraftGuiFactory")
+/**
+ * Main mod class for GwyCraft 1.16.5.
+ *
+ * Replaces the 1.12 @SidedProxy / @EventHandler / FMLCommonHandler pattern
+ * with constructor-based DeferredRegister and event-bus listeners.
+ */
+@Mod(Gwycraft.MOD_ID)
 public class Gwycraft {
-	public static final String MOD_ID = "gwycraft";
-	public static final String MOD_NAME = "GwyCraft";
-	public static final String MOD_VERSION = "0.1.11b";
 
+    public static final String MOD_ID = "gwycraft";
+    public static final String MOD_NAME = "GwyCraft";
 
-	public static final String[] gwyColorNames = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey", "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
-	public static final String[] gwyColorLog1Names = { "White", "Orange", "Magenta", "Light Blue" };
-	public static final String[] gwyColorLog2Names = { "Yellow", "Light Green", "Pink", "Dark Grey" };
-	public static final String[] gwyColorLog3Names = { "Light Grey", "Cyan", "Purple", "Blue" };
-	public static final String[] gwyColorLog4Names = { "Brown", "Green", "Red", "Black" };
-	public static final String[] gwyColorSlab1Names = { "White", "Orange", "Magenta", "Light Blue", "Yellow", "Light Green", "Pink", "Dark Grey" };
-	public static final String[] gwyColorSlab2Names = { "Light Grey", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black" };
-	public static final String[] gwyGemNames = { "Enchanted Quartz", "Enchanted Citrine", "Enchanted Tanzanite", "Enchanted Sapphire", "Enchanted Topaz", "Enchanted Agate", "Enchanted Garnet", "Enchanted Moonstone", "Enchanted Hematite", "Enchanted Aquamarine", "Enchanted Amethyst", "Enchanted Lapis Lazuli", "Enchanted Tigerseye", "Enchanted Emerald",
-			"Enchanted Ruby", "Enchanted Onyx" };
+    /** Creative tab — icon is the quartz compressed gem block. */
+    public static final ItemGroup TAB = new ItemGroup(MOD_ID) {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModBlocks.COMPRESSED_GEM
+                    .get(gwydion0917.gwycraft.enums.EnumGemType.QUARTZ).get());
+        }
+    };
 
+    public Gwycraft() {
+        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        // Register config (COMMON type → gwycraft-common.toml)
+        ConfigGwycraft.register();
 
-	public static GwycraftWorldGenerator worldGen = new GwycraftWorldGenerator();
-	public static GwycraftTab tabs = new GwycraftTab("GwyCraft");
+        // Register DeferredRegisters (blocks first, items second — order matters)
+        ModBlocks.BLOCKS.register(modBus);
+        ModItems.ITEMS.register(modBus);
 
-	@Instance("Gwycraft")
-	public static Gwycraft instance;
+        // Lifecycle hooks on the mod bus
+        modBus.addListener(CommonSetup::init);
+        modBus.addListener(GwycraftDataGen::gatherData);
+        DistExecutor.unsafeRunWhenOn(net.minecraftforge.api.distmarker.Dist.CLIENT,
+                () -> () -> modBus.addListener(ClientSetup::init));
 
-	@SidedProxy(clientSide = "gwydion0917.gwycraft.proxy.ClientProxy", serverSide = "gwydion0917.gwycraft.proxy.CommonProxy")
-	public static CommonProxy proxy;
-
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		LogHelper.trace("Starting Pre-Init");
-		FMLCommonHandler.instance().bus().register(new ConfigGwycraft());
-		ConfigGwycraft.initConfig(event);
-
-		GwycraftBlocks.init();
-		GwycraftItems.init();
-
-		proxy.registerRenderers();
-
-		LogHelper.trace("Pre-Init Complete");
-	}
-
-	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		LogHelper.trace("Starting Init");
-		GwycraftRecipes.init();
-		GameRegistry.registerWorldGenerator(worldGen, 0);
-		FMLCommonHandler.instance().bus().register(new GwycraftPlayerEvents());
-		LogHelper.trace("Doing IMC");
-		InterModCommunication.initIMC();
-		LogHelper.trace("Init Complete");
-	}
-
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-		// Stub Method
-		LogHelper.trace("Starting Post-Init");
-		LogHelper.trace("Post-Init Complete");
-	}
-
+        // Forge event bus (player events, worldgen biome loading)
+        MinecraftForge.EVENT_BUS.register(GwycraftPlayerEvents.class);
+        MinecraftForge.EVENT_BUS.register(GwycraftWorldGenerator.class);
+    }
 }

@@ -1,12 +1,12 @@
 {
     "parent": "block/cube",
     "textures": {
-        "particle": "gwycraft:blocks/dyed_plank_pink",
-        "north": "gwycraft:blocks/bookcase_pink",
-        "south": "gwycraft:blocks/bookcase_pink",
-        "east": "gwycraft:blocks/bookcase_pink",
-        "west": "gwycraft:blocks/bookcase_pink",
-        "up": "gwycraft:blocks/dyed_plank_pink",
-        "down": "gwycraft:blocks/dyed_plank_pink"
+        "particle": "gwycraft:block/dyed_plank_pink",
+        "north": "gwycraft:block/bookcase_pink",
+        "south": "gwycraft:block/bookcase_pink",
+        "east": "gwycraft:block/bookcase_pink",
+        "west": "gwycraft:block/bookcase_pink",
+        "up": "gwycraft:block/dyed_plank_pink",
+        "down": "gwycraft:block/dyed_plank_pink"
     }
 }

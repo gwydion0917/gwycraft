@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/leaf_purple"
+        "all": "gwycraft:block/leaf_purple"
     }
 }

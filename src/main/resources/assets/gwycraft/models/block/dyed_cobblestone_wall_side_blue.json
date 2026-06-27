@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_side",
+    "parent": "block/template_wall_side",
     "textures": {
-        "wall": "gwycraft:blocks/dyed_cobblestone_blue"
+        "wall": "gwycraft:block/dyed_cobblestone_blue"
     }
 }

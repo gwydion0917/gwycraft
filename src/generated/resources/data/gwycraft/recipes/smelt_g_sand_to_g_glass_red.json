@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "gwycraft:red_glowy_dyed_sand"
+  },
+  "result": "gwycraft:red_glowy_dyed_glass",
+  "experience": 0.1,
+  "cookingtime": 200
+}

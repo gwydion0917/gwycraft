@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gwycraft:dyed_clay_block_orange"
+    ]
+  },
+  "criteria": {
+    "has_clay_ball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "gwycraft:orange_clay_ball"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gwycraft:dyed_clay_block_orange"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_clay_ball",
+      "has_the_recipe"
+    ]
+  ]
+}

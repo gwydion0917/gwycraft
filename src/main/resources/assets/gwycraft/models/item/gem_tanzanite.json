@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "gwycraft:items/gem_tanzanite"
+        "layer0": "gwycraft:item/gem_tanzanite"
     }
 }

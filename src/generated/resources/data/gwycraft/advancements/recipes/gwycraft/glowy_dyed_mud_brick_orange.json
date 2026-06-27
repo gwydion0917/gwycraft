@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gwycraft:glowy_dyed_mud_brick_orange"
+    ]
+  },
+  "criteria": {
+    "has_mud_brick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "gwycraft:orange_dyed_mud_brick"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gwycraft:glowy_dyed_mud_brick_orange"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mud_brick",
+      "has_the_recipe"
+    ]
+  ]
+}

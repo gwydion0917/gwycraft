@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "gwycraft:blocks/gemblock_amethyst"
+        "all": "gwycraft:block/gemblock_amethyst"
     }
 }

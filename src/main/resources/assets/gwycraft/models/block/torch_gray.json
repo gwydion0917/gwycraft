@@ -1,6 +1,6 @@
 {
     "parent": "block/torch",
     "textures": {
-        "torch": "gwycraft:blocks/torch_gray"
+        "torch": "gwycraft:block/torch_gray"
     }
 }

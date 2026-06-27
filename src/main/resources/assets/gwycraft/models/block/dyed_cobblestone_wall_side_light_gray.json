@@ -1,0 +1,6 @@
+{
+    "parent": "block/template_wall_side",
+    "textures": {
+        "wall": "gwycraft:block/dyed_cobblestone_light_gray"
+    }
+}

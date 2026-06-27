@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_post",
+    "parent": "block/template_wall_post",
     "textures": {
-        "wall": "gwycraft:blocks/dyed_cobblestone_green"
+        "wall": "gwycraft:block/dyed_cobblestone_green"
     }
 }

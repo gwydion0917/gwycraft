@@ -1,0 +1,6 @@
+{
+    "parent": "block/template_wall_side_tall",
+    "textures": {
+        "wall": "gwycraft:block/dyed_cobblestone_pink"
+    }
+}

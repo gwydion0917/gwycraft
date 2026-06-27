@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gwycraft:compressed_gem_emerald"
+    }
+  ],
+  "result": {
+    "item": "gwycraft:gem_emerald",
+    "count": 4
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "gwycraft:gem_quartz",
+    "gwycraft:gem_citrine",
+    "gwycraft:gem_tanzanite",
+    "gwycraft:gem_sapphire",
+    "gwycraft:gem_topaz",
+    "gwycraft:gem_agate",
+    "gwycraft:gem_garnet",
+    "gwycraft:gem_moonstone",
+    "gwycraft:gem_hematite",
+    "gwycraft:gem_aquamarine",
+    "gwycraft:gem_amethyst",
+    "gwycraft:gem_lapis_lazuli",
+    "gwycraft:gem_tigerseye",
+    "gwycraft:gem_emerald",
+    "gwycraft:gem_ruby",
+    "gwycraft:gem_onyx"
+  ]
+}

@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "gwycraft:items/gem_shears"
+        "layer0": "gwycraft:item/gem_shears"
     }
 }

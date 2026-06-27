@@ -1,72 +1,48 @@
-/**
- * 
- */
 package gwydion0917.gwycraft.enums;
 
-import net.minecraft.util.IStringSerializable;
-
 /**
- * @author JLB Shecky
- *
+ * The 16 enchanted gem types used for items, ore blocks, and compressed blocks.
+ * Metadata-based identity was removed in the 1.13 flattening; this enum is now
+ * used purely for naming and iteration — each gem type maps to separate blocks/items.
  */
-public enum EnumGemType implements IStringSerializable {
-	QUARTZ(0, "quartz", "quartz"),
-	CITRINE(1, "citrine", "citrine"),
-	TANZANITE(2, "tanzanite", "tanzanite"),
-	SAPPHIRE(3, "sapphire", "sapphire"),
-	TOPAZ(4, "topaz", "topaz"),
-	AGATE(5, "agate", "agate"),
-	GARNET(6, "garnet", "garnet"),
-	MOONSTONE(7, "moonstone", "moonstone"),
-	HEMATITE(8, "hematite", "hematite"),
-	AQUAMARINE(9, "aquamarine", "aquamarine"),
-	AMETHYST(10, "amethyst", "amethyst"),
-	LAPIS_LAZULI(11, "lapis_lazuli", "lapis_lazuli"),
-	TIGERSEYE(12, "tigerseye", "tigerseye"),
-	EMERALD(13, "emerald", "emerald"),
-	RUBY(14, "ruby", "ruby"),
-	ONYX(15, "onyx", "onyx");
-	
-	private static final EnumGemType[] META_LOOKUP = new EnumGemType[values().length];
-	
-	private final int meta;
+public enum EnumGemType {
+    QUARTZ(0, "quartz"),
+    CITRINE(1, "citrine"),
+    TANZANITE(2, "tanzanite"),
+    SAPPHIRE(3, "sapphire"),
+    TOPAZ(4, "topaz"),
+    AGATE(5, "agate"),
+    GARNET(6, "garnet"),
+    MOONSTONE(7, "moonstone"),
+    HEMATITE(8, "hematite"),
+    AQUAMARINE(9, "aquamarine"),
+    AMETHYST(10, "amethyst"),
+    LAPIS_LAZULI(11, "lapis_lazuli"),
+    TIGERSEYE(12, "tigerseye"),
+    EMERALD(13, "emerald"),
+    RUBY(14, "ruby"),
+    ONYX(15, "onyx");
+
+    private static final EnumGemType[] BY_INDEX = values();
+
+    private final int index;
     private final String name;
-    private final String unlocalizedName;
 
-    private EnumGemType(int meta, String name, String unlocalizedName) {
-    	this.meta = meta;
-    	this.name = name;
-    	this.unlocalizedName = unlocalizedName;
+    EnumGemType(int index, String name) {
+        this.index = index;
+        this.name = name;
     }
-    
-    public int getMetadata() {
-        return this.meta;
-    }
-    
-    public String getUnlocalizedName() {
-        return this.unlocalizedName;
-    }
-    
-    public String toString() {
-        return this.unlocalizedName;
-    }
-    
-    public static EnumGemType byMetadata(int meta) {
-    	if(meta < 0 || meta >= META_LOOKUP.length) {
-    		meta = 0;
-    	}
-    	
-    	return META_LOOKUP[meta];
-    }
-    
-	@Override
-	public String getName() {
-		return this.name;
-	}
 
-	static {
-		for(EnumGemType enumGemType: values()) {
-			META_LOOKUP[enumGemType.getMetadata()] = enumGemType;
-		}
-	}
+    public int getIndex() { return index; }
+
+    public String getName() { return name; }
+
+    @Override
+    public String toString() { return name; }
+
+    /** Safe lookup by ordinal / old metadata value (clamped to valid range). */
+    public static EnumGemType byIndex(int idx) {
+        if (idx < 0 || idx >= BY_INDEX.length) idx = 0;
+        return BY_INDEX[idx];
+    }
 }

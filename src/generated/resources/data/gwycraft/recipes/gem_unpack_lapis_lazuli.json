@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gwycraft:compressed_gem_lapis_lazuli"
+    }
+  ],
+  "result": {
+    "item": "gwycraft:gem_lapis_lazuli",
+    "count": 4
+  }
+}
