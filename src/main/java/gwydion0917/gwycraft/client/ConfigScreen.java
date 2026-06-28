@@ -1,15 +1,29 @@
 package gwydion0917.gwycraft.client;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
 import gwydion0917.gwycraft.ConfigGwycraft;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 
+/**
+ * In-game mod config screen for GwyCraft (1.20.1 GUI API).
+ * Key changes from 1.16.5:
+ * - Screen extends net.minecraft.client.gui.screens.Screen (moved package)
+ * - StringTextComponent → Component.literal / Component.translatable
+ * - MatrixStack render param → GuiGraphics
+ * - drawCenteredString → guiGraphics.drawCenteredString(font, text, x, y, color)
+ * - renderBackground(matrixStack) → renderBackground(guiGraphics)
+ * - addButton(new Button(...)) → addRenderableWidget(Button.builder(...).bounds(...).build())
+ * - GEN_GEMS_VEINS/NUMBER kept in screen for display but note: they are now baked into
+ *   datagen PlacedFeatures. The sliders still read/write the config values (they're
+ *   harmless as documentation); a note in the UI explains they require a world restart.
+ */
 public class ConfigScreen extends Screen {
 
     private final Screen parent;
 
+    // Local state — written to config on Save
     private boolean genGemsEnabled;
     private boolean genGemsNether;
     private int     genGemsVeins;
@@ -18,11 +32,12 @@ public class ConfigScreen extends Screen {
     private boolean toolsHaveEnchants;
     private boolean gemsCraftingEnabled;
 
-    private Button veinsBtn;
-    private Button numberBtn;
+    // Displays (inactive buttons showing numeric values)
+    private Button veinsLabel;
+    private Button numberLabel;
 
     public ConfigScreen(Screen parent) {
-        super(new StringTextComponent("GwyCraft Config"));
+        super(Component.literal("GwyCraft Config"));
         this.parent = parent;
     }
 
@@ -44,68 +59,86 @@ public class ConfigScreen extends Screen {
         addBoolToggle(lx, y, bw, bh, "Tools Enchanted on Craft", 3); y += dy;
         addBoolToggle(lx, y, bw, bh, "Gems Craftable",       4); y += dy;
 
-        // Veins per chunk
-        addButton(new Button(lx,           y, 20, bh, new StringTextComponent("-"),
-                btn -> genGemsVeins = Math.max(0, genGemsVeins - 1)));
-        veinsBtn = addButton(new Button(lx + 22, y, bw - 44, bh,
-                new StringTextComponent(""), btn -> {}));
-        veinsBtn.active = false;
-        addButton(new Button(lx + bw - 20, y, 20, bh, new StringTextComponent("+"),
-                btn -> genGemsVeins = Math.min(256, genGemsVeins + 1)));
+        // Veins per chunk (visual only — baked into datagen in 1.20.1)
+        addRenderableWidget(Button.builder(Component.literal("-"),
+                btn -> { genGemsVeins = Math.max(0, genGemsVeins - 1); updateLabels(); })
+                .bounds(lx, y, 20, bh).build());
+        veinsLabel = addRenderableWidget(Button.builder(Component.literal(""),
+                btn -> {})
+                .bounds(lx + 22, y, bw - 44, bh).build());
+        veinsLabel.active = false;
+        addRenderableWidget(Button.builder(Component.literal("+"),
+                btn -> { genGemsVeins = Math.min(256, genGemsVeins + 1); updateLabels(); })
+                .bounds(lx + bw - 20, y, 20, bh).build());
         y += dy;
 
-        // Blocks per vein
-        addButton(new Button(lx,           y, 20, bh, new StringTextComponent("-"),
-                btn -> genGemsNumber = Math.max(0, genGemsNumber - 1)));
-        numberBtn = addButton(new Button(lx + 22, y, bw - 44, bh,
-                new StringTextComponent(""), btn -> {}));
-        numberBtn.active = false;
-        addButton(new Button(lx + bw - 20, y, 20, bh, new StringTextComponent("+"),
-                btn -> genGemsNumber = Math.min(256, genGemsNumber + 1)));
+        // Blocks per vein (visual only — baked into datagen in 1.20.1)
+        addRenderableWidget(Button.builder(Component.literal("-"),
+                btn -> { genGemsNumber = Math.max(0, genGemsNumber - 1); updateLabels(); })
+                .bounds(lx, y, 20, bh).build());
+        numberLabel = addRenderableWidget(Button.builder(Component.literal(""),
+                btn -> {})
+                .bounds(lx + 22, y, bw - 44, bh).build());
+        numberLabel.active = false;
+        addRenderableWidget(Button.builder(Component.literal("+"),
+                btn -> { genGemsNumber = Math.min(256, genGemsNumber + 1); updateLabels(); })
+                .bounds(lx + bw - 20, y, 20, bh).build());
 
-        addButton(new Button(width / 2 - 105, height - 28, 100, 20,
-                new StringTextComponent("Save & Close"), btn -> { save(); onClose(); }));
-        addButton(new Button(width / 2 + 5,   height - 28, 100, 20,
-                new StringTextComponent("Cancel"), btn -> onClose()));
+        // Save / Cancel
+        addRenderableWidget(Button.builder(Component.literal("Save & Close"),
+                btn -> { save(); onClose(); })
+                .bounds(width / 2 - 105, height - 28, 100, 20).build());
+        addRenderableWidget(Button.builder(Component.literal("Cancel"),
+                btn -> onClose())
+                .bounds(width / 2 + 5, height - 28, 100, 20).build());
+
+        updateLabels();
     }
 
     private void addBoolToggle(int x, int y, int w, int h, String label, int idx) {
-        addButton(new Button(x, y, w, h,
-                new StringTextComponent(label + ": " + getBool(idx)),
+        final String[] l = {label};  // effectively final for lambda capture
+        addRenderableWidget(Button.builder(
+                Component.literal(label + ": " + getBool(idx)),
                 btn -> {
                     setBool(idx, !getBool(idx));
-                    btn.setMessage(new StringTextComponent(label + ": " + getBool(idx)));
-                }));
+                    btn.setMessage(Component.literal(l[0] + ": " + getBool(idx)));
+                }).bounds(x, y, w, h).build());
+    }
+
+    private void updateLabels() {
+        if (veinsLabel  != null) veinsLabel .setMessage(Component.literal("Gem Veins/Chunk: " + genGemsVeins + " (stored)"));
+        if (numberLabel != null) numberLabel.setMessage(Component.literal("Blocks/Vein: "     + genGemsNumber + " (stored)"));
     }
 
     private boolean getBool(int idx) {
-        switch (idx) {
-            case 0: return genGemsEnabled;
-            case 1: return genGemsNether;
-            case 2: return toolsEnabled;
-            case 3: return toolsHaveEnchants;
-            case 4: return gemsCraftingEnabled;
-            default: return false;
-        }
+        return switch (idx) {
+            case 0 -> genGemsEnabled;
+            case 1 -> genGemsNether;
+            case 2 -> toolsEnabled;
+            case 3 -> toolsHaveEnchants;
+            case 4 -> gemsCraftingEnabled;
+            default -> false;
+        };
     }
 
     private void setBool(int idx, boolean v) {
         switch (idx) {
-            case 0: genGemsEnabled = v; break;
-            case 1: genGemsNether = v; break;
-            case 2: toolsEnabled = v; break;
-            case 3: toolsHaveEnchants = v; break;
-            case 4: gemsCraftingEnabled = v; break;
+            case 0 -> genGemsEnabled = v;
+            case 1 -> genGemsNether = v;
+            case 2 -> toolsEnabled = v;
+            case 3 -> toolsHaveEnchants = v;
+            case 4 -> gemsCraftingEnabled = v;
         }
     }
 
     @Override
-    public void render(MatrixStack ms, int mx, int my, float pt) {
-        renderBackground(ms);
-        drawCenteredString(ms, font, "GwyCraft Config", width / 2, 15, 0xFFFFFF);
-        if (veinsBtn  != null) veinsBtn .setMessage(new StringTextComponent("Gem Veins/Chunk: " + genGemsVeins));
-        if (numberBtn != null) numberBtn.setMessage(new StringTextComponent("Blocks/Vein: "     + genGemsNumber));
-        super.render(ms, mx, my, pt);
+    public void render(GuiGraphics guiGraphics, int mx, int my, float pt) {
+        renderBackground(guiGraphics);
+        guiGraphics.drawCenteredString(font, "GwyCraft Config", width / 2, 15, 0xFFFFFF);
+        guiGraphics.drawCenteredString(font,
+                "§7(Veins/Blocks sliders are stored only; generation is baked into datagen)",
+                width / 2, height - 44, 0xFFFFFF);
+        super.render(guiGraphics, mx, my, pt);
     }
 
     private void save() {

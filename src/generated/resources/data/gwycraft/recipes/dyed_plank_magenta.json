@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building",
   "ingredients": [
     {
       "item": "minecraft:magenta_dye"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:magenta_dyed_plank",
-    "count": 8
+    "count": 8,
+    "item": "gwycraft:magenta_dyed_plank"
   }
 }

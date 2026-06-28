@@ -1,13 +1,13 @@
 package gwydion0917.gwycraft.items;
 
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShearsItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShearsItem;
+import net.minecraft.world.item.enchantment.Enchantments;
 
 /**
  * Gem shears — silk touch applied on craft via GwycraftPlayerEvents.
- * ShearsItem uses a fixed durability (238); no IItemTier.
+ * ShearsItem uses a fixed durability (238); no Tier.
  */
 public class ItemGemShears extends ShearsItem {
     public ItemGemShears(Item.Properties props) {

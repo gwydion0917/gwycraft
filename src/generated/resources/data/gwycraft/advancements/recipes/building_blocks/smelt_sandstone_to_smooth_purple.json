@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sandstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gwycraft:purple_dyed_sandstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gwycraft:smelt_sandstone_to_smooth_purple"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_sandstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gwycraft:smelt_sandstone_to_smooth_purple"
+    ]
+  },
+  "sends_telemetry_event": false
+}

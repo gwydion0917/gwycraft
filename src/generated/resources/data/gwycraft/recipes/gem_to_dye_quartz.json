@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:gem_quartz"
@@ -12,7 +13,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:white_dye",
-    "count": 4
+    "count": 4,
+    "item": "minecraft:white_dye"
   }
 }

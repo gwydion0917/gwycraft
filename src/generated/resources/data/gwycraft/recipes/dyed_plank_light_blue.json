@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building",
   "ingredients": [
     {
       "item": "minecraft:light_blue_dye"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:light_blue_dyed_plank",
-    "count": 8
+    "count": 8,
+    "item": "gwycraft:light_blue_dyed_plank"
   }
 }

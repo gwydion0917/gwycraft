@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:compressed_gem_amethyst"
     }
   ],
   "result": {
-    "item": "gwycraft:gem_amethyst",
-    "count": 4
+    "count": 4,
+    "item": "gwycraft:gem_amethyst"
   }
 }

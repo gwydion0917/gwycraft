@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=x": {
+            "model": "gwycraft:block/dyed_log_cyan_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "gwycraft:block/dyed_log_cyan"
+        },
+        "axis=z": {
+            "model": "gwycraft:block/dyed_log_cyan_horizontal",
+            "x": 90
+        }
+    }
+}

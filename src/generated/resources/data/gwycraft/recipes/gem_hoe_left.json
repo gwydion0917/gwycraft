@@ -1,10 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX ",
-    " Y ",
-    " Y "
-  ],
+  "category": "equipment",
   "key": {
     "X": {
       "tag": "gwycraft:gems"
@@ -13,7 +9,13 @@
       "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    "XX ",
+    " Y ",
+    " Y "
+  ],
   "result": {
     "item": "gwycraft:gem_hoe"
-  }
+  },
+  "show_notification": true
 }

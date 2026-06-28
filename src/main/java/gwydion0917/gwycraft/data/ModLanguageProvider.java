@@ -4,8 +4,8 @@ import gwydion0917.gwycraft.Gwycraft;
 import gwydion0917.gwycraft.enums.EnumGemType;
 import gwydion0917.gwycraft.registration.ModBlocks;
 import gwydion0917.gwycraft.registration.ModItems;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.item.DyeColor;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.DyeColor;
 import net.minecraftforge.common.data.LanguageProvider;
 
 /**
@@ -14,8 +14,8 @@ import net.minecraftforge.common.data.LanguageProvider;
  */
 public class ModLanguageProvider extends LanguageProvider {
 
-    public ModLanguageProvider(DataGenerator gen) {
-        super(gen, Gwycraft.MOD_ID, "en_us");
+    public ModLanguageProvider(PackOutput output) {
+        super(output, Gwycraft.MOD_ID, "en_us");
     }
 
     @Override
@@ -33,6 +33,7 @@ public class ModLanguageProvider extends LanguageProvider {
             addBlock(ModBlocks.DYED_STONE.get(c), dn + " Dyed Stone");
             addBlock(ModBlocks.GLOWY_DYED_STONE.get(c), dn + " Glowing Dyed Stone");
             addBlock(ModBlocks.DYED_STONE_PAVER.get(c), dn + " Dyed Stone Paver");
+            addBlock(ModBlocks.GLOWY_DYED_STONE_PAVER.get(c), dn + " Glowing Dyed Stone Paver");
 
             // Bookcase
             addBlock(ModBlocks.DYED_BOOKCASE.get(c), dn + " Dyed Bookcase");
@@ -42,6 +43,7 @@ public class ModLanguageProvider extends LanguageProvider {
             addBlock(ModBlocks.DYED_BRICK.get(c), dn + " Dyed Brick");
             addBlock(ModBlocks.GLOWY_DYED_BRICK.get(c), dn + " Glowing Dyed Brick");
             addBlock(ModBlocks.DYED_BRICK_PAVER.get(c), dn + " Dyed Brick Paver");
+            addBlock(ModBlocks.GLOWY_DYED_BRICK_PAVER.get(c), dn + " Glowing Dyed Brick Paver");
 
             // Clay
             addBlock(ModBlocks.DYED_CLAY.get(c), dn + " Dyed Clay");
@@ -59,6 +61,11 @@ public class ModLanguageProvider extends LanguageProvider {
             addBlock(ModBlocks.DYED_MUD_BRICK.get(c), dn + " Dyed Mud Brick");
             addBlock(ModBlocks.GLOWY_DYED_MUD_BRICK.get(c), dn + " Glowing Dyed Mud Brick");
             addBlock(ModBlocks.DYED_MUD_BRICK_PAVER.get(c), dn + " Dyed Mud Brick Paver");
+            addBlock(ModBlocks.GLOWY_DYED_MUD_BRICK_PAVER.get(c), dn + " Glowing Dyed Mud Brick Paver");
+
+            // Log
+            addBlock(ModBlocks.DYED_LOG.get(c), dn + " Dyed Log");
+            addBlock(ModBlocks.GLOWY_DYED_LOG.get(c), dn + " Glowing Dyed Log");
 
             // Plank
             addBlock(ModBlocks.DYED_PLANK.get(c), dn + " Dyed Plank");
@@ -78,13 +85,41 @@ public class ModLanguageProvider extends LanguageProvider {
             addBlock(ModBlocks.DYED_STONE_BRICK.get(c), dn + " Dyed Stone Brick");
             addBlock(ModBlocks.GLOWY_DYED_STONE_BRICK.get(c), dn + " Glowing Dyed Stone Brick");
             addBlock(ModBlocks.DYED_STONE_BRICK_PAVER.get(c), dn + " Dyed Stone Brick Paver");
+            addBlock(ModBlocks.GLOWY_DYED_STONE_BRICK_PAVER.get(c), dn + " Glowing Dyed Stone Brick Paver");
 
             // Cobblestone
             addBlock(ModBlocks.DYED_COBBLESTONE.get(c), dn + " Dyed Cobblestone");
             addBlock(ModBlocks.GLOWY_DYED_COBBLESTONE.get(c), dn + " Glowing Dyed Cobblestone");
             addBlock(ModBlocks.DYED_COBBLESTONE_PAVER.get(c), dn + " Dyed Cobblestone Paver");
+            addBlock(ModBlocks.GLOWY_DYED_COBBLESTONE_PAVER.get(c), dn + " Glowing Dyed Cobblestone Paver");
             addBlock(ModBlocks.DYED_COBBLESTONE_WALL.get(c), dn + " Dyed Cobblestone Wall");
             addBlock(ModBlocks.GLOWY_DYED_COBBLESTONE_WALL.get(c), dn + " Glowing Dyed Cobblestone Wall");
+
+            // Pillar block sets
+            addBlock(ModBlocks.PLAIN_GREEK_BOTTOM.get(c), dn + " Plain Greek Bottom");
+            addBlock(ModBlocks.PLAIN_GREEK_PILLAR.get(c), dn + " Plain Greek Pillar");
+            addBlock(ModBlocks.PLAIN_GREEK_TOP.get(c), dn + " Plain Greek Top");
+            addBlock(ModBlocks.PLAIN_PILLAR_BOTTOM.get(c), dn + " Plain Pillar Bottom");
+            addBlock(ModBlocks.PLAIN_PILLAR.get(c), dn + " Plain Pillar");
+            addBlock(ModBlocks.PLAIN_PILLAR_TOP.get(c), dn + " Plain Pillar Top");
+            addBlock(ModBlocks.PLAIN_WIDE_PILLAR_BOTTOM.get(c), dn + " Plain Wide Pillar Bottom");
+            addBlock(ModBlocks.PLAIN_WIDE_PILLAR.get(c), dn + " Plain Wide Pillar");
+            addBlock(ModBlocks.PLAIN_WIDE_PILLAR_TOP.get(c), dn + " Plain Wide Pillar Top");
+            addBlock(ModBlocks.GREEK_PILLAR_BOTTOM.get(c), dn + " Greek Pillar Bottom");
+            addBlock(ModBlocks.GREEK_PILLAR_TOP.get(c), dn + " Greek Pillar Top");
+            addBlock(ModBlocks.GREEK_WIDE_PILLAR_BOTTOM.get(c), dn + " Greek Wide Pillar Bottom");
+            addBlock(ModBlocks.GREEK_WIDE_PILLAR_TOP.get(c), dn + " Greek Wide Pillar Top");
+            addBlock(ModBlocks.GREEK2_PILLAR_BOTTOM.get(c), dn + " Greek 2 Pillar Bottom");
+            addBlock(ModBlocks.GREEK2_PILLAR_TOP.get(c), dn + " Greek 2 Pillar Top");
+            addBlock(ModBlocks.PLAIN_SLAB.get(c), dn + " Plain Slab");
+            addBlock(ModBlocks.GREEK_SLAB.get(c), dn + " Greek Slab");
+            addBlock(ModBlocks.FANCY_BOTTOM.get(c), dn + " Fancy Bottom");
+            addBlock(ModBlocks.FANCY_TOP.get(c), dn + " Fancy Top");
+            addBlock(ModBlocks.FANCY_GREEK_BOTTOM.get(c), dn + " Fancy Greek Bottom");
+            addBlock(ModBlocks.FANCY_GREEK_TOP.get(c), dn + " Fancy Greek Top");
+            addBlock(ModBlocks.FANCY_WIDE_BOTTOM.get(c), dn + " Fancy Wide Bottom");
+            addBlock(ModBlocks.FANCY_WIDE_TOP.get(c), dn + " Fancy Wide Top");
+            addBlock(ModBlocks.FANCY_SLAB.get(c), dn + " Fancy Slab");
 
             // Torches
             addItem(ModItems.TORCH_ITEMS.get(c), dn + " Torch");

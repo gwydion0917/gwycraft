@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX",
-    "XX"
-  ],
+  "category": "misc",
   "key": {
     "X": {
       "item": "gwycraft:gem_lapis_lazuli"
     }
   },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
   "result": {
     "item": "gwycraft:compressed_gem_lapis_lazuli"
-  }
+  },
+  "show_notification": true
 }

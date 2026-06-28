@@ -1,14 +1,12 @@
 package gwydion0917.gwycraft.blocks;
 
-import net.minecraft.block.AbstractGlassBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.AbstractGlassBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * Dyed glass block (transparent, cutout render layer). Replaces BlockDyedGlass.
- * Render layer (cutout) is set in ClientSetup via RenderTypeLookup.
+ * Dyed glass block (transparent, cutout render layer).
+ * Render layer (cutout) is set in ClientSetup via ItemBlockRenderTypes.
  */
 public class GwyGlassBlock extends AbstractGlassBlock {
     public GwyGlassBlock(Properties props) {

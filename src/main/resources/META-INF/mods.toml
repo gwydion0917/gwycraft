@@ -1,24 +1,25 @@
 modLoader = "javafml"
-loaderVersion = "[36,)"
+loaderVersion = "[47,)"
 license = "MIT"
 
 [[mods]]
     modId = "gwycraft"
-    version = "1.16.5-2"
+    version = "1.20.1-1"
     displayName = "GwyCraft"
     description = "GwyCraft adds colored and glowing building blocks, enchanted gem tools, and more."
     authors = "gwydion0917, zepanv"
+    displayTest = "MATCH_VERSION"
 
 [[dependencies.gwycraft]]
     modId = "forge"
     mandatory = true
-    versionRange = "[36.2,)"
+    versionRange = "[47,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.gwycraft]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.16.5,1.17)"
+    versionRange = "[1.20.1,1.21)"
     ordering = "NONE"
     side = "BOTH"

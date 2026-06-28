@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX",
-    "XX"
-  ],
+  "category": "building",
   "key": {
     "X": {
       "item": "gwycraft:black_clay_ball"
     }
   },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
   "result": {
     "item": "gwycraft:black_dyed_clay"
-  }
+  },
+  "show_notification": true
 }

@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX"
-  ],
+  "category": "building",
   "key": {
     "X": {
       "item": "gwycraft:orange_dyed_mud_brick"
     }
   },
+  "pattern": [
+    "XX"
+  ],
   "result": {
-    "item": "gwycraft:orange_dyed_mud_brick_paver",
-    "count": 3
-  }
+    "count": 3,
+    "item": "gwycraft:orange_dyed_mud_brick_paver"
+  },
+  "show_notification": true
 }

@@ -1,10 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " XX",
-    " YX",
-    " Y "
-  ],
+  "category": "equipment",
   "key": {
     "X": {
       "tag": "gwycraft:gems"
@@ -13,7 +9,13 @@
       "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    " XX",
+    " YX",
+    " Y "
+  ],
   "result": {
     "item": "gwycraft:gem_hatchet"
-  }
+  },
+  "show_notification": true
 }

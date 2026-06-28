@@ -1,19 +1,20 @@
 package gwydion0917.gwycraft.items;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.world.World;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 
 /**
  * Item for dyed torches. Places the floor TorchBlock when right-clicking the top of a block,
  * or the WallTorchBlock when right-clicking a wall face.
- * Replaces the 1.12 StandingAndWallBlockItem pattern (which used onItemUse).
+ * 1.20.1 renames: ItemUseContext→UseOnContext, BlockItemUseContext→BlockPlaceContext,
+ * ActionResultType→InteractionResult, World→Level, SoundCategory→SoundSource.
  */
 public class GwyTorchItem extends Item {
     private final Block floorBlock;
@@ -26,32 +27,32 @@ public class GwyTorchItem extends Item {
     }
 
     @Override
-    public ActionResultType useOn(ItemUseContext ctx) {
+    public InteractionResult useOn(UseOnContext ctx) {
         Direction face = ctx.getClickedFace();
         Block toPlace;
         if (face == Direction.DOWN) {
-            return ActionResultType.FAIL;
+            return InteractionResult.FAIL;
         } else if (face == Direction.UP) {
             toPlace = floorBlock;
         } else {
             toPlace = wallBlock;
         }
 
-        BlockItemUseContext bCtx = new BlockItemUseContext(ctx);
-        if (!bCtx.canPlace()) return ActionResultType.FAIL;
+        BlockPlaceContext bCtx = new BlockPlaceContext(ctx);
+        if (!bCtx.canPlace()) return InteractionResult.FAIL;
 
         BlockState state = toPlace.getStateForPlacement(bCtx);
-        if (state == null) return ActionResultType.FAIL;
+        if (state == null) return InteractionResult.FAIL;
 
-        World world = ctx.getLevel();
-        if (!world.setBlock(bCtx.getClickedPos(), state, 11)) return ActionResultType.FAIL;
+        Level world = ctx.getLevel();
+        if (!world.setBlock(bCtx.getClickedPos(), state, 11)) return InteractionResult.FAIL;
 
-        net.minecraft.util.SoundEvent sound = state.getSoundType(world, bCtx.getClickedPos(), ctx.getPlayer()).getPlaceSound();
-        world.playSound(null, bCtx.getClickedPos(), sound, SoundCategory.BLOCKS, 1.0F, 0.8F);
+        net.minecraft.sounds.SoundEvent sound = state.getSoundType(world, bCtx.getClickedPos(), ctx.getPlayer()).getPlaceSound();
+        world.playSound(null, bCtx.getClickedPos(), sound, SoundSource.BLOCKS, 1.0F, 0.8F);
 
         if (!ctx.getPlayer().isCreative()) {
             ctx.getItemInHand().shrink(1);
         }
-        return ActionResultType.sidedSuccess(world.isClientSide);
+        return InteractionResult.sidedSuccess(world.isClientSide);
     }
 }

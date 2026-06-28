@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building",
   "ingredients": [
     {
       "item": "minecraft:brown_dye"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:brown_dyed_sandstone",
-    "count": 8
+    "count": 8,
+    "item": "gwycraft:brown_dyed_sandstone"
   }
 }

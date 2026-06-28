@@ -1,11 +1,11 @@
 package gwydion0917.gwycraft.items;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
 
 /**
- * Gem sword. Random enchant-on-craft is handled by GwycraftPlayerEvents.ItemCraftedEvent.
+ * Gem sword. Random enchant-on-craft is handled by GwycraftPlayerEvents.
  */
 public class ItemGemSword extends SwordItem {
     public ItemGemSword(Item.Properties props) {
@@ -14,7 +14,7 @@ public class ItemGemSword extends SwordItem {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack material) {
-        return false; // Repaired via gem tag in tier
+        return false;
     }
 
     @Override

@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX"
-  ],
+  "category": "building",
   "key": {
     "X": {
       "item": "gwycraft:green_dyed_stone"
     }
   },
+  "pattern": [
+    "XX"
+  ],
   "result": {
-    "item": "gwycraft:green_dyed_stone_paver",
-    "count": 3
-  }
+    "count": 3,
+    "item": "gwycraft:green_dyed_stone_paver"
+  },
+  "show_notification": true
 }

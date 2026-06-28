@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "gwycraft:light_blue_glowy_dyed_mud_brick"
+    }
+  },
+  "pattern": [
+    "XX"
+  ],
+  "result": {
+    "count": 3,
+    "item": "gwycraft:light_blue_glowy_dyed_mud_brick_paver"
+  },
+  "show_notification": true
+}

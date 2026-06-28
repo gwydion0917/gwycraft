@@ -1,9 +1,10 @@
 {
   "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
   "ingredient": {
     "item": "gwycraft:pink_mud_ball"
   },
-  "result": "gwycraft:pink_mud_brick",
-  "experience": 0.1,
-  "cookingtime": 200
+  "result": "gwycraft:pink_mud_brick"
 }

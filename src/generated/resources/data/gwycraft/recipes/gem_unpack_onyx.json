@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:compressed_gem_onyx"
     }
   ],
   "result": {
-    "item": "gwycraft:gem_onyx",
-    "count": 4
+    "count": 4,
+    "item": "gwycraft:gem_onyx"
   }
 }

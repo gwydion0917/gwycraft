@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "gwycraft:block/logtop_white",
+        "side": "gwycraft:block/logside_white"
+    }
+}

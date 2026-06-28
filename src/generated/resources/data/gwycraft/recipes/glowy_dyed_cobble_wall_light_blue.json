@@ -1,16 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    "XXX"
-  ],
+  "category": "building",
   "key": {
     "X": {
       "item": "gwycraft:light_blue_glowy_dyed_cobblestone"
     }
   },
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
   "result": {
-    "item": "gwycraft:light_blue_glowy_dyed_cobblestone_wall",
-    "count": 6
-  }
+    "count": 6,
+    "item": "gwycraft:light_blue_glowy_dyed_cobblestone_wall"
+  },
+  "show_notification": true
 }

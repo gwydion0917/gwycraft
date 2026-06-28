@@ -1,12 +1,11 @@
 package gwydion0917.gwycraft.items;
 
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 /**
  * Gem hoe. Random enchant-on-craft is handled by GwycraftPlayerEvents.
- * In 1.16.5, HoeItem constructor takes (tier, attackDamage, attackSpeed, properties).
  */
 public class ItemGemHoe extends HoeItem {
     public ItemGemHoe(Item.Properties props) {

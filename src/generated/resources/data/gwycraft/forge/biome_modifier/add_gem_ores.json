@@ -1,0 +1,39 @@
+{
+  "type": "gwycraft:gem_ore_biome_modifier",
+  "nether_features": [
+    "gwycraft:ore_gem_quartz_nether",
+    "gwycraft:ore_gem_citrine_nether",
+    "gwycraft:ore_gem_tanzanite_nether",
+    "gwycraft:ore_gem_sapphire_nether",
+    "gwycraft:ore_gem_topaz_nether",
+    "gwycraft:ore_gem_agate_nether",
+    "gwycraft:ore_gem_garnet_nether",
+    "gwycraft:ore_gem_moonstone_nether",
+    "gwycraft:ore_gem_hematite_nether",
+    "gwycraft:ore_gem_aquamarine_nether",
+    "gwycraft:ore_gem_amethyst_nether",
+    "gwycraft:ore_gem_lapis_lazuli_nether",
+    "gwycraft:ore_gem_tigerseye_nether",
+    "gwycraft:ore_gem_emerald_nether",
+    "gwycraft:ore_gem_ruby_nether",
+    "gwycraft:ore_gem_onyx_nether"
+  ],
+  "overworld_features": [
+    "gwycraft:ore_gem_quartz_overworld",
+    "gwycraft:ore_gem_citrine_overworld",
+    "gwycraft:ore_gem_tanzanite_overworld",
+    "gwycraft:ore_gem_sapphire_overworld",
+    "gwycraft:ore_gem_topaz_overworld",
+    "gwycraft:ore_gem_agate_overworld",
+    "gwycraft:ore_gem_garnet_overworld",
+    "gwycraft:ore_gem_moonstone_overworld",
+    "gwycraft:ore_gem_hematite_overworld",
+    "gwycraft:ore_gem_aquamarine_overworld",
+    "gwycraft:ore_gem_amethyst_overworld",
+    "gwycraft:ore_gem_lapis_lazuli_overworld",
+    "gwycraft:ore_gem_tigerseye_overworld",
+    "gwycraft:ore_gem_emerald_overworld",
+    "gwycraft:ore_gem_ruby_overworld",
+    "gwycraft:ore_gem_onyx_overworld"
+  ]
+}

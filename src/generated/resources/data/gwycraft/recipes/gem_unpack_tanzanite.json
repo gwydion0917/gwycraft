@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:compressed_gem_tanzanite"
     }
   ],
   "result": {
-    "item": "gwycraft:gem_tanzanite",
-    "count": 4
+    "count": 4,
+    "item": "gwycraft:gem_tanzanite"
   }
 }

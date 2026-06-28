@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:compressed_gem_quartz"
     }
   ],
   "result": {
-    "item": "gwycraft:gem_quartz",
-    "count": 4
+    "count": 4,
+    "item": "gwycraft:gem_quartz"
   }
 }

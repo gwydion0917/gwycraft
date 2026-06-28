@@ -1,11 +1,11 @@
 package gwydion0917.gwycraft.items;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.PickaxeItem;
 
 /**
- * Gem pickaxe. Random enchant-on-craft is handled by GwycraftPlayerEvents.ItemCraftedEvent.
+ * Gem pickaxe. Random enchant-on-craft is handled by GwycraftPlayerEvents.
  */
 public class ItemGemPickaxe extends PickaxeItem {
     public ItemGemPickaxe(Item.Properties props) {

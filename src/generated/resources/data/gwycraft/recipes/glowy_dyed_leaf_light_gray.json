@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:glowstone"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:light_gray_glowy_dyed_leaf",
-    "count": 8
+    "count": 8,
+    "item": "gwycraft:light_gray_glowy_dyed_leaf"
   }
 }

@@ -1,32 +1,39 @@
 package gwydion0917.gwycraft.data;
 
-import gwydion0917.gwycraft.Gwycraft;
-import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
+import gwydion0917.gwycraft.worldgen.ModWorldGenProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 
 /**
- * Entry point for all GwyCraft data generators.
- * Triggered by the 'data' run configuration: ./gradlew runData
- * Output is written to src/generated/resources/.
+ * Entry point for all GwyCraft data generators (1.20.1).
+ * Key changes from 1.16.5:
+ * - addProvider(boolean run, DataProvider) — run flag replaces includeServer/Client guard
+ * - Providers take PackOutput (not DataGenerator) + optional CompletableFuture<HolderLookup.Provider>
+ * - WorldGen data added via DatapackBuiltinEntriesProvider (ModWorldGenProvider)
  */
 public class GwycraftDataGen {
 
     public static void gatherData(GatherDataEvent event) {
-        net.minecraftforge.common.data.ExistingFileHelper efh = event.getExistingFileHelper();
+        var gen    = event.getGenerator();
+        var output = gen.getPackOutput();
+        var lookup = event.getLookupProvider();
+        ExistingFileHelper efh = event.getExistingFileHelper();
 
-        if (event.includeServer()) {
-            event.getGenerator().addProvider(new ModRecipeProvider(event.getGenerator()));
-            event.getGenerator().addProvider(new ModLootTableProvider(event.getGenerator()));
-            ModTagsProvider.GwycraftBlockTags blockTagsProv =
-                    new ModTagsProvider.GwycraftBlockTags(event.getGenerator(), efh);
-            event.getGenerator().addProvider(blockTagsProv);
-            event.getGenerator().addProvider(
-                    new ModTagsProvider.GwycraftItemTags(event.getGenerator(), blockTagsProv, efh));
-        }
+        // Server-side providers
+        gen.addProvider(event.includeServer(), new ModRecipeProvider(output));
+        gen.addProvider(event.includeServer(), new ModLootTableProvider(output));
 
-        if (event.includeClient()) {
-            event.getGenerator().addProvider(new ModBlockStateProvider(event.getGenerator(), efh));
-            event.getGenerator().addProvider(new ModItemModelProvider(event.getGenerator(), efh));
-            event.getGenerator().addProvider(new ModLanguageProvider(event.getGenerator()));
-        }
+        var blockTagsProv = new ModTagsProvider.GwycraftBlockTags(output, lookup, efh);
+        gen.addProvider(event.includeServer(), blockTagsProv);
+        gen.addProvider(event.includeServer(),
+                new ModTagsProvider.GwycraftItemTags(output, lookup, blockTagsProv.contentsGetter(), efh));
+
+        // WorldGen data (ConfiguredFeatures, PlacedFeatures, BiomeModifier)
+        gen.addProvider(event.includeServer(), new ModWorldGenProvider(output, lookup));
+
+        // Client-side providers
+        gen.addProvider(event.includeClient(), new ModBlockStateProvider(output, efh));
+        gen.addProvider(event.includeClient(), new ModItemModelProvider(output, efh));
+        gen.addProvider(event.includeClient(), new ModLanguageProvider(output));
     }
 }

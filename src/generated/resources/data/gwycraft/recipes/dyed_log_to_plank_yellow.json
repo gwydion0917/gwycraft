@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "gwycraft:yellow_dyed_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "gwycraft:yellow_dyed_plank"
+  }
+}

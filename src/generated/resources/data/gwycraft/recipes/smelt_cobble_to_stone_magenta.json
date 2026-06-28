@@ -1,9 +1,10 @@
 {
   "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
   "ingredient": {
     "item": "gwycraft:magenta_dyed_cobblestone"
   },
-  "result": "gwycraft:magenta_dyed_stone",
-  "experience": 0.1,
-  "cookingtime": 200
+  "result": "gwycraft:magenta_dyed_stone"
 }

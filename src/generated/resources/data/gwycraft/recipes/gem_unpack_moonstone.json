@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:compressed_gem_moonstone"
     }
   ],
   "result": {
-    "item": "gwycraft:gem_moonstone",
-    "count": 4
+    "count": 4,
+    "item": "gwycraft:gem_moonstone"
   }
 }

@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX",
-    "XX"
-  ],
+  "category": "building",
   "key": {
     "X": {
       "item": "gwycraft:green_mud_brick"
     }
   },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
   "result": {
     "item": "gwycraft:green_dyed_mud_brick"
-  }
+  },
+  "show_notification": true
 }

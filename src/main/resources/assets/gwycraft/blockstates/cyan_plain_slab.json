@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "gwycraft:block/plain_slab_tinted_bottom"
+        },
+        "type=double": {
+            "model": "gwycraft:block/plain_slab_tinted_double"
+        },
+        "type=top": {
+            "model": "gwycraft:block/plain_slab_tinted_top"
+        }
+    }
+}

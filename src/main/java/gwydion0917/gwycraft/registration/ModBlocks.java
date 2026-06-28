@@ -3,26 +3,24 @@ package gwydion0917.gwycraft.registration;
 import gwydion0917.gwycraft.Gwycraft;
 import gwydion0917.gwycraft.blocks.*;
 import gwydion0917.gwycraft.enums.EnumGemType;
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.item.DyeColor;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.*;
 
 /**
- * All block registrations for GwyCraft 1.16.5.
- *
- * Architecture: each 1.12.2 16-metadata block becomes 16 separate Block objects,
- * registered in loops over DyeColor or EnumGemType.  Maps are EnumMaps for O(1) lookup.
- *
- * Naming convention:
- *   dye-color blocks  → {color}_{base}  (e.g. "black_dyed_brick")
- *   gem blocks        → {base}_{gem}    (e.g. "ore_gem_quartz")
+ * All block registrations for GwyCraft 1.20.1.
+ * Material was removed in 1.20. BlockBehaviour.Properties.of() replaces
+ * AbstractBlock.Properties.of(Material.*). MapColor replaces MaterialColor.
+ * Mining-tool gating that was implicit in Material is now expressed via
+ * mineable/* block tags (generated in ModTagsProvider) +
+ * requiresCorrectToolForDrops().
  */
 public class ModBlocks {
 
@@ -33,7 +31,7 @@ public class ModBlocks {
 
     /** Register 16 plain Block variants, one per DyeColor. */
     private static Map<DyeColor, RegistryObject<Block>> dyeBlocks(
-            String base, AbstractBlock.Properties props) {
+            String base, BlockBehaviour.Properties props) {
         Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
         for (DyeColor c : DyeColor.values()) {
             m.put(c, BLOCKS.register(c.getName() + "_" + base,
@@ -44,7 +42,7 @@ public class ModBlocks {
 
     /** Register 16 GwyGlassBlock variants. */
     private static Map<DyeColor, RegistryObject<Block>> dyeGlassBlocks(
-            String base, AbstractBlock.Properties props) {
+            String base, BlockBehaviour.Properties props) {
         Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
         for (DyeColor c : DyeColor.values()) {
             m.put(c, BLOCKS.register(c.getName() + "_" + base,
@@ -55,7 +53,7 @@ public class ModBlocks {
 
     /** Register 16 GwyLeafBlock variants. */
     private static Map<DyeColor, RegistryObject<Block>> dyeLeafBlocks(
-            String base, AbstractBlock.Properties props) {
+            String base, BlockBehaviour.Properties props) {
         Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
         for (DyeColor c : DyeColor.values()) {
             m.put(c, BLOCKS.register(c.getName() + "_" + base,
@@ -66,7 +64,7 @@ public class ModBlocks {
 
     /** Register 16 GwyFallingBlock variants. */
     private static Map<DyeColor, RegistryObject<Block>> dyeFallingBlocks(
-            String base, AbstractBlock.Properties props) {
+            String base, BlockBehaviour.Properties props) {
         Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
         for (DyeColor c : DyeColor.values()) {
             m.put(c, BLOCKS.register(c.getName() + "_" + base,
@@ -77,7 +75,7 @@ public class ModBlocks {
 
     /** Register 16 GwyPaverBlock variants. */
     private static Map<DyeColor, RegistryObject<Block>> dyePaverBlocks(
-            String base, AbstractBlock.Properties props) {
+            String base, BlockBehaviour.Properties props) {
         Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
         for (DyeColor c : DyeColor.values()) {
             m.put(c, BLOCKS.register(c.getName() + "_" + base,
@@ -86,9 +84,44 @@ public class ModBlocks {
         return Collections.unmodifiableMap(m);
     }
 
+    /** Register 16 GwyTintedBlock variants (single shared model, color via tintindex). */
+    private static Map<DyeColor, RegistryObject<Block>> dyeTintedBlocks(
+            String base, BlockBehaviour.Properties props) {
+        Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
+        for (DyeColor c : DyeColor.values()) {
+            final DyeColor color = c;
+            m.put(c, BLOCKS.register(c.getName() + "_" + base,
+                    () -> new GwyTintedBlock(color, props)));
+        }
+        return Collections.unmodifiableMap(m);
+    }
+
+    /** Register 16 GwyTintedSlabBlock variants (single shared model set, color via tintindex). */
+    private static Map<DyeColor, RegistryObject<Block>> dyeTintedSlabBlocks(
+            String base, BlockBehaviour.Properties props) {
+        Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
+        for (DyeColor c : DyeColor.values()) {
+            final DyeColor color = c;
+            m.put(c, BLOCKS.register(c.getName() + "_" + base,
+                    () -> new GwyTintedSlabBlock(color, props)));
+        }
+        return Collections.unmodifiableMap(m);
+    }
+
+    /** Register 16 RotatedPillarBlock variants (logs). */
+    private static Map<DyeColor, RegistryObject<Block>> dyeRotatedPillarBlocks(
+            String base, BlockBehaviour.Properties props) {
+        Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
+        for (DyeColor c : DyeColor.values()) {
+            m.put(c, BLOCKS.register(c.getName() + "_" + base,
+                    () -> new RotatedPillarBlock(props)));
+        }
+        return Collections.unmodifiableMap(m);
+    }
+
     /** Register 16 WallBlock variants. */
     private static Map<DyeColor, RegistryObject<Block>> dyeWallBlocks(
-            String base, AbstractBlock.Properties props) {
+            String base, BlockBehaviour.Properties props) {
         Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
         for (DyeColor c : DyeColor.values()) {
             m.put(c, BLOCKS.register(c.getName() + "_" + base,
@@ -97,9 +130,9 @@ public class ModBlocks {
         return Collections.unmodifiableMap(m);
     }
 
-    /** Register 16 dyed bookcase variants (plain Block — bookshelf is just a block in 1.16). */
+    /** Register 16 dyed bookcase variants (plain Block). */
     private static Map<DyeColor, RegistryObject<Block>> dyeBookcaseBlocks(
-            String base, AbstractBlock.Properties props) {
+            String base, BlockBehaviour.Properties props) {
         Map<DyeColor, RegistryObject<Block>> m = new EnumMap<>(DyeColor.class);
         for (DyeColor c : DyeColor.values()) {
             m.put(c, BLOCKS.register(c.getName() + "_" + base,
@@ -110,52 +143,74 @@ public class ModBlocks {
 
     // ── Common property builders ─────────────────────────────────────────────
 
-    private static AbstractBlock.Properties stoneProps(float hardness, float resistance) {
-        return AbstractBlock.Properties.of(Material.STONE)
-                .requiresCorrectToolForDrops().strength(hardness, resistance).sound(SoundType.STONE);
+    private static BlockBehaviour.Properties stoneProps(float hardness, float resistance) {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.STONE)
+                .requiresCorrectToolForDrops()
+                .strength(hardness, resistance)
+                .sound(SoundType.STONE);
     }
 
-    private static AbstractBlock.Properties glowyStoneProps(float hardness, float resistance) {
+    private static BlockBehaviour.Properties glowyStoneProps(float hardness, float resistance) {
         return stoneProps(hardness, resistance).lightLevel(s -> 15);
     }
 
-    private static AbstractBlock.Properties woodProps(float hardness, float resistance) {
-        return AbstractBlock.Properties.of(Material.WOOD)
-                .strength(hardness, resistance).sound(SoundType.WOOD);
+    private static BlockBehaviour.Properties woodProps(float hardness, float resistance) {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.WOOD)
+                .strength(hardness, resistance)
+                .sound(SoundType.WOOD);
     }
 
-    private static AbstractBlock.Properties glowyWoodProps(float hardness, float resistance) {
+    private static BlockBehaviour.Properties glowyWoodProps(float hardness, float resistance) {
         return woodProps(hardness, resistance).lightLevel(s -> 15);
     }
 
-    private static AbstractBlock.Properties woolProps() {
-        return AbstractBlock.Properties.of(Material.WOOL)
-                .strength(0.8F).sound(SoundType.WOOL).lightLevel(s -> 15);
+    private static BlockBehaviour.Properties woolProps() {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.WOOL)
+                .strength(0.8F)
+                .sound(SoundType.WOOL)
+                .lightLevel(s -> 15);
     }
 
-    private static AbstractBlock.Properties clayProps(float hardness) {
-        return AbstractBlock.Properties.of(Material.CLAY)
-                .strength(hardness).sound(SoundType.GRAVEL);
+    private static BlockBehaviour.Properties clayProps(float hardness) {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.CLAY)
+                .strength(hardness)
+                .sound(SoundType.GRAVEL);
     }
 
-    private static AbstractBlock.Properties sandProps() {
-        return AbstractBlock.Properties.of(Material.SAND)
-                .strength(0.5F).sound(SoundType.SAND);
+    private static BlockBehaviour.Properties sandProps() {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.SAND)
+                .strength(0.5F)
+                .sound(SoundType.SAND);
     }
 
-    private static AbstractBlock.Properties glassProps(float hardness) {
-        return AbstractBlock.Properties.of(Material.GLASS)
-                .strength(hardness).sound(SoundType.GLASS).noOcclusion();
+    private static BlockBehaviour.Properties glassProps(float hardness) {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.NONE)
+                .strength(hardness)
+                .sound(SoundType.GLASS)
+                .noOcclusion();
     }
 
-    private static AbstractBlock.Properties leafProps() {
-        return AbstractBlock.Properties.of(Material.LEAVES)
-                .strength(0.2F).sound(SoundType.GRASS).noOcclusion();
+    private static BlockBehaviour.Properties leafProps() {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.PLANT)
+                .strength(0.2F)
+                .sound(SoundType.GRASS)
+                .noOcclusion();
     }
 
-    private static AbstractBlock.Properties torchProps() {
-        return AbstractBlock.Properties.of(Material.DECORATION)
-                .noCollission().instabreak().lightLevel(s -> 14).sound(SoundType.WOOD);
+    private static BlockBehaviour.Properties torchProps() {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.NONE)
+                .noCollission()
+                .instabreak()
+                .lightLevel(s -> 14)
+                .sound(SoundType.WOOD);
     }
 
     // ── Wool ─────────────────────────────────────────────────────────────────
@@ -171,15 +226,19 @@ public class ModBlocks {
             dyeBlocks("glowy_dyed_stone", glowyStoneProps(1.5F, 10.0F));
     public static final Map<DyeColor, RegistryObject<Block>> DYED_STONE_PAVER =
             dyePaverBlocks("dyed_stone_paver", stoneProps(2.0F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_STONE_PAVER =
+            dyePaverBlocks("glowy_dyed_stone_paver", glowyStoneProps(2.0F, 6.0F));
 
     // ── Bookshelves ──────────────────────────────────────────────────────────
 
     public static final Map<DyeColor, RegistryObject<Block>> DYED_BOOKCASE =
             dyeBookcaseBlocks("dyed_bookcase",
-                    AbstractBlock.Properties.of(Material.WOOD).strength(1.5F).sound(SoundType.WOOD));
+                    BlockBehaviour.Properties.of().mapColor(MapColor.WOOD)
+                            .strength(1.5F).sound(SoundType.WOOD));
     public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_BOOKCASE =
             dyeBookcaseBlocks("glowy_dyed_bookcase",
-                    AbstractBlock.Properties.of(Material.WOOD).strength(1.5F).sound(SoundType.WOOD).lightLevel(s -> 15));
+                    BlockBehaviour.Properties.of().mapColor(MapColor.WOOD)
+                            .strength(1.5F).sound(SoundType.WOOD).lightLevel(s -> 15));
 
     // ── Brick ─────────────────────────────────────────────────────────────────
 
@@ -189,6 +248,8 @@ public class ModBlocks {
             dyeBlocks("glowy_dyed_brick", glowyStoneProps(2.0F, 10.0F));
     public static final Map<DyeColor, RegistryObject<Block>> DYED_BRICK_PAVER =
             dyePaverBlocks("dyed_brick_paver", stoneProps(2.0F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_BRICK_PAVER =
+            dyePaverBlocks("glowy_dyed_brick_paver", glowyStoneProps(2.0F, 6.0F));
 
     // ── Clay ──────────────────────────────────────────────────────────────────
 
@@ -219,6 +280,15 @@ public class ModBlocks {
             dyeBlocks("glowy_dyed_mud_brick", glowyStoneProps(1.5F, 6.0F));
     public static final Map<DyeColor, RegistryObject<Block>> DYED_MUD_BRICK_PAVER =
             dyePaverBlocks("dyed_mud_brick_paver", stoneProps(2.0F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_MUD_BRICK_PAVER =
+            dyePaverBlocks("glowy_dyed_mud_brick_paver", glowyStoneProps(2.0F, 6.0F));
+
+    // ── Logs ─────────────────────────────────────────────────────────────────
+
+    public static final Map<DyeColor, RegistryObject<Block>> DYED_LOG =
+            dyeRotatedPillarBlocks("dyed_log", woodProps(2.0F, 5.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_LOG =
+            dyeRotatedPillarBlocks("glowy_dyed_log", glowyWoodProps(2.0F, 5.0F));
 
     // ── Planks ───────────────────────────────────────────────────────────────
 
@@ -255,6 +325,8 @@ public class ModBlocks {
             dyeBlocks("glowy_dyed_stone_brick", glowyStoneProps(2.0F, 6.0F));
     public static final Map<DyeColor, RegistryObject<Block>> DYED_STONE_BRICK_PAVER =
             dyePaverBlocks("dyed_stone_brick_paver", stoneProps(2.0F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_STONE_BRICK_PAVER =
+            dyePaverBlocks("glowy_dyed_stone_brick_paver", glowyStoneProps(2.0F, 6.0F));
 
     // ── Cobblestone ──────────────────────────────────────────────────────────
 
@@ -264,6 +336,8 @@ public class ModBlocks {
             dyeBlocks("glowy_dyed_cobblestone", glowyStoneProps(2.0F, 10.0F));
     public static final Map<DyeColor, RegistryObject<Block>> DYED_COBBLESTONE_PAVER =
             dyePaverBlocks("dyed_cobblestone_paver", stoneProps(2.0F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_COBBLESTONE_PAVER =
+            dyePaverBlocks("glowy_dyed_cobblestone_paver", glowyStoneProps(2.0F, 6.0F));
 
     // ── Cobblestone Walls ────────────────────────────────────────────────────
 
@@ -271,6 +345,65 @@ public class ModBlocks {
             dyeWallBlocks("dyed_cobblestone_wall", stoneProps(2.0F, 10.0F).noOcclusion());
     public static final Map<DyeColor, RegistryObject<Block>> GLOWY_DYED_COBBLESTONE_WALL =
             dyeWallBlocks("glowy_dyed_cobblestone_wall", glowyStoneProps(2.0F, 10.0F).noOcclusion());
+
+    // ── Tinted pillar blocks ──────────────────────────────────────────────────
+    // Three shaft textures (pillar, pillar_wide, pillar_greek) each have matching
+    // plain caps. Greek and wide-greek caps can mix with any shaft.
+
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_GREEK_BOTTOM =
+            dyeTintedBlocks("plain_greek_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_GREEK_PILLAR =
+            dyeTintedBlocks("plain_greek_pillar", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_GREEK_TOP =
+            dyeTintedBlocks("plain_greek_top", stoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_PILLAR_BOTTOM =
+            dyeTintedBlocks("plain_pillar_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_PILLAR =
+            dyeTintedBlocks("plain_pillar", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_PILLAR_TOP =
+            dyeTintedBlocks("plain_pillar_top", stoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_WIDE_PILLAR_BOTTOM =
+            dyeTintedBlocks("plain_wide_pillar_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_WIDE_PILLAR =
+            dyeTintedBlocks("plain_wide_pillar", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_WIDE_PILLAR_TOP =
+            dyeTintedBlocks("plain_wide_pillar_top", stoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GREEK_PILLAR_BOTTOM =
+            dyeTintedBlocks("greek_pillar_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GREEK_PILLAR_TOP =
+            dyeTintedBlocks("greek_pillar_top", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GREEK_WIDE_PILLAR_BOTTOM =
+            dyeTintedBlocks("greek_wide_pillar_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GREEK_WIDE_PILLAR_TOP =
+            dyeTintedBlocks("greek_wide_pillar_top", stoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GREEK2_PILLAR_BOTTOM =
+            dyeTintedBlocks("greek2_pillar_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GREEK2_PILLAR_TOP =
+            dyeTintedBlocks("greek2_pillar_top", stoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> PLAIN_SLAB =
+            dyeTintedSlabBlocks("plain_slab", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GREEK_SLAB =
+            dyeTintedSlabBlocks("greek_slab", stoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> FANCY_BOTTOM =
+            dyeTintedBlocks("fancy_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> FANCY_TOP =
+            dyeTintedBlocks("fancy_top", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> FANCY_GREEK_BOTTOM =
+            dyeTintedBlocks("fancy_greek_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> FANCY_GREEK_TOP =
+            dyeTintedBlocks("fancy_greek_top", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> FANCY_WIDE_BOTTOM =
+            dyeTintedBlocks("fancy_wide_bottom", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> FANCY_WIDE_TOP =
+            dyeTintedBlocks("fancy_wide_top", stoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> FANCY_SLAB =
+            dyeTintedSlabBlocks("fancy_slab", stoneProps(1.5F, 6.0F));
 
     // ── Torches ──────────────────────────────────────────────────────────────
     // Each color: one floor TorchBlock + one WallTorchBlock. One item per color.
@@ -299,10 +432,18 @@ public class ModBlocks {
             new EnumMap<>(EnumGemType.class);
 
     static {
-        AbstractBlock.Properties oreProps = AbstractBlock.Properties.of(Material.STONE)
-                .requiresCorrectToolForDrops().strength(3.0F, 5.0F).sound(SoundType.STONE);
-        AbstractBlock.Properties compressedProps = AbstractBlock.Properties.of(Material.STONE)
-                .requiresCorrectToolForDrops().strength(3.0F, 5.0F).sound(SoundType.STONE)
+        // DropExperienceBlock replaces OreBlock (removed in 1.17).
+        // XP range: UniformInt.of(3, 7) matches old OreBlock behaviour.
+        BlockBehaviour.Properties oreProps = BlockBehaviour.Properties.of()
+                .mapColor(MapColor.STONE)
+                .requiresCorrectToolForDrops()
+                .strength(3.0F, 5.0F)
+                .sound(SoundType.STONE);
+        BlockBehaviour.Properties compressedProps = BlockBehaviour.Properties.of()
+                .mapColor(MapColor.STONE)
+                .requiresCorrectToolForDrops()
+                .strength(3.0F, 5.0F)
+                .sound(SoundType.STONE)
                 .lightLevel(s -> 15);
 
         for (EnumGemType gem : EnumGemType.values()) {

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building",
   "ingredients": [
     {
       "item": "minecraft:lime_dye"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:lime_dyed_sand",
-    "count": 8
+    "count": 8,
+    "item": "gwycraft:lime_dyed_sand"
   }
 }

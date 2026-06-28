@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " X",
-    "X "
-  ],
+  "category": "equipment",
   "key": {
     "X": {
       "tag": "gwycraft:gems"
     }
   },
+  "pattern": [
+    " X",
+    "X "
+  ],
   "result": {
     "item": "gwycraft:gem_shears"
-  }
+  },
+  "show_notification": true
 }

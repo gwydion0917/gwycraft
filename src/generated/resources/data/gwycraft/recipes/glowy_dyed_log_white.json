@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    },
+    {
+      "item": "gwycraft:white_dyed_log"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "gwycraft:white_glowy_dyed_log"
+  }
+}

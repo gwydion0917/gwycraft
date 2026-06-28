@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX",
-    "XX"
-  ],
+  "category": "building",
   "key": {
     "X": {
       "item": "gwycraft:blue_clay_brick"
     }
   },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
   "result": {
     "item": "gwycraft:blue_dyed_brick"
-  }
+  },
+  "show_notification": true
 }

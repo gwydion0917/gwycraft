@@ -1,8 +1,8 @@
 package gwydion0917.gwycraft.items;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShovelItem;
 
 /**
  * Gem shovel. Random enchant-on-craft is handled by GwycraftPlayerEvents.

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:gem_garnet"
@@ -12,7 +13,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:pink_dye",
-    "count": 4
+    "count": 4,
+    "item": "minecraft:pink_dye"
   }
 }

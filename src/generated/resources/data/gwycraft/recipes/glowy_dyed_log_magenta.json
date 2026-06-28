@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_log"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "gwycraft:magenta_glowy_dyed_log"
+  }
+}

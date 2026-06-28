@@ -1,16 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX",
-    "XX"
-  ],
+  "category": "building",
   "key": {
     "X": {
       "item": "gwycraft:red_glowy_dyed_stone"
     }
   },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
   "result": {
-    "item": "gwycraft:red_glowy_dyed_stone_brick",
-    "count": 4
-  }
+    "count": 4,
+    "item": "gwycraft:red_glowy_dyed_stone_brick"
+  },
+  "show_notification": true
 }

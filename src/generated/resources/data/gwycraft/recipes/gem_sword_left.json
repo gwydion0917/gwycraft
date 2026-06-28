@@ -1,10 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X  ",
-    "X  ",
-    "Y  "
-  ],
+  "category": "equipment",
   "key": {
     "X": {
       "tag": "gwycraft:gems"
@@ -13,7 +9,13 @@
       "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    "X  ",
+    "X  ",
+    "Y  "
+  ],
   "result": {
     "item": "gwycraft:gem_sword"
-  }
+  },
+  "show_notification": true
 }

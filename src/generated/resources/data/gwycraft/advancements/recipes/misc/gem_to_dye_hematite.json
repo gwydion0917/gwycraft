@@ -1,26 +1,23 @@
 {
   "parent": "minecraft:recipes/root",
-  "rewards": {
-    "recipes": [
-      "gwycraft:gem_to_dye_hematite"
-    ]
-  },
   "criteria": {
     "has_gem": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "gwycraft:gem_hematite"
+            "items": [
+              "gwycraft:gem_hematite"
+            ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
       "conditions": {
         "recipe": "gwycraft:gem_to_dye_hematite"
-      }
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
@@ -28,5 +25,11 @@
       "has_gem",
       "has_the_recipe"
     ]
-  ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gwycraft:gem_to_dye_hematite"
+    ]
+  },
+  "sends_telemetry_event": false
 }

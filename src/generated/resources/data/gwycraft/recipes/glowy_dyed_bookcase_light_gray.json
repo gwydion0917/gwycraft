@@ -1,10 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "###",
-    "XXX",
-    "###"
-  ],
+  "category": "building",
   "key": {
     "#": {
       "item": "gwycraft:light_gray_glowy_dyed_plank"
@@ -13,7 +9,13 @@
       "item": "minecraft:book"
     }
   },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
   "result": {
     "item": "gwycraft:light_gray_glowy_dyed_bookcase"
-  }
+  },
+  "show_notification": true
 }

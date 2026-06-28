@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XX",
-    "XX"
-  ],
+  "category": "misc",
   "key": {
     "X": {
       "item": "gwycraft:gem_quartz"
     }
   },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
   "result": {
     "item": "gwycraft:compressed_gem_quartz"
-  }
+  },
+  "show_notification": true
 }

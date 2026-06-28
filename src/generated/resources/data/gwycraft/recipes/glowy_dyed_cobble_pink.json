@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building",
   "ingredients": [
     {
       "item": "minecraft:glowstone"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:pink_glowy_dyed_cobblestone",
-    "count": 8
+    "count": 8,
+    "item": "gwycraft:pink_glowy_dyed_cobblestone"
   }
 }

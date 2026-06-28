@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "gwycraft:gem_citrine"
@@ -12,7 +13,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:orange_dye",
-    "count": 4
+    "count": 4,
+    "item": "minecraft:orange_dye"
   }
 }

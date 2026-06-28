@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:black_dye"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:black_mud_ball",
-    "count": 16
+    "count": 16,
+    "item": "gwycraft:black_mud_ball"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gwycraft:light_blue_plain_wide_pillar"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "gwycraft:blocks/light_blue_plain_wide_pillar"
+}

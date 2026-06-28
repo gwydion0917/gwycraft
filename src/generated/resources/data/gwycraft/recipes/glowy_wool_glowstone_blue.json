@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building",
   "ingredients": [
     {
       "item": "minecraft:glowstone"
@@ -15,10 +16,22 @@
     },
     {
       "item": "minecraft:blue_wool"
+    },
+    {
+      "item": "minecraft:blue_wool"
+    },
+    {
+      "item": "minecraft:blue_wool"
+    },
+    {
+      "item": "minecraft:blue_wool"
+    },
+    {
+      "item": "minecraft:blue_wool"
     }
   ],
   "result": {
-    "item": "gwycraft:blue_glowy_wool",
-    "count": 4
+    "count": 8,
+    "item": "gwycraft:blue_glowy_wool"
   }
 }

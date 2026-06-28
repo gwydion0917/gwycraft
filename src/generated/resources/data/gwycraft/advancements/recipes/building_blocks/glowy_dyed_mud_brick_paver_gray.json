@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_g_mud_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gwycraft:gray_glowy_dyed_mud_brick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gwycraft:glowy_dyed_mud_brick_paver_gray"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_g_mud_brick",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gwycraft:glowy_dyed_mud_brick_paver_gray"
+    ]
+  },
+  "sends_telemetry_event": false
+}

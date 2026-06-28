@@ -1,17 +1,17 @@
 package gwydion0917.gwycraft.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 /**
  * Dyed leaf block — non-opaque, uses cutout render layer.
- * Does NOT decay (unlike vanilla LeavesBlock). Replaces BlockDyedLeaf.
- * Render layer (cutout_mipped) is set in ClientSetup via RenderTypeLookup.
+ * Does NOT decay (unlike vanilla LeavesBlock).
+ * Render layer (cutout_mipped) is set in ClientSetup via ItemBlockRenderTypes.
  */
 public class GwyLeafBlock extends Block {
 
@@ -25,12 +25,12 @@ public class GwyLeafBlock extends Block {
     }
 
     @Override
-    public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 
     @Override
-    public VoxelShape getVisualShape(BlockState state, IBlockReader reader, BlockPos pos, ISelectionContext ctx) {
-        return VoxelShapes.empty();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter reader, BlockPos pos, CollisionContext ctx) {
+        return Shapes.empty();
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gwycraft:white_fancy_greek_bottom"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "gwycraft:blocks/white_fancy_greek_bottom"
+}

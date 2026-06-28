@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:lime_dye"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:lime_mud_ball",
-    "count": 16
+    "count": 16,
+    "item": "gwycraft:lime_mud_ball"
   }
 }

@@ -1,16 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X",
-    "X"
-  ],
+  "category": "misc",
   "key": {
     "X": {
       "item": "gwycraft:black_dyed_plank"
     }
   },
+  "pattern": [
+    "X",
+    "X"
+  ],
   "result": {
-    "item": "gwycraft:black_dyed_stick",
-    "count": 4
-  }
+    "count": 4,
+    "item": "gwycraft:black_dyed_stick"
+  },
+  "show_notification": true
 }

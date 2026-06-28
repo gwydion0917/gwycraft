@@ -1,19 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "gwycraft:cyan_dyed_stick"
+    },
+    "X": {
+      "item": "minecraft:coal"
+    }
+  },
   "pattern": [
     "X",
     "#"
   ],
-  "key": {
-    "X": {
-      "item": "minecraft:coal"
-    },
-    "#": {
-      "item": "gwycraft:cyan_dyed_stick"
-    }
-  },
   "result": {
-    "item": "gwycraft:torch_cyan",
-    "count": 4
-  }
+    "count": 4,
+    "item": "gwycraft:torch_cyan"
+  },
+  "show_notification": true
 }

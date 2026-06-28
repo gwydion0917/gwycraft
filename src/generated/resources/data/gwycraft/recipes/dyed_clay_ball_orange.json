@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:orange_dye"
@@ -30,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "gwycraft:orange_clay_ball",
-    "count": 8
+    "count": 8,
+    "item": "gwycraft:orange_clay_ball"
   }
 }
