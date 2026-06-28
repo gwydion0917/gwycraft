@@ -121,6 +121,32 @@ public class ModLanguageProvider extends LanguageProvider {
             addBlock(ModBlocks.FANCY_WIDE_TOP.get(c), dn + " Fancy Wide Top");
             addBlock(ModBlocks.FANCY_SLAB.get(c), dn + " Fancy Slab");
 
+            // Glowing pillar block sets
+            addBlock(ModBlocks.GLOWY_PLAIN_GREEK_BOTTOM.get(c), dn + " Glowing Plain Greek Bottom");
+            addBlock(ModBlocks.GLOWY_PLAIN_GREEK_PILLAR.get(c), dn + " Glowing Plain Greek Pillar");
+            addBlock(ModBlocks.GLOWY_PLAIN_GREEK_TOP.get(c), dn + " Glowing Plain Greek Top");
+            addBlock(ModBlocks.GLOWY_PLAIN_PILLAR_BOTTOM.get(c), dn + " Glowing Plain Pillar Bottom");
+            addBlock(ModBlocks.GLOWY_PLAIN_PILLAR.get(c), dn + " Glowing Plain Pillar");
+            addBlock(ModBlocks.GLOWY_PLAIN_PILLAR_TOP.get(c), dn + " Glowing Plain Pillar Top");
+            addBlock(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_BOTTOM.get(c), dn + " Glowing Plain Wide Pillar Bottom");
+            addBlock(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR.get(c), dn + " Glowing Plain Wide Pillar");
+            addBlock(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_TOP.get(c), dn + " Glowing Plain Wide Pillar Top");
+            addBlock(ModBlocks.GLOWY_GREEK_PILLAR_BOTTOM.get(c), dn + " Glowing Greek Pillar Bottom");
+            addBlock(ModBlocks.GLOWY_GREEK_PILLAR_TOP.get(c), dn + " Glowing Greek Pillar Top");
+            addBlock(ModBlocks.GLOWY_GREEK_WIDE_PILLAR_BOTTOM.get(c), dn + " Glowing Greek Wide Pillar Bottom");
+            addBlock(ModBlocks.GLOWY_GREEK_WIDE_PILLAR_TOP.get(c), dn + " Glowing Greek Wide Pillar Top");
+            addBlock(ModBlocks.GLOWY_GREEK2_PILLAR_BOTTOM.get(c), dn + " Glowing Greek 2 Pillar Bottom");
+            addBlock(ModBlocks.GLOWY_GREEK2_PILLAR_TOP.get(c), dn + " Glowing Greek 2 Pillar Top");
+            addBlock(ModBlocks.GLOWY_PLAIN_SLAB.get(c), dn + " Glowing Plain Slab");
+            addBlock(ModBlocks.GLOWY_GREEK_SLAB.get(c), dn + " Glowing Greek Slab");
+            addBlock(ModBlocks.GLOWY_FANCY_BOTTOM.get(c), dn + " Glowing Fancy Bottom");
+            addBlock(ModBlocks.GLOWY_FANCY_TOP.get(c), dn + " Glowing Fancy Top");
+            addBlock(ModBlocks.GLOWY_FANCY_GREEK_BOTTOM.get(c), dn + " Glowing Fancy Greek Bottom");
+            addBlock(ModBlocks.GLOWY_FANCY_GREEK_TOP.get(c), dn + " Glowing Fancy Greek Top");
+            addBlock(ModBlocks.GLOWY_FANCY_WIDE_BOTTOM.get(c), dn + " Glowing Fancy Wide Bottom");
+            addBlock(ModBlocks.GLOWY_FANCY_WIDE_TOP.get(c), dn + " Glowing Fancy Wide Top");
+            addBlock(ModBlocks.GLOWY_FANCY_SLAB.get(c), dn + " Glowing Fancy Slab");
+
             // Torches
             addItem(ModItems.TORCH_ITEMS.get(c), dn + " Torch");
 

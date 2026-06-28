@@ -1,7 +1,7 @@
-// 1.20.1	2026-06-28T08:39:12.662119673	GwyCraft Item Tags
+// 1.20.1	2026-06-28T11:45:20.879472078	GwyCraft Item Tags
 07d45c87ec39b69bc36d780885e6086100655220 data/gwycraft/tags/items/gems.json
 a1d0b64b3f1135386383471775f13562407779ef data/minecraft/tags/items/leaves.json
 2c3662959447c3e9fcc62c8004effe1f8d9cb822 data/minecraft/tags/items/planks.json
-a66f36268c55819bf56544182f1cd081358b158c data/minecraft/tags/items/slabs.json
+0639ce45e1ccf6a2f653243d6e0fd09bfc35a5ea data/minecraft/tags/items/slabs.json
 973fd7430688d4d1edb9c517ff440098e8867290 data/minecraft/tags/items/stone_crafting_materials.json
 b77334fa0f2d312036c43bf736d7ef2ac2a407a1 data/minecraft/tags/items/walls.json

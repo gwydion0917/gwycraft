@@ -299,6 +299,158 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_leaf", has(leaf))
                     .save(out, grl("glowy_dyed_leaf_" + s));
 
+            // ── Pillar stonecutter (1 dyed_stone → 1 pillar piece) ────────
+            Block plainPillarBot   = ModBlocks.PLAIN_PILLAR_BOTTOM.get(c).get();
+            Block plainPillar      = ModBlocks.PLAIN_PILLAR.get(c).get();
+            Block plainPillarTop   = ModBlocks.PLAIN_PILLAR_TOP.get(c).get();
+            Block plainGrkBot      = ModBlocks.PLAIN_GREEK_BOTTOM.get(c).get();
+            Block plainGrkPillar   = ModBlocks.PLAIN_GREEK_PILLAR.get(c).get();
+            Block plainGrkTop      = ModBlocks.PLAIN_GREEK_TOP.get(c).get();
+            Block plainWidePilBot  = ModBlocks.PLAIN_WIDE_PILLAR_BOTTOM.get(c).get();
+            Block plainWidePil     = ModBlocks.PLAIN_WIDE_PILLAR.get(c).get();
+            Block plainWidePilTop  = ModBlocks.PLAIN_WIDE_PILLAR_TOP.get(c).get();
+            Block grkPilBot        = ModBlocks.GREEK_PILLAR_BOTTOM.get(c).get();
+            Block grkPilTop        = ModBlocks.GREEK_PILLAR_TOP.get(c).get();
+            Block grkWidePilBot    = ModBlocks.GREEK_WIDE_PILLAR_BOTTOM.get(c).get();
+            Block grkWidePilTop    = ModBlocks.GREEK_WIDE_PILLAR_TOP.get(c).get();
+            Block grk2PilBot       = ModBlocks.GREEK2_PILLAR_BOTTOM.get(c).get();
+            Block grk2PilTop       = ModBlocks.GREEK2_PILLAR_TOP.get(c).get();
+            Block plainSlab        = ModBlocks.PLAIN_SLAB.get(c).get();
+            Block grkSlab          = ModBlocks.GREEK_SLAB.get(c).get();
+            Block fancyBot         = ModBlocks.FANCY_BOTTOM.get(c).get();
+            Block fancyTop         = ModBlocks.FANCY_TOP.get(c).get();
+            Block fancyGrkBot      = ModBlocks.FANCY_GREEK_BOTTOM.get(c).get();
+            Block fancyGrkTop      = ModBlocks.FANCY_GREEK_TOP.get(c).get();
+            Block fancyWideBot     = ModBlocks.FANCY_WIDE_BOTTOM.get(c).get();
+            Block fancyWideTop     = ModBlocks.FANCY_WIDE_TOP.get(c).get();
+            Block fancySlab        = ModBlocks.FANCY_SLAB.get(c).get();
+
+            Block gPlainPillarBot  = ModBlocks.GLOWY_PLAIN_PILLAR_BOTTOM.get(c).get();
+            Block gPlainPillar     = ModBlocks.GLOWY_PLAIN_PILLAR.get(c).get();
+            Block gPlainPillarTop  = ModBlocks.GLOWY_PLAIN_PILLAR_TOP.get(c).get();
+            Block gPlainGrkBot     = ModBlocks.GLOWY_PLAIN_GREEK_BOTTOM.get(c).get();
+            Block gPlainGrkPillar  = ModBlocks.GLOWY_PLAIN_GREEK_PILLAR.get(c).get();
+            Block gPlainGrkTop     = ModBlocks.GLOWY_PLAIN_GREEK_TOP.get(c).get();
+            Block gPlainWidePilBot = ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_BOTTOM.get(c).get();
+            Block gPlainWidePil    = ModBlocks.GLOWY_PLAIN_WIDE_PILLAR.get(c).get();
+            Block gPlainWidePilTop = ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_TOP.get(c).get();
+            Block gGrkPilBot       = ModBlocks.GLOWY_GREEK_PILLAR_BOTTOM.get(c).get();
+            Block gGrkPilTop       = ModBlocks.GLOWY_GREEK_PILLAR_TOP.get(c).get();
+            Block gGrkWidePilBot   = ModBlocks.GLOWY_GREEK_WIDE_PILLAR_BOTTOM.get(c).get();
+            Block gGrkWidePilTop   = ModBlocks.GLOWY_GREEK_WIDE_PILLAR_TOP.get(c).get();
+            Block gGrk2PilBot      = ModBlocks.GLOWY_GREEK2_PILLAR_BOTTOM.get(c).get();
+            Block gGrk2PilTop      = ModBlocks.GLOWY_GREEK2_PILLAR_TOP.get(c).get();
+            Block gPlainSlab       = ModBlocks.GLOWY_PLAIN_SLAB.get(c).get();
+            Block gGrkSlab         = ModBlocks.GLOWY_GREEK_SLAB.get(c).get();
+            Block gFancyBot        = ModBlocks.GLOWY_FANCY_BOTTOM.get(c).get();
+            Block gFancyTop        = ModBlocks.GLOWY_FANCY_TOP.get(c).get();
+            Block gFancyGrkBot     = ModBlocks.GLOWY_FANCY_GREEK_BOTTOM.get(c).get();
+            Block gFancyGrkTop     = ModBlocks.GLOWY_FANCY_GREEK_TOP.get(c).get();
+            Block gFancyWideBot    = ModBlocks.GLOWY_FANCY_WIDE_BOTTOM.get(c).get();
+            Block gFancyWideTop    = ModBlocks.GLOWY_FANCY_WIDE_TOP.get(c).get();
+            Block gFancySlab       = ModBlocks.GLOWY_FANCY_SLAB.get(c).get();
+
+            Ingredient stoneIng  = Ingredient.of(stone);
+            Ingredient gStoneIng = Ingredient.of(gStone);
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainPillarBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainPillar)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_pillar_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainPillarTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainGrkBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_greek_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainGrkPillar)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_greek_pillar_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainGrkTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_greek_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainWidePilBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_wide_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainWidePil)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_wide_pillar_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainWidePilTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_wide_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, grkPilBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_greek_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, grkPilTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_greek_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, grkWidePilBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_greek_wide_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, grkWidePilTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_greek_wide_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, grk2PilBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_greek2_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, grk2PilTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_greek2_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, plainSlab, 2)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_plain_slab_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, grkSlab, 2)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_greek_slab_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, fancyBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_fancy_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, fancyTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_fancy_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, fancyGrkBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_fancy_greek_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, fancyGrkTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_fancy_greek_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, fancyWideBot)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_fancy_wide_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, fancyWideTop)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_fancy_wide_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(stoneIng, RecipeCategory.BUILDING_BLOCKS, fancySlab, 2)
+                    .unlockedBy("has_stone", has(stone)).save(out, grl("stonecutter_fancy_slab_" + s));
+
+            // ── Glowy pillar stonecutter (1 glowy_dyed_stone → 1 glowy pillar piece) ─
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainPillarBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainPillar)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_pillar_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainPillarTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainGrkBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_greek_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainGrkPillar)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_greek_pillar_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainGrkTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_greek_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainWidePilBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_wide_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainWidePil)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_wide_pillar_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainWidePilTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_wide_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gGrkPilBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_greek_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gGrkPilTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_greek_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gGrkWidePilBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_greek_wide_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gGrkWidePilTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_greek_wide_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gGrk2PilBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_greek2_pillar_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gGrk2PilTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_greek2_pillar_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gPlainSlab, 2)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_plain_slab_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gGrkSlab, 2)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_greek_slab_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gFancyBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_fancy_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gFancyTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_fancy_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gFancyGrkBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_fancy_greek_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gFancyGrkTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_fancy_greek_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gFancyWideBot)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_fancy_wide_bottom_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gFancyWideTop)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_fancy_wide_top_" + s));
+            SingleItemRecipeBuilder.stonecutting(gStoneIng, RecipeCategory.BUILDING_BLOCKS, gFancySlab, 2)
+                    .unlockedBy("has_g_stone", has(gStone)).save(out, grl("stonecutter_glowy_fancy_slab_" + s));
+
             // ── Smelting ───────────────────────────────────────────────────
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(cobble), RecipeCategory.BUILDING_BLOCKS, stone, 0.1F, 200)
                     .unlockedBy("has_cobble", has(cobble)).save(out, grl("smelt_cobble_to_stone_" + s));

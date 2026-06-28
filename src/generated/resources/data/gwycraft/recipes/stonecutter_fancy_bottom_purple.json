@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "gwycraft:purple_dyed_stone"
+  },
+  "result": "gwycraft:purple_fancy_bottom"
+}

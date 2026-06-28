@@ -121,6 +121,30 @@ public class ModLootTableProvider extends LootTableProvider {
             selfDropDyeMap(ModBlocks.FANCY_WIDE_BOTTOM);
             selfDropDyeMap(ModBlocks.FANCY_WIDE_TOP);
             slabDropDyeMap(ModBlocks.FANCY_SLAB);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_GREEK_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_GREEK_PILLAR);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_GREEK_TOP);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_PILLAR_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_PILLAR);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_PILLAR_TOP);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR);
+            selfDropDyeMap(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_TOP);
+            selfDropDyeMap(ModBlocks.GLOWY_GREEK_PILLAR_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_GREEK_PILLAR_TOP);
+            selfDropDyeMap(ModBlocks.GLOWY_GREEK_WIDE_PILLAR_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_GREEK_WIDE_PILLAR_TOP);
+            selfDropDyeMap(ModBlocks.GLOWY_GREEK2_PILLAR_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_GREEK2_PILLAR_TOP);
+            slabDropDyeMap(ModBlocks.GLOWY_PLAIN_SLAB);
+            slabDropDyeMap(ModBlocks.GLOWY_GREEK_SLAB);
+            selfDropDyeMap(ModBlocks.GLOWY_FANCY_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_FANCY_TOP);
+            selfDropDyeMap(ModBlocks.GLOWY_FANCY_GREEK_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_FANCY_GREEK_TOP);
+            selfDropDyeMap(ModBlocks.GLOWY_FANCY_WIDE_BOTTOM);
+            selfDropDyeMap(ModBlocks.GLOWY_FANCY_WIDE_TOP);
+            slabDropDyeMap(ModBlocks.GLOWY_FANCY_SLAB);
 
             // Torches: floor drops itself; wall torch drops floor torch item
             for (DyeColor c : DyeColor.values()) {

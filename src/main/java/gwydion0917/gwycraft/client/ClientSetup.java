@@ -88,7 +88,31 @@ public class ClientSetup {
                         ModBlocks.FANCY_GREEK_TOP,
                         ModBlocks.FANCY_WIDE_BOTTOM,
                         ModBlocks.FANCY_WIDE_TOP,
-                        ModBlocks.FANCY_SLAB
+                        ModBlocks.FANCY_SLAB,
+                        ModBlocks.GLOWY_PLAIN_GREEK_BOTTOM,
+                        ModBlocks.GLOWY_PLAIN_GREEK_PILLAR,
+                        ModBlocks.GLOWY_PLAIN_GREEK_TOP,
+                        ModBlocks.GLOWY_PLAIN_PILLAR_BOTTOM,
+                        ModBlocks.GLOWY_PLAIN_PILLAR,
+                        ModBlocks.GLOWY_PLAIN_PILLAR_TOP,
+                        ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_BOTTOM,
+                        ModBlocks.GLOWY_PLAIN_WIDE_PILLAR,
+                        ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_TOP,
+                        ModBlocks.GLOWY_GREEK_PILLAR_BOTTOM,
+                        ModBlocks.GLOWY_GREEK_PILLAR_TOP,
+                        ModBlocks.GLOWY_GREEK_WIDE_PILLAR_BOTTOM,
+                        ModBlocks.GLOWY_GREEK_WIDE_PILLAR_TOP,
+                        ModBlocks.GLOWY_GREEK2_PILLAR_BOTTOM,
+                        ModBlocks.GLOWY_GREEK2_PILLAR_TOP,
+                        ModBlocks.GLOWY_PLAIN_SLAB,
+                        ModBlocks.GLOWY_GREEK_SLAB,
+                        ModBlocks.GLOWY_FANCY_BOTTOM,
+                        ModBlocks.GLOWY_FANCY_TOP,
+                        ModBlocks.GLOWY_FANCY_GREEK_BOTTOM,
+                        ModBlocks.GLOWY_FANCY_GREEK_TOP,
+                        ModBlocks.GLOWY_FANCY_WIDE_BOTTOM,
+                        ModBlocks.GLOWY_FANCY_WIDE_TOP,
+                        ModBlocks.GLOWY_FANCY_SLAB
                 )
         );
     }
@@ -121,7 +145,31 @@ public class ClientSetup {
                     ModBlocks.FANCY_GREEK_TOP.get(c).get().asItem(),
                     ModBlocks.FANCY_WIDE_BOTTOM.get(c).get().asItem(),
                     ModBlocks.FANCY_WIDE_TOP.get(c).get().asItem(),
-                    ModBlocks.FANCY_SLAB.get(c).get().asItem()
+                    ModBlocks.FANCY_SLAB.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_GREEK_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_GREEK_PILLAR.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_GREEK_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_PILLAR_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_PILLAR.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_PILLAR_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_WIDE_PILLAR.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_GREEK_PILLAR_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_GREEK_PILLAR_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_GREEK_WIDE_PILLAR_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_GREEK_WIDE_PILLAR_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_GREEK2_PILLAR_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_GREEK2_PILLAR_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_PLAIN_SLAB.get(c).get().asItem(),
+                    ModBlocks.GLOWY_GREEK_SLAB.get(c).get().asItem(),
+                    ModBlocks.GLOWY_FANCY_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_FANCY_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_FANCY_GREEK_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_FANCY_GREEK_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_FANCY_WIDE_BOTTOM.get(c).get().asItem(),
+                    ModBlocks.GLOWY_FANCY_WIDE_TOP.get(c).get().asItem(),
+                    ModBlocks.GLOWY_FANCY_SLAB.get(c).get().asItem()
             );
         }
     }
@@ -129,12 +177,12 @@ public class ClientSetup {
     // ── Render layers ────────────────────────────────────────────────────────
 
     private static void setRenderLayers() {
-        // Glass → cutout (so panes look correct)
+        // Glass → translucent (alpha=128 center pixels need real transparency)
         for (RegistryObject<Block> ro : ModBlocks.DYED_GLASS.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.translucent());
         }
         for (RegistryObject<Block> ro : ModBlocks.GLOWY_DYED_GLASS.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.translucent());
         }
 
         // Leaves → cutout_mipped (mipmapped transparency)

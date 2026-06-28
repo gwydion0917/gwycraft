@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "gwycraft:magenta_dyed_stone"
+  },
+  "result": "gwycraft:magenta_plain_wide_pillar_bottom"
+}

@@ -112,7 +112,31 @@ public class ModTagsProvider {
                         ModBlocks.FANCY_GREEK_TOP.get(c).get(),
                         ModBlocks.FANCY_WIDE_BOTTOM.get(c).get(),
                         ModBlocks.FANCY_WIDE_TOP.get(c).get(),
-                        ModBlocks.FANCY_SLAB.get(c).get());
+                        ModBlocks.FANCY_SLAB.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_GREEK_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_GREEK_PILLAR.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_GREEK_TOP.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_PILLAR_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_PILLAR.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_PILLAR_TOP.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_WIDE_PILLAR.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_TOP.get(c).get(),
+                        ModBlocks.GLOWY_GREEK_PILLAR_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_GREEK_PILLAR_TOP.get(c).get(),
+                        ModBlocks.GLOWY_GREEK_WIDE_PILLAR_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_GREEK_WIDE_PILLAR_TOP.get(c).get(),
+                        ModBlocks.GLOWY_GREEK2_PILLAR_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_GREEK2_PILLAR_TOP.get(c).get(),
+                        ModBlocks.GLOWY_PLAIN_SLAB.get(c).get(),
+                        ModBlocks.GLOWY_GREEK_SLAB.get(c).get(),
+                        ModBlocks.GLOWY_FANCY_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_FANCY_TOP.get(c).get(),
+                        ModBlocks.GLOWY_FANCY_GREEK_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_FANCY_GREEK_TOP.get(c).get(),
+                        ModBlocks.GLOWY_FANCY_WIDE_BOTTOM.get(c).get(),
+                        ModBlocks.GLOWY_FANCY_WIDE_TOP.get(c).get(),
+                        ModBlocks.GLOWY_FANCY_SLAB.get(c).get());
             }
 
             // ── Slabs ───────────────────────────────────────────────────────
@@ -120,7 +144,10 @@ public class ModTagsProvider {
             for (DyeColor c : DyeColor.values()) {
                 slabs.add(ModBlocks.PLAIN_SLAB.get(c).get(),
                            ModBlocks.GREEK_SLAB.get(c).get(),
-                           ModBlocks.FANCY_SLAB.get(c).get());
+                           ModBlocks.FANCY_SLAB.get(c).get(),
+                           ModBlocks.GLOWY_PLAIN_SLAB.get(c).get(),
+                           ModBlocks.GLOWY_GREEK_SLAB.get(c).get(),
+                           ModBlocks.GLOWY_FANCY_SLAB.get(c).get());
             }
             for (EnumGemType gem : EnumGemType.values()) {
                 pickaxe.add(ModBlocks.GEM_ORE.get(gem).get(),

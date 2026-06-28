@@ -405,6 +405,63 @@ public class ModBlocks {
     public static final Map<DyeColor, RegistryObject<Block>> FANCY_SLAB =
             dyeTintedSlabBlocks("fancy_slab", stoneProps(1.5F, 6.0F));
 
+    // ── Glowing tinted pillar blocks ─────────────────────────────────────────
+
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_GREEK_BOTTOM =
+            dyeTintedBlocks("glowy_plain_greek_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_GREEK_PILLAR =
+            dyeTintedBlocks("glowy_plain_greek_pillar", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_GREEK_TOP =
+            dyeTintedBlocks("glowy_plain_greek_top", glowyStoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_PILLAR_BOTTOM =
+            dyeTintedBlocks("glowy_plain_pillar_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_PILLAR =
+            dyeTintedBlocks("glowy_plain_pillar", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_PILLAR_TOP =
+            dyeTintedBlocks("glowy_plain_pillar_top", glowyStoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_WIDE_PILLAR_BOTTOM =
+            dyeTintedBlocks("glowy_plain_wide_pillar_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_WIDE_PILLAR =
+            dyeTintedBlocks("glowy_plain_wide_pillar", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_WIDE_PILLAR_TOP =
+            dyeTintedBlocks("glowy_plain_wide_pillar_top", glowyStoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_GREEK_PILLAR_BOTTOM =
+            dyeTintedBlocks("glowy_greek_pillar_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_GREEK_PILLAR_TOP =
+            dyeTintedBlocks("glowy_greek_pillar_top", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_GREEK_WIDE_PILLAR_BOTTOM =
+            dyeTintedBlocks("glowy_greek_wide_pillar_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_GREEK_WIDE_PILLAR_TOP =
+            dyeTintedBlocks("glowy_greek_wide_pillar_top", glowyStoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_GREEK2_PILLAR_BOTTOM =
+            dyeTintedBlocks("glowy_greek2_pillar_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_GREEK2_PILLAR_TOP =
+            dyeTintedBlocks("glowy_greek2_pillar_top", glowyStoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_PLAIN_SLAB =
+            dyeTintedSlabBlocks("glowy_plain_slab", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_GREEK_SLAB =
+            dyeTintedSlabBlocks("glowy_greek_slab", glowyStoneProps(1.5F, 6.0F));
+
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_FANCY_BOTTOM =
+            dyeTintedBlocks("glowy_fancy_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_FANCY_TOP =
+            dyeTintedBlocks("glowy_fancy_top", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_FANCY_GREEK_BOTTOM =
+            dyeTintedBlocks("glowy_fancy_greek_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_FANCY_GREEK_TOP =
+            dyeTintedBlocks("glowy_fancy_greek_top", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_FANCY_WIDE_BOTTOM =
+            dyeTintedBlocks("glowy_fancy_wide_bottom", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_FANCY_WIDE_TOP =
+            dyeTintedBlocks("glowy_fancy_wide_top", glowyStoneProps(1.5F, 6.0F));
+    public static final Map<DyeColor, RegistryObject<Block>> GLOWY_FANCY_SLAB =
+            dyeTintedSlabBlocks("glowy_fancy_slab", glowyStoneProps(1.5F, 6.0F));
+
     // ── Torches ──────────────────────────────────────────────────────────────
     // Each color: one floor TorchBlock + one WallTorchBlock. One item per color.
 

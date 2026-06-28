@@ -198,6 +198,31 @@ public class ModItems {
         registerBlockItems(ModBlocks.FANCY_WIDE_TOP);
         registerBlockItems(ModBlocks.FANCY_SLAB);
 
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_GREEK_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_GREEK_PILLAR);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_GREEK_TOP);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_PILLAR_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_PILLAR);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_PILLAR_TOP);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_WIDE_PILLAR_TOP);
+        registerBlockItems(ModBlocks.GLOWY_GREEK_PILLAR_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_GREEK_PILLAR_TOP);
+        registerBlockItems(ModBlocks.GLOWY_GREEK_WIDE_PILLAR_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_GREEK_WIDE_PILLAR_TOP);
+        registerBlockItems(ModBlocks.GLOWY_GREEK2_PILLAR_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_GREEK2_PILLAR_TOP);
+        registerBlockItems(ModBlocks.GLOWY_PLAIN_SLAB);
+        registerBlockItems(ModBlocks.GLOWY_GREEK_SLAB);
+        registerBlockItems(ModBlocks.GLOWY_FANCY_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_FANCY_TOP);
+        registerBlockItems(ModBlocks.GLOWY_FANCY_GREEK_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_FANCY_GREEK_TOP);
+        registerBlockItems(ModBlocks.GLOWY_FANCY_WIDE_BOTTOM);
+        registerBlockItems(ModBlocks.GLOWY_FANCY_WIDE_TOP);
+        registerBlockItems(ModBlocks.GLOWY_FANCY_SLAB);
+
         registerBlockItems(ModBlocks.GEM_ORE);
         registerBlockItems(ModBlocks.COMPRESSED_GEM);
     }
