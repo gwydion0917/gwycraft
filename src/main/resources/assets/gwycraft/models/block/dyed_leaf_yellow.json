@@ -1,4 +1,5 @@
 {
+    "render_type": "minecraft:cutout_mipped",
     "parent": "block/cube_all",
     "textures": {
         "all": "gwycraft:block/leaf_yellow"

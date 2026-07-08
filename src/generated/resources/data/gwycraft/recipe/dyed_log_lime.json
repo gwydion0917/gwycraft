@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:lime_dye"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    },
+    {
+      "tag": "minecraft:logs_that_burn"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gwycraft:lime_dyed_log"
+  }
+}

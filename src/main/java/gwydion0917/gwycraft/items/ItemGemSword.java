@@ -9,7 +9,8 @@ import net.minecraft.world.item.SwordItem;
  */
 public class ItemGemSword extends SwordItem {
     public ItemGemSword(Item.Properties props) {
-        super(GwyItemTier.INSTANCE, 3, -2.4F, props);
+        super(GwyItemTier.INSTANCE,
+                props.attributes(SwordItem.createAttributes(GwyItemTier.INSTANCE, 3, -2.4F)));
     }
 
     @Override

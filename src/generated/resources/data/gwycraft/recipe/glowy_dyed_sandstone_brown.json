@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    },
+    {
+      "item": "gwycraft:brown_dyed_sandstone"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gwycraft:brown_glowy_dyed_sandstone"
+  }
+}

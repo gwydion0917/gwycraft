@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "gwycraft:purple_dyed_stone"
+  },
+  "result": {
+    "count": 1,
+    "id": "gwycraft:purple_plain_wide_pillar"
+  }
+}

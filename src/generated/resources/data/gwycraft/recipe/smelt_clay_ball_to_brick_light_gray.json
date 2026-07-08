@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "gwycraft:light_gray_clay_ball"
+  },
+  "result": {
+    "count": 1,
+    "id": "gwycraft:light_gray_clay_brick"
+  }
+}

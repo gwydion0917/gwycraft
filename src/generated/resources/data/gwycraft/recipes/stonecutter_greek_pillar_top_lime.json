@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "gwycraft:lime_dyed_stone"
-  },
-  "result": "gwycraft:lime_greek_pillar_top"
-}

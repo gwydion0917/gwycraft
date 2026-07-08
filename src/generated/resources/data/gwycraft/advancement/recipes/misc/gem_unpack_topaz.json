@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gem_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gwycraft:compressed_gem_topaz"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gwycraft:gem_unpack_topaz"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gem_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gwycraft:gem_unpack_topaz"
+    ]
+  }
+}

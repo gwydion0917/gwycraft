@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_g_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gwycraft:orange_glowy_dyed_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gwycraft:glowy_dyed_stone_brick_orange"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_g_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gwycraft:glowy_dyed_stone_brick_orange"
+    ]
+  }
+}

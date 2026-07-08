@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:magenta_dyed_leaf"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gwycraft:magenta_glowy_dyed_leaf"
+  }
+}

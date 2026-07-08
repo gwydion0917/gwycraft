@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "gwycraft:lime_dyed_stone"
+  },
+  "result": {
+    "count": 1,
+    "id": "gwycraft:lime_plain_wide_pillar_top"
+  }
+}

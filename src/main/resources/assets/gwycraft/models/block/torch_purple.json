@@ -1,4 +1,5 @@
 {
+    "render_type": "minecraft:cutout",
     "parent": "block/torch",
     "textures": {
         "torch": "gwycraft:block/torch_purple"

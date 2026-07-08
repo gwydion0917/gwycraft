@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    },
+    {
+      "item": "gwycraft:green_dyed_leaf"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gwycraft:green_glowy_dyed_leaf"
+  }
+}

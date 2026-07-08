@@ -9,7 +9,8 @@ import net.minecraft.world.item.ItemStack;
  */
 public class ItemGemHoe extends HoeItem {
     public ItemGemHoe(Item.Properties props) {
-        super(GwyItemTier.INSTANCE, -2, -1.0F, props);
+        super(GwyItemTier.INSTANCE,
+                props.attributes(HoeItem.createAttributes(GwyItemTier.INSTANCE, -2.0F, -1.0F)));
     }
 
     @Override

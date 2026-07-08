@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "gwycraft:pink_dyed_cobblestone"
+    }
+  },
+  "pattern": [
+    "XX"
+  ],
+  "result": {
+    "count": 3,
+    "id": "gwycraft:pink_dyed_cobblestone_paver"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "gwycraft:white_dyed_stone"
+  },
+  "result": {
+    "count": 2,
+    "id": "gwycraft:white_greek_slab"
+  }
+}

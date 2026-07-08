@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    },
+    {
+      "item": "gwycraft:orange_dyed_plank"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gwycraft:orange_glowy_dyed_plank"
+  }
+}

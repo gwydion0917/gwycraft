@@ -3,11 +3,11 @@ package gwydion0917.gwycraft.registration;
 import gwydion0917.gwycraft.Gwycraft;
 import gwydion0917.gwycraft.enums.EnumGemType;
 import gwydion0917.gwycraft.items.*;
+import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.*;
 
@@ -21,7 +21,7 @@ import java.util.*;
 public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, Gwycraft.MOD_ID);
+            DeferredRegister.create(Registries.ITEM, Gwycraft.MOD_ID);
 
     // ── Common properties ────────────────────────────────────────────────────
 
@@ -33,9 +33,9 @@ public class ModItems {
 
     /** Register BlockItems for every entry in a block family map. */
     private static <K extends Enum<K>> void registerBlockItems(
-            Map<K, RegistryObject<net.minecraft.world.level.block.Block>> family) {
-        for (Map.Entry<K, RegistryObject<net.minecraft.world.level.block.Block>> e : family.entrySet()) {
-            RegistryObject<net.minecraft.world.level.block.Block> ro = e.getValue();
+            Map<K, DeferredHolder<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.Block>> family) {
+        for (Map.Entry<K, DeferredHolder<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.Block>> e : family.entrySet()) {
+            DeferredHolder<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.Block> ro = e.getValue();
             ITEMS.register(ro.getId().getPath(),
                     () -> new BlockItem(ro.get(), blockItemProps()));
         }
@@ -43,69 +43,72 @@ public class ModItems {
 
     // ── Torch items (one item per color places floor OR wall block) ───────────
 
-    public static final Map<DyeColor, RegistryObject<Item>> TORCH_ITEMS =
+    public static final Map<DyeColor, DeferredHolder<Item, Item>> TORCH_ITEMS =
             new EnumMap<>(DyeColor.class);
 
     static {
         for (DyeColor c : DyeColor.values()) {
-            RegistryObject<net.minecraft.world.level.block.Block> floorRO = ModBlocks.TORCH.get(c);
-            RegistryObject<net.minecraft.world.level.block.Block> wallRO  = ModBlocks.WALL_TORCH.get(c);
+            DeferredHolder<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.Block> floorRO = ModBlocks.TORCH.get(c);
+            DeferredHolder<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.Block> wallRO  = ModBlocks.WALL_TORCH.get(c);
             String name = "torch_" + c.getName();
-            RegistryObject<Item> item = ITEMS.register(name, () ->
-                    new GwyTorchItem(floorRO.get(), wallRO.get(), blockItemProps()));
-            ((EnumMap<DyeColor, RegistryObject<Item>>) TORCH_ITEMS).put(c, item);
+            // Vanilla item that places the standing block on top faces and the wall
+            // variant on side faces - same behaviour vanilla torches use.
+            DeferredHolder<Item, Item> item = ITEMS.register(name, () ->
+                    new StandingAndWallBlockItem(floorRO.get(), wallRO.get(),
+                            blockItemProps(), Direction.DOWN));
+            ((EnumMap<DyeColor, DeferredHolder<Item, Item>>) TORCH_ITEMS).put(c, item);
         }
     }
 
     // ── Gem items ─────────────────────────────────────────────────────────────
 
     /** 16 enchanted gem items, one per EnumGemType. */
-    public static final Map<EnumGemType, RegistryObject<Item>> GEM =
+    public static final Map<EnumGemType, DeferredHolder<Item, Item>> GEM =
             new EnumMap<>(EnumGemType.class);
 
     // ── Dyed standalone items ─────────────────────────────────────────────────
 
-    public static final Map<DyeColor, RegistryObject<Item>> CLAY_BALL  = new EnumMap<>(DyeColor.class);
-    public static final Map<DyeColor, RegistryObject<Item>> CLAY_BRICK  = new EnumMap<>(DyeColor.class);
-    public static final Map<DyeColor, RegistryObject<Item>> MUD_BALL    = new EnumMap<>(DyeColor.class);
-    public static final Map<DyeColor, RegistryObject<Item>> MUD_BRICK   = new EnumMap<>(DyeColor.class);
-    public static final Map<DyeColor, RegistryObject<Item>> DYED_STICK  = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredHolder<Item, Item>> CLAY_BALL  = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredHolder<Item, Item>> CLAY_BRICK  = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredHolder<Item, Item>> MUD_BALL    = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredHolder<Item, Item>> MUD_BRICK   = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredHolder<Item, Item>> DYED_STICK  = new EnumMap<>(DyeColor.class);
 
     static {
         for (EnumGemType gem : EnumGemType.values()) {
             String name = "gem_" + gem.getName();
-            ((EnumMap<EnumGemType, RegistryObject<Item>>) GEM).put(gem,
+            ((EnumMap<EnumGemType, DeferredHolder<Item, Item>>) GEM).put(gem,
                     ITEMS.register(name, () -> new Item(new Item.Properties())));
         }
         for (DyeColor c : DyeColor.values()) {
             final String col = c.getName();
             Item.Properties p = new Item.Properties();
-            ((EnumMap<DyeColor, RegistryObject<Item>>) CLAY_BALL).put(c,
+            ((EnumMap<DyeColor, DeferredHolder<Item, Item>>) CLAY_BALL).put(c,
                     ITEMS.register(col + "_clay_ball",  () -> new Item(p)));
-            ((EnumMap<DyeColor, RegistryObject<Item>>) CLAY_BRICK).put(c,
+            ((EnumMap<DyeColor, DeferredHolder<Item, Item>>) CLAY_BRICK).put(c,
                     ITEMS.register(col + "_clay_brick", () -> new Item(p)));
-            ((EnumMap<DyeColor, RegistryObject<Item>>) MUD_BALL).put(c,
+            ((EnumMap<DyeColor, DeferredHolder<Item, Item>>) MUD_BALL).put(c,
                     ITEMS.register(col + "_mud_ball",   () -> new Item(p)));
-            ((EnumMap<DyeColor, RegistryObject<Item>>) MUD_BRICK).put(c,
+            ((EnumMap<DyeColor, DeferredHolder<Item, Item>>) MUD_BRICK).put(c,
                     ITEMS.register(col + "_mud_brick",  () -> new Item(p)));
-            ((EnumMap<DyeColor, RegistryObject<Item>>) DYED_STICK).put(c,
+            ((EnumMap<DyeColor, DeferredHolder<Item, Item>>) DYED_STICK).put(c,
                     ITEMS.register(col + "_dyed_stick", () -> new Item(p)));
         }
     }
 
     // ── Tools ────────────────────────────────────────────────────────────────
 
-    public static final RegistryObject<Item> GEM_SHEARS  = ITEMS.register("gem_shears",
+    public static final DeferredHolder<Item, Item> GEM_SHEARS  = ITEMS.register("gem_shears",
             () -> new ItemGemShears(new Item.Properties().durability(500)));
-    public static final RegistryObject<Item> GEM_HATCHET = ITEMS.register("gem_hatchet",
+    public static final DeferredHolder<Item, Item> GEM_HATCHET = ITEMS.register("gem_hatchet",
             () -> new ItemGemHatchet(new Item.Properties()));
-    public static final RegistryObject<Item> GEM_HOE     = ITEMS.register("gem_hoe",
+    public static final DeferredHolder<Item, Item> GEM_HOE     = ITEMS.register("gem_hoe",
             () -> new ItemGemHoe(new Item.Properties()));
-    public static final RegistryObject<Item> GEM_PICKAXE = ITEMS.register("gem_pickaxe",
+    public static final DeferredHolder<Item, Item> GEM_PICKAXE = ITEMS.register("gem_pickaxe",
             () -> new ItemGemPickaxe(new Item.Properties()));
-    public static final RegistryObject<Item> GEM_SHOVEL  = ITEMS.register("gem_shovel",
+    public static final DeferredHolder<Item, Item> GEM_SHOVEL  = ITEMS.register("gem_shovel",
             () -> new ItemGemShovel(new Item.Properties()));
-    public static final RegistryObject<Item> GEM_SWORD   = ITEMS.register("gem_sword",
+    public static final DeferredHolder<Item, Item> GEM_SWORD   = ITEMS.register("gem_sword",
             () -> new ItemGemSword(new Item.Properties()));
 
     // ── Register block items for all families ────────────────────────────────
@@ -225,18 +228,5 @@ public class ModItems {
 
         registerBlockItems(ModBlocks.GEM_ORE);
         registerBlockItems(ModBlocks.COMPRESSED_GEM);
-    }
-
-    // ── Creative tab population ──────────────────────────────────────────────
-
-    /**
-     * Called via modBus.addListener in Gwycraft constructor.
-     * Adds all mod items to the GwyCraft creative tab.
-     */
-    public static void buildCreativeTab(BuildCreativeModeTabContentsEvent event) {
-        if (!event.getTabKey().equals(Gwycraft.TAB.getKey())) return;
-        for (RegistryObject<Item> ro : ITEMS.getEntries()) {
-            event.accept(ro.get());
-        }
     }
 }

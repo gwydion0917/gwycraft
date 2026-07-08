@@ -1,5 +1,5 @@
-// 1.20.1	2026-06-27T17:22:21.220843718	GwyCraft WorldGen
-e5daef916dc1ecdbb9bc872a091c43b756fbaa1d data/gwycraft/forge/biome_modifier/add_gem_ores.json
+// 1.21.1	2026-07-08T06:00:48.565497465	GwyCraft WorldGen
+e5daef916dc1ecdbb9bc872a091c43b756fbaa1d data/gwycraft/neoforge/biome_modifier/add_gem_ores.json
 b4f1dbb7bb14ced88172aa7caa87d042425ec978 data/gwycraft/worldgen/configured_feature/ore_gem_agate_nether.json
 76af8fa360d0270b0473055e42e9dbef11bdc5e5 data/gwycraft/worldgen/configured_feature/ore_gem_agate_overworld.json
 d608f998ff007ab8df3efbf7616775a0b6e45776 data/gwycraft/worldgen/configured_feature/ore_gem_amethyst_nether.json

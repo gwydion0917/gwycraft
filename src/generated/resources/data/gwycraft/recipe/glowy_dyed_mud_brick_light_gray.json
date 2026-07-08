@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    },
+    {
+      "item": "gwycraft:light_gray_dyed_mud_brick"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gwycraft:light_gray_glowy_dyed_mud_brick"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "gwycraft:blue_glowy_dyed_stone"
-  },
-  "result": "gwycraft:blue_glowy_fancy_wide_top"
-}

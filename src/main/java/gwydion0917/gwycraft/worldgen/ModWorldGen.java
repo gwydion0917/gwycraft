@@ -5,7 +5,7 @@ import gwydion0917.gwycraft.enums.EnumGemType;
 import gwydion0917.gwycraft.registration.ModBlocks;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -69,17 +69,17 @@ public class ModWorldGen {
 
     private static ResourceKey<ConfiguredFeature<?, ?>> cfKey(String path) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                new ResourceLocation(Gwycraft.MOD_ID, path));
+                ResourceLocation.fromNamespaceAndPath(Gwycraft.MOD_ID, path));
     }
 
     private static ResourceKey<PlacedFeature> pfKey(String path) {
         return ResourceKey.create(Registries.PLACED_FEATURE,
-                new ResourceLocation(Gwycraft.MOD_ID, path));
+                ResourceLocation.fromNamespaceAndPath(Gwycraft.MOD_ID, path));
     }
 
     // ── Bootstrap methods (called by DatapackBuiltinEntriesProvider) ──────────
 
-    public static void bootstrapConfiguredFeatures(BootstapContext<ConfiguredFeature<?, ?>> ctx) {
+    public static void bootstrapConfiguredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> ctx) {
         RuleTest stoneRule    = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepSlateRule = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherRule   = new BlockMatchTest(Blocks.NETHERRACK);
@@ -103,7 +103,7 @@ public class ModWorldGen {
         }
     }
 
-    public static void bootstrapPlacedFeatures(BootstapContext<PlacedFeature> ctx) {
+    public static void bootstrapPlacedFeatures(BootstrapContext<PlacedFeature> ctx) {
         HolderGetter<ConfiguredFeature<?, ?>> cfLookup =
                 ctx.lookup(Registries.CONFIGURED_FEATURE);
 

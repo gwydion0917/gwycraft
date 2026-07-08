@@ -10,6 +10,6 @@ import net.minecraft.world.level.block.DropExperienceBlock;
  */
 public class GwyGemOreBlock extends DropExperienceBlock {
     public GwyGemOreBlock(Properties props) {
-        super(props, UniformInt.of(3, 7));
+        super(UniformInt.of(3, 7), props);
     }
 }

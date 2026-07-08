@@ -9,7 +9,8 @@ import net.minecraft.world.item.ShovelItem;
  */
 public class ItemGemShovel extends ShovelItem {
     public ItemGemShovel(Item.Properties props) {
-        super(GwyItemTier.INSTANCE, 1.5F, -3.0F, props);
+        super(GwyItemTier.INSTANCE,
+                props.attributes(ShovelItem.createAttributes(GwyItemTier.INSTANCE, 1.5F, -3.0F)));
     }
 
     @Override

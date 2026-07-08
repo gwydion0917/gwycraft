@@ -1,48 +1,43 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url = "https://maven.minecraftforge.net/" }
-    }
-    dependencies {
-        classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "[6.0,6.2)"
-    }
+plugins {
+    id "java"
+    id "net.neoforged.moddev" version "2.0.141"
 }
 
-apply plugin: "java"
-apply plugin: "net.minecraftforge.gradle"
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
-version = "1.20.1-1"
+version = "1.21.1-1"
 group = "gwydion0917.gwycraft"
-archivesBaseName = "gwycraft"
+base.archivesName = "gwycraft"
 
 repositories {
     maven { url = "https://maven.blamejared.com" }
     maven { url = "https://api.modrinth.com/maven" }
 }
 
-minecraft {
-    mappings channel: "official", version: "1.20.1"
+neoForge {
+    version = "21.1.235"
 
     runs {
-        "client" {
-            workingDirectory file("./run")
-            mods { gwycraft { source sourceSets.main } }
-            // Jade
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+        client {
+            client()
+            gameDirectory = file("run")
         }
-        "server" {
-            workingDirectory file("./run/server")
-            mods { gwycraft { source sourceSets.main } }
+        server {
+            server()
+            gameDirectory = file("run/server")
         }
-        "data" {
-            workingDirectory file("./run")
-            args "--mod", "gwycraft", "--all",
-                 "--output", file("src/generated/resources/"),
-                 "--existing", file("src/main/resources/")
-            mods { gwycraft { source sourceSets.main } }
+        data {
+            data()
+            gameDirectory = file("run")
+            programArguments.addAll "--mod", "gwycraft", "--all",
+                    "--output", file("src/generated/resources/").absolutePath,
+                    "--existing", file("src/main/resources/").absolutePath
+        }
+    }
+
+    mods {
+        gwycraft {
+            sourceSet sourceSets.main
         }
     }
 }
@@ -62,13 +57,10 @@ tasks.withType(ProcessResources).configureEach {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.20.1-47.4.20"
-
     // JEI — API on compile path, full jar at runtime
-    compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.3.0.4")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.3.0.4")
+    compileOnly "mezz.jei:jei-1.21.1-neoforge-api:19.32.0.359"
+    runtimeOnly "mezz.jei:jei-1.21.1-neoforge:19.32.0.359"
 
-    // jade_version example: 11.13.2+forge
-    // Visit https://modrinth.com/mod/jade/versions?l=forge to get the latest version
-    implementation fg.deobf("maven.modrinth:jade:11.13.2+forge")
+    // Visit https://modrinth.com/mod/jade/versions?l=neoforge to get the latest version
+    implementation "maven.modrinth:jade:15.10.5+neoforge"
 }

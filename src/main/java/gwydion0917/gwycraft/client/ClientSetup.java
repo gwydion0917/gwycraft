@@ -2,33 +2,32 @@ package gwydion0917.gwycraft.client;
 
 import gwydion0917.gwycraft.blocks.ITintedGwyBlock;
 import gwydion0917.gwycraft.registration.ModBlocks;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.client.ConfigScreenHandler;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /**
- * Client-only setup — sets render layers for transparent/non-opaque blocks
- * and registers block/item color handlers for tinted blocks.
+ * Client-only setup — registers the config screen and block/item color handlers
+ * for tinted blocks. Render layers are declared via "render_type" in the block
+ * model JSONs (the modern replacement for ItemBlockRenderTypes.setRenderLayer).
  */
 public class ClientSetup {
 
-    public static void init(FMLClientSetupEvent event) {
-        ModLoadingContext.get().registerExtensionPoint(
-                ConfigScreenHandler.ConfigScreenFactory.class,
-                () -> new ConfigScreenHandler.ConfigScreenFactory(
-                        (mc, screen) -> new ConfigScreen(screen)));
-
-        event.enqueueWork(ClientSetup::setRenderLayers);
+    /** Called from the mod constructor when running on the client dist. */
+    public static void registerModBusListeners(IEventBus modBus, ModContainer container) {
+        // NeoForge's built-in ConfigurationScreen auto-generates a config UI from ModConfigSpec
+        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        modBus.addListener(ClientSetup::registerBlockColors);
+        modBus.addListener(ClientSetup::registerItemColors);
     }
 
     // ── Tinted block color handlers ──────────────────────────────────────────
@@ -38,10 +37,10 @@ public class ClientSetup {
      * Add new families here as they are implemented.
      */
     @SafeVarargs
-    private static Block[] allTintedBlocks(Map<DyeColor, RegistryObject<Block>>... families) {
+    private static Block[] allTintedBlocks(Map<DyeColor, DeferredHolder<Block, Block>>... families) {
         List<Block> blocks = new ArrayList<>();
-        for (Map<DyeColor, RegistryObject<Block>> family : families) {
-            for (RegistryObject<Block> ro : family.values()) {
+        for (Map<DyeColor, DeferredHolder<Block, Block>> family : families) {
+            for (DeferredHolder<Block, Block> ro : family.values()) {
                 blocks.add(ro.get());
             }
         }
@@ -49,11 +48,8 @@ public class ClientSetup {
     }
 
     private static int tintColor(DyeColor c) {
-        float[] rgb = c.getTextureDiffuseColors();
-        return 0xFF000000
-                | ((int) (rgb[0] * 255) << 16)
-                | ((int) (rgb[1] * 255) << 8)
-                | (int) (rgb[2] * 255);
+        // 1.20.5+: DyeColor exposes a packed ARGB int directly
+        return 0xFF000000 | c.getTextureDiffuseColor();
     }
 
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
@@ -171,34 +167,6 @@ public class ClientSetup {
                     ModBlocks.GLOWY_FANCY_WIDE_TOP.get(c).get().asItem(),
                     ModBlocks.GLOWY_FANCY_SLAB.get(c).get().asItem()
             );
-        }
-    }
-
-    // ── Render layers ────────────────────────────────────────────────────────
-
-    private static void setRenderLayers() {
-        // Glass → translucent (alpha=128 center pixels need real transparency)
-        for (RegistryObject<Block> ro : ModBlocks.DYED_GLASS.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.translucent());
-        }
-        for (RegistryObject<Block> ro : ModBlocks.GLOWY_DYED_GLASS.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.translucent());
-        }
-
-        // Leaves → cutout_mipped (mipmapped transparency)
-        for (RegistryObject<Block> ro : ModBlocks.DYED_LEAF.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutoutMipped());
-        }
-        for (RegistryObject<Block> ro : ModBlocks.GLOWY_DYED_LEAF.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutoutMipped());
-        }
-
-        // Torches → cutout
-        for (RegistryObject<Block> ro : ModBlocks.TORCH.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
-        }
-        for (RegistryObject<Block> ro : ModBlocks.WALL_TORCH.values()) {
-            ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
         }
     }
 }

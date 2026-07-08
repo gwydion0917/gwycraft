@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "gwycraft:yellow_dyed_stone"
-  },
-  "result": "gwycraft:yellow_fancy_greek_bottom"
-}

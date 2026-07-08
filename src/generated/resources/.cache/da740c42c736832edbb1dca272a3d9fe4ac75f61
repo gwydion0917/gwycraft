@@ -1,10 +1,10 @@
-// 1.20.1	2026-06-28T11:45:20.88014785	GwyCraft Block Tags
-a1d0b64b3f1135386383471775f13562407779ef data/minecraft/tags/blocks/leaves.json
-add43a115201a8ea169e93ba6062cc8755288b6e data/minecraft/tags/blocks/mineable/axe.json
-a1d0b64b3f1135386383471775f13562407779ef data/minecraft/tags/blocks/mineable/hoe.json
-22ce571e33cceb714a6ebc5f7781ca4441c66c2c data/minecraft/tags/blocks/mineable/pickaxe.json
-bf581745cce865b9efd1f5b7caa8b06294d2faba data/minecraft/tags/blocks/mineable/shovel.json
-d772bdfc4b4f495bf77db4f087bf242728fe460a data/minecraft/tags/blocks/needs_stone_tool.json
-2c3662959447c3e9fcc62c8004effe1f8d9cb822 data/minecraft/tags/blocks/planks.json
-0639ce45e1ccf6a2f653243d6e0fd09bfc35a5ea data/minecraft/tags/blocks/slabs.json
-b77334fa0f2d312036c43bf736d7ef2ac2a407a1 data/minecraft/tags/blocks/walls.json
+// 1.21.1	2026-07-08T06:00:48.565815677	GwyCraft Block Tags
+a1d0b64b3f1135386383471775f13562407779ef data/minecraft/tags/block/leaves.json
+add43a115201a8ea169e93ba6062cc8755288b6e data/minecraft/tags/block/mineable/axe.json
+a1d0b64b3f1135386383471775f13562407779ef data/minecraft/tags/block/mineable/hoe.json
+22ce571e33cceb714a6ebc5f7781ca4441c66c2c data/minecraft/tags/block/mineable/pickaxe.json
+bf581745cce865b9efd1f5b7caa8b06294d2faba data/minecraft/tags/block/mineable/shovel.json
+d772bdfc4b4f495bf77db4f087bf242728fe460a data/minecraft/tags/block/needs_stone_tool.json
+2c3662959447c3e9fcc62c8004effe1f8d9cb822 data/minecraft/tags/block/planks.json
+0639ce45e1ccf6a2f653243d6e0fd09bfc35a5ea data/minecraft/tags/block/slabs.json
+b77334fa0f2d312036c43bf736d7ef2ac2a407a1 data/minecraft/tags/block/walls.json

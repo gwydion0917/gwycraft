@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "gwycraft:lime_dyed_brick"
+    }
+  },
+  "pattern": [
+    "XX"
+  ],
+  "result": {
+    "count": 3,
+    "id": "gwycraft:lime_dyed_brick_paver"
+  }
+}

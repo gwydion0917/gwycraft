@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "gwycraft:yellow_dyed_stone"
-  },
-  "result": "gwycraft:yellow_plain_slab"
-}

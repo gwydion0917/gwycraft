@@ -9,7 +9,8 @@ import net.minecraft.world.item.PickaxeItem;
  */
 public class ItemGemPickaxe extends PickaxeItem {
     public ItemGemPickaxe(Item.Properties props) {
-        super(GwyItemTier.INSTANCE, 1, -2.8F, props);
+        super(GwyItemTier.INSTANCE,
+                props.attributes(PickaxeItem.createAttributes(GwyItemTier.INSTANCE, 1.0F, -2.8F)));
     }
 
     @Override

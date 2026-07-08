@@ -2,8 +2,8 @@ package gwydion0917.gwycraft.data;
 
 import gwydion0917.gwycraft.Gwycraft;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 /**
  * BlockState provider for GwyCraft.

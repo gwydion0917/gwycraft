@@ -1,8 +1,8 @@
 package gwydion0917.gwycraft.data;
 
 import gwydion0917.gwycraft.worldgen.ModWorldGenProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 /**
  * Entry point for all GwyCraft data generators (1.20.1).
@@ -20,8 +20,8 @@ public class GwycraftDataGen {
         ExistingFileHelper efh = event.getExistingFileHelper();
 
         // Server-side providers
-        gen.addProvider(event.includeServer(), new ModRecipeProvider(output));
-        gen.addProvider(event.includeServer(), new ModLootTableProvider(output));
+        gen.addProvider(event.includeServer(), new ModRecipeProvider(output, lookup));
+        gen.addProvider(event.includeServer(), new ModLootTableProvider(output, lookup));
 
         var blockTagsProv = new ModTagsProvider.GwycraftBlockTags(output, lookup, efh);
         gen.addProvider(event.includeServer(), blockTagsProv);

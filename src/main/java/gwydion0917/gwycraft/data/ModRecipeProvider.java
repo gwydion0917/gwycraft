@@ -4,6 +4,7 @@ import gwydion0917.gwycraft.Gwycraft;
 import gwydion0917.gwycraft.enums.EnumGemType;
 import gwydion0917.gwycraft.registration.ModBlocks;
 import gwydion0917.gwycraft.registration.ModItems;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -14,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Data generator for GwyCraft recipes (1.20.1).
@@ -30,12 +31,12 @@ import java.util.function.Consumer;
  */
 public class ModRecipeProvider extends RecipeProvider {
 
-    public ModRecipeProvider(PackOutput output) {
-        super(output);
+    public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(output, registries);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> out) {
+    protected void buildRecipes(RecipeOutput out) {
 
         for (DyeColor c : DyeColor.values()) {
             Item  dye        = dyeFor(c);
@@ -107,8 +108,8 @@ public class ModRecipeProvider extends RecipeProvider {
 
             // ── Dyed cobblestone (8 vanilla cobble + dye) ──────────────────
             ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, cobble, 8)
-                    .requires(dye).requires(Ingredient.of(Tags.Items.COBBLESTONE), 8)
-                    .unlockedBy("has_cobble", has(Tags.Items.COBBLESTONE))
+                    .requires(dye).requires(Ingredient.of(Tags.Items.COBBLESTONES), 8)
+                    .unlockedBy("has_cobble", has(Tags.Items.COBBLESTONES))
                     .save(out, grl("dyed_cobble_" + s));
             ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, gCobble, 8)
                     .requires(Blocks.GLOWSTONE).requires(cobble, 8)
@@ -241,7 +242,7 @@ public class ModRecipeProvider extends RecipeProvider {
             // ── Dyed torch (coal + dyed stick → 4 torches) ────────────────
             Item torchItem = ModItems.TORCH_ITEMS.get(c).get();
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, torchItem, 4)
-                    .pattern("X").pattern("#").define('X', Items.COAL).define('#', dStick)
+                    .pattern("X").pattern("#").define('X', ItemTags.COALS).define('#', dStick)
                     .unlockedBy("has_stick", has(dStick))
                     .save(out, grl("dyed_torch_" + s));
 
@@ -545,7 +546,7 @@ public class ModRecipeProvider extends RecipeProvider {
     // ── Helpers ───────────────────────────────────────────────────────────────
 
     private static ResourceLocation grl(String path) {
-        return new ResourceLocation(Gwycraft.MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(Gwycraft.MOD_ID, path);
     }
 
     private static Item dyeFor(DyeColor c) {

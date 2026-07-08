@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "tag": "gwycraft:gems"
+    },
+    "Y": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    " XX",
+    " YX",
+    " Y "
+  ],
+  "result": {
+    "count": 1,
+    "id": "gwycraft:gem_hatchet"
+  }
+}

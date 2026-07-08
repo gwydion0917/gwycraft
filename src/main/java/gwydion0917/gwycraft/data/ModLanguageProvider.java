@@ -6,7 +6,7 @@ import gwydion0917.gwycraft.registration.ModBlocks;
 import gwydion0917.gwycraft.registration.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.DyeColor;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.LanguageProvider;
 
 /**
  * Generates en_us.json (replaces 1.12 lang/en_us.lang).
@@ -22,6 +22,16 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         // Creative tab
         add("itemGroup.gwycraft", "GwyCraft");
+
+        // NeoForge built-in ConfigurationScreen labels
+        add("gwycraft.configuration.general", "General");
+        add("gwycraft.configuration.genGemsEnabled", "Generate Gem Ores (Overworld)");
+        add("gwycraft.configuration.genGemsNether", "Generate Gem Ores (Nether)");
+        add("gwycraft.configuration.genGemsVeins", "Ore Vein Attempts per Chunk (stored; baked into datagen)");
+        add("gwycraft.configuration.genGemsNumber", "Blocks per Vein Attempt (stored; baked into datagen)");
+        add("gwycraft.configuration.toolsEnabled", "Gem Tools Craftable");
+        add("gwycraft.configuration.toolsHaveEnchants", "Gem Tools Enchanted on Craft");
+        add("gwycraft.configuration.gemsCraftingEnabled", "Gems Craftable");
 
         for (DyeColor c : DyeColor.values()) {
             String dn = displayName(c);
@@ -147,8 +157,8 @@ public class ModLanguageProvider extends LanguageProvider {
             addBlock(ModBlocks.GLOWY_FANCY_WIDE_TOP.get(c), dn + " Glowing Fancy Wide Top");
             addBlock(ModBlocks.GLOWY_FANCY_SLAB.get(c), dn + " Glowing Fancy Slab");
 
-            // Torches
-            addItem(ModItems.TORCH_ITEMS.get(c), dn + " Torch");
+            // Torches (StandingAndWallBlockItem uses the block's translation key)
+            addBlock(ModBlocks.TORCH.get(c), dn + " Torch");
 
             // Standalone items
             addItem(ModItems.CLAY_BALL.get(c), dn + " Clay Ball");

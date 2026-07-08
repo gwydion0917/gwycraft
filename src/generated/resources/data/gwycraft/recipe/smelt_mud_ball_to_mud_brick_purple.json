@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "gwycraft:purple_mud_ball"
+  },
+  "result": {
+    "count": 1,
+    "id": "gwycraft:purple_mud_brick"
+  }
+}

@@ -3,6 +3,7 @@ package gwydion0917.gwycraft.data;
 import gwydion0917.gwycraft.enums.EnumGemType;
 import gwydion0917.gwycraft.registration.ModBlocks;
 import gwydion0917.gwycraft.registration.ModItems;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
@@ -11,12 +12,13 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Block loot table generator for GwyCraft 1.20.1.
@@ -29,18 +31,18 @@ import java.util.Set;
  */
 public class ModLootTableProvider extends LootTableProvider {
 
-    public ModLootTableProvider(PackOutput output) {
+    public ModLootTableProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, Set.of(), List.of(
                 new SubProviderEntry(GwycraftBlockLoot::new, LootContextParamSets.BLOCK)
-        ));
+        ), registries);
     }
 
     // ── Inner block loot table class ─────────────────────────────────────────
 
     public static class GwycraftBlockLoot extends BlockLootSubProvider {
 
-        public GwycraftBlockLoot() {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+        public GwycraftBlockLoot(HolderLookup.Provider registries) {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
         }
 
         @Override
@@ -155,20 +157,20 @@ public class ModLootTableProvider extends LootTableProvider {
             }
         }
 
-        private void selfDropDyeMap(Map<DyeColor, RegistryObject<Block>> family) {
-            for (RegistryObject<Block> ro : family.values()) {
+        private void selfDropDyeMap(Map<DyeColor, DeferredHolder<Block, Block>> family) {
+            for (DeferredHolder<Block, Block> ro : family.values()) {
                 dropSelf(ro.get());
             }
         }
 
-        private void slabDropDyeMap(Map<DyeColor, RegistryObject<Block>> family) {
-            for (RegistryObject<Block> ro : family.values()) {
+        private void slabDropDyeMap(Map<DyeColor, DeferredHolder<Block, Block>> family) {
+            for (DeferredHolder<Block, Block> ro : family.values()) {
                 add(ro.get(), createSlabItemTable(ro.get()));
             }
         }
 
-        private void selfDropGemMap(Map<EnumGemType, RegistryObject<Block>> family) {
-            for (RegistryObject<Block> ro : family.values()) {
+        private void selfDropGemMap(Map<EnumGemType, DeferredHolder<Block, Block>> family) {
+            for (DeferredHolder<Block, Block> ro : family.values()) {
                 dropSelf(ro.get());
             }
         }
@@ -176,7 +178,7 @@ public class ModLootTableProvider extends LootTableProvider {
         @Override
         protected Iterable<Block> getKnownBlocks() {
             List<Block> all = new ArrayList<>();
-            for (RegistryObject<Block> ro : ModBlocks.BLOCKS.getEntries()) {
+            for (var ro : ModBlocks.BLOCKS.getEntries()) {
                 all.add(ro.get());
             }
             return all;

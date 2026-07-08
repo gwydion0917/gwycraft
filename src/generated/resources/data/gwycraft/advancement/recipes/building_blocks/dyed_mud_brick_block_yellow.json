@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mud_brick_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gwycraft:yellow_mud_brick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gwycraft:dyed_mud_brick_block_yellow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mud_brick_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gwycraft:dyed_mud_brick_block_yellow"
+    ]
+  }
+}

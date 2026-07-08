@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    },
+    {
+      "item": "gwycraft:blue_dyed_chiseled_sandstone"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gwycraft:blue_glowy_dyed_chiseled_sandstone"
+  }
+}

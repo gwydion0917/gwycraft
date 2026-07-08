@@ -11,8 +11,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -214,6 +214,15 @@ public class ModTagsProvider {
             for (EnumGemType gem : EnumGemType.values()) {
                 gems.add(ModItems.GEM.get(gem).get());
             }
+
+            // Vanilla tool-type tags — the minecraft:enchantable/* tags are built
+            // from these, so without them EnchantmentHelper.enchantItem finds no
+            // applicable enchantments for the gem tools.
+            tag(ItemTags.SWORDS).add(ModItems.GEM_SWORD.get());
+            tag(ItemTags.AXES).add(ModItems.GEM_HATCHET.get());
+            tag(ItemTags.PICKAXES).add(ModItems.GEM_PICKAXE.get());
+            tag(ItemTags.SHOVELS).add(ModItems.GEM_SHOVEL.get());
+            tag(ItemTags.HOES).add(ModItems.GEM_HOE.get());
 
             // Copy block tags to item tags
             copy(BlockTags.PLANKS, ItemTags.PLANKS);

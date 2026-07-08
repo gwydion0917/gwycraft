@@ -6,27 +6,23 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * Forge-bus player event handlers for GwyCraft 1.20.1.
- * Key changes from 1.16.5:
- * - ServerPlayerEntity → ServerPlayer
- * - getPlayer() → getEntity()
- * - RecipeHolder does NOT exist in MC 1.20.1; use RecipeManager.getRecipeIds() +
- *   byKey() to get Recipe<?> by namespace, then awardRecipes(Collection<Recipe<?>>).
- * - IRecipe → Recipe
- * - Random → RandomSource
- * - EnchantmentHelper.enchantItem still takes (RandomSource, ItemStack, int, boolean)
+ * Game-bus player event handlers for GwyCraft 1.21.1 (NeoForge).
+ * Key changes from 1.20.1:
+ * - Recipes are wrapped in RecipeHolder; awardRecipes takes Collection<RecipeHolder<?>>
+ * - Enchantments.* are ResourceKeys; EnchantmentHelper.enchantItem needs registry access
  */
-@Mod.EventBusSubscriber(modid = Gwycraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = Gwycraft.MOD_ID)
 public class GwycraftPlayerEvents {
 
     /** Unlock all gwycraft recipes for a player when they log in. */
@@ -36,13 +32,8 @@ public class GwycraftPlayerEvents {
 
         var rm = player.getServer().getRecipeManager();
 
-        // In MC 1.20.1, RecipeManager.getRecipeIds() returns Stream<ResourceLocation>.
-        // Filter by our modid namespace, then resolve each recipe via byKey().
-        List<Recipe<?>> gwycraftRecipes = rm.getRecipeIds()
-                .filter(id -> id.getNamespace().equals(Gwycraft.MOD_ID))
-                .map(rm::byKey)
-                .filter(opt -> opt.isPresent())
-                .map(opt -> opt.get())
+        List<RecipeHolder<?>> gwycraftRecipes = rm.getRecipes().stream()
+                .filter(holder -> holder.id().getNamespace().equals(Gwycraft.MOD_ID))
                 .collect(Collectors.toList());
 
         if (!gwycraftRecipes.isEmpty()) {
@@ -56,16 +47,18 @@ public class GwycraftPlayerEvents {
         if (!ConfigGwycraft.TOOLS_HAVE_ENCHANTS.get()) return;
         ItemStack stack = event.getCrafting();
         Item item = stack.getItem();
+        var registries = event.getEntity().level().registryAccess();
 
         if (item == ModItems.GEM_SHEARS.get()) {
-            ItemGemShears.enchantOnCraft(stack);
+            ItemGemShears.enchantOnCraft(stack, registries);
         } else if (item == ModItems.GEM_HATCHET.get()
                 || item == ModItems.GEM_HOE.get()
                 || item == ModItems.GEM_PICKAXE.get()
                 || item == ModItems.GEM_SHOVEL.get()
                 || item == ModItems.GEM_SWORD.get()) {
             RandomSource rng = RandomSource.create();
-            EnchantmentHelper.enchantItem(rng, stack, rng.nextInt(30) + 1, true);
+            EnchantmentHelper.enchantItem(rng, stack, rng.nextInt(30) + 1,
+                    registries, Optional.empty());
         }
     }
 }
